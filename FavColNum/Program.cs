@@ -39,7 +39,7 @@ namespace FavColNum
             //prompt user for fave number
             Console.Write("Enter your fave number: \t");
 
-            
+            //put into a loop to catch error
             do
             {
 
