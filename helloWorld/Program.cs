@@ -12,12 +12,12 @@ namespace helloWorld
         {
             Console.WriteLine("Victoria Rose Olivieri");
 
-            //Testing Diff Variables
-
+            //using 2 integer variables to print out their sum
             var i = 2;
             var iplus3 = i + 3;
             Console.WriteLine("i plus 3: " + iplus3);
 
+            //printing happy birthday using a string variable
             string hbd;
             hbd = "Happy Birthday";
             Console.WriteLine(hbd + " Samantha!");
@@ -35,7 +35,7 @@ namespace helloWorld
             {
                 melon = 1;
             }
-
+            //print the values recieved from the if statment
             Console.WriteLine("juice: " + juice);
             Console.WriteLine("melon: " + melon);
 
@@ -63,13 +63,33 @@ namespace helloWorld
             //while loop test
             int puppies = 0;
 
-            //while i have less than 3 puppies, i am happy
+            //while the amount of puppies is less than 3, print out that we want more
+            //if its greater than 3, than print no more puppies needed.
             while (puppies <= 2)
             {
                 Console.WriteLine("I need another puppy!");
                 puppies++;
             }
             Console.WriteLine("No more puppies");
+
+            //Implicit example
+            //hold an integer value in a long variable
+            int idNum = 1651268486;
+            long bigIdNum = idNum;
+
+            //print out the long num
+            Console.WriteLine("id: " + bigIdNum);
+
+            //Explicit example
+            double dbl = 546.23;
+            int newInt;
+
+            //cast double to an integer
+            newInt = (int)dbl;
+
+            //print out the int variable 
+            Console.WriteLine("Explicit integer from dbl: " + newInt);
+
 
         }//end main
     }//end class program
