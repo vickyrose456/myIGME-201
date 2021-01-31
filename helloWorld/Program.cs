@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace helloWorld
 {
+
     class Program
     {
+        //Class: PE1 - Hellow world Program
+        //Author: Victoria Olivieri
+        //Purpose: Get familiar w/ VS to create c# Programs
+        //Restrictions: None.
         static void Main(string[] args)
         {
             Console.WriteLine("Victoria Rose Olivieri");
