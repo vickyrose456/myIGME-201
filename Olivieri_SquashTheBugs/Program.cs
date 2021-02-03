@@ -53,6 +53,6 @@ namespace Olivieri_SquashTheBugs
             // output all numbers which have been processed
             //Console.WriteLine("These numbers have been processed: " allNumbers);
             Console.WriteLine("These numbers have been processed: " + allNumbers);
-        }
-    }
+        }//end main
+    }//end program
 }
