@@ -20,7 +20,7 @@ namespace Olivieri_SquashTheBugs
             int i = 0;
             //declared string to hold all numbers
             string allNumbers = null;
-
+            
 
 
             // loop through the numbers 1 through 10
@@ -56,7 +56,7 @@ namespace Olivieri_SquashTheBugs
                 allNumbers += i + " ";
 
                 // increment the counter
-                //i = i + 1; //Logic error --> do not need to increment within a loop
+                //i = i + 1; //Logic error --> do not need to increment within a loop b/c this would make it iterate by 2
             }
 
             // output all numbers which have been processed

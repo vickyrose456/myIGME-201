@@ -156,16 +156,60 @@ namespace MathQuiz
                 // else multiplication
                 if (nOp == 0)
                 {
-                    nAnswer =
+                    nAnswer = val1 + val2;
+                    sQuestion = $"Question #{nCntr + 1}: {val1} + {val2} => ";
+                } else if (nOp == 1)
+
+                {
+                    nAnswer = val1 - val2;
+                    sQuestion = $"Question #{nCntr + 1}: {val1} + {val2} => ";
+
+                } else
+                {
+                    nAnswer = val1 * val2;
+                    sQuestion = $"Question #{nCntr + 1}: {val1} + {val2} => ";
+
                 }
 
                 // display the question and prompt for the answer until they enter a valid number
                 do
                 {
-                } while ( );
+                    Console.Write(sQuestion);
+
+                    try
+                    {
+                        sResponse = Console.ReadLine();
+                        nResponse = int.Parse(sResponse);
+                        bValid = true;
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Please enter an integer.");
+                        bValid = false;
+                    }
+                    finally 
+                    {
+                        Console.WriteLine("This line will always be output!");
+                    }
+
+                } while (!bValid); //bValid == false
 
                 // if nResponse == nAnswer, output flashy reward and increment nCorrect
                 // else output stark answer
+
+                if (nResponse == nAnswer)
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.BackgroundColor = ConsoleColor.White;
+                    Console.WriteLine("Well done" + myName);
+                }
+                else 
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.BackgroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine();
+                }
 
                 // restore the screen colors
                 Console.BackgroundColor = ConsoleColor.Black;
@@ -175,12 +219,24 @@ namespace MathQuiz
             }
 
             // output how many they got correct (nCorrect) and their score (nCorrect/nCntr)
+            Console.WriteLine("You got {0} correct out of {1}, which is a score of {2:P2}", nCorrect, nQuestions);
+
 
             do
             {
                 // prompt if they want to play again
+                Console.Write("Do you want to play again? (y/n)";
+                sAgain = Console.ReadLine();
                 // if they type y or yes then play again (note there is a goto label at line ~71)
-                // else if they type n or no then leave this loop
+                if (sAgain.ToLower().StartsWith("y"))
+                {
+                    goto start;
+                }
+                else 
+                {
+                    // else if they type n or no then leave this loop
+                    
+                }
                 // string has a StartsWith() method that could be helpful!
 
             } while (true);
