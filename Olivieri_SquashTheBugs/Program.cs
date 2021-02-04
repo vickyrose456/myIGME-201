@@ -18,6 +18,7 @@ namespace Olivieri_SquashTheBugs
             // declare int counter
             //int i = 0 //Compile time error --> missing ;
             int i = 0;
+            //declared string to hold all numbers
             string allNumbers = null;
 
             // loop through the numbers 1 through 10
