@@ -18,10 +18,9 @@ namespace Olivieri_SquashTheBugs
             // declare int counter
             //int i = 0 //Compile time error --> missing ;
             int i = 0;
-            //need to declare the number we are working with so that we can check if n-i = 0 so that 
-            int n = 1;
             //declared string to hold all numbers
             string allNumbers = null;
+
 
 
             // loop through the numbers 1 through 10
@@ -41,25 +40,23 @@ namespace Olivieri_SquashTheBugs
 
 
                //test to see if the value is undefined (divide by 0)
-                if (n-i == 0)
+                if(i-1 == 0)
                 {
                     Console.Write("undefined\n");
-                    n++;
                 }
                 else
                 {
-                    //Console.Write("undefined\n");
+                    
                     Console.Write((double)i / (i - 1) + "\n"); //outputed a double to get an accurate number (instead of integer)
                 }
 
-                
+
+
                 // concatenate each number to allNumbers
-                allNumbers += i + " " ;
+                allNumbers += i + " ";
 
                 // increment the counter
-                //i = i + 1; //Logic error --> do not need to increment within a loop.
-                //incrementing n that represents the number we are utilizing
-                n++;
+                //i = i + 1; //Logic error --> do not need to increment within a loop
             }
 
             // output all numbers which have been processed
