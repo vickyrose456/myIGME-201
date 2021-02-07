@@ -13,28 +13,43 @@ namespace Olivieri_PE3
     class Program
     {
         // Method: Main
-        // Purpose: 
-        // Restrictions: None
+        // Purpose: Get 4 numbers from the user and output the product of them. 
+        // Restrictions: Must enter a number, not a string
         static void Main(string[] args)
         {
-            //1. In the following code, how would we refer 
-            // to the name great from code in the namespace fabulous?
+            //declare all integers and the final product 
+            int num1 = 0;
+            int num2 = 0;
+            int num3 = 0;
+            int num4 = 0;
+            int numProduct = 0;
 
-            //2. Which of the following are not legal variable names.  Why?
-            //myVariableIsGood --> Legal = variable begins with a letter and has no spaces
-            //99Flake --> illegal = cannot start with a number
-            //iLike#Tags --> illegal = Can only contain _, numbers or letters. # cannot be used
-            //_floor --> legal = begins with _ and contains letter
-            //rit_tigers --> legal = begins with a letter and contains _ instead of a space
-            //time2GetJiggyWidIt -->Legal = begins with a letter and contain letters (although its a bit long)
-            //$bankBalance --> illegal = Cannot contian $. Also can only begin with a letter, _, or @
-            //Factorial! -->
-            //MAX_SIZE -->
-            //black & white --> illegal = Cannot have spaces
+            //Ask user to input for the number
+            Console.Write("Enter a number: ");
 
-            //3.	Is the string "supercalifragilisticexpialidocious" 
-            //too big to fit in a string variable? Why?
-            
+            //Convert the string input to an integer
+            num1 = Convert.ToInt32(Console.ReadLine());
+
+            //Get input number 2
+            Console.Write("Enter a number: ");
+            //convert input 2
+            num2 = Convert.ToInt32(Console.ReadLine());
+
+            //get input 3
+            Console.Write("Enter a number: ");
+            //convert the input 3
+            num3 = Convert.ToInt32(Console.ReadLine());
+
+            //ask user for input 4
+            Console.Write("Enter a number: ");
+            //convert input 4
+            num4 = Convert.ToInt32(Console.ReadLine());
+
+            //get the product of all the numbers 
+            numProduct = num1 * num2 * num3 * num4;
+            //output the product 
+            Console.WriteLine("The product of those numbers is: {0}", numProduct);
+
 
 
         }
