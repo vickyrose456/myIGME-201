@@ -2,10 +2,11 @@
 
 namespace Mandelbrot
 {
-    /// <summary>
-    /// This class generates Mandelbrot sets in the console window!
-    /// </summary>
 
+    // Class Program
+    // Author: Victoria Olivieri
+    // Purpose: This class generates Mandelbrot sets in the console window!
+    // Restrictions: None
 
     class Class1
     {
@@ -28,8 +29,18 @@ namespace Mandelbrot
             double endVal = 0;
             bool bValid = false;
 
+            //Enter a value to start
+            Console.Write("Enter starting value: ");
+            startVal = double.Parse(Console.ReadLine());
+
+            //enter a value to end
+            Console.Write("Enter ending value (less than starting): ");
+            endVal = double.Parse(Console.ReadLine());
+
+            //check to make sure start is greater than end
+            //if it is not, get new user input until the input it correct
             //do not allow tha starting value to be less than endVal
-           while (startVal <= endVal)
+           while (startVal <= endVal )
             {
                 //catch to see if a string was entered.
                 do
@@ -39,7 +50,7 @@ namespace Mandelbrot
                         //read num from keyboard as start val
                         //store the string as a double
                         Console.WriteLine("Enter the starting value");
-                        startVal = Convert.ToDouble(Console.ReadLine());
+                        startVal = Double.Parse(Console.ReadLine());
                         bValid = true;
                     }
                     catch
@@ -49,14 +60,15 @@ namespace Mandelbrot
                     }
                 } while (!bValid);
 
+
                 do
                 {
                     try
                     {
                         //read num from keyboard
                         //store the string as a double
-                        Console.WriteLine("Enter the ending value");
-                        endVal = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Enter the ending value (greater than starting value)");
+                        endVal = double.Parse(Console.ReadLine());
                         bValid = true;
                     }
                     catch
@@ -66,15 +78,13 @@ namespace Mandelbrot
                     }
                 } while (!bValid);
             }
-            
 
 
-            
 
 
-            for (imagCoord = startVal; imagCoord >= -1.2; imagCoord -= 0.05)
+            for (imagCoord = startVal; imagCoord >= -startVal; imagCoord -= startVal/24)
             {
-                for (realCoord = endVal; realCoord <= 1.77; realCoord += 0.03)
+                for (realCoord = endVal; realCoord <= -endVal*29.5; realCoord += -endVal/2)
                 {
                     iterations = 0;
                     realTemp = realCoord;
