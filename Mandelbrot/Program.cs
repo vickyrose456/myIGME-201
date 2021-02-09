@@ -84,7 +84,7 @@ namespace Mandelbrot
 
             for (imagCoord = startVal; imagCoord >= -startVal; imagCoord -= startVal/24)
             {
-                for (realCoord = endVal; realCoord <= -endVal*29.5; realCoord += -endVal/2)
+                for (realCoord = endVal; realCoord <= -endVal*2.95; realCoord += -endVal/20)
                 {
                     iterations = 0;
                     realTemp = realCoord;
