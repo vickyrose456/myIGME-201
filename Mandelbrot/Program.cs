@@ -34,13 +34,13 @@ namespace Mandelbrot
             startVal = double.Parse(Console.ReadLine());
 
             //enter a value to end
-            Console.Write("Enter ending value (less than starting): ");
+            Console.Write("Enter ending value (less than starting value and less than 0): ");
             endVal = double.Parse(Console.ReadLine());
 
             //check to make sure start is greater than end
             //if it is not, get new user input until the input it correct
             //do not allow tha starting value to be less than endVal
-           while (startVal <= endVal )
+           while (startVal <= endVal || endVal >= 0)
             {
                 //catch to see if a string was entered.
                 do
@@ -67,7 +67,7 @@ namespace Mandelbrot
                     {
                         //read num from keyboard
                         //store the string as a double
-                        Console.WriteLine("Enter the ending value (greater than starting value)");
+                        Console.WriteLine("Enter the ending value (greater than starting value and less than 0)");
                         endVal = double.Parse(Console.ReadLine());
                         bValid = true;
                     }
