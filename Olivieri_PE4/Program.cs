@@ -22,18 +22,46 @@ namespace Olivieri_PE4
             int num1 = 0;
             int num2 = 0;
             bool validNum = false;
-
+            bool bValid = false;
            
 
             do
             {
-                //get number 1
-                Console.WriteLine("Enter a number: " );
-                num1 = Convert.ToInt32(Console.ReadLine());
+                do
+                {
+                    try
+                    {
+                        //read num from keyboard
+                        //get number 1
+                        Console.WriteLine("Enter a number: " );
+                        num1 = Convert.ToInt32(Console.ReadLine());
+                        bValid = true;
+                    }
+                    catch
+                    {
+                        //let the user know it was invalid
+                        Console.WriteLine("Not a valid number");
+                    }
+                } while (!bValid);
 
-                //get number 2
-                Console.WriteLine("Enter another number: ");
-                num2 = Convert.ToInt32(Console.ReadLine());
+
+                do
+                {
+                    try
+                    {
+                        //read num from keyboard
+                        //get number 2
+                        Console.WriteLine("Enter another number: ");
+                        num2 = Convert.ToInt32(Console.ReadLine());
+                        bValid = true;
+                    }
+                    catch
+                    {
+                        //let the user know it was invalid
+                        Console.WriteLine("Not a valid number");
+                    }
+                } while (!bValid);
+                
 
                 //if both numbers are greater than 0, re enter the values
                 if (num1 > 10 & num2 > 10)
