@@ -28,9 +28,10 @@ namespace Mandelbrot
             double endVal = 0;
             bool bValid = false;
 
-            //do not allow tha starting value o be 
+            //do not allow tha starting value to be less than endVal
            while (startVal <= endVal)
             {
+                //catch to see if a string was entered.
                 do
                 {
                     try
@@ -38,7 +39,7 @@ namespace Mandelbrot
                         //read num from keyboard as start val
                         //store the string as a double
                         Console.WriteLine("Enter the starting value");
-                        startVal = Convert.ToInt32(Console.ReadLine());
+                        startVal = Convert.ToDouble(Console.ReadLine());
                         bValid = true;
                     }
                     catch
@@ -71,9 +72,9 @@ namespace Mandelbrot
             
 
 
-            for (imagCoord = 1.2; imagCoord >= -1.2; imagCoord -= 0.05)
+            for (imagCoord = startVal; imagCoord >= -1.2; imagCoord -= 0.05)
             {
-                for (realCoord = -0.6; realCoord <= 1.77; realCoord += 0.03)
+                for (realCoord = endVal; realCoord <= 1.77; realCoord += 0.03)
                 {
                     iterations = 0;
                     realTemp = realCoord;
