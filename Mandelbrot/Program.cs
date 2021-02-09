@@ -24,6 +24,53 @@ namespace Mandelbrot
             double realCoord, imagCoord;
             double realTemp, imagTemp, realTemp2, arg;
             int iterations;
+            double startVal = 0;
+            double endVal = 0;
+            bool bValid = false;
+
+            //do not allow tha starting value o be 
+           while (startVal <= endVal)
+            {
+                do
+                {
+                    try
+                    {
+                        //read num from keyboard as start val
+                        //store the string as a double
+                        Console.WriteLine("Enter the starting value");
+                        startVal = Convert.ToInt32(Console.ReadLine());
+                        bValid = true;
+                    }
+                    catch
+                    {
+                        //let the user know it was invalid
+                        Console.WriteLine("Not a valid number.");
+                    }
+                } while (!bValid);
+
+                do
+                {
+                    try
+                    {
+                        //read num from keyboard
+                        //store the string as a double
+                        Console.WriteLine("Enter the ending value");
+                        endVal = Convert.ToDouble(Console.ReadLine());
+                        bValid = true;
+                    }
+                    catch
+                    {
+                        //let the user know it was invalid
+                        Console.WriteLine("Not a valid number.");
+                    }
+                } while (!bValid);
+            }
+            
+
+
+            
+
+
             for (imagCoord = 1.2; imagCoord >= -1.2; imagCoord -= 0.05)
             {
                 for (realCoord = -0.6; realCoord <= 1.77; realCoord += 0.03)
