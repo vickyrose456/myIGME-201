@@ -20,6 +20,7 @@ namespace Olivieri_PE6
         {
             int userNum = 0;
             int numOfTries = 0;
+            int winTries = 0;
 
             //initialize rand to be call the Random class
             Random rand = new Random();
@@ -49,23 +50,53 @@ namespace Olivieri_PE6
                 }
 
                 //output the user's number
-                Console.WriteLine("Your num: {0}", userNum);
+                //Console.WriteLine("Your num: {0}", userNum);
 
                 //check if the user input matches the random number
                 if (userNum == randomNum)
                 {
                     //congrats outputed to user
-                    Console.WriteLine("CONGRATS! You guessed {0} correct on your {1} try!", userNum, numOfTries);
+                    //Console.WriteLine("CONGRATS! You guessed {0} correct on try #{1}!", userNum, (numOfTries+1));
+
+                    //increment the number of times through the loop
+                    //winTries++;
 
                     //set num of tries = 8 to stop the while loop
                     numOfTries = 8;
+
+                } else if (userNum < randomNum)
+                {
+                    Console.WriteLine("Your number, {0}, Is Too Low!!!", userNum);
+                }
+                else if (userNum > randomNum)
+                {
+                    Console.WriteLine("Your number, {0}, Is Too High!!!", userNum);
                 }
 
                 //increment the number of tries for the while loop
                 numOfTries++;
+                winTries++;
+            }
+
+            //check if the user data is equal to the random number
+            if (userNum == randomNum)
+            {
+                //congrats outputed to user
+                Console.WriteLine("CONGRATS! You guessed {0} correct on try #{1}!", userNum, (winTries));
 
             }
+             //If over 8 tries, then they lost. so print that to user
+            if (winTries <= 8)
+            {
+
                 
+            }
+            else 
+            { 
+                //print the correct number to user
+                Console.WriteLine("Sorry, you ran out of tries :( \nThe number was {0}", randomNum);
+            }
+            
             
            
         }
