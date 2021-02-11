@@ -29,12 +29,13 @@ namespace Olivieri_PE6
             int randomNum = rand.Next(0, 101);
 
             //test the program
-            Console.WriteLine("My num: {0}", randomNum);
+            Console.WriteLine("The random number: {0}", randomNum);
 
 
             while (numOfTries < 8)
             {
                 
+
                 do 
                 { 
                     //promt the user to guess a number
