@@ -35,10 +35,13 @@ namespace Olivieri_PE6
             while (numOfTries < 8)
             {
                 
-                //promt the user to guess a number
-                Console.WriteLine("Turn: {0}. Guess the random number between 0 and 100: ", (numOfTries+1));
-                //enter the data into userNum
-                userNum = int.Parse(Console.ReadLine());
+                do 
+                { 
+                    //promt the user to guess a number
+                    Console.WriteLine("Turn: {0}. Guess the random integer between 0 and 100: ", (numOfTries+1));
+                }  while (!int.TryParse(Console.ReadLine(), out userNum));
+
+
 
                 //check if the user number is less than 0 or greater than 100
                 while ((userNum < 0) ^ (userNum > 100))
