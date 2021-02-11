@@ -10,7 +10,7 @@ namespace Olivieri_PE6
     // Author: Victoria Olivieri
     // Purpose: PE6 - Parsing and Formatting 
     // Restrictions: None
-    class Program
+    static class Program
     {
         // Method: Main
         // Purpose: Create a simple number guessing game. It will generate
@@ -18,7 +18,20 @@ namespace Olivieri_PE6
         // Restrictions: None
         static void Main(string[] args)
         {
+            int userNum = 0;
 
+            //initialize rand to be call the Random class
+            Random rand = new Random();
+
+            //generate the random int b/w 0 and 100
+            int randomNum = rand.Next(0, 101);
+
+            //test the program
+            Console.WriteLine("My num: {0}", randomNum);
+
+            //promt the user to guess a number
+            Console.Write("Guess the random number between 0 and 100");
+            userNum = int.Parse(Console.ReadLine());
         }
     }
 }
