@@ -28,11 +28,12 @@ namespace Olivieri_PE7MadLibs
             string userName = null;
             string userIn = null;
             string resultString = null;
+            string yOrN = null;
 
 
             //ask the user if they want to play
-            Console.WriteLine("Would you like to play a Mad Lab?: ");
-
+            Console.Write("Would you like to play a Mad Lab?: ");
+            yOrN = Console.ReadLine();
 
 
 
