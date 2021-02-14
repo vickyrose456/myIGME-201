@@ -28,6 +28,7 @@ namespace Olivieri_PE7MadLibs
             string userName = null;
             string userIn = null;
             string resultString = null;
+
             //open the txt file and count the lines
             txtInput = new StreamReader("c:\\templates\\MadLibsTemplate.txt");
 
@@ -56,6 +57,7 @@ namespace Olivieri_PE7MadLibs
                 //replace"/n" w/ tage with new line
                 madLibs[cLibs] = madLibs[cLibs].Replace("\\n", "\n");
 
+
                 //increment the lib we are on
                 ++cLibs;
             }
@@ -70,8 +72,13 @@ namespace Olivieri_PE7MadLibs
             //split the mad lib into words
             string[] words = madLibs[userNum].Split(' ');
 
+
             foreach (string word in words)
             {
+                if (word == "\n")
+                {
+                    resultString += '\n';
+                }
                 //if word is a placeholder
                 if (word.Contains('{'))
                 {
@@ -79,19 +86,17 @@ namespace Olivieri_PE7MadLibs
                     string entry = word.Replace("_", " ");
                     Console.WriteLine("Enter a(n) {0}: ", entry);
                     userIn = Console.ReadLine();
-                    resultString += userIn;
+                    resultString += userIn+ " ";
                 }
                 else 
                 {
                     //else append word to result stirng 
+                    resultString += word+ " ";
                 }
 
-                
+            }//end for each
 
-
-            }
-
-
+            Console.WriteLine(resultString);
 
         
         }//end main
