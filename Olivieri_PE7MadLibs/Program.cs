@@ -15,7 +15,7 @@ namespace Olivieri_PE7MadLibs
     class Program
     {
         // Method: Main
-        // Purpose: 
+        // Purpose: To allow the user to input data to play a mad lib game
         // Restrictions: None
         static void Main(string[] args)
         {
@@ -28,6 +28,13 @@ namespace Olivieri_PE7MadLibs
             string userName = null;
             string userIn = null;
             string resultString = null;
+
+
+            //ask the user if they want to play
+            Console.WriteLine("Would you like to play a Mad Lab?: ");
+
+
+
 
             //open the txt file and count the lines
             txtInput = new StreamReader("c:\\templates\\MadLibsTemplate.txt");
