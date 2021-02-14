@@ -19,33 +19,72 @@ namespace Olivieri_PE7MadLibs
         // Restrictions: None
         static void Main(string[] args)
         {
-            //declare txtInput
-            StreamReader txtInput = null;
+            //declare txt reader
+            StreamReader txtInput;
 
-            try
+            int numLines = 0;
+            int cLibs = 0;  //counter for mad libs
+            int userNum = 0;
+            string userName = null;
+
+            //open the txt file and count the lines
+            txtInput = new StreamReader("c:\\templates\\MadLibsTemplate.txt");
+
+            string line = null;
+            while ((line = txtInput.ReadLine()) != null)
             {
-                //use txtInput to store the data from the text file
-                txtInput = new StreamReader("c:\\templates\\MadLibsTemplate.txt");
-                String line = txtInput.ReadLine();
-            }
-            catch (Exception e)
-            {
-                //if there was an error print a message
-                Console.WriteLine("Error with file: " + e.Message);
-            }
-            finally 
-            {
-                //if theres no more text, stop reading the file
-                if (txtInput != null)
-                {
-                    txtInput.Close();
-                }
+                //count the lines that are in the txt
+                ++numLines;
             }
 
+            //close the txt file
+            txtInput.Close();
+
+            //put the mad libs into array of strings
+            string[] madLibs = new string[numLines];
+
+            //read mad libs into the array of strings
+            txtInput = new StreamReader("c:\\templates\\MadLibsTemplate.txt");
+
+            line = null;
+            while ((line = txtInput.ReadLine())!= null)
+            {
+                //set array elem to current line of file
+                madLibs[cLibs] = line;
+
+                //replace"/n" w/ tage with new line
+                madLibs[cLibs] = madLibs[cLibs].Replace("\\n", "\n");
+
+                //increment the lib we are on
+                ++cLibs;
+            }
+
+            //close out the txt file
+            txtInput.Close();
+
+            //promt user for mad lib selection
 
 
 
+            //split the mad lib into words
+            string[] words = madLibs[userNum].Split(' ');
 
-        }
-    }
+            foreach (string word in words)
+            {
+                //if word is a placeholder
+
+                //prompt user for replacement
+
+                //add append the user response to resultString
+
+                //else append word to result stirng 
+
+
+            }
+
+
+
+        
+        }//end main
+    }//end program
 }
