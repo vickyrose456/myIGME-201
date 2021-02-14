@@ -19,20 +19,23 @@ namespace Olivieri_PE7MadLibs
         // Restrictions: None
         static void Main(string[] args)
         {
-
+            //declare txtInput
             StreamReader txtInput = null;
 
             try
             {
+                //use txtInput to store the data from the text file
                 txtInput = new StreamReader("c:\\templates\\MadLibsTemplate.txt");
                 String line = txtInput.ReadLine();
             }
             catch (Exception e)
             {
+                //if there was an error print a message
                 Console.WriteLine("Error with file: " + e.Message);
             }
             finally 
             {
+                //if theres no more text, stop reading the file
                 if (txtInput != null)
                 {
                     txtInput.Close();
