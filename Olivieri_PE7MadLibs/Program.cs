@@ -29,11 +29,26 @@ namespace Olivieri_PE7MadLibs
             string userIn = null;
             string resultString = null;
             string yOrN = null;
+            bool play = false;
 
+            do
+            {
+                //ask the user if they want to play
+                Console.Write("Would you like to play a Mad Lab? (yes/no): ");
+                yOrN = Console.ReadLine();
 
-            //ask the user if they want to play
-            Console.Write("Would you like to play a Mad Lab?: ");
-            yOrN = Console.ReadLine();
+                if (yOrN == "yes")
+                {
+                    Console.WriteLine("Awesome Lets Play!");
+                    play = true;
+                } else if (yOrN == "no")
+                {
+                    Console.WriteLine("Bye");
+                    System.Environment.Exit(0);
+                }
+                else { }
+            } while (!play);
+           
 
 
 
