@@ -24,9 +24,10 @@ namespace Olivieri_PE7MadLibs
 
             int numLines = 0;
             int cLibs = 0;  //counter for mad libs
-            int userNum = 0;
+            int userNum = 0; //user input of the story
             string userName = null;
-
+            string userIn = null;
+            string resultString = null;
             //open the txt file and count the lines
             txtInput = new StreamReader("c:\\templates\\MadLibsTemplate.txt");
 
@@ -63,8 +64,8 @@ namespace Olivieri_PE7MadLibs
             txtInput.Close();
 
             //promt user for mad lib selection
-
-
+            Console.WriteLine("Which story would you like to choose? (1 though {0}: )", cLibs);
+            userNum = int.Parse(Console.ReadLine());
 
             //split the mad lib into words
             string[] words = madLibs[userNum].Split(' ');
@@ -72,12 +73,20 @@ namespace Olivieri_PE7MadLibs
             foreach (string word in words)
             {
                 //if word is a placeholder
+                if (word.Contains('{'))
+                {
+                    //prompt user for replacement
+                    string entry = word.Replace("_", " ");
+                    Console.WriteLine("Enter a(n) {0}: ", entry);
+                    userIn = Console.ReadLine();
+                    resultString += userIn;
+                }
+                else 
+                {
+                    //else append word to result stirng 
+                }
 
-                //prompt user for replacement
-
-                //add append the user response to resultString
-
-                //else append word to result stirng 
+                
 
 
             }
