@@ -30,7 +30,13 @@ namespace Olivieri_PE7MadLibs
             string resultString = null;
             string yOrN = null;
             bool play = false;
+            int inValidYorN = 0;
 
+            //get the user's name
+            Console.Write("What is your name?: ");
+            userName = Console.ReadLine();
+
+            //while the user does not input yes or no, keep asking for input
             do
             {
                 //ask the user if they want to play
@@ -39,14 +45,34 @@ namespace Olivieri_PE7MadLibs
 
                 if (yOrN == "yes")
                 {
+                    //user wants to play
                     Console.WriteLine("Awesome Lets Play!");
                     play = true;
                 } else if (yOrN == "no")
                 {
+                    //user does not want to play so output goodbye
                     Console.WriteLine("Bye");
+                    //exit the program
                     System.Environment.Exit(0);
                 }
-                else { }
+                
+                else 
+                {
+                    if (inValidYorN == 2)
+                    {
+                        Console.WriteLine("Its been 3 tries.... type yes or no");
+                    }
+                    if (inValidYorN == 5)
+                    {
+                        Console.WriteLine("Are you even reading this? Enter yes or no");
+                    }
+                    if (inValidYorN >= 10)
+                    {
+                        Console.WriteLine("Alright {0}, how many times do we have to do this?", userName);
+                    }
+
+                    inValidYorN++;
+                }
             } while (!play);
            
 
