@@ -131,10 +131,18 @@ namespace Olivieri_PE7MadLibs
                 //if word is a placeholder
                 if (word.Contains('{'))
                 {
-                    //prompt user for replacement
+                    //get rid of _ and brackets
                     string entry = word.Replace("_", " ");
+                    entry = entry.Replace("{", " ");
+                    entry = entry.Replace("}", " ");
+
+                    //prompt user to insert data
                     Console.WriteLine("Enter a(n) {0}: ", entry);
                     userIn = Console.ReadLine();
+
+
+
+                    //append user info and spaace for mad lib
                     resultString += userIn+ " ";
                 }
                 else 
