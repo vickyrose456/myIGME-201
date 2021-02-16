@@ -19,12 +19,30 @@ namespace Olivieri_PE8_Question7
         {
             string userIn = null;
             string revInput = null;
+            
 
             //get user input
-            Console.WriteLine("Enter a word");
-            userIn = Console.ReadLine();
+            Console.WriteLine("Enter a word or phrase");
+            //store input into variable
+            userIn = Convert.ToString(Console.ReadLine());
+
+            //store in temp array
+            char[] letters = userIn.ToCharArray();
 
 
+            for (int i = letters.Length; i >0 ; i--)
+            {
+                revInput = revInput + letters[i -1];
+            }
+
+            Console.WriteLine("The reverse order of your input: " + revInput);
+
+
+
+
+
+            //Console.WriteLine(letters);
+            
         }
     }
 }
