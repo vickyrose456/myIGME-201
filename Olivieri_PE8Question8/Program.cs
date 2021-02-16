@@ -23,7 +23,23 @@ namespace Olivieri_PE8Question8
             //get the input from the user
             Console.WriteLine("Enter a phrase using the word \"yes\" or \"no\"");
             userIn = Convert.ToString(Console.ReadLine());
-        
+
+            string[] sentence = userIn.Split(' ');
+            
+
+            for (int i = 0; i<sentence.Length; i++)
+            {
+                //if the word is no, write yes
+                if (sentence[i] == "no")
+                {
+                    //replace the index with "yes"
+                    sentence[i] = "yes";
+                }
+                
+                Console.Write(sentence[i] + " " );
+            }Console.WriteLine(".");
+
+
         }
     }
 }
