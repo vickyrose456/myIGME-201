@@ -17,7 +17,23 @@ namespace Olivieri_PE8Question9
         // Restrictions: None
         static void Main(string[] args)
         {
+            string userIn = null;
+
+            //iput from user
+            Console.WriteLine("Enter a word/phrase. ");
+            userIn = Convert.ToString(Console.ReadLine());
+
+            string[] words = userIn.Split(' ');
+
+            for (int i = 0; i< words.Length; i++)
+            {
+                Console.Write("\"{0}\" ", words[i]);
+            }
+
+
 
         }
+       
+
     }
 }
