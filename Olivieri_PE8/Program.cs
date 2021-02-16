@@ -62,14 +62,14 @@ namespace Olivieri_PE8
 
                     //do actual calculation to findd z
                     z = (3 * Math.Pow(y, 2)) + (2 * x) - 1;
+                    z = Math.Round(z, 3);
 
                     //store the correct values into the correct index
-
-
-
+                    zArray[nX][nY][0] = x;
+                    zArray[nX][nY][1] = y;
+                    zArray[nX][nY][2] = z;
                 }
-               
-
+            
             }
 
 
