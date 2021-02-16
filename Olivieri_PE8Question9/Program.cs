@@ -25,8 +25,10 @@ namespace Olivieri_PE8Question9
 
             string[] words = userIn.Split(' ');
 
+            //Go through each index of the sentence
             for (int i = 0; i< words.Length; i++)
             {
+                //print out the sentence with "" around it
                 Console.Write("\"{0}\" ", words[i]);
             }
 
