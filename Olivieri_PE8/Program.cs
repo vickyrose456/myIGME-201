@@ -74,24 +74,6 @@ namespace Olivieri_PE8
 
 
 
-
-
-/*
-            //while y is between 1 and 4, do calc
-            for (double y = 1; y <= 4.0; y += .01)
-            {
-                //while x is between -1 and 1, do calc
-                for(double x= -1.0; x<= 1; x+= .01)
-                {
-                    //do calc w/ x and y to find z
-                    z = (3 * Math.Pow(y, 2)) + (2 * x) - 1;
-                    Console.WriteLine(z);
-                }
-            }
-*/
-
-            //Console.WriteLine(z);
-
         }//end main
 
     }//class program
