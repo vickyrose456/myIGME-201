@@ -4,7 +4,7 @@ using System;
 namespace MathQuiz
 {
     // Class: Program
-    // Author: Victoria Olivieri
+    // Author: David Schuh
     // Purpose: Math Quiz Application
     // Restrictions: None
     class Program
@@ -17,7 +17,7 @@ namespace MathQuiz
             // store user name
             string myName = null;
 
-            // string and int of # of questions
+            // int of # of questions
             int nQuestions = 0;
 
             // string and base value related to difficulty
@@ -62,6 +62,8 @@ namespace MathQuiz
             // fetch the user's name into myName
             while (true)
             {
+                Console.Write("Enter your name: ");
+
                 // only break out of the loop if they entered something 
                 // (ie. if myName.Length > 0)
                 myName = Console.ReadLine();
@@ -135,7 +137,7 @@ namespace MathQuiz
                 do
                 {
                     // choose 2 random operands and ensure that both are non-zero
-                    // note that using rand.Next(1,nMaxRange - 1) would give the same result
+                    // note that using rand.Next(1,nMaxRange) would give the same result
                     val1 = rand.Next(0, nMaxRange) + nMaxRange;
                     val2 = rand.Next(0, nMaxRange);
                 } while (val1 == 0 || val2 == 0);
@@ -158,18 +160,18 @@ namespace MathQuiz
                 {
                     nAnswer = val1 + val2;
                     sQuestion = $"Question #{nCntr + 1}: {val1} + {val2} => ";
-                } else if (nOp == 1)
-
+                }
+                else if (nOp == 1)
                 {
                     nAnswer = val1 - val2;
-                    sQuestion = $"Question #{nCntr + 1}: {val1} + {val2} => ";
-
-                } else
+                    sQuestion = $"Question #{nCntr + 1}: {val1} - {val2} => ";
+                }
+                else
                 {
                     nAnswer = val1 * val2;
-                    sQuestion = $"Question #{nCntr + 1}: {val1} + {val2} => ";
-
+                    sQuestion = $"Question #{nCntr + 1}: {val1} * {val2} => ";
                 }
+
 
                 // display the question and prompt for the answer until they enter a valid number
                 do
@@ -187,29 +189,30 @@ namespace MathQuiz
                         Console.WriteLine("Please enter an integer.");
                         bValid = false;
                     }
-                    finally 
+                    finally
                     {
                         Console.WriteLine("This line will always be output!");
                     }
 
-                } while (!bValid); //bValid == false
+                } while (bValid == false);
 
                 // if nResponse == nAnswer, output flashy reward and increment nCorrect
-                // else output stark answer
-
                 if (nResponse == nAnswer)
                 {
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.BackgroundColor = ConsoleColor.White;
-                    Console.WriteLine("Well done" + myName);
+                    Console.WriteLine("Well done, {0}!!!", myName);
+
+                    ++nCorrect;
                 }
-                else 
+                else
                 {
+                    // else output stark answer
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.BackgroundColor = ConsoleColor.Black;
-
-                    Console.WriteLine();
+                    Console.WriteLine("I'm sorry, {0}.  The answer is {1}", myName, nAnswer);
                 }
+
 
                 // restore the screen colors
                 Console.BackgroundColor = ConsoleColor.Black;
@@ -219,25 +222,25 @@ namespace MathQuiz
             }
 
             // output how many they got correct (nCorrect) and their score (nCorrect/nCntr)
-            Console.WriteLine("You got {0} correct out of {1}, which is a score of {2:P2}", nCorrect, nQuestions);
-
+            Console.WriteLine("You got {0} correct out of {1}, which is a score of {2:P2}", nCorrect, nQuestions, (double)nCorrect / nCntr);
 
             do
             {
                 // prompt if they want to play again
-                Console.Write("Do you want to play again? (y/n)";
+                Console.Write("Do you want to play again? (y/n) ");
                 sAgain = Console.ReadLine();
+
+
                 // if they type y or yes then play again (note there is a goto label at line ~71)
                 if (sAgain.ToLower().StartsWith("y"))
                 {
                     goto start;
                 }
-                else 
+                else
                 {
                     // else if they type n or no then leave this loop
-                    
+                    break;
                 }
-                // string has a StartsWith() method that could be helpful!
 
             } while (true);
         }
