@@ -62,6 +62,7 @@ namespace factorial
                 returnVal = v * nextVal;
             }
 
+            return returnVal;
 
         }
 
