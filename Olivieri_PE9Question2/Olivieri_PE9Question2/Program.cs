@@ -227,7 +227,7 @@ namespace MathQuiz
                 } while (bValid == false);
 
                 // if nResponse == nAnswer, output flashy reward and increment nCorrect
-                if (nResponse == nAnswer)
+                if (nResponse == nAnswer && !bTimeOut)
                 {
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.BackgroundColor = ConsoleColor.White;
