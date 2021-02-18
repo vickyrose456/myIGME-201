@@ -9,15 +9,15 @@ namespace MathQuiz
     //Purpose:  Add a timer to the Math Quiz Solution to elapse in 5 seconds for
     //each question, and mark the answer wrong if the timer expires
     //Restrictions: None.
-    class Program
+    static class Program
     {
-        //global variables
 
-        //time out boolean
+        //declare global time out
         static bool bTimeOut = false;
 
-        //time outtimer
-        static Timer timeOutTimer;
+        //timerOutTimer timer
+        static Timer timerOutTimer;
+
 
 
         // Method: Main
@@ -93,9 +93,8 @@ namespace MathQuiz
             // initialize correct responses for each time around
             nCorrect = 0;
 
-            //initialize timeout flag
+            //initizialize timeOut
             bTimeOut = false;
-
 
             Console.WriteLine();
 
@@ -146,7 +145,6 @@ namespace MathQuiz
             }
 
             // ask each question
-
             for (nCntr = 0; nCntr < nQuestions; nCntr++)
             {
                 // generate a random number between 0 inclusive and 3 exclusive to get the operation
@@ -160,16 +158,7 @@ namespace MathQuiz
                     val2 = rand.Next(0, nMaxRange);
                 } while (val1 == 0 || val2 == 0);
 
-                // another way to repeat the iteration if either operand is 0
-                //if( val1 == 0 || val2 == 0)
-                //{
-                //    // because nCntr is incremented when the for() loop iterates, 
-                //    // decrement it to repeat this iteration
-                //    --nCntr;
-                //    // go back to the top of the for() loop
-                //    continue;
-                //}
-
+                
 
                 // if nOp == 0, then addition
                 // else if nOp == 1, then subtraction
@@ -190,27 +179,9 @@ namespace MathQuiz
                     sQuestion = $"Question #{nCntr + 1}: {val1} * {val2} => ";
                 }
 
-
-                // display the question and prompt for the answer until they enter a valid number
-                while (!bTimeOut)
-                {
-                    //create timer
-                    timeOutTimer = new Timer(nOp * 500 + 1000);
-
-                    //declare var to delegate type
-                    ElapsedEventHandler elapsedEventHandler;
-
-                    //point the variable to timesUp method
-                    elapsedEventHandler = new ElapsedEventHandler(TimesUp);
-
-                    //add timesup fns to timeroutTimer using +=
-                    timeOutTimer.Elapsed += elapsedEventHandler;
-
-                    //start the timeOutTimer
-                    timeOutTimer.Start();
-
-                    //read answer
-
+                //while the user has not timed out
+                
+                    //display question and get user input
                     do
                     {
                         Console.Write(sQuestion);
@@ -219,13 +190,14 @@ namespace MathQuiz
                         {
                             sResponse = Console.ReadLine();
                             nResponse = int.Parse(sResponse);
+
+                        timerOutTimer.Stop();
+
                             bValid = true;
                         }
                         catch
                         {
                             Console.WriteLine("Please enter an integer.");
-                            //stop the timer
-                            timeOutTimer.Stop();
                             bValid = false;
                         }
                         finally
@@ -234,27 +206,25 @@ namespace MathQuiz
                         }
 
                     } while (bValid == false);
-                    
-                    
-                    // if nResponse == nAnswer, output flashy reward and increment nCorrect
-                    if (nResponse == nAnswer)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.BackgroundColor = ConsoleColor.White;
-                        Console.WriteLine("Well done, {0}!!!", myName);
-
-                        ++nCorrect;
-                    }
-                    else
-                    {
-                        // else output stark answer
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.BackgroundColor = ConsoleColor.Black;
-                        Console.WriteLine("I'm sorry, {0}.  The answer is {1}", myName, nAnswer);
-                    }
-
-                }//end timer while
                 
+                // if nResponse == nAnswer, output flashy reward and increment nCorrect
+                if (nResponse == nAnswer && !bTimeOut)
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.BackgroundColor = ConsoleColor.White;
+                    Console.WriteLine("Well done, {0}!!!", myName);
+
+                    ++nCorrect;
+                }
+                else
+                {
+                    // else output stark answer
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.WriteLine("I'm sorry, {0}.  The answer is {1}", myName, nAnswer);
+                    bTimeOut = true;
+                }
+
 
                 // restore the screen colors
                 Console.BackgroundColor = ConsoleColor.Black;

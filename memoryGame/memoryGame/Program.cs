@@ -80,20 +80,15 @@ namespace MemoryGame
                 // clear the Console (hide the answer)
                 Console.Clear();
 
-                // create timeOutTimer with an elapsed time of displayString.Length * 500ms + 1sec
-                // (Add 0.5 seconds per character in the code + 1 second "buffer")
+                // create timeOutTimer with an elapsed time of 5 secs
                 timeOutTimer = new Timer(displayString.Length * 500 + 1000);
 
-                // Timer calls the Timer.Elapsed event handler when the time elapses
-                // The Timer.Elapsed event handler uses a delegate function with the following signature:
-                //        public delegate void ElapsedEventHandler(object sender, ElapsedEventArgs e);
-                // This delegate method type is already defined for us by .NET
-
-                // 2. declare a variable of the delegate type
+              
+                //declare a variable of the delegate type
                 ElapsedEventHandler elapsedEventHandler;
 
 
-                // 3. "point" the variable to our TimesUp method
+                //point the variable to our TimesUp method
                 elapsedEventHandler = new ElapsedEventHandler(TimesUp);
 
 
@@ -130,7 +125,7 @@ namespace MemoryGame
                     bTimeOut = true;
 
                 }
-            }
+            }//end while true
 
             Console.Write("Press Enter to Play Again");
             Console.ReadLine();
