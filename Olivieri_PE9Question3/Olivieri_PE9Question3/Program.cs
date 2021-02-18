@@ -18,10 +18,21 @@ namespace Olivieri_PE9Question3
         static void Main(string[] args)
         {
             //ask for user  input
+            string uInput = null;
+            Console.WriteLine("Enter a word/phrase.");
+            inputString();
+            //Console.WriteLine(inputString());
+
+
 
         }//end main
 
-
+        static string inputString()
+        {
+            string stringInput = null;
+            stringInput = Console.ReadLine();
+            return stringInput;
+        }
        
 
 }//end program
