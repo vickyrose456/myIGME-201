@@ -207,7 +207,7 @@ namespace MathQuiz
 
                         if (timeOutTimer.Enabled)
                         {
-                            Console.WriteLine("no time");
+                            Console.WriteLine("Ran out of time!");
                             bTimeOut = true;
                         }
 
