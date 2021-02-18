@@ -16,7 +16,7 @@ namespace MathQuiz
         static bool bTimeOut = false;
 
         //timerOutTimer timer
-        static Timer timerOutTimer;
+        static Timer timeOutTimer;
 
 
 
@@ -93,9 +93,6 @@ namespace MathQuiz
             // initialize correct responses for each time around
             nCorrect = 0;
 
-            //initizialize timeOut
-            bTimeOut = false;
-
             Console.WriteLine();
 
             // ask how many questions until they enter a valid number
@@ -158,7 +155,7 @@ namespace MathQuiz
                     val2 = rand.Next(0, nMaxRange);
                 } while (val1 == 0 || val2 == 0);
 
-                
+               
 
                 // if nOp == 0, then addition
                 // else if nOp == 1, then subtraction
@@ -179,36 +176,58 @@ namespace MathQuiz
                     sQuestion = $"Question #{nCntr + 1}: {val1} * {val2} => ";
                 }
 
-                //while the user has not timed out
-                
-                    //display question and get user input
-                    do
+                //initialize time out
+                bTimeOut = false;
+
+                //create timer for 5 seconds
+                timeOutTimer = new Timer(5000);
+
+                //declare var of timesup
+                ElapsedEventHandler elapsedEventHandler;
+
+                //point handler to timesup
+                elapsedEventHandler = new ElapsedEventHandler(TimesUp);
+
+                //add times up fns to timeouttimer
+                timeOutTimer.Elapsed += elapsedEventHandler;
+
+                // display the question and prompt for the answer until they enter a valid number
+                do
+                {
+                    Console.Write(sQuestion);
+
+                    try
                     {
-                        Console.Write(sQuestion);
+                        //start timer
+                        timeOutTimer.Start();
+                        sResponse = Console.ReadLine();
+                        nResponse = int.Parse(sResponse);
+                        //stop timer
+                        timeOutTimer.Stop();
 
-                        try
+                        if (timeOutTimer.Enabled)
                         {
-                            sResponse = Console.ReadLine();
-                            nResponse = int.Parse(sResponse);
-
-                        timerOutTimer.Stop();
-
-                            bValid = true;
-                        }
-                        catch
-                        {
-                            Console.WriteLine("Please enter an integer.");
-                            bValid = false;
-                        }
-                        finally
-                        {
-                            Console.WriteLine("This line will always be output!");
+                            Console.WriteLine("no time");
+                            bTimeOut = true;
                         }
 
-                    } while (bValid == false);
-                
+
+                        bValid = true;
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Please enter an integer.");
+                        bValid = false;
+                    }
+                    finally
+                    {
+                        Console.WriteLine("This line will always be output!");
+                    }
+
+                } while (bValid == false);
+
                 // if nResponse == nAnswer, output flashy reward and increment nCorrect
-                if (nResponse == nAnswer && !bTimeOut)
+                if (nResponse == nAnswer)
                 {
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.BackgroundColor = ConsoleColor.White;
@@ -222,7 +241,6 @@ namespace MathQuiz
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.WriteLine("I'm sorry, {0}.  The answer is {1}", myName, nAnswer);
-                    bTimeOut = true;
                 }
 
 
@@ -255,6 +273,19 @@ namespace MathQuiz
                 }
 
             } while (true);
+        }//main
+
+        static void TimesUp(object source, ElapsedEventArgs e)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Your time is up!");
+
+            //set the bTimeOut flag to show incorrect 
+            bTimeOut = true;
+
+            //stop the timeOutTimer
+            timeOutTimer.Stop();
         }
-    }
-}
+
+    }//program
+}//namespace
