@@ -34,7 +34,7 @@ class Program
 
         // string and int for the response
         string sResponse = "";
-        Int32 nResponse = 0;
+        double nResponse = 0.0;
 
         // boolean for checking valid input
         bool bValid = false;
@@ -158,7 +158,8 @@ class Program
             }
             else if (nOp == 2) 
             {
-                nAnswer = (double)(val1 / val2);
+                nAnswer = (double)val1 / val2;
+                nAnswer = Math.Round(nAnswer, 2);
                 sQuestions = $"Question #{nCntr + 1}: {val1}/{val2} => ";
             }
             else
@@ -175,12 +176,12 @@ class Program
 
                 try
                 {
-                    nResponse = int.Parse(sResponse);
+                    nResponse = Math.Round(double.Parse(sResponse),2);
                     bValid = true;
                 }
                 catch
                 {
-                    Console.WriteLine("Please enter an integer.");
+                    Console.WriteLine("Please enter a valid number. (0.00) ");
                     bValid = false;
                 }
 
