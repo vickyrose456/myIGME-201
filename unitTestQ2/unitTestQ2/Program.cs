@@ -51,8 +51,18 @@ namespace unitTestQ2
                     continue;
                 }
 
-                nThisWord = sThisWord;
-                ++nUnsortedLength;
+                try
+                {
+                    nThisWord = Convert.ToString(sThisWord);
+                    ++nUnsortedLength;
+                }
+                catch 
+                {
+                    //if an error occurs, indicate it is invalid
+                    Console.WriteLine($"Word #{nUnsortedLength + 1} is invalid");
+                    goto start;
+                }
+                
 
             }
 
