@@ -163,7 +163,7 @@ namespace unitTestQ2
             //loop through array
             foreach (string thisWord in array)
             {
-                if (thisWord.CompareTo(returnVal) > 1)
+                if (thisWord.CompareTo(returnVal) > 0)
                 {
                     //if greater than the saved highest val
                     returnVal = thisWord;
@@ -173,6 +173,9 @@ namespace unitTestQ2
             return (returnVal);
         }//end Find highest val
 
+        // Method: Find lowest val
+        // Purpose: removes words in the array that were already put in order 
+        // Restrictions: None
         static void RemoveUnsortedVal(string removeVal, ref string[] array)
         {
             //allocate new array to hold 1 less val
