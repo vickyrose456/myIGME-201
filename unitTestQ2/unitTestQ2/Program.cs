@@ -104,7 +104,7 @@ namespace unitTestQ2
                 aSorted[nSortedLength] = findHiLow(aUnsorted);
 
                 //remove current sorted value
-                RemoveUnsortedValue(aSorted[nSortedLength], ref aUnsorted);
+                RemoveUnsortedVal(aSorted[nSortedLength], ref aUnsorted);
 
                 //increment num of vals in sorted array
                 ++nSortedLength;
@@ -121,16 +121,93 @@ namespace unitTestQ2
         }//end main  
 
 
+        // Method: Find lowest val
+        // Purpose: Orders the words in ascending order
+        // Restrictions: None
+
         //find lowest val in array
         static string FindLowestVal(string[] array)
         {
+            //define return value
+            string returnString;
 
-            return "";
-        }
+            //initialize 1st element in array
+            returnString = array[0];
+
+            //loop through array
+            foreach (string thisWord in array)
+            {
+                //if current val is less than saved lowest val
+                if (thisWord.CompareTo(returnString) < 0)
+                {
+                    //save this as lowest val
+                    returnString = thisWord;
+                }
+            }
+
+            return (returnString);
+        }//end FindLowest val
 
 
+        // Method: Find lowest val
+        // Purpose: returns the words in descending order
+        // Restrictions: None
+        static string FindHighestVal(string[] array)
+        {
+            //define return val
+            string returnVal;
 
+            //initialize
+            returnVal = array[0];
 
+            //loop through array
+            foreach (string thisWord in array)
+            {
+                if (thisWord.CompareTo(returnVal) > 1)
+                {
+                    //if greater than the saved highest val
+                    returnVal = thisWord;
+                }
+                
+            }
+            return (returnVal);
+        }//end Find highest val
+
+        static void RemoveUnsortedVal(string removeVal, ref string[] array)
+        {
+            //allocate new array to hold 1 less val
+            string[] newArray = new string[array.Length - 1];
+
+            //seperate counter to indez into array
+            int dest = 0;
+
+            //skip subsequent occurrences
+            bool bRemovedAlready = false;
+
+            //iterate through array
+            foreach (string srcWord in array)
+            {
+                //if this is the wor to be removed and we didnt remove it
+                if (srcWord == removeVal && !bRemovedAlready)
+                {
+                    //set flag that it was removed
+                    bRemovedAlready = true;
+
+                    //skip it
+                    continue;
+                }
+
+                //insert src word into new array
+                newArray[dest] = srcWord;
+
+                //increment array
+                ++dest;
+            }
+
+            //set ref array equatl to new array
+            array = newArray;
+
+        }//end remove
 
 
 
