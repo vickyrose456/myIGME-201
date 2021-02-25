@@ -1,8 +1,17 @@
 ﻿using System.IO;
 using System;
 
+//Class Unit test - Question 1
+//Author: Victoria Olivieri
+//Purpose:  Add division to the math quiz example
+//Restrictions: None.
 class Program
 {
+    // Method: Main
+    // Purpose: The user is asked how many questions they want and the program randomly 
+    // generates addition, subtraction, multiplication and division problems. The input must be rounded to 
+    // the nearest hundreth (0.00)
+    // Restrictions: None
     static void Main()
     {
         // store user name
@@ -173,8 +182,9 @@ class Program
             {
                 Console.Write(sQuestions);
                 sResponse = Console.ReadLine();
-
-                try
+                
+                
+            try
                 {
                     nResponse = Math.Round(double.Parse(sResponse),2);
                     bValid = true;
