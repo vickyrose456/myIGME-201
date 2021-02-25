@@ -31,6 +31,7 @@ namespace Olivieri_PE7MadLibs
             string yOrN = null;
             bool play = false;
             int inValidYorN = 0;
+            bool bValid = false;
 
             //get the user's name
             Console.Write("What is your name?: ");
@@ -43,12 +44,12 @@ namespace Olivieri_PE7MadLibs
                 Console.Write("Would you like to play a Mad Lab? (yes/no): ");
                 yOrN = Console.ReadLine();
 
-                if (yOrN == "yes")
+                if (yOrN.ToLower() == "yes")
                 {
                     //user wants to play
-                    Console.WriteLine("Awesome Lets Play!");
+                    Console.WriteLine("Awesome Let's Play!");
                     play = true;
-                } else if (yOrN == "no")
+                } else if (yOrN.ToLower() == "no")
                 {
                     //user does not want to play so output goodbye
                     Console.WriteLine("Bye");
@@ -115,8 +116,21 @@ namespace Olivieri_PE7MadLibs
             txtInput.Close();
 
             //promt user for mad lib selection
-            Console.WriteLine("Which story would you like to choose? (1 though {0}: )", cLibs);
-            userNum = int.Parse(Console.ReadLine());
+            while (!bValid)
+            {
+                Console.WriteLine("Which story would you like to choose? (1 though {0}: )", cLibs);
+                try
+                {
+                     userNum = int.Parse(Console.ReadLine());
+                    bValid = true;
+                }   
+                 catch
+                {
+                    Console.WriteLine("Invalid integer.");
+                    bValid = false;
+                }
+            }
+            
 
             //split the mad lib into words
             string[] words = madLibs[userNum].Split(' ');
