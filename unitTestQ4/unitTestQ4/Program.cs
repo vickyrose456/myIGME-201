@@ -19,6 +19,9 @@ namespace unitTestQ4
         //timeouttimer boolean
         static Timer timeOutTimer;
 
+        //correct answer 
+        static string sCorrect = "";
+
 
 
         // Method: Main
@@ -35,9 +38,14 @@ namespace unitTestQ4
             //var for user input 
             string userIn = null;
             //variables of each answr
-            string correct1 = "black";
-            string correct2 = "42";
-            string correct3 = "What do you mean? African or European swallow?";
+            //string sCorrect = "";
+
+            //string to hold the question
+            string sQuestion = "";
+            
+            //play again string
+            string sAgain = "";
+
 
 
         //the start of the game asks the user what question they want
@@ -66,79 +74,117 @@ namespace unitTestQ4
                     bValid = false;
                 }
             }
-            //once user inputs the question number, ask the question 
+              
+            //once user inputs the question number, ask the question based on input 
             bValid = false;
             switch (qNum)
             {
-                
                 case 1:
-                    //while input is valid, ask Q1
-                    while (!bValid)
-                    {
-                        try
-                        {
-                            Console.WriteLine("What is your favorite color?");
-                            userIn = Convert.ToString(Console.ReadLine());
-                            bValid = true;
-                        }
-                    catch 
-                        {
-                            //if invalid, ask again
-                            bValid = false;
-                        }
-                    } 
-
-                    //check if the anwr is correct
-                    //if the ans
-
-
-
-
+                    //Console.WriteLine("What is your favorite color?");
+                    sQuestion = "What is your favorite color?";
+                    //set the answer to the correct one
+                    sCorrect = "black";
                     break;
                 case 2:
-                     //while input is valid, ask Q2
-                    while (!bValid)
-                    {
-                        try
-                        {
-                            Console.WriteLine("What is the answer to life, the universe and everything?");
-                            userIn = Convert.ToString(Console.ReadLine());
-                            bValid = true;
-                        }
-                        catch
-                        {
-                            //if invalid, ask again
-                            bValid = false;
-                        }
-                    }
+                     //Console.WriteLine("What is the answer to life, the universe and everything?");
+                    sQuestion = "What is the answer to life, the universe and everything?";
+                    //set the answer to the correct one
+                    sCorrect = "42";
                     break;
                 case 3:
-                        //while input is valid, ask Q3
-                     while (!bValid)
-                    {
-                        try
-                        {
-                            Console.WriteLine("What is the airspeed velocity of an unladen swallow?");
-                            userIn = Convert.ToString(Console.ReadLine());
-                            bValid = true;
-                        }
-                        catch
-                        {
-                            //if invalid, ask again
-                            bValid = false;
-                        }
-                    }
+                    //Console.WriteLine("What is the airspeed velocity of an unladen swallow?");
+                    sQuestion = "What is the airspeed velocity of an unladen swallow?";
+                    //set the answer to the correct one
+                    sCorrect = "What do you mean? African or European swallow ?";
                     break;
             }
+
+            //create timeouttimer w/ time of 5 sec
+            timeOutTimer = new Timer(5000);
+
+            //use timer delegate
+            timeOutTimer.Elapsed += new ElapsedEventHandler(TimesUp);
+
+            //initialize timeout 
+            bTimeOut = false;
+
+            //start the timer
+            timeOutTimer.Start();
+
             
+            do
+            {
+                //display question
+                Console.WriteLine("You have 5 seconds to answer the following question:");
+                Console.WriteLine(sQuestion);
+                //get response
+                userIn = Convert.ToString(Console.ReadLine());
+          
+
+                //stop the timer when enter is pressed
+                timeOutTimer.Stop();
+
+                //if timer timed out. Response was wrong. display correct one and get 
+                //out of this loop
+                if (bTimeOut) 
+                {   
+                    //time is up outputted
+                    //Console.WriteLine("Time is up!");
+                    //display correct answer
+                    //Console.WriteLine("The answer is: {0}", sCorrect);
+                    break;
+                }
+
+                //make sure input is valid
+                try
+                {
+                    userIn = Convert.ToString(Console.ReadLine());
+                    bValid = true;
+                }
+                catch { bValid = false; }
+
+
+            } while (!bValid);
+
+            //if the user input is incorrect
+            //ouput correct answer'
+            //if the input is right
+            //ouput well done
+
+            //while inpput is valid,
+            //output "Do you want to play again"
+            //if yes, goto start
+            //if no, end the program
 
 
 
 
+        }//main
+
+        // Method: Main
+        // Purpose: Timesup will be called when the timer elapses. the user will be told the 
+        // time is up
+        // Restrictions: None
+        static void TimesUp(object source, ElapsedEventArgs e)
+            {
+                //Times up outputted when timer is done
+                Console.WriteLine("Time is up!");
+
+                //output correct answer
+                Console.WriteLine("The answer is: {0}", sCorrect);
+
+                //stop the timer
+                timeOutTimer.Stop();
+
+                //tell user to press enter
+                Console.WriteLine("Please press enter.");
+            
+                //set time out
+                bTimeOut = true;
+
+        }//TimesUp
+
+    }//program
 
 
-
-
-        }
-    }
-}
+}//namespace
