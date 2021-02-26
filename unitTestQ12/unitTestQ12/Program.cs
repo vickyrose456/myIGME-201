@@ -22,14 +22,7 @@ namespace unitTestQ12
         {
             string sName;
             double dSalary = 30000;
-            /*
-                It should prompt for the user's name, then call the following function:
-
-                The main program should congratulate the user if they got a raise, 
-                and display their new salary.
-
-                */
-
+            
             //prompt for name
             Console.WriteLine("Enter your name: " );
             sName = Convert.ToString(Console.ReadLine());
