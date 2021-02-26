@@ -138,7 +138,7 @@ namespace unitTestQ4
                 //make sure input is valid
                 try
                 {
-                    userIn = Convert.ToString(Console.ReadLine());
+                    userIn = Convert.ToString(userIn);
                     bValid = true;
                 }
                 catch { bValid = false; }
@@ -146,17 +146,45 @@ namespace unitTestQ4
 
             } while (!bValid);
 
-            //if the user input is incorrect
-            //ouput correct answer'
+
             //if the input is right
-            //ouput well done
+            if (userIn.Equals(sCorrect))
+            {
+                //ouput well done
+                Console.WriteLine("Well done!");
+            }//if the user input is incorrect
+            else if (userIn == " " ^ userIn == "")
+            {
+                //do nothing b/c ran out of time
+            }
+            else 
+            {
+                //ouput correct answer
+                Console.Write("Wrong!");
+                Console.WriteLine("The answer is: {0}", sCorrect);
+            }
+            
+            
+            bValid = false;
+            //while true
+            do
+            {
+                //output Do you want to play again
+                Console.Write("Play again? ");
 
-            //while inpput is valid,
-            //output "Do you want to play again"
-            //if yes, goto start
-            //if no, end the program
+                sAgain = Convert.ToString(Console.ReadLine());
 
-
+                 //if yes, goto start
+                if (sAgain.ToLower().StartsWith("y"))
+                {
+                    goto start;
+                }
+                //if no, end the program
+                else if (sAgain.ToLower().StartsWith("n"))
+                {
+                    break;
+                }
+            } while (true);
 
 
         }//main
