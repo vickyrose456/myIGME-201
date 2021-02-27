@@ -13,11 +13,11 @@ namespace unitTestQ13
     //Restrictions: None.
     public class Program
     {
-
         struct employee
         {
             public string sName;
             public double dSalary;
+
         }
         
 
@@ -30,7 +30,7 @@ namespace unitTestQ13
         static void Main(string[] args)
         {
             //create employee var
-            employee myEmployee;
+            employee myEmployee = new employee();
 
             //tell user to enter name
             Console.WriteLine("Enter your name");
@@ -39,8 +39,7 @@ namespace unitTestQ13
             myEmployee.sName = Console.ReadLine();
 
             //set dSalary = 3000;
-            myEmployee.dSalary = 3000.00;
-
+            myEmployee.dSalary = 30000.00;
 
             
             if (GiveRaise(myEmployee))
@@ -61,12 +60,14 @@ namespace unitTestQ13
         //purpose: The function should increase the salary by $19,999.99 if name = your name and return true
         //Otherwise it should return false.
         //restrictions: none
+
         static bool GiveRaise(employee myEmployee)
         {
+            
             //if name is my name then add salary
             if (myEmployee.sName.ToLower()=="victoria")
             {
-                myEmployee.dSalary = myEmployee.dSalary + 19999.99;
+                myEmployee.dSalary += 19999.99;
                 return true;
             }
             return false;
