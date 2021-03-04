@@ -15,9 +15,10 @@ namespace Traffic
     {
         static void Main(string[] args)
         {
-            //Vehicle vehicle = null;
-            IPassengerCarrier iPassCarrier = null;
-            AddPassenger(iPassCarrier);
+            //initialize vehicle
+            Vehicle vehicle = null;
+            //call addPassenger fns
+            AddPassenger(vehicle);
         }
     
     // Method: addPassenger
@@ -26,10 +27,12 @@ namespace Traffic
     // Restrictions: None
     public static void AddPassenger(object obj)
     {
+            IPassengerCarrier iPassengerCarrier = (IPassengerCarrier)obj;
         //call LoadPass using ref to the interface
-        obj.LoadPassenger();
+        iPassengerCarrier.LoadPassenger();
+            //if not an IPassengerCarrier object, then error b/c of the function LoadPasseneger.
         //use ToString() 
-        obj.ToString();
+        iPassengerCarrier.ToString();
     }
     
     }//program
