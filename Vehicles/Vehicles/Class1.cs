@@ -6,27 +6,41 @@ using System.Threading.Tasks;
 
 namespace Vehicles
 {
-    // {type:class}
-    // {generate:true}
-    // {direction:topDown}
-
     //[+A:Vehicle||+LoadPassenger():v;]
 
     public abstract class Vehicle
     {
         public virtual void LoadPassenger()
         {
-            
-        }
-    }
 
+        }//loadPass
 
-
-    //[+A:Car||]
-    //[+A:Train||]
+    }//end vehicle abstract class
 
     //[+I:IPassengerCarrier||LoadPassenger()]
-    //[+I:IHeavyLoadCarrier||]
+    public interface IPassengerCarrier
+    {
+        void LoadPassenger();
+    }//passCarrier
+
+     //[+I:IHeavyLoadCarrier||]
+    public interface IHeavyLoadCarrier
+    {
+
+    }//loadCarrier
+
+    //[+A:Car||]
+    public abstract class Car : Vehicle
+    {
+
+    }//car
+
+    //[+A:Train||]
+    public abstract class Train : Vehicle
+    {
+    }//train
+
+
 
     //[+Compact||]
     //[+SUV||]
