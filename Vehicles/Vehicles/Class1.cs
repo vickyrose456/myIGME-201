@@ -30,48 +30,67 @@ namespace Vehicles
     }//loadCarrier
 
     //[+A:Car||]
+    //[+A:Vehicle]<-[+A:Car]
     public abstract class Car : Vehicle
     {
 
     }//car
 
     //[+A:Train||]
+    //[+A:Vehicle]<-[+A:Train]
     public abstract class Train : Vehicle
     {
+
     }//train
 
-
-
     //[+Compact||]
-    //[+SUV||]
-    //[+Pickup||]
-    //[+PassengerTrain||]
-    //[+FreightTrain||]
-    //[+424DoubleBogey||]
-
-    //[+A:Vehicle]<-[+A:Car]
-    //car to car type
-    //[+A:Car]<-[+Compact]
-    //[+A:Car]<-[+SUV]
-    //[+A:Car]<-[+Pickup]
-
-    //[+A:Vehicle]<-[+A:Train]
-    //train to train type
-    //[+A:Train]<-[+PassengerTrain]
-    //[+A:Train]<-[+FreightTrain]
-    //[+A:Train]<-[+424DoubleBogey]
-
-    //connects to passenger
     //[+I:IPassengerCarrier]^[+Compact]
+    //[+A:Car]<-[+Compact]
+    public class Compact : Car, IPassengerCarrier
+    {
+        
+    }//end compact
+
+    //[+SUV||]
+    //[+A:Car]<-[+SUV]
     //[+I:IPassengerCarrier]^[+SUV]
+    public class SUV : Car, IPassengerCarrier
+    {
+        
+    }//end SUV
+
+    //[+Pickup||]
+    //[+A:Car]<-[+Pickup]
     //[+I:IPassengerCarrier]^[+Pickup]
-    //[+I:IPassengerCarrier]^[+PassengerTrain]
-
-    //connects to heavy loader
     //[+I:IHeavyLoadCarrier]^[+Pickup]
-    //[+I:IHeavyLoadCarrier]^[+FreightTrain]
-    //[+I:IHeavyLoadCarrier]^[+424DoubleBogey]
+    public class Pickup : Car, IPassengerCarrier, IHeavyLoadCarrier
+    {
+        
+    }//end pickup
 
+    //[+PassengerTrain||]
+    //[+A:Train]<-[+PassengerTrain]
+    //[+I:IPassengerCarrier]^[+PassengerTrain]
+    public class PassengerTrain : Train, IPassengerCarrier
+    {
+        
+    }//end passTrain
+
+    //[+FreightTrain||]
+    //[+A:Train]<-[+FreightTrain]
+    //[+I:IHeavyLoadCarrier]^[+FreightTrain]
+    public class FreightTrain : Train, IHeavyLoadCarrier
+    {
+        
+    }//freightTrain
+
+    //[+424DoubleBogey||]
+    //[+A:Train]<-[+424DoubleBogey]    
+    //[+I:IHeavyLoadCarrier]^[+424DoubleBogey]
+    public class DoubleBogey : Train, IHeavyLoadCarrier
+    {
+        
+    }//424DoubleBogey
 
 
     public class Class1
