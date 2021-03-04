@@ -15,24 +15,25 @@ namespace Traffic
     {
         static void Main(string[] args)
         {
-            //initialize vehicle
-            Vehicle vehicle = null;
+            //initialize passsenger carrier object
+            //Vehicle vehicle = null;
+            IPassengerCarrier iPassCarrier = null;
+            
             //call addPassenger fns
-            AddPassenger(vehicle);
+            AddPassenger(iPassCarrier);
         }
     
     // Method: addPassenger
     // Purpose: fns that accepts any obj in the passengerCarrier interface
     //call loadPasseneger and use toString on it
     // Restrictions: None
-    public static void AddPassenger(object obj)
-    {
-            IPassengerCarrier iPassengerCarrier = (IPassengerCarrier)obj;
+    public static void AddPassenger(IPassengerCarrier obj)
+    { 
         //call LoadPass using ref to the interface
-        iPassengerCarrier.LoadPassenger();
+        obj.LoadPassenger();
             //if not an IPassengerCarrier object, then error b/c of the function LoadPasseneger.
-        //use ToString() 
-        iPassengerCarrier.ToString();
+            //use ToString()
+        obj.ToString();
     }
     
     }//program
