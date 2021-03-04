@@ -40,7 +40,7 @@ namespace UT1_BugSquash
             
             //Console.WriteLine("{nX}^{nY} = {nAnswer}"); //Logic error - need to put $ in order for values to print
             Console.WriteLine($"{nX}^{nY} = {nAnswer}");
-        }
+        }//main
 
 
          //int Power(int nBase, int nExponent)
