@@ -12,6 +12,7 @@ namespace Olivieri_Q3
     {
         static void Main(string[] args)
         {
+
             MyDerivedClass dClass = new MyDerivedClass();
             Console.WriteLine(dClass.GetString());
 
