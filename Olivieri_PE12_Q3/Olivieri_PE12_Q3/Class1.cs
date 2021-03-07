@@ -28,7 +28,7 @@ namespace Olivieri_PE12_Q3
     {
         public override string GetString()
         {
-            return base.GetString() + " output from derived class";
+            return base.GetString() + "output from derived class";
         }
     }
     
