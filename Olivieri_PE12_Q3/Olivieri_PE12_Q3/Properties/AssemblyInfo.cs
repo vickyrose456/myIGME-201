@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Olivieri_PE12_Question3")]
+[assembly: AssemblyTitle("Olivieri_PE12_Q3")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Olivieri_PE12_Question3")]
+[assembly: AssemblyProduct("Olivieri_PE12_Q3")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f4b6c1ea-a87d-4419-ac8d-7ddb8a735d15")]
+[assembly: Guid("3ed15fbd-ba28-4bfe-a2f2-1e0a0d139b7f")]
 
 // Version information for an assembly consists of the following four values:
 //

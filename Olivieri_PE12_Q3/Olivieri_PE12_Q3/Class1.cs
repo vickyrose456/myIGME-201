@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace olivieri_PE12_Q3
+namespace Olivieri_PE12_Q3
 {
     public abstract class MyClass
     {
@@ -28,10 +28,9 @@ namespace olivieri_PE12_Q3
     {
         public override string GetString()
         {
-
-            return GetString() + " output from derived class";
+            return base.GetString() + " output from derived class";
         }
     }
-
-
+    
 }//end namespace
+

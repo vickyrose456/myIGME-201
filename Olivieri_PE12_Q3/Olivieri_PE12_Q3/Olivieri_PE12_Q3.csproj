@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>f4b6c1ea-a87d-4419-ac8d-7ddb8a735d15</ProjectGuid>
+    <ProjectGuid>3ed15fbd-ba28-4bfe-a2f2-1e0a0d139b7f</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Olivieri_PE12_Question3</RootNamespace>
-    <AssemblyName>Olivieri_PE12_Question3</AssemblyName>
+    <RootNamespace>Olivieri_PE12_Q3</RootNamespace>
+    <AssemblyName>Olivieri_PE12_Q3</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
