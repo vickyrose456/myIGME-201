@@ -10,23 +10,64 @@ namespace CourseLib
     {
         public List<DayOfWeek> daysOfWeek = new List<DayOfWeek>();
         public DateTime startTime;
-        public DateTime endTime; 
+        public DateTime endTime;
+    }//schedule
 
-    }
 
     public class Course : Schedule
     {
-        public string CourseCode;
+        public string courseCode;
         public string description;
         public string teacherEmail;
         public Schedule schedule;
 
-    }
+        public Course()
+        {
+            
+        }
+        public Course(string courseCode, string description)
+        {
+            
+        }
+        
+
+
+    }//course
 
     public class Courses : Course
     {
-         public SortedList<string, Course> sortedList = new SortedList<string, Course>();
-        this[thisCourse.courseCode];
+        public SortedList<string, Courses> sortedList = new SortedList<string, Courses>();
+        
+
+        public void Remove(string courseCode)
+        {
+            if ( courseCode!= null)
+            {
+                sortedList.Remove(courseCode);
+            }
+        }
+
+        public Courses this[string courseCode]
+        {
+            get 
+            {
+                Courses returnVal;
+                try {
+                    returnVal = (Courses)sortedList[courseCode];
+                }
+                catch { returnVal = null;}
+                return returnVal;
+            }
+            set
+            {
+                try { sortedList[courseCode] = value; }
+                catch { }
+                
+            }
+            
+        }
+
+
         public Courses()
         {
             Course thisCourse;
@@ -64,10 +105,12 @@ namespace CourseLib
                 thisCourse.schedule = thisSchedule;
 
                 // add this course to the SortedList
-                this[thisCourse.courseCode] = thisCourse;
+                this[thisCourse.courseCode] = (Courses)thisCourse;
             }
         }
 
-    }
+    }//courses
+
 
 }
+   
