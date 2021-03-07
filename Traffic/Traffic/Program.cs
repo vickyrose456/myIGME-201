@@ -31,9 +31,17 @@ namespace Traffic
     { 
         //call LoadPass using ref to the interface
         obj.LoadPassenger();
-            //if not an IPassengerCarrier object, then error b/c of the function LoadPasseneger.
-            //use ToString()
-        obj.ToString();
+        //if not an IPassengerCarrier object, then error b/c of the function LoadPasseneger.
+        //use ToString()
+        //obj.ToString();
+
+            if (obj.GetType() == typeof(Vehicle))
+            {
+                Console.WriteLine(obj.ToString());
+            }
+
+
+
     }
     
     }//program
