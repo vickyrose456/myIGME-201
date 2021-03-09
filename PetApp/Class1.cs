@@ -11,9 +11,6 @@ namespace PetApp
         //pet list
         List<Pet> petList = new List<Pet>();
 
-        //count int r
-
-
         //this int petEI
         public Pet this[int nPetEl]
         {
@@ -48,6 +45,9 @@ namespace PetApp
             }
         }//this Pet
 
+        //count: int r
+
+
         //Add(pet Pet)
         public void Add(Pet pet)
         {
@@ -81,7 +81,7 @@ namespace PetApp
         public string Name;
 
         //Eat(): a
-
+        
         //Play(): a
 
         //GotoVet():a
@@ -101,7 +101,7 @@ namespace PetApp
 
     }//Pet
 
-    public class Dog : Pet
+    public class Dog : Pet, IDog
     {
         //license:string
         public string license;
@@ -142,40 +142,80 @@ namespace PetApp
 
     }//Dog
 
-    public class IDog
+    interface IDog
+    {
+        //eat()
+        void Eat();
+
+
+        //play()
+        void Play();
+        
+
+        //bark
+        void Bark();
+        
+
+        //neddwalk
+        void NeedWalk();
+
+        //gotoVet
+        void GotoVet();
+
+
+    }//IDog
+
+
+    public class Cat : Pet, ICat
     {
         //eat()
         public void Eat()
         {
             
         }
-
         //play()
         public void Play()
         {
             
         }
-
-        //bark
-        public void Bark()
+        //purr()
+        public void Purr()
         {
             
         }
-
-        //neddwalk
-        public void NeedWalk()
+        //scratch
+        public void Scratch()
         {
             
         }
-
         //gotoVet
         public void GotoVet()
         {
             
         }
+        //()
+        public Cat()
+        {
+            
+        }
+
+    }//cat
+
+    interface ICat
+    {
+        //eat
+        void Eat();
+        //play
+        void Play();
+        //scratch
+        void Scratch();
+        //purr
+        void Purr();
+
+    }//iCat
 
 
-    }//IDog
+
 
 
 
