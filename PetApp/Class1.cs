@@ -92,11 +92,13 @@ namespace PetApp
         public string Name;
 
         //Eat(): a
-      
+        public abstract void Eat();
 
         //Play(): a
+        public abstract void Play();
 
         //GotoVet():a
+        public abstract void GotoVet();
 
         //()
         public Pet()
