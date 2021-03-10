@@ -211,22 +211,25 @@ namespace PetApp
         public override void Play()
         {
             //play output
-            Console.WriteLine();
+            Console.WriteLine("{0}: What's that red light?! I need to catch it!", this.Name);
         }
         //purr()
         public void Purr()
         {
-            
+            //purr output
+            Console.WriteLine("Purrrrrrrrrrrrrr", this.Name);
         }
         //scratch
         public void Scratch()
         {
-            
+            //scratch output
+            Console.WriteLine("{0}: HISS, TAKE THAT!", this.Name);
         }
         //gotoVet
         public override void GotoVet()
         {
-            
+            //vet output
+            Console.WriteLine("{0}: Nooooooooooooooooooooooooooooooo", this.Name);
         }
         //()
         public Cat()
