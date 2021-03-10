@@ -129,32 +129,38 @@ namespace PetApp
         //Eat()
         public override void Eat()
         {
-            
+            //dog is eating output
+            Console.WriteLine("{0}: I love my bacon bits!!!", this.Name);
         }//eat
 
         //play()
         public override void Play()
         {
-            
+            //dpg is playing output
+            Console.WriteLine("{0}: Let me get the ball!", this.Name);
         }//play
 
 
         //Bark()
         public void Bark()
         {
+            //barking output
+            Console.WriteLine("{0}: Woof Woof!!!", this.Name);
             
         }//bark
 
         //needWalk()
         public void NeedWalk()
         {
-            
+            //walking output
+            Console.WriteLine("{0}: Wheres the leash? I want to walk!", this.Name);
         }//needwalk
 
         //GotoVet
         public override void GotoVet()
         {
-            
+            //vet output
+            Console.WriteLine("{0}: Grrrrr. How dare you take me to the vet.", this.Name);
         }//gotoVet 
 
 
@@ -198,12 +204,14 @@ namespace PetApp
         //eat()
         public override void Eat()
         {
-            
+            //cat eating output
+            Console.WriteLine("{0}: Where is my Lil Soup?! Yummmmmmyyyyy", this.Name);
         }
         //play()
         public override void Play()
         {
-            
+            //play output
+            Console.WriteLine();
         }
         //purr()
         public void Purr()
