@@ -121,14 +121,19 @@ namespace PetApp
         //license:string
         public string license;
 
+        public Dog()
+        {
+            
+        }
+
         //Eat()
-        public void Eat()
+        public override void Eat()
         {
             
         }//eat
 
         //play()
-        public void Play()
+        public override void Play()
         {
             
         }//play
@@ -147,13 +152,18 @@ namespace PetApp
         }//needwalk
 
         //GotoVet
-        public void GotoVet()
+        public override void GotoVet()
         {
             
         }//gotoVet 
 
 
         //(szLicense:string, szName:string, nAge:int): base(szName, nAge)
+        public Dog(string szLicense, string szName, int nAge) : base (szName, nAge)
+        {
+
+        }
+
 
     }//Dog
 
@@ -184,12 +194,12 @@ namespace PetApp
     public class Cat : Pet, ICat
     {
         //eat()
-        public void Eat()
+        public override void Eat()
         {
             
         }
         //play()
-        public void Play()
+        public override void Play()
         {
             
         }
@@ -204,7 +214,7 @@ namespace PetApp
             
         }
         //gotoVet
-        public void GotoVet()
+        public override void GotoVet()
         {
             
         }
