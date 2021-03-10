@@ -161,7 +161,9 @@ namespace PetApp
         //(szLicense:string, szName:string, nAge:int): base(szName, nAge)
         public Dog(string szLicense, string szName, int nAge) : base (szName, nAge)
         {
-
+            this.Name = szName;
+            this.age = nAge;
+            this.license = szLicense;
         }
 
 
