@@ -46,18 +46,28 @@ namespace PetApp
         }//this Pet
 
         //count: int r
+        private int Count
+        {
+            //get returns petList.Count
+            get 
+            {
+                return petList.Count();
+            }
+        }
 
 
         //Add(pet Pet)
         public void Add(Pet pet)
         {
-
+            //should call petList.Add(pet)
+            petList.Add(pet);
         }
 
         //remove(Pet pet)
         public void Remove(Pet pet)
         {
-
+            //call petList.remove
+            petList.Remove(pet);
         }
 
         //RemoveAt (petEI:int)
