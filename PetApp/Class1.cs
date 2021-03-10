@@ -226,6 +226,12 @@ namespace PetApp
             
         }
 
+        public Cat(string cName, int nAge) : base(cName, nAge)
+        {
+            this.Name = cName;
+            this.age = nAge;
+        }
+
     }//cat
 
     interface ICat
