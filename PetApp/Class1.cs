@@ -80,7 +80,7 @@ namespace PetApp
 
     }
 
-    public class Pet : Pets
+    public abstract class Pet : Pets
     {
         //name:string
         private string name;
