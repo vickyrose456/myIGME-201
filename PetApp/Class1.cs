@@ -73,9 +73,10 @@ namespace PetApp
         //RemoveAt (petEI:int)
         public void RemoveAt(int petEI)
         {
-
+            petList.RemoveAt(petEI);
         }
 
+        
 
     }
 
@@ -91,7 +92,8 @@ namespace PetApp
         public string Name;
 
         //Eat(): a
-        
+      
+
         //Play(): a
 
         //GotoVet():a
@@ -105,7 +107,8 @@ namespace PetApp
         //(name: string, age:int)
         public Pet(string name, int age)
         {
-
+            this.name = name;
+            this.age = age;
         }
 
 
