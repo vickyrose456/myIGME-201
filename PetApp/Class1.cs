@@ -46,7 +46,7 @@ namespace PetApp
         }//this Pet
 
         //count: int r
-        private int Count
+        public int Count
         {
             //get returns petList.Count
             get 
