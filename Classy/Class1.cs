@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace Classy
 {
-    public class Class1
-    {
         //public abstract class
         public abstract class myAClass
         {
@@ -37,6 +35,29 @@ namespace Classy
                     
                 }
             }
-        }
+        }//my class
+        class my1stClass : myInterface
+        {
+            public void Cool()
+            {
+                Console.WriteLine("My 1st class is super cool!");
+            }
+
+        }//1st class
+
+        class my2ndClass : myInterface
+        {
+            public void Cool()
+            {
+                Console.WriteLine("My 2nd class is cooler. ");
+            }
+
+        }//my 2nd class
+
+    public interface myInterface 
+    {
+        void Cool();
+       
     }
+    
 }
