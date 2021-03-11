@@ -36,8 +36,10 @@ namespace Classy
                 }
             }
         }//my class
-        class my1stClass : myInterface
+    //create 1st class that inherits interface
+        public class my1stClass : myInterface
         {
+            //inhert method
             public void Cool()
             {
                 Console.WriteLine("My 1st class is super cool!");
@@ -45,8 +47,10 @@ namespace Classy
 
         }//1st class
 
-        class my2ndClass : myInterface
+    //create 2nd class that inherits interface
+        public class my2ndClass : myInterface
         {
+        //method that uses inherited interface void
             public void Cool()
             {
                 Console.WriteLine("My 2nd class is cooler. ");
