@@ -24,19 +24,26 @@ namespace pe13
             Random rand = new Random();
 
             //loop 50 times
-            for (int i = 0; i < 50; i ++)
+            for (int i = 0; i < 50; i++)
             {
                 // 1 in 10 chance of adding an animal
                 if (rand.Next(1, 11) == 1)
                 {
                     if (rand.Next(0, 2) == 0)
                     {
+                        //output you bought dog
+                        Console.WriteLine("You bought a dog!");
+                        //get input on name, license id and age
                         // add a dog
                         pets[i] = dog.Add(nDog);
                     }
                     else
                     {
                         // else add a cat
+                        Console.WriteLine("You bought a cat!");
+                        //output bought cat
+                        //get input of name and age
+                        //add cat
 
                     }
                 }
