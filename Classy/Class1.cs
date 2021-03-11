@@ -30,14 +30,22 @@ namespace Classy
                     catch 
                     {
                         this.myVar = 57;
+                    Console.WriteLine("Invalid input. Therefore the integer is: {0}", this.myVar);
                     }
                         
                     
                 }
             }
+
+        public void PrintVar()
+        {
+            Console.WriteLine(GetMyVar);
+        }
+
+
         }//my class
     //create 1st class that inherits interface
-        public class my1stClass : myInterface
+        public class my1stClass : myAClass, myInterface
         {
             //inhert method
             public void Cool()
@@ -48,7 +56,7 @@ namespace Classy
         }//1st class
 
     //create 2nd class that inherits interface
-        public class my2ndClass : myInterface
+        public class my2ndClass : myAClass, myInterface
         {
         //method that uses inherited interface void
             public void Cool()
