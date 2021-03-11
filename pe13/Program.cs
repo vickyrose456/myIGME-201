@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PetApp;
 
 namespace pe13
 {
@@ -16,6 +17,8 @@ namespace pe13
             IDog iDog = null;
             ICat iCat = null;
 
+            //create list of pets
+            Pets pets = new Pets();
         }
     }
 }
