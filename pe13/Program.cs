@@ -19,6 +19,17 @@ namespace pe13
 
             //create list of pets
             Pets pets = new Pets();
+
+            //random num
+            Random rand = new Random();
+
+            //loop 50 times
+            for (int i = 0; i < 50; i ++)
+            {
+                
+            }
+
+
         }
     }
 }
