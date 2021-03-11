@@ -175,7 +175,7 @@ namespace PetApp
 
     }//Dog
 
-    public interface IDog
+    interface IDog
     {
         //eat()
         void Eat();
@@ -245,7 +245,7 @@ namespace PetApp
 
     }//cat
 
-    public interface ICat
+    interface ICat
     {
         //eat
         void Eat();
