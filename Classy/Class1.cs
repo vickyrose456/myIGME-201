@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Classy
 {
         //public abstract class
-        public abstract class myAClass
+        public abstract class MyAClass
         {
             //private field
             private int myVar;
@@ -45,7 +45,7 @@ namespace Classy
 
         }//my class
     //create 1st class that inherits interface
-        public class my1stClass : myAClass, myInterface
+        public class My1stClass : MyAClass, MyInterface
         {
             //inhert method
             public void Cool()
@@ -56,7 +56,7 @@ namespace Classy
         }//1st class
 
     //create 2nd class that inherits interface
-        public class my2ndClass : myAClass, myInterface
+        public class My2ndClass : MyAClass, MyInterface
         {
         //method that uses inherited interface void
             public void Cool()
@@ -66,7 +66,7 @@ namespace Classy
 
         }//my 2nd class
 
-    public interface myInterface 
+    public interface MyInterface 
     {
         void Cool();
        
