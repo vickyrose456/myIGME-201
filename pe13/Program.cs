@@ -10,6 +10,12 @@ namespace pe13
     {
         static void Main(string[] args)
         {
+            Pet thisPet = null;
+            Dog dog = null;
+            Cat cat = null;
+            IDog iDog = null;
+            ICat iCat = null;
+
         }
     }
 }
