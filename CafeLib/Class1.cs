@@ -66,7 +66,7 @@ namespace CafeLib
 
 
 
-    public abstract class HotDrink
+    public abstract class HotDrink : Customer
     {
         public bool instant;
         public bool milk;
@@ -196,7 +196,11 @@ namespace CafeLib
         }
 
         //():this(false
-        //CupOfCocoa this[]
+        CupOfCocoa this[bool marshmallows] 
+        {
+            get { }
+            set { }
+        }
 
         CupOfCocoa(bool marshmallows) : base("Expensive Organic Brand")
         {
