@@ -9,18 +9,49 @@ using System.Threading.Tasks;
 
 namespace CafeLib
 {
+
+    public abstract class HotDrink
+    {
+        public bool instant;
+        public bool milk;
+        private byte sugar;
+        public string size;
+        public Customer customer;
+
+        //AddSugar(amount:byte):v
+        public virtual int AddSugar(byte amount) 
+        {
+            return this.sugar;
+        }
+
+        //steam():a
+        public abstract void Steam();
+
+        //()
+        public HotDrink()
+        {
+
+        }
+
+        //(brand:strng)
+        public HotDrink(string brand)
+        {
+
+        }
+
+
+    }//abstract hotDrink
+
+
+
+
     //+IMood
     public interface IMood
     {
 
         //+Mood:string:r
-        public string Mood
-        {
-            get
-            {
-                return " ";
-            }
-        }
+        string Mood { get; }
+        
     }//IMood
 
 
@@ -39,6 +70,11 @@ namespace CafeLib
             {
                 return "";
             }
+        }
+
+        public override void Steam()
+        {
+            
         }
     }//Customer
 
@@ -66,34 +102,7 @@ namespace CafeLib
 
 
 
-    public abstract class HotDrink : Customer
-    {
-        public bool instant;
-        public bool milk;
-        private byte sugar;
-        public string size;
-        public Customer customer;
-
-        //AddSugar(amount:byte):v
-        public virtual int AddSugar(byte amount);
-
-        //steam():a
-        public abstract void Steam();
-
-        //()
-        public HotDrink() 
-        {
-
-        }
-
-        //(brand:strng)
-        public HotDrink(string brand)
-        {
-            
-        }
-        
-
-    }//abstract hotDrink
+    
 
 
     //+CupofCoffee
@@ -151,10 +160,7 @@ namespace CafeLib
     public interface ITakeOrder
     {
         //+TakeOrder():void
-        public void TakeOrder()
-        {
-            
-        }
+        void TakeOrder();
     }//ITakeOrder interface 
 
 
