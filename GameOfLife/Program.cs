@@ -27,11 +27,11 @@ namespace GameOfLife
         right,
         down,
         left,
-        up
-        // topleft
-        // topright
-        // bottomleft
-        // bottomright
+        up,
+        topleft,
+        topright,
+        bottomleft,
+        bottomright
     }
 
     // use a "by value" structure type to store the current and next state of each cell
@@ -291,6 +291,35 @@ namespace GameOfLife
                                 if (col > 0)
                                 {
                                     neighborCell = organism[row, col - 1];
+                                }
+                                break;
+
+                            case (int)EDirection.topleft:
+                                //topleft neighbor = [row - 1, col - 1]
+                                if (row > 0 && col > 0)
+                                {
+                                    neighborCell = organism[row - 1, col - 1];
+                                }
+                                break;
+                            case (int)EDirection.topright:
+                                //top right neighbor = [row - 1, col + 1]
+                                if(col < MAX_COLS - 1 && row > 0)
+                                {
+                                    neighborCell = organism[row - 1, col + 1];
+                                }
+                                break;
+                            case (int)EDirection.bottomleft:
+                                //bottom left neighbor = [row + 1, col -1]
+                                if(row < MAX_ROWS - 1 && col > 0)
+                                {
+                                    neighborCell = organism[row + 1, col - 1];
+                                }
+                                break;
+                            case (int)EDirection.bottomright:
+                                //bottom right neighbor = [row + 1, col +1]
+                                if(row < MAX_ROWS - 1 && col < MAX_COLS - 1)
+                                {
+                                    neighborCell = organism[row + 1, col + 1];
                                 }
                                 break;
                         }
