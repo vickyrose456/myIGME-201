@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olivieri_UnitTest2Q14", "Olivieri_UnitTest2Q14.csproj", "{1271250F-27F2-47C2-998B-2E3D2E75670A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1271250F-27F2-47C2-998B-2E3D2E75670A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1271250F-27F2-47C2-998B-2E3D2E75670A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1271250F-27F2-47C2-998B-2E3D2E75670A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1271250F-27F2-47C2-998B-2E3D2E75670A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F24DD213-B61B-4626-9F78-4343F7B4ECB3}
+	EndGlobalSection
+EndGlobal
