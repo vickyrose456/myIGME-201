@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace OlivieriQ10
+{ 
     static class Program
     {
         public abstract class IceSkating
