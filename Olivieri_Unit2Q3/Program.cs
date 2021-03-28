@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Olivieri_UnitTestQ4;
 
-namespace Question6UnitTest2
+namespace Olivieri_Unit2Q3
 {
     class Program
     {
@@ -21,7 +20,7 @@ namespace Question6UnitTest2
 
             Tuple<double, double, double> formula = new Tuple<double, double, double>(11, 21, 41);
 
-            for(dw =- 2; dw <= 0; dw += 0.2)
+            for (dw = -2; dw <= 0; dw += 0.2)
             {
                 dw = Math.Round(dw, 1);
                 dy = 0;
@@ -32,10 +31,10 @@ namespace Question6UnitTest2
                     dw = 0;
                     dx = 0;
 
-                   for (dx =0; dx<=4; dx+=  0.1)
+                    for (dx = 0; dx <= 4; dx += 0.1)
                     {
                         dx = Math.Round(dx, 1);
-                        dz = (4* Math.Pow(dy,3)) + (2 * Math.Pow(dx,2)) - (8 * dw)  + 7;
+                        dz = (4 * Math.Pow(dy, 3)) + (2 * Math.Pow(dx, 2)) - (8 * dw) + 7;
                         dz = Math.Round(dz, 3);
 
                         //store into tuple
@@ -51,7 +50,7 @@ namespace Question6UnitTest2
                 }
                 ++nw;
             }
-            
+
         }
     }
-}
+ }

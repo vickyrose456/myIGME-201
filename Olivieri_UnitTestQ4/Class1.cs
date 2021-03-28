@@ -182,7 +182,6 @@ namespace Olivieri_UnitTestQ4
             phone.HangUp();
 
 
-
             if (phone.GetType() == typeof(Tardis))
             {
                 iphoneInterface = (IPhoneInterface)phone;
