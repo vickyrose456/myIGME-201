@@ -70,7 +70,40 @@ namespace Olivieri_UnitTestQ4
         }
 
         public void TimeTravel()
-        { 
+        {
+        }
+
+        //overload bool operators ==, !=, <, >, <= and >= for Tardis
+        //whichDrWho compares to Tardis objects
+        
+        public static bool operator ==(Tardis myTardis1, Tardis myTardis2)
+        {
+            return (myTardis1.whichDrWho == myTardis2.whichDrWho);
+        }
+
+        public static bool operator !=(Tardis myTardis1, Tardis myTardis2)
+        {
+            return !(myTardis1.whichDrWho == myTardis2.whichDrWho);
+        }
+
+        public static bool operator <(Tardis myTardis1, Tardis myTardis2)
+        {
+            return !(myTardis1.whichDrWho >= myTardis2.whichDrWho);
+        }
+
+        public static bool operator >(Tardis myTardis1, Tardis myTardis2)
+        {
+            return !(myTardis1.whichDrWho <= myTardis2.whichDrWho);
+        }
+
+        public static bool operator >=(Tardis myTardis1, Tardis myTardis2)
+        {
+            return (myTardis1.whichDrWho >= myTardis2.whichDrWho);
+        }
+
+        public static bool operator <=(Tardis myTardis1, Tardis myTardis2)
+        {
+            return (myTardis1.whichDrWho <= myTardis2.whichDrWho);
         }
 
 
