@@ -71,8 +71,8 @@ namespace Olivieri_UnitTestQ4
 
         public void TimeTravel()
         {
-        }
 
+        }
         //overload bool operators ==, !=, <, >, <= and >= for Tardis
         //whichDrWho compares to Tardis objects
         
@@ -106,7 +106,7 @@ namespace Olivieri_UnitTestQ4
             return (myTardis1.whichDrWho <= myTardis2.whichDrWho);
         }
 
-
+        
     }//end tardis
 
 
@@ -145,6 +145,29 @@ namespace Olivieri_UnitTestQ4
         }
         public void CloseDoor() 
         {
+        }
+    }
+
+    public class Olivieri_UnitTestQ4
+    {
+        static void Main(string[] args)
+        {
+            //create new tardis object
+            Tardis tardis = new Tardis();
+
+            //new photobooth object
+            PhoneBooth phoneBooth = new PhoneBooth();
+
+            //pass each to a UsePhone(object obj) method 
+            UsePhone(tardis);
+            UsePhone(phoneBooth);
+        }
+        static void UsePhone(object obj)
+        {
+            obj = (IPhoneInterface)obj;
+            //obj.MakeCall();
+            //obj.HangUp();
+
         }
     }
 
