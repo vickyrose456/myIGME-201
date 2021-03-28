@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace OlivieriQ10
-{ 
+{
     static class Program
     {
         public abstract class IceSkating
@@ -61,16 +61,30 @@ namespace OlivieriQ10
         {
             void TripleAxel();
         }
-
-
-    }
-
-    public class Olivieri_UnitTestQ4
-    {
-        static void Main(string[] args)
+    
+    
+        public class Olivieri_UnitTestQ4
         {
+            static void Main(string[] args)
+            {
+                IHockey iHockey = null;
+                IFigure iFigure = null;
 
+                Hockey hockey = new Hockey();
+                FigureSkate figureSkater = new FigureSkate();
+
+                MyMethod(hockey);
+                MyMethod(iFigure);
+
+            }
+
+            static void MyMethod(object obj)
+            {
+                
+            }
         }
+    
     }
+    
 
 }
