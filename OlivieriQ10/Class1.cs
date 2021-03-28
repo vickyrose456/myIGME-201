@@ -8,7 +8,7 @@ namespace OlivieriQ10
 {
     static class Program
     {
-        public abstract class IceSkating
+        public abstract class IceSkating 
         {
             public string skates;
             public double speed;
@@ -67,19 +67,34 @@ namespace OlivieriQ10
         {
             static void Main(string[] args)
             {
-                IHockey iHockey = null;
-                IFigure iFigure = null;
+                Hockey hPlayer = new Hockey();
+                MyMethod(hPlayer);
 
-                Hockey hockey = new Hockey();
-                FigureSkate figureSkater = new FigureSkate();
-
-                MyMethod(hockey);
-                MyMethod(iFigure);
+                FigureSkate fSkater = new FigureSkate();
+                MyMethod(fSkater);
 
             }
 
-            static void MyMethod(object obj)
+            static void MyMethod(IceSkating skater)
             {
+                IceSkating iceSkating = (IceSkating)skater;
+                IHockey iHockey = null;
+                IFigure iFigure = null;
+
+                skater.Speed(8.3);
+                skater.Skating();
+
+                if (skater.GetType() == typeof(Hockey))
+                {
+                    iHockey = (IHockey)skater;
+                    skater.SlapShot();
+                }
+
+                if (skater.GetType() == typeof(FigureSkate))
+                {
+                    iFigure = (IFigure)skater;
+                    skater.TripleAxel();
+                }
                 
             }
         }
