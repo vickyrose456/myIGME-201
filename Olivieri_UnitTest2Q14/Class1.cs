@@ -2,6 +2,34 @@
 
 namespace Olivieri_UnitTest2Q14
 {
+    public class Friend
+    {
+        public string name;
+        public string greeting;
+        public DateTime birthday;
+        public string address;
+
+        public Friend()
+        {
+            this.name = "Charlie Sheen";
+            this.greeting = "Dear Charlie";
+            this.birthday = DateTime.Parse("1967-12-25");
+            this.address = "123 Any Street, NY NY 12202";
+        }
+    }
+    public class Enemy : Friend 
+    {
+        public Enemy()
+        {
+            this.greeting = "Sorry Charlie";
+            this.address = "Return to sender. Address Unknown. ";
+        }
+    }
+
+   
+
+    /*
+
     struct Friend
     {
         public string name;
@@ -35,4 +63,5 @@ namespace Olivieri_UnitTest2Q14
             Console.WriteLine($"friend.address => enemy.address: {friend.address} => {enemy.address}");
         }
     }
+    */
 }
