@@ -75,9 +75,17 @@ namespace Olivieri_UnitTestQ4
         }
         //overload bool operators ==, !=, <, >, <= and >= for Tardis
         //whichDrWho compares to Tardis objects
-        
+      
         public static bool operator ==(Tardis myTardis1, Tardis myTardis2)
         {
+            if (myTardis1.whichDrWho == 10)
+            {
+                return (myTardis1.whichDrWho > myTardis2.whichDrWho);
+            }
+            else if (myTardis2.whichDrWho == 10)
+            {
+                return (myTardis2.whichDrWho > myTardis1.whichDrWho);
+            }
             return (myTardis1.whichDrWho == myTardis2.whichDrWho);
         }
 
@@ -142,16 +150,19 @@ namespace Olivieri_UnitTestQ4
 
         public void OpenDoor()
         {
+
         }
         public void CloseDoor() 
         {
+
         }
     }
 
-    public class Olivieri_UnitTestQ4
+    class Program
     {
         static void Main(string[] args)
         {
+
             //create new tardis object
             Tardis tardis = new Tardis();
 
@@ -164,9 +175,27 @@ namespace Olivieri_UnitTestQ4
         }
         static void UsePhone(object obj)
         {
-            obj = (IPhoneInterface)obj;
-            //obj.MakeCall();
-            //obj.HangUp();
+            Phone phone = (Phone)obj;
+            IPhoneInterface iphoneInterface = null;
+
+            phone.MakeCall();
+            phone.HangUp();
+
+
+
+            if (phone.GetType() == typeof(Tardis))
+            {
+                iphoneInterface = (IPhoneInterface)phone;
+                phone.TimeTravel();
+            }
+            if (phone.GetType() == typeof(PhoneBooth))
+            {
+                iphoneInterface = (IPhoneInterface)phone;
+                phone.OpenDoor();
+            }
+
+
+
 
         }
     }
