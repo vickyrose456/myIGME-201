@@ -75,9 +75,10 @@ namespace OlivieriQ10
 
             }
 
-            static void MyMethod(IceSkating skater)
+            static void MyMethod(object obj)
             {
-                IceSkating iceSkating = (IceSkating)skater;
+                IceSkating skater = (IceSkating)obj;
+
                 IHockey iHockey = null;
                 IFigure iFigure = null;
 
@@ -87,13 +88,13 @@ namespace OlivieriQ10
                 if (skater.GetType() == typeof(Hockey))
                 {
                     iHockey = (IHockey)skater;
-                    skater.SlapShot();
+                    iHockey.SlapShot();
                 }
 
                 if (skater.GetType() == typeof(FigureSkate))
                 {
                     iFigure = (IFigure)skater;
-                    skater.TripleAxel();
+                    iFigure.TripleAxel();
                 }
                 
             }
