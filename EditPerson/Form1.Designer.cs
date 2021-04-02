@@ -214,25 +214,29 @@
             // 
             // okButton
             // 
+            this.okButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(130)))), ((int)(((byte)(184)))));
+            this.okButton.ForeColor = System.Drawing.Color.White;
             this.okButton.Location = new System.Drawing.Point(996, 579);
             this.okButton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(149, 57);
             this.okButton.TabIndex = 8;
             this.okButton.Text = "OK";
-            this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.UseVisualStyleBackColor = false;
             // 
             // cancelButton
             // 
+            this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(121)))), ((int)(((byte)(138)))));
             this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.ForeColor = System.Drawing.Color.White;
             this.cancelButton.Location = new System.Drawing.Point(1204, 579);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(149, 57);
             this.cancelButton.TabIndex = 9;
             this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.UseVisualStyleBackColor = false;
             // 
             // errorProvider
             // 
@@ -359,6 +363,7 @@
             this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(195)))), ((int)(((byte)(209)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(1836, 695);
