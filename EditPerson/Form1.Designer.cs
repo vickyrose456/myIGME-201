@@ -214,7 +214,7 @@
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(1442, 579);
+            this.okButton.Location = new System.Drawing.Point(996, 579);
             this.okButton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(149, 57);
@@ -226,7 +226,7 @@
             // 
             this.cancelButton.CausesValidation = false;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(1657, 579);
+            this.cancelButton.Location = new System.Drawing.Point(1204, 579);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(149, 57);

@@ -284,6 +284,11 @@ namespace EditPerson
                 this.gpaText.Visible = true;
 
                 this.gpaText.Tag = (this.gpaText.Text.Length > 0);
+
+                //since person type = student, classGroup box should be visible and enabled
+                this.classBox.Visible = true;
+                this.classBox.Enabled = true;
+
             }
             else
             {
@@ -300,6 +305,10 @@ namespace EditPerson
                 this.gpaText.Visible = false;
 
                 this.gpaText.Tag = true;
+
+                //since teacher is selected
+                this.classBox.Visible = false;
+                this.classBox.Enabled = false;
             }
         }
 
