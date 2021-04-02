@@ -64,8 +64,8 @@
             // typeLabel
             // 
             this.typeLabel.BackColor = System.Drawing.Color.Transparent;
-            this.typeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.typeLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.typeLabel.Font = new System.Drawing.Font("Palatino Linotype", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.typeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(49)))), ((int)(((byte)(117)))));
             this.typeLabel.Location = new System.Drawing.Point(24, 48);
             this.typeLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.typeLabel.Name = "typeLabel";
@@ -91,8 +91,8 @@
             // nameLabel
             // 
             this.nameLabel.BackColor = System.Drawing.Color.Transparent;
-            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.nameLabel.Font = new System.Drawing.Font("Palatino Linotype", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(49)))), ((int)(((byte)(117)))));
             this.nameLabel.Location = new System.Drawing.Point(24, 131);
             this.nameLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.nameLabel.Name = "nameLabel";
@@ -112,8 +112,8 @@
             // emailLabel
             // 
             this.emailLabel.BackColor = System.Drawing.Color.Transparent;
-            this.emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.emailLabel.Font = new System.Drawing.Font("Palatino Linotype", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(49)))), ((int)(((byte)(117)))));
             this.emailLabel.Location = new System.Drawing.Point(24, 219);
             this.emailLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.emailLabel.Name = "emailLabel";
@@ -133,8 +133,8 @@
             // ageLabel
             // 
             this.ageLabel.BackColor = System.Drawing.Color.Transparent;
-            this.ageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ageLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ageLabel.Font = new System.Drawing.Font("Palatino Linotype", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(49)))), ((int)(((byte)(117)))));
             this.ageLabel.Location = new System.Drawing.Point(24, 312);
             this.ageLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.ageLabel.Name = "ageLabel";
@@ -154,8 +154,8 @@
             // licLabel
             // 
             this.licLabel.BackColor = System.Drawing.Color.Transparent;
-            this.licLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.licLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.licLabel.Font = new System.Drawing.Font("Palatino Linotype", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.licLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(49)))), ((int)(((byte)(117)))));
             this.licLabel.Location = new System.Drawing.Point(24, 408);
             this.licLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.licLabel.Name = "licLabel";
@@ -175,6 +175,8 @@
             // specialtyLabel
             // 
             this.specialtyLabel.BackColor = System.Drawing.Color.Transparent;
+            this.specialtyLabel.Font = new System.Drawing.Font("Palatino Linotype", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.specialtyLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(49)))), ((int)(((byte)(117)))));
             this.specialtyLabel.Location = new System.Drawing.Point(24, 501);
             this.specialtyLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.specialtyLabel.Name = "specialtyLabel";
@@ -194,8 +196,8 @@
             // gpaLabel
             // 
             this.gpaLabel.BackColor = System.Drawing.Color.Transparent;
-            this.gpaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpaLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.gpaLabel.Font = new System.Drawing.Font("Palatino Linotype", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpaLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(49)))), ((int)(((byte)(117)))));
             this.gpaLabel.Location = new System.Drawing.Point(24, 501);
             this.gpaLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.gpaLabel.Name = "gpaLabel";
@@ -247,6 +249,7 @@
             this.genderGroupBox.Controls.Add(this.themRadioButton);
             this.genderGroupBox.Controls.Add(this.herRadioButton);
             this.genderGroupBox.Controls.Add(this.himRadioButton);
+            this.genderGroupBox.Font = new System.Drawing.Font("Palatino Linotype", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.genderGroupBox.Location = new System.Drawing.Point(1182, 126);
             this.genderGroupBox.Name = "genderGroupBox";
             this.genderGroupBox.Size = new System.Drawing.Size(228, 236);
@@ -258,9 +261,10 @@
             // themRadioButton
             // 
             this.themRadioButton.AutoSize = true;
+            this.themRadioButton.Font = new System.Drawing.Font("Palatino Linotype", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.themRadioButton.Location = new System.Drawing.Point(22, 168);
             this.themRadioButton.Name = "themRadioButton";
-            this.themRadioButton.Size = new System.Drawing.Size(124, 36);
+            this.themRadioButton.Size = new System.Drawing.Size(129, 42);
             this.themRadioButton.TabIndex = 14;
             this.themRadioButton.TabStop = true;
             this.themRadioButton.Text = "Them";
@@ -269,9 +273,10 @@
             // herRadioButton
             // 
             this.herRadioButton.AutoSize = true;
+            this.herRadioButton.Font = new System.Drawing.Font("Palatino Linotype", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.herRadioButton.Location = new System.Drawing.Point(22, 108);
             this.herRadioButton.Name = "herRadioButton";
-            this.herRadioButton.Size = new System.Drawing.Size(97, 36);
+            this.herRadioButton.Size = new System.Drawing.Size(102, 42);
             this.herRadioButton.TabIndex = 13;
             this.herRadioButton.TabStop = true;
             this.herRadioButton.Text = "Her";
@@ -280,9 +285,10 @@
             // himRadioButton
             // 
             this.himRadioButton.AutoSize = true;
+            this.himRadioButton.Font = new System.Drawing.Font("Palatino Linotype", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.himRadioButton.Location = new System.Drawing.Point(22, 48);
             this.himRadioButton.Name = "himRadioButton";
-            this.himRadioButton.Size = new System.Drawing.Size(102, 36);
+            this.himRadioButton.Size = new System.Drawing.Size(111, 42);
             this.himRadioButton.TabIndex = 12;
             this.himRadioButton.TabStop = true;
             this.himRadioButton.Text = "Him";
@@ -296,6 +302,7 @@
             this.classBox.Controls.Add(this.juniorRadioButton);
             this.classBox.Controls.Add(this.sophRadioButton);
             this.classBox.Controls.Add(this.freshRadioButton);
+            this.classBox.Font = new System.Drawing.Font("Palatino Linotype", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.classBox.Location = new System.Drawing.Point(1469, 126);
             this.classBox.Name = "classBox";
             this.classBox.Size = new System.Drawing.Size(350, 377);
@@ -307,9 +314,10 @@
             // seniorRadioButton
             // 
             this.seniorRadioButton.AutoSize = true;
+            this.seniorRadioButton.Font = new System.Drawing.Font("Palatino Linotype", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seniorRadioButton.Location = new System.Drawing.Point(23, 230);
             this.seniorRadioButton.Name = "seniorRadioButton";
-            this.seniorRadioButton.Size = new System.Drawing.Size(135, 36);
+            this.seniorRadioButton.Size = new System.Drawing.Size(138, 42);
             this.seniorRadioButton.TabIndex = 20;
             this.seniorRadioButton.TabStop = true;
             this.seniorRadioButton.Text = "Senior";
@@ -318,9 +326,10 @@
             // juniorRadioButton
             // 
             this.juniorRadioButton.AutoSize = true;
+            this.juniorRadioButton.Font = new System.Drawing.Font("Palatino Linotype", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.juniorRadioButton.Location = new System.Drawing.Point(23, 168);
             this.juniorRadioButton.Name = "juniorRadioButton";
-            this.juniorRadioButton.Size = new System.Drawing.Size(130, 36);
+            this.juniorRadioButton.Size = new System.Drawing.Size(135, 42);
             this.juniorRadioButton.TabIndex = 19;
             this.juniorRadioButton.TabStop = true;
             this.juniorRadioButton.Text = "Junior";
@@ -329,9 +338,10 @@
             // sophRadioButton
             // 
             this.sophRadioButton.AutoSize = true;
+            this.sophRadioButton.Font = new System.Drawing.Font("Palatino Linotype", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sophRadioButton.Location = new System.Drawing.Point(23, 108);
             this.sophRadioButton.Name = "sophRadioButton";
-            this.sophRadioButton.Size = new System.Drawing.Size(183, 36);
+            this.sophRadioButton.Size = new System.Drawing.Size(187, 42);
             this.sophRadioButton.TabIndex = 18;
             this.sophRadioButton.TabStop = true;
             this.sophRadioButton.Text = "Sophmore";
@@ -340,9 +350,10 @@
             // freshRadioButton
             // 
             this.freshRadioButton.AutoSize = true;
+            this.freshRadioButton.Font = new System.Drawing.Font("Palatino Linotype", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.freshRadioButton.Location = new System.Drawing.Point(23, 48);
             this.freshRadioButton.Name = "freshRadioButton";
-            this.freshRadioButton.Size = new System.Drawing.Size(179, 36);
+            this.freshRadioButton.Size = new System.Drawing.Size(180, 42);
             this.freshRadioButton.TabIndex = 17;
             this.freshRadioButton.TabStop = true;
             this.freshRadioButton.Text = "Freshman";
@@ -351,9 +362,10 @@
             // ClassOf
             // 
             this.ClassOf.AutoSize = true;
+            this.ClassOf.Font = new System.Drawing.Font("Palatino Linotype", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClassOf.Location = new System.Drawing.Point(86, 328);
             this.ClassOf.Name = "ClassOf";
-            this.ClassOf.Size = new System.Drawing.Size(188, 32);
+            this.ClassOf.Size = new System.Drawing.Size(181, 38);
             this.ClassOf.TabIndex = 21;
             this.ClassOf.Text = "Class of 9999";
             this.ClassOf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -385,6 +397,7 @@
             this.Controls.Add(this.typeComboBox);
             this.Controls.Add(this.typeLabel);
             this.Controls.Add(this.gpaLabel);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(63)))), ((int)(((byte)(117)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.MaximizeBox = false;
