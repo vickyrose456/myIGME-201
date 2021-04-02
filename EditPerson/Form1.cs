@@ -168,13 +168,29 @@ namespace EditPerson
             this.okButton.Click += new EventHandler(this.OkButton__Click);
             this.cancelButton.Click += new EventHandler(this.CancelButton__Click);
 
-            //delegate method for radio buttons
-            this.ClassRadioButton__CheckChanged.CheckChanged += EventHandler(this.ClassRadioButton__CheckChanged);
+            //delegate method for radio buttons - gender
+            this.himRadioButton.CheckedChanged += new EventHandler(this.ClassRadioButton__CheckedChanged);
+            this.herRadioButton.CheckedChanged += new EventHandler(this.ClassRadioButton__CheckedChanged);
+            this.themRadioButton.CheckedChanged += new EventHandler(this.ClassRadioButton__CheckedChanged);
+            //delegate method for radio buttons - class
+            this.freshRadioButton.CheckedChanged += new EventHandler(this.ClassRadioButton__CheckedChanged);
+            this.sophRadioButton.CheckedChanged += new EventHandler(this.ClassRadioButton__CheckedChanged);
+            this.juniorRadioButton.CheckedChanged += new EventHandler(this.ClassRadioButton__CheckedChanged);
+            this.seniorRadioButton.CheckedChanged += new EventHandler(this.ClassRadioButton__CheckedChanged);
 
             this.nameText.Text = person.name;
             this.emailText.Text = person.email;
             this.ageText.Text = person.age.ToString();
             this.licText.Text = person.LicenseId.ToString();
+
+            //check to see if gender or class and set defaults
+            
+                if (person.name == null) 
+                {
+                    //set them to true for gender radio button
+                    themRadioButton.Checked = true;
+                }
+            
 
             if (person.GetType() == typeof(Student))
             {
@@ -182,6 +198,29 @@ namespace EditPerson
                 this.typeComboBox.SelectedIndex = 0;
                 Student student = (Student)person;
                 this.gpaText.Text = student.gpa.ToString();
+
+                //2c) check the radio button based on the college year. otherwise default to senior
+                //freshman
+                if (student.eCollegeYear.Equals(1))
+                {
+                    freshRadioButton.Checked = true;
+                }
+                else if (student.eCollegeYear.Equals(2))
+                {
+                    sophRadioButton.Checked = true;
+                }
+                else if (student.eCollegeYear.Equals(3))
+                {
+                    juniorRadioButton.Checked = true;
+                }
+                else if (student.eCollegeYear.Equals(4))
+                {
+                    seniorRadioButton.Checked = true;
+                }
+                else {
+                    seniorRadioButton.Checked = true;
+                }
+
             }
             else
             {
@@ -191,6 +230,16 @@ namespace EditPerson
             }
 
             this.Show();
+        }
+        //event handler for the radio buttons
+        private void ClassRadioButton__CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+            if (rb.Checked)
+            {
+                
+            }
+
         }
 
         // the Event Handler for changing the typeComboBox value (Student or Teacher)
