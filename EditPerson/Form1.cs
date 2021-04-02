@@ -425,6 +425,23 @@ namespace EditPerson
                 person.eGender = genderPronoun.them;
             }
 
+            //set collegeyear based on button
+            if (freshRadioButton.Checked == true)
+            {
+                student.eCollegeYear = collegeYear.freshman;
+            }
+            else if (juniorRadioButton.Checked == true)
+            {
+                student.eCollegeYear = collegeYear.junior;
+            }
+            else if (sophRadioButton.Checked == true)
+            {
+                student.eCollegeYear = collegeYear.sophomore;
+            }
+            else 
+            {
+                student.eCollegeYear = collegeYear.senior;
+            }
 
 
 
