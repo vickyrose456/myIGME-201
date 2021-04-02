@@ -18,6 +18,7 @@ namespace EditPerson
         
         public PersonEditForm(Person person, Form parentForm)
         {
+            
             InitializeComponent();
 
             foreach (Control control in this.Controls)
@@ -167,6 +168,8 @@ namespace EditPerson
             this.okButton.Click += new EventHandler(this.OkButton__Click);
             this.cancelButton.Click += new EventHandler(this.CancelButton__Click);
 
+            //delegate method for radio buttons
+            this.ClassRadioButton__CheckChanged.CheckChanged += EventHandler(this.ClassRadioButton__CheckChanged);
 
             this.nameText.Text = person.name;
             this.emailText.Text = person.email;
@@ -391,6 +394,36 @@ namespace EditPerson
             // note that these must come at the end since they clear and release the form data
             this.Close();
             this.Dispose();
+        }
+
+        private void PersonEditForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void genderBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void classBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void himButton_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
