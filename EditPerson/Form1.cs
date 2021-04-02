@@ -411,6 +411,24 @@ namespace EditPerson
 
             Globals.people.Remove(this.formPerson.email);
 
+            //person.eGender is set based on the radio button selected
+            if (himRadioButton.Checked == true)
+            {
+                person.eGender = genderPronoun.him;
+            }
+            else if (herRadioButton.Checked == true)
+            {
+                person.eGender = genderPronoun.her;
+            }
+            else 
+            {
+                person.eGender = genderPronoun.them;
+            }
+
+
+
+
+
             if( this.typeComboBox.SelectedIndex == 0)
             {
                 student = new Student();
