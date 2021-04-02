@@ -234,10 +234,30 @@ namespace EditPerson
         //event handler for the radio buttons
         private void ClassRadioButton__CheckedChanged(object sender, EventArgs e)
         {
+            //rb is casted as a radio button
             RadioButton rb = (RadioButton)sender;
+
+            //if rb is tru
             if (rb.Checked)
             {
-                
+                //set this.classOfLabel.Text to match the Radio button that is checked
+                if (freshRadioButton.Checked == true)
+                {
+                    this.ClassOf.Text = "Class of 2024";
+                }
+                else if (sophRadioButton.Checked == true)
+                {
+                    this.ClassOf.Text = "Class of 2023";
+                }
+                else if (juniorRadioButton.Checked == true)
+                {
+                    this.ClassOf.Text = "Class of 2022";
+                }
+                else if (seniorRadioButton.Checked == true)
+                {
+                    //set this.classOfLabel.Text = "Class of 2021"
+                    this.ClassOf.Text = "Class of 2021";
+                }
             }
 
         }

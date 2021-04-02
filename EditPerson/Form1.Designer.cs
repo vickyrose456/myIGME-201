@@ -55,7 +55,7 @@
             this.juniorRadioButton = new System.Windows.Forms.RadioButton();
             this.sophRadioButton = new System.Windows.Forms.RadioButton();
             this.freshRadioButton = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.ClassOf = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.genderGroupBox.SuspendLayout();
             this.classBox.SuspendLayout();
@@ -287,7 +287,7 @@
             // 
             // classBox
             // 
-            this.classBox.Controls.Add(this.label1);
+            this.classBox.Controls.Add(this.ClassOf);
             this.classBox.Controls.Add(this.seniorRadioButton);
             this.classBox.Controls.Add(this.juniorRadioButton);
             this.classBox.Controls.Add(this.sophRadioButton);
@@ -344,15 +344,15 @@
             this.freshRadioButton.Text = "Freshman";
             this.freshRadioButton.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // ClassOf
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(86, 328);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 32);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Class of 9999";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ClassOf.AutoSize = true;
+            this.ClassOf.Location = new System.Drawing.Point(86, 328);
+            this.ClassOf.Name = "ClassOf";
+            this.ClassOf.Size = new System.Drawing.Size(188, 32);
+            this.ClassOf.TabIndex = 21;
+            this.ClassOf.Text = "Class of 9999";
+            this.ClassOf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PersonEditForm
             // 
@@ -427,7 +427,7 @@
         private System.Windows.Forms.RadioButton themRadioButton;
         private System.Windows.Forms.RadioButton herRadioButton;
         private System.Windows.Forms.RadioButton himRadioButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label ClassOf;
     }
 }
 
