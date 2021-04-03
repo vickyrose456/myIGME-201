@@ -36,25 +36,26 @@
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.reviewRichTextBox = new System.Windows.Forms.RichTextBox();
             this.reviewLabel = new System.Windows.Forms.Label();
+            this.courseListView = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // exitButton
             // 
             this.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.exitButton.Location = new System.Drawing.Point(733, 379);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(2);
+            this.exitButton.Location = new System.Drawing.Point(1955, 904);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(56, 24);
+            this.exitButton.Size = new System.Drawing.Size(149, 57);
             this.exitButton.TabIndex = 9;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
             // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(631, 379);
-            this.updateButton.Margin = new System.Windows.Forms.Padding(2);
+            this.updateButton.Location = new System.Drawing.Point(1683, 904);
+            this.updateButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(56, 24);
+            this.updateButton.Size = new System.Drawing.Size(149, 57);
             this.updateButton.TabIndex = 8;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
@@ -62,61 +63,77 @@
             // courseCodeTextBox
             // 
             this.courseCodeTextBox.BackColor = System.Drawing.Color.White;
-            this.courseCodeTextBox.Location = new System.Drawing.Point(91, 382);
+            this.courseCodeTextBox.Location = new System.Drawing.Point(243, 911);
+            this.courseCodeTextBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.courseCodeTextBox.Name = "courseCodeTextBox";
-            this.courseCodeTextBox.Size = new System.Drawing.Size(94, 20);
+            this.courseCodeTextBox.Size = new System.Drawing.Size(244, 38);
             this.courseCodeTextBox.TabIndex = 11;
             // 
             // courseDescriptionTextBox
             // 
-            this.courseDescriptionTextBox.Location = new System.Drawing.Point(293, 382);
+            this.courseDescriptionTextBox.Location = new System.Drawing.Point(781, 911);
+            this.courseDescriptionTextBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.courseDescriptionTextBox.Name = "courseDescriptionTextBox";
-            this.courseDescriptionTextBox.Size = new System.Drawing.Size(292, 20);
+            this.courseDescriptionTextBox.Size = new System.Drawing.Size(772, 38);
             this.courseDescriptionTextBox.TabIndex = 12;
             // 
             // courseCodeLabel
             // 
             this.courseCodeLabel.AutoSize = true;
-            this.courseCodeLabel.Location = new System.Drawing.Point(12, 385);
+            this.courseCodeLabel.Location = new System.Drawing.Point(32, 918);
+            this.courseCodeLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.courseCodeLabel.Name = "courseCodeLabel";
-            this.courseCodeLabel.Size = new System.Drawing.Size(71, 13);
+            this.courseCodeLabel.Size = new System.Drawing.Size(189, 32);
             this.courseCodeLabel.TabIndex = 13;
             this.courseCodeLabel.Text = "Course Code:";
             // 
             // descriptionLabel
             // 
             this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Location = new System.Drawing.Point(223, 385);
+            this.descriptionLabel.Location = new System.Drawing.Point(595, 918);
+            this.descriptionLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(63, 13);
+            this.descriptionLabel.Size = new System.Drawing.Size(166, 32);
             this.descriptionLabel.TabIndex = 14;
             this.descriptionLabel.Text = "Description:";
             // 
             // reviewRichTextBox
             // 
-            this.reviewRichTextBox.Location = new System.Drawing.Point(91, 417);
+            this.reviewRichTextBox.Location = new System.Drawing.Point(243, 994);
+            this.reviewRichTextBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.reviewRichTextBox.Name = "reviewRichTextBox";
-            this.reviewRichTextBox.Size = new System.Drawing.Size(494, 76);
+            this.reviewRichTextBox.Size = new System.Drawing.Size(1311, 176);
             this.reviewRichTextBox.TabIndex = 15;
             this.reviewRichTextBox.Text = "";
             // 
             // reviewLabel
             // 
             this.reviewLabel.AutoSize = true;
-            this.reviewLabel.Location = new System.Drawing.Point(12, 420);
+            this.reviewLabel.Location = new System.Drawing.Point(32, 1002);
+            this.reviewLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.reviewLabel.Name = "reviewLabel";
-            this.reviewLabel.Size = new System.Drawing.Size(46, 13);
+            this.reviewLabel.Size = new System.Drawing.Size(116, 32);
             this.reviewLabel.TabIndex = 16;
             this.reviewLabel.Text = "Review:";
             // 
+            // courseListView
+            // 
+            this.courseListView.HideSelection = false;
+            this.courseListView.Location = new System.Drawing.Point(0, 0);
+            this.courseListView.Name = "courseListView";
+            this.courseListView.Size = new System.Drawing.Size(2121, 881);
+            this.courseListView.TabIndex = 17;
+            this.courseListView.UseCompatibleStateImageBehavior = false;
+            // 
             // CourseListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.exitButton;
-            this.ClientSize = new System.Drawing.Size(800, 505);
+            this.ClientSize = new System.Drawing.Size(2133, 1289);
+            this.Controls.Add(this.courseListView);
             this.Controls.Add(this.reviewLabel);
             this.Controls.Add(this.reviewRichTextBox);
             this.Controls.Add(this.descriptionLabel);
@@ -125,6 +142,7 @@
             this.Controls.Add(this.courseCodeTextBox);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.updateButton);
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "CourseListForm";
             this.Text = "Course List";
             this.ResumeLayout(false);
@@ -141,6 +159,7 @@
         private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.RichTextBox reviewRichTextBox;
         private System.Windows.Forms.Label reviewLabel;
+        private System.Windows.Forms.ListView courseListView;
     }
 }
 
