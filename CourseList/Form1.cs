@@ -110,18 +110,19 @@ namespace CourseList
             int nStartEl = 0;
 
             // 10. if a firstCourseCode to display at top of the list was passed in
-            //if(    )
+            if(firstCourseCode != null)
             {
                 // 11. fetch the index of firstCourseCode from the Globals.courses.sortedList
                 // using the IndexOfKey method
+                nStartEl = Globals.courses.sortedList.IndexOfKey(firstCourseCode);
                 
             }
 
             // 12. clear the listview items
-            
+            this.courseListView.Items.Clear();
 
             // 13. lock the listview to begin updating it
-            
+            this.courseListView.BeginUpdate();
 
             int lviCntr = 0;
 
