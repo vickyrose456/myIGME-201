@@ -127,21 +127,21 @@ namespace CourseList
             int lviCntr = 0;
 
             // 14. loop through all courses in Globals.courses.sortedList and insert them in the ListView
-            // foreach ( )
+            foreach (myCourse in Globals.courses.sortedList)
             {
                 Course thisCourse = null;
 
                 // 15. set thisCourse to the Value in the current keyValuePair
+                thisCourse = myCourse;
                 
-
                 // 16. create a new ListViewItem named lvi
-                
+                ListViewItem lvi = null;
 
                 // 17. set the first column of this row to show thisCourse.courseCode
-                
+                lvi.Text = thisCourse.courseCode;
 
                 // 18. set the Tag property for this ListViewItem to the courseCode
-                
+                lvi.Tag = thisCourse.courseCode;
 
                 // alternate row color
                 if (lviCntr % 2 == 0)
