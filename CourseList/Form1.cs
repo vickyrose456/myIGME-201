@@ -234,7 +234,7 @@ namespace CourseList
             string courseCode = null;
 
             // 39. get the courseCode from the currently selected row
-            courseCode = courseListView.SelectedItems[0].Tag;
+            courseCode = courseListView.SelectedItems[0].Tag.ToString();
 
             // 40. get the course object associated with this courseCode from Globals.courses SortedList
             course = Globals.courses;
@@ -278,43 +278,44 @@ namespace CourseList
 
             // 49. if Enter was pressed, we will handle it
             //if ( )
+            if(e.KeyCode == Keys.Enter)
             {
                 // 50. remove the key from the keyboard buffer, we handled it
-                
+                e.SuppressKeyPress = true;
 
                 try
                 {
                     // 51. get the courseCode from the currently selected row
-                    
+                    string myInfo = lv.SelectedItems[0].Tag.ToString();
 
                     // 52. get the course object associated with this courseCode from Globals.courses
-                    
+                    course = Globals.courses;
 
                     if (course != null)
                     {
                         // 53. set courseCodeTextBox to hold the courseCode
-                        
+                        this.courseCodeTextBox = courseCode;
 
                         // 54. set courseDescriptionTextBox to hold the description
-                        
+                        this.courseDescriptionTextBox = courseCode.description;
 
                         // 55. set the reviewRichTextBox to hold the review
-                        
+                        this.reviewRichTextBox = courseCode.review;
 
                         // 56. disable the ListView
-                        
+                        this.courseListView.Enabled = false;
 
                         // 57. enable courseCodeTextBox
-                        
+                        this.courseCodeTextBox.Enabled = true;
 
                         // 58. enable courseDescriptionTextBox
-                        
+                        this.courseDescriptionTextBox.Enabled = true;
 
                         // 59. enable reviewRichTextBox
-                        
+                        this.reviewRichTextBox.Enabled = true;
 
                         // 60. enable the updateButton
-                        
+                        this.updateButton.Enabled = true;
                     }
                 }
                 catch
