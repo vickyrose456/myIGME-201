@@ -135,8 +135,9 @@
             this.courseListView.MultiSelect = false;
             this.courseListView.Name = "courseListView";
             this.courseListView.Size = new System.Drawing.Size(2103, 853);
-            this.courseListView.TabIndex = 17;
+            this.courseListView.TabIndex = 1;
             this.courseListView.UseCompatibleStateImageBehavior = false;
+            this.courseListView.View = System.Windows.Forms.View.Details;
             // 
             // codeHer
             // 
