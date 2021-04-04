@@ -337,10 +337,11 @@ namespace CourseList
             try
             {
                 // 61. get the courseCode from the currently selected row
+                courseCode = courseListView.SelectedItems[0].Tag.ToString();
                 
-
                 // 62. get the course object associated with this courseCode from courses
-                
+                course = Globals.courses;
+
             }
             catch
             {
@@ -350,13 +351,13 @@ namespace CourseList
             if (course != null)
             {
                 // 63. set courseCodeTextBox to hold the courseCode
-                
+                this.courseCodeTextBox = courseCode;
 
                 // 64. set courseDescriptionTextBox to hold the description
-                
+                this.courseDescriptionTextBox = courseCode.description;
 
                 // 65. set the reviewRichTextBox to hold the review
-                
+                this.reviewRichTextBox = courseCode.review;
             }
         }
         private void UpdateButton__Click(object sender, EventArgs e)
