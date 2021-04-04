@@ -196,30 +196,32 @@ namespace CourseList
 
                 // 31. if this row is the row that we are supposed to show at the top of the list
                 //if (  )
+                if(lvi == nStartEl)
                 {
                     // 32. set this ListViewItem to selected
-                    
+                    lvi.Selected = true;
 
                     // 33. set this ListViewItem to be focused upon (otherwise the current focus defaults to the first in the list)
-                    
+                    lvi.Focused = true;
 
                     // 34. save a reference to this ListViewItem in firstLVI
+                    firstLVI = lvi;
                     
                 }
 
                 // 35. lvi is all filled in for all columns for this row so add it to courseListView.Items
-                
+                this.courseListView.Items.Add(lvi);
 
                 // 36. increment our counter to alternate colors and check for nStartEl
-                
+                ++lviCntr;
             }
 
 
             // 37. unlock the ListView since we are done updating the contents
-            
+            this.courseListView.EndUpdate();
 
             // 38. set courseListView.TopItem to be firstLVI
-            
+            this.courseListView.TopItem = firstLVI;
         }
 
 
