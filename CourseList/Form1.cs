@@ -76,25 +76,25 @@ namespace CourseList
             this.courseListView.SelectedIndexChanged += new KeyEventHandler(this.CourseListView__SelectedIndexChanged);
 
             // 5. disable updateButton (using the Enabled property)
-            
+            this.updateButton.Enabled = false;
 
             // 6. disable courseCodeTextBox
-            
+            this.courseCodeTextBox.Enabled = false;
 
             // 7. disable courseDescriptionTextBox
-            
+            this.courseDescriptionTextBox.Enabled = false;
 
             // 8. disable reviewRichTextBox
-            
+            this.reviewRichTextBox.Enabled = false;
 
             // 9. set focus on courseListView by calling the object's Focus() method
-            
+            this.courseListView.Focus();
 
             this.updateButton.Click += new EventHandler(UpdateButton__Click);
             this.exitButton.Click += new EventHandler(ExitButton__Click);
 
             // call PaintListView with null to indicate starting at top of list
-            
+            PaintListView(null);
         }
 
 
