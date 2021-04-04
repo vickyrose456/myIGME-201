@@ -155,43 +155,43 @@ namespace CourseList
 
 
                 // 19. create a new ListViewItem.ListViewSubItem named lvsi for the next column
-                
-
+                ListViewItem.ListViewSubItem lvsi = null;
+                  
                 // 20. set the column to show thisCourse.description
-                
+                lvsi.Text = thisCourse.description;
 
                 // 21. add lvsi to lvi.SubItems
-                
+                lvi.SubItems.Add(lvsi);
 
                 // 22. create a new ListViewItem.ListViewSubItem named lvsi for the next column
-                
+                lvsi = new ListViewItem.ListViewSubItem();
 
                 // 23. set the column to show thisCourse.teacherEmail
-                
+                lvsi.Text = thisCourse.teacherEmail;
 
                 // 24. add lvsi to lvi.SubItems
-                
+                lvi.SubItems.Add(lvsi);
 
 
                 // 25. create a new ListViewItem.ListViewSubItem named lvsi for the next column
-                
+                lvsi = new ListViewItem.ListViewSubItem();
 
                 // 26. set the column to show thisCourse.schedule.DaysOfWeek()
                 // note that thisCourse.schedule.DaysOfWeek() returns the string that we want to display
-                
+                lvsi.Text = thisCourse.schedule.DaysOfWeek();
 
                 // 27. add lvsi to lvi.SubItems
-                
+                lvi.SubItems.Add(lvsi);
 
                 // 28. create a new ListViewItem.ListViewSubItem named lvsi for the next column
-                
+                lvsi = new ListViewItem.ListViewSubItem();
 
                 // 29. set the column to show thisCourse.schedule.GetTimes()
                 // note that thisCourse.schedule.GetTimes() returns the string that we want to display
-                
+                lvsi.Text = thisCourse.schedule.GetTimes();
 
                 // 30. add lvsi to lvi.SubItems
-                
+                lvi.SubItems.Add(lvsi);
 
 
                 // 31. if this row is the row that we are supposed to show at the top of the list
