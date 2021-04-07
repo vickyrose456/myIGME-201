@@ -45,7 +45,7 @@ namespace MyEditor
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.boldToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.italicToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.colorToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -54,12 +54,14 @@ namespace MyEditor
             this.timesNewRomanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.underlineToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -168,7 +170,7 @@ namespace MyEditor
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.toolStrip1);
+            this.splitContainer1.Panel1.Controls.Add(this.toolStrip);
             // 
             // splitContainer1.Panel2
             // 
@@ -186,19 +188,20 @@ namespace MyEditor
             this.richTextBox.TabIndex = 0;
             this.richTextBox.Text = "";
             // 
-            // toolStrip1
+            // toolStrip
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStrip.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.boldToolStripButton,
             this.italicToolStripButton,
+            this.underlineToolStripButton,
             this.colorToolStripButton,
             this.fontToolStripButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(2068, 62);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Size = new System.Drawing.Size(2068, 51);
+            this.toolStrip.TabIndex = 0;
+            this.toolStrip.Text = "toolStrip1";
             // 
             // boldToolStripButton
             // 
@@ -206,7 +209,7 @@ namespace MyEditor
             this.boldToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("boldToolStripButton.Image")));
             this.boldToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.boldToolStripButton.Name = "boldToolStripButton";
-            this.boldToolStripButton.Size = new System.Drawing.Size(58, 55);
+            this.boldToolStripButton.Size = new System.Drawing.Size(58, 44);
             this.boldToolStripButton.Text = "toolStripButton1";
             this.boldToolStripButton.ToolTipText = "Bold";
             // 
@@ -216,7 +219,7 @@ namespace MyEditor
             this.italicToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("italicToolStripButton.Image")));
             this.italicToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.italicToolStripButton.Name = "italicToolStripButton";
-            this.italicToolStripButton.Size = new System.Drawing.Size(58, 55);
+            this.italicToolStripButton.Size = new System.Drawing.Size(58, 44);
             this.italicToolStripButton.Text = "toolStripButton2";
             this.italicToolStripButton.ToolTipText = "Italic";
             // 
@@ -226,7 +229,7 @@ namespace MyEditor
             this.colorToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.colorToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.colorToolStripButton.Name = "colorToolStripButton";
-            this.colorToolStripButton.Size = new System.Drawing.Size(58, 55);
+            this.colorToolStripButton.Size = new System.Drawing.Size(58, 44);
             this.colorToolStripButton.Text = "Color";
             // 
             // fontToolStripButton
@@ -238,7 +241,7 @@ namespace MyEditor
             this.fontToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("fontToolStripButton.Image")));
             this.fontToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.fontToolStripButton.Name = "fontToolStripButton";
-            this.fontToolStripButton.Size = new System.Drawing.Size(66, 55);
+            this.fontToolStripButton.Size = new System.Drawing.Size(66, 44);
             this.fontToolStripButton.Text = "toolStripButton4";
             this.fontToolStripButton.ToolTipText = "Font";
             // 
@@ -266,6 +269,16 @@ namespace MyEditor
             this.saveFileDialog.DefaultExt = "rtf";
             this.saveFileDialog.Filter = "richTextFiles|\".rtf|Plain Text Files|\".txt|All Files|*.*\"";
             // 
+            // underlineToolStripButton
+            // 
+            this.underlineToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.underlineToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("underlineToolStripButton.Image")));
+            this.underlineToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.underlineToolStripButton.Name = "underlineToolStripButton";
+            this.underlineToolStripButton.Size = new System.Drawing.Size(58, 44);
+            this.underlineToolStripButton.Text = "toolStripButton1";
+            this.underlineToolStripButton.ToolTipText = "underline";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -284,8 +297,8 @@ namespace MyEditor
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,7 +320,7 @@ namespace MyEditor
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.RichTextBox richTextBox;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripButton boldToolStripButton;
         private System.Windows.Forms.ToolStripButton italicToolStripButton;
         private System.Windows.Forms.ToolStripButton colorToolStripButton;
@@ -316,6 +329,8 @@ namespace MyEditor
         private System.Windows.Forms.ToolStripMenuItem timesNewRomanToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.ToolStripButton underlineToolStripButton;
+        private System.Windows.Forms.ColorDialog colorDialog;
     }
 }
 

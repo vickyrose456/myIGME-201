@@ -25,6 +25,8 @@ namespace MyEditor
             this.copyToolStripMenuItem.Click += new EventHandler(CopyToolStripMenuItem__Click);
             this.pasteToolStripMenuItem.Click += new EventHandler(PasteToolStripMenuItem__Click);
 
+            this.toolStrip.ItemClicked += new ToolStripItemClickedEventHandler(ToolStrip__ItemClicked);
+
             this.Text = "MyEditor";
 
         }
@@ -91,7 +93,50 @@ namespace MyEditor
             richTextBox.Paste();
         }
 
+        private void ToolStrip__ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            FontStyle fontStyle = FontStyle.Regular;
 
+            //which tool button was clicked.. deefault to null
+
+            ToolStripButton toolStripButton = null;
+            if (e.ClickedItem == this.boldToolStripButton)
+            {
+                fontStyle = FontStyle.Bold;
+                toolStripButton = this.boldToolStripButton;
+            }
+            else if (e.ClickedItem == this.italicToolStripButton)
+            {
+                fontStyle = FontStyle.Italic;
+                toolStripButton = this.italicToolStripButton;
+            }
+            else if (e.ClickedItem == this.underlineToolStripButton)
+            {
+                fontStyle = FontStyle.Underline;
+                toolStripButton = this.underlineToolStripButton;
+            } 
+            else if (e.ClickedItem == this.colorToolStripButton)
+            {
+                //the color dialog was clicked
+                if (colorDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //set the text color to the selected color
+                    richTextBox.SelectionColor = colorDialog.Color;
+                    colorToolStripButton.BackColor = colorDialog.Color;
+
+                }
+            }
+
+            if (fontStyle != FontStyle.Regular)
+            {
+                toolStripButton.Checked = !toolStripButton.Checked;
+
+                SetSelectionFont(fontStyle, toolStripButton.Checked);
+            }
+
+
+
+        }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
