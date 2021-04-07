@@ -147,15 +147,6 @@
         RGQd2r4WyGvwKiLrEJffwHV+/wOD4AuQrQaRF6S63QAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="underlineToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAJOgAACToAYJjBRwAAAC3SURBVDhP7ZC9DcMgEIUZJSNkBnq2oHdPlUGQMgSDpGEA
-        eoo0/JSERw6wpUgkUtLlSU863/vuzjbrSimVvak9tMobwDlvfgWs8v+Cqq8ucM6VnPOJIobae79ccBdC
-        NMAYU2KMF4oYavSQgQFL0VSFrlrrAVlrAd5g1H05GLA0NoXXxGYpZQNhpVTZtm08IwOz/7yDQghnALjS
-        L8Ko0UMGhvCjath+zrumsSk0+8WVf7fgEz+nGHsAFdjJor2UtRAAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="fontToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -172,6 +163,15 @@
   <metadata name="saveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1099, 17</value>
   </metadata>
+  <data name="underlineToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAJOgAACToAYJjBRwAAAC3SURBVDhP7ZC9DcMgEIUZJSNkBnq2oHdPlUGQMgSDpGEA
+        eoo0/JSERw6wpUgkUtLlSU863/vuzjbrSimVvak9tMobwDlvfgWs8v+Cqq8ucM6VnPOJIobae79ccBdC
+        NMAYU2KMF4oYavSQgQFL0VSFrlrrAVlrAd5g1H05GLA0NoXXxGYpZQNhpVTZtm08IwOz/7yDQghnALjS
+        L8Ko0UMGhvCjath+zrumsSk0+8WVf7fgEz+nGHsAFdjJor2UtRAAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="colorDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 0</value>
   </metadata>

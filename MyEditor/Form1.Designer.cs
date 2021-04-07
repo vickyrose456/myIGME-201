@@ -73,7 +73,7 @@ namespace MyEditor
             this.editToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(2068, 60);
+            this.menuStrip.Size = new System.Drawing.Size(2068, 49);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -164,7 +164,8 @@ namespace MyEditor
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 60);
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 49);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -175,16 +176,17 @@ namespace MyEditor
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.richTextBox);
-            this.splitContainer1.Size = new System.Drawing.Size(2068, 745);
-            this.splitContainer1.SplitterDistance = 62;
+            this.splitContainer1.Size = new System.Drawing.Size(2068, 756);
+            this.splitContainer1.SplitterDistance = 63;
             this.splitContainer1.TabIndex = 2;
             // 
             // richTextBox
             // 
             this.richTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox.Location = new System.Drawing.Point(0, 0);
             this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(2068, 679);
+            this.richTextBox.Size = new System.Drawing.Size(2068, 689);
             this.richTextBox.TabIndex = 0;
             this.richTextBox.Text = "";
             // 
