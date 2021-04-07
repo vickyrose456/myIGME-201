@@ -132,11 +132,38 @@ namespace MyEditor
                 toolStripButton.Checked = !toolStripButton.Checked;
 
                 SetSelectionFont(fontStyle, toolStripButton.Checked);
+
             }
 
 
 
         }
+
+        private void SetSelectionFont(FontStyle fontStyle, bool bSet)
+        {
+            Font newFont = null;
+            Font selectionFont = null;
+
+            selectionFont = richTextBox.SelectionFont;
+
+            //if text has multiple fonts, then the selection is null
+            if (selectionFont == null)
+            {
+                selectionFont = richTextBox.Font;
+            }
+            if (bSet)
+            {
+                newFont = new Font(selectionFont, selectionFont.Style | fontStyle);
+            }
+            else 
+            {
+                //will reset the font style
+                newFont = new Font(selectionFont, selectionFont.Style & ~fontStyle);
+            }
+
+            this.richTextBox.SelectionFont = newFont;
+        }
+
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
