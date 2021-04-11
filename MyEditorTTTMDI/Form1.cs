@@ -213,6 +213,11 @@ namespace MyEditor
         //saving delegate method
         private void SaveToolStripMenuItem__Click(object sender, EventArgs e)
         {
+            if (this.MdiParent.ActiveMdiChild != this)
+            {
+                return;
+            }
+
             saveFileDialog.FileName = openFileDialog.FileName;
             //if opening existing file
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -234,6 +239,11 @@ namespace MyEditor
 
         private void OpenToolStripMenuItem__Click(object sender, EventArgs e) 
         {
+            if (this.MdiParent.ActiveMdiChild != this)
+            {
+                return;
+            }
+
             //if opening existing file
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -254,6 +264,11 @@ namespace MyEditor
 
         private void CopyToolStripMenuItem__Click(object sender, EventArgs e)
         {
+            if (this.MdiParent.ActiveMdiChild != this)
+            {
+                return;
+            }
+
             richTextBox.Copy();
         }
         private void CutToolStripMenuItem__Click(object sender, EventArgs e)
@@ -262,6 +277,11 @@ namespace MyEditor
         }
         private void PasteToolStripMenuItem__Click(object sender, EventArgs e)
         {
+            if (this.MdiParent.ActiveMdiChild != this)
+            {
+                return;
+            }
+
             richTextBox.Paste();
         }
 

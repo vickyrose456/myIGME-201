@@ -56,6 +56,7 @@ namespace MyEditor
             this.editToolStripMenuItem,
             this.windowToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.MdiWindowListItem = this.windowToolStripMenuItem;
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1762, 52);
             this.menuStrip.TabIndex = 1;
@@ -74,7 +75,6 @@ namespace MyEditor
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 48);
             this.fileToolStripMenuItem.Text = "&File";
             this.fileToolStripMenuItem.ToolTipText = "File";
-            this.fileToolStripMenuItem.Visible = false;
             // 
             // newToolStripMenuItem
             // 
