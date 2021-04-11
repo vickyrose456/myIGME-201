@@ -70,8 +70,11 @@ namespace MyEditor
             if (this.richTextBox.SelectionFont != null)
             {
                 this.boldToolStripButton.Checked = richTextBox.SelectionFont.Bold;
-
+                this.italicsToolStripMenuItem.Checked = richTextBox.SelectionFont.Italic;
+                this.underlineToolStripButton.Checked = richTextBox.SelectionFont.Underline;
             }
+
+            this.colorToolStripButton.BackColor = richTextBox.SelectionColor;
         }
 
 
