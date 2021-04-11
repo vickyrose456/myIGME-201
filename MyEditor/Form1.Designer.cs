@@ -43,6 +43,9 @@ namespace MyEditor
             this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.boldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.italicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.underlineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.boldToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -56,9 +59,6 @@ namespace MyEditor
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.boldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.italicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.underlineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.contextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -167,7 +167,27 @@ namespace MyEditor
             this.italicsToolStripMenuItem,
             this.underlineToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip1";
-            this.contextMenuStrip.Size = new System.Drawing.Size(361, 203);
+            this.contextMenuStrip.Size = new System.Drawing.Size(226, 148);
+            // 
+            // boldToolStripMenuItem
+            // 
+            this.boldToolStripMenuItem.Name = "boldToolStripMenuItem";
+            this.boldToolStripMenuItem.Size = new System.Drawing.Size(360, 48);
+            this.boldToolStripMenuItem.Text = "&Bold";
+            // 
+            // italicsToolStripMenuItem
+            // 
+            this.italicsToolStripMenuItem.Name = "italicsToolStripMenuItem";
+            this.italicsToolStripMenuItem.Size = new System.Drawing.Size(360, 48);
+            this.italicsToolStripMenuItem.Text = "&Italics";
+            this.italicsToolStripMenuItem.ToolTipText = "Italicize Selected Text";
+            // 
+            // underlineToolStripMenuItem
+            // 
+            this.underlineToolStripMenuItem.Name = "underlineToolStripMenuItem";
+            this.underlineToolStripMenuItem.Size = new System.Drawing.Size(360, 48);
+            this.underlineToolStripMenuItem.Text = "&Underline";
+            this.underlineToolStripMenuItem.ToolTipText = "Underline Selected Text";
             // 
             // splitContainer1
             // 
@@ -271,6 +291,7 @@ namespace MyEditor
             // 
             // richTextBox
             // 
+            this.richTextBox.ContextMenuStrip = this.contextMenuStrip;
             this.richTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox.Location = new System.Drawing.Point(0, 0);
@@ -288,24 +309,6 @@ namespace MyEditor
             // 
             this.saveFileDialog.DefaultExt = "rtf";
             this.saveFileDialog.Filter = "richTextFiles|\".rtf|Plain Text Files|\".txt|All Files|*.*\"";
-            // 
-            // boldToolStripMenuItem
-            // 
-            this.boldToolStripMenuItem.Name = "boldToolStripMenuItem";
-            this.boldToolStripMenuItem.Size = new System.Drawing.Size(360, 48);
-            this.boldToolStripMenuItem.Text = "&Bold";
-            // 
-            // italicsToolStripMenuItem
-            // 
-            this.italicsToolStripMenuItem.Name = "italicsToolStripMenuItem";
-            this.italicsToolStripMenuItem.Size = new System.Drawing.Size(360, 48);
-            this.italicsToolStripMenuItem.Text = "&Italics";
-            // 
-            // underlineToolStripMenuItem
-            // 
-            this.underlineToolStripMenuItem.Name = "underlineToolStripMenuItem";
-            this.underlineToolStripMenuItem.Size = new System.Drawing.Size(360, 48);
-            this.underlineToolStripMenuItem.Text = "&Underline";
             // 
             // Form1
             // 
