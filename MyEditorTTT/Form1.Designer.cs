@@ -46,7 +46,6 @@ namespace MyEditor
             this.boldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.italicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.underlineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.boldToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.italicToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -61,13 +60,19 @@ namespace MyEditor
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.testToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.countdownLabel = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.contextMenuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             this.toolStrip.SuspendLayout();
+            this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.ContentPanel.SuspendLayout();
+            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -191,27 +196,9 @@ namespace MyEditor
             this.underlineToolStripMenuItem.Text = "&Underline";
             this.underlineToolStripMenuItem.ToolTipText = "Underline Selected Text";
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 49);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.toolStrip);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.richTextBox);
-            this.splitContainer1.Size = new System.Drawing.Size(1946, 921);
-            this.splitContainer1.SplitterDistance = 31;
-            this.splitContainer1.TabIndex = 2;
-            // 
             // toolStrip
             // 
+            this.toolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.boldToolStripButton,
@@ -221,9 +208,9 @@ namespace MyEditor
             this.fontToolStripButton,
             this.toolStripSeparator2,
             this.testToolStripButton});
-            this.toolStrip.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip.Location = new System.Drawing.Point(9, 0);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(1946, 62);
+            this.toolStrip.Size = new System.Drawing.Size(368, 31);
             this.toolStrip.TabIndex = 0;
             this.toolStrip.Text = "toolStrip1";
             // 
@@ -233,7 +220,7 @@ namespace MyEditor
             this.boldToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("boldToolStripButton.Image")));
             this.boldToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.boldToolStripButton.Name = "boldToolStripButton";
-            this.boldToolStripButton.Size = new System.Drawing.Size(58, 55);
+            this.boldToolStripButton.Size = new System.Drawing.Size(58, 24);
             this.boldToolStripButton.Text = "toolStripButton1";
             this.boldToolStripButton.ToolTipText = "Bold";
             // 
@@ -243,7 +230,7 @@ namespace MyEditor
             this.italicToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("italicToolStripButton.Image")));
             this.italicToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.italicToolStripButton.Name = "italicToolStripButton";
-            this.italicToolStripButton.Size = new System.Drawing.Size(58, 55);
+            this.italicToolStripButton.Size = new System.Drawing.Size(58, 24);
             this.italicToolStripButton.Text = "toolStripButton2";
             this.italicToolStripButton.ToolTipText = "Italic";
             // 
@@ -253,7 +240,7 @@ namespace MyEditor
             this.underlineToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("underlineToolStripButton.Image")));
             this.underlineToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.underlineToolStripButton.Name = "underlineToolStripButton";
-            this.underlineToolStripButton.Size = new System.Drawing.Size(58, 55);
+            this.underlineToolStripButton.Size = new System.Drawing.Size(58, 24);
             this.underlineToolStripButton.Text = "toolStripButton1";
             this.underlineToolStripButton.ToolTipText = "underline";
             // 
@@ -263,7 +250,7 @@ namespace MyEditor
             this.colorToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.colorToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.colorToolStripButton.Name = "colorToolStripButton";
-            this.colorToolStripButton.Size = new System.Drawing.Size(58, 55);
+            this.colorToolStripButton.Size = new System.Drawing.Size(58, 24);
             this.colorToolStripButton.Text = "Color";
             // 
             // fontToolStripButton
@@ -275,7 +262,7 @@ namespace MyEditor
             this.fontToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("fontToolStripButton.Image")));
             this.fontToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.fontToolStripButton.Name = "fontToolStripButton";
-            this.fontToolStripButton.Size = new System.Drawing.Size(46, 55);
+            this.fontToolStripButton.Size = new System.Drawing.Size(46, 24);
             this.fontToolStripButton.Text = "toolStripButton4";
             this.fontToolStripButton.ToolTipText = "Font";
             // 
@@ -300,7 +287,7 @@ namespace MyEditor
             this.richTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox.Location = new System.Drawing.Point(0, 0);
             this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(1946, 886);
+            this.richTextBox.Size = new System.Drawing.Size(1946, 842);
             this.richTextBox.TabIndex = 0;
             this.richTextBox.Text = "";
             // 
@@ -317,7 +304,7 @@ namespace MyEditor
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 62);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // testToolStripButton
             // 
@@ -325,15 +312,67 @@ namespace MyEditor
             this.testToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("testToolStripButton.Image")));
             this.testToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.testToolStripButton.Name = "testToolStripButton";
-            this.testToolStripButton.Size = new System.Drawing.Size(58, 55);
+            this.testToolStripButton.Size = new System.Drawing.Size(58, 24);
             this.testToolStripButton.Text = "toolStripButton1";
+            // 
+            // toolStripContainer1
+            // 
+            // 
+            // toolStripContainer1.BottomToolStripPanel
+            // 
+            this.toolStripContainer1.BottomToolStripPanel.Controls.Add(this.statusStrip1);
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.countdownLabel);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.richTextBox);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1946, 842);
+            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 49);
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.Size = new System.Drawing.Size(1946, 921);
+            this.toolStripContainer1.TabIndex = 1;
+            this.toolStripContainer1.Text = "toolStripContainer1";
+            // 
+            // toolStripContainer1.TopToolStripPanel
+            // 
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1946, 48);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripProgressBar
+            // 
+            this.toolStripProgressBar.Name = "toolStripProgressBar";
+            this.toolStripProgressBar.Size = new System.Drawing.Size(1000, 32);
+            this.toolStripProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            // 
+            // countdownLabel
+            // 
+            this.countdownLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.countdownLabel.ForeColor = System.Drawing.Color.Red;
+            this.countdownLabel.Location = new System.Drawing.Point(870, 297);
+            this.countdownLabel.Name = "countdownLabel";
+            this.countdownLabel.Size = new System.Drawing.Size(120, 157);
+            this.countdownLabel.TabIndex = 2;
+            this.countdownLabel.Text = "3";
+            this.countdownLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1946, 970);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
             this.Name = "Form1";
@@ -342,13 +381,17 @@ namespace MyEditor
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.contextMenuStrip.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
+            this.toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.BottomToolStripPanel.PerformLayout();
+            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
+            this.toolStripContainer1.ResumeLayout(false);
+            this.toolStripContainer1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,7 +411,6 @@ namespace MyEditor
         private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.RichTextBox richTextBox;
         private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripButton boldToolStripButton;
@@ -386,6 +428,11 @@ namespace MyEditor
         private System.Windows.Forms.ToolStripMenuItem underlineToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton testToolStripButton;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.Label countdownLabel;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar;
     }
 }
 
