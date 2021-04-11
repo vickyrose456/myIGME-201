@@ -54,12 +54,12 @@ namespace MyEditor
             this.fontToolStripButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.mSSansSerifToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timesNewRomanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.testToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.testToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -84,7 +84,7 @@ namespace MyEditor
             this.editToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1946, 49);
+            this.menuStrip.Size = new System.Drawing.Size(1946, 52);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -97,40 +97,41 @@ namespace MyEditor
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 45);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 48);
             this.fileToolStripMenuItem.Text = "&File";
             this.fileToolStripMenuItem.ToolTipText = "File";
+            this.fileToolStripMenuItem.Visible = false;
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(258, 54);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
             this.newToolStripMenuItem.Text = "&New";
             this.newToolStripMenuItem.ToolTipText = "New";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(258, 54);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
             this.openToolStripMenuItem.Text = "&Open";
             this.openToolStripMenuItem.ToolTipText = "Open";
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(258, 54);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
             this.saveToolStripMenuItem.Text = "&Save";
             this.saveToolStripMenuItem.ToolTipText = "Save";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(255, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(445, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(258, 54);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.ToolTipText = "Exit";
             // 
@@ -141,7 +142,7 @@ namespace MyEditor
             this.cutToolStripMenuItem,
             this.pasteToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(92, 45);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(92, 48);
             this.editToolStripMenuItem.Text = "&Edit";
             this.editToolStripMenuItem.ToolTipText = "Edit";
             // 
@@ -208,9 +209,9 @@ namespace MyEditor
             this.fontToolStripButton,
             this.toolStripSeparator2,
             this.testToolStripButton});
-            this.toolStrip.Location = new System.Drawing.Point(9, 0);
+            this.toolStrip.Location = new System.Drawing.Point(8, 0);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(368, 31);
+            this.toolStrip.Size = new System.Drawing.Size(368, 62);
             this.toolStrip.TabIndex = 0;
             this.toolStrip.Text = "toolStrip1";
             // 
@@ -220,7 +221,7 @@ namespace MyEditor
             this.boldToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("boldToolStripButton.Image")));
             this.boldToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.boldToolStripButton.Name = "boldToolStripButton";
-            this.boldToolStripButton.Size = new System.Drawing.Size(58, 24);
+            this.boldToolStripButton.Size = new System.Drawing.Size(58, 55);
             this.boldToolStripButton.Text = "toolStripButton1";
             this.boldToolStripButton.ToolTipText = "Bold";
             // 
@@ -280,27 +281,6 @@ namespace MyEditor
             this.timesNewRomanToolStripMenuItem.Text = "Times New Roman";
             this.timesNewRomanToolStripMenuItem.ToolTipText = "Times New Roman";
             // 
-            // richTextBox
-            // 
-            this.richTextBox.ContextMenuStrip = this.contextMenuStrip;
-            this.richTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(1946, 842);
-            this.richTextBox.TabIndex = 0;
-            this.richTextBox.Text = "";
-            // 
-            // openFileDialog
-            // 
-            this.openFileDialog.DefaultExt = "rtf";
-            this.openFileDialog.Filter = "richTextFiles|\".rtf|Plain Text Files|\".txt|All Files|*.*\"";
-            // 
-            // saveFileDialog
-            // 
-            this.saveFileDialog.DefaultExt = "rtf";
-            this.saveFileDialog.Filter = "richTextFiles|\".rtf|Plain Text Files|\".txt|All Files|*.*\"";
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -315,6 +295,27 @@ namespace MyEditor
             this.testToolStripButton.Size = new System.Drawing.Size(58, 24);
             this.testToolStripButton.Text = "toolStripButton1";
             // 
+            // richTextBox
+            // 
+            this.richTextBox.ContextMenuStrip = this.contextMenuStrip;
+            this.richTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox.Name = "richTextBox";
+            this.richTextBox.Size = new System.Drawing.Size(1946, 808);
+            this.richTextBox.TabIndex = 0;
+            this.richTextBox.Text = "";
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.DefaultExt = "rtf";
+            this.openFileDialog.Filter = "richTextFiles|\".rtf|Plain Text Files|\".txt|All Files|*.*\"";
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.DefaultExt = "rtf";
+            this.saveFileDialog.Filter = "richTextFiles|\".rtf|Plain Text Files|\".txt|All Files|*.*\"";
+            // 
             // toolStripContainer1
             // 
             // 
@@ -326,11 +327,11 @@ namespace MyEditor
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.countdownLabel);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.richTextBox);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1946, 842);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1946, 808);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 49);
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 52);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(1946, 921);
+            this.toolStripContainer1.Size = new System.Drawing.Size(1946, 918);
             this.toolStripContainer1.TabIndex = 1;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 

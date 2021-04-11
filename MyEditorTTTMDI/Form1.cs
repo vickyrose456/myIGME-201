@@ -13,18 +13,22 @@ namespace MyEditor
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public Form1(MyEditorParent myEditorParent)
         {
             InitializeComponent();
 
-            this.newToolStripMenuItem.Click += new EventHandler(NewToolStripMenuItem__Click);
-            this.openToolStripMenuItem.Click += new EventHandler(OpenToolStripMenuItem__Click);
-            this.saveToolStripMenuItem.Click += new EventHandler(SaveToolStripMenuItem__Click);
-            this.exitToolStripMenuItem.Click += new EventHandler(ExitToolStripMenuItem__Click);
+            this.MdiParent = myEditorParent;
 
-            this.cutToolStripMenuItem.Click += new EventHandler(CutToolStripMenuItem__Click);
-            this.copyToolStripMenuItem.Click += new EventHandler(CopyToolStripMenuItem__Click);
-            this.pasteToolStripMenuItem.Click += new EventHandler(PasteToolStripMenuItem__Click);
+           // this.newToolStripMenuItem.Click += new EventHandler(NewToolStripMenuItem__Click);
+            myEditorParent.openToolStripMenuItem.Click += new EventHandler(OpenToolStripMenuItem__Click);
+            myEditorParent.saveToolStripMenuItem.Click += new EventHandler(SaveToolStripMenuItem__Click);
+            //this.exitToolStripMenuItem.Click += new EventHandler(ExitToolStripMenuItem__Click);
+
+            myEditorParent.cutToolStripMenuItem.Click += new EventHandler(CutToolStripMenuItem__Click);
+            myEditorParent.copyToolStripMenuItem.Click += new EventHandler(CopyToolStripMenuItem__Click);
+            myEditorParent.pasteToolStripMenuItem.Click += new EventHandler(PasteToolStripMenuItem__Click);
+            
+            myEditorParent.closeAllToolStripMenuItem.Click += new EventHandler(CloseAllToolStripMenuItem__Click);
 
             this.toolStrip.ItemClicked += new ToolStripItemClickedEventHandler(ToolStrip__ItemClicked);
 
@@ -47,13 +51,36 @@ namespace MyEditor
 
             this.Text = "MyEditor";
 
+            this.FormClosing += new FormClosingEventHandler(Form1__FormClosing);
         }
+
+        private void Form1__FormClosing(object sender, EventArgs e)
+        {
+            MyEditorParent myEditorParent = (MyEditorParent)this.MdiParent;
+
+            // this.newToolStripMenuItem.Click += new EventHandler(NewToolStripMenuItem__Click);
+            myEditorParent.openToolStripMenuItem.Click -= new EventHandler(OpenToolStripMenuItem__Click);
+            myEditorParent.saveToolStripMenuItem.Click -= new EventHandler(SaveToolStripMenuItem__Click);
+            //this.exitToolStripMenuItem.Click += new EventHandler(ExitToolStripMenuItem__Click);
+
+            myEditorParent.cutToolStripMenuItem.Click -= new EventHandler(CutToolStripMenuItem__Click);
+            myEditorParent.copyToolStripMenuItem.Click -= new EventHandler(CopyToolStripMenuItem__Click);
+            myEditorParent.pasteToolStripMenuItem.Click -= new EventHandler(PasteToolStripMenuItem__Click);
+
+            myEditorParent.closeAllToolStripMenuItem.Click -= new EventHandler(CloseAllToolStripMenuItem__Click);
+        }
+
 
         private void NewToolStripMenuItem__Click(object sender, EventArgs e)
         {
             richTextBox.Clear();
             this.Text = "MyEditor";
 
+        }
+
+        private void CloseAllToolStripMenuItem__Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void MSSansSerifToolStripMenuItem__Click(object sender, EventArgs e)
