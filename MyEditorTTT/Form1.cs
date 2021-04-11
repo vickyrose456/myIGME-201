@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace MyEditor
 {
@@ -34,8 +35,15 @@ namespace MyEditor
             this.mSSansSerifToolStripMenuItem.Click += new EventHandler(MSSansSerifToolStripMenuItem__Click);
             this.timesNewRomanToolStripMenuItem.Click += new EventHandler(TimesNewRomanToolStripMenuItem__Click);
 
+            this.testToolStripButton.Click += new EventHandler(TestToolStripButton__Click);
 
             this.richTextBox.SelectionChanged += new EventHandler(RichTextBox__SelectionChanged);
+
+
+            this.countdownLabel.Visible = false;
+            //timer control
+            this.timer.Tick += new EventHandler(Timer__Tick);
+
 
             this.Text = "MyEditor";
 
@@ -133,6 +141,46 @@ namespace MyEditor
             SetSelectionFont(fontStyle, !selectionFont.Underline);
         }
 
+        private void TestToolStripButton__Click(object sender, EventArgs e)
+        {
+            this.timer.Interval = 500;
+
+            this.toolStripProgressBar.Value = 60;
+
+            this.countdownLabel.Text = "3";
+            this.countdownLabel.Visible = true;
+            this.richTextBox.Visible = false;
+
+            for (int i = 3; i > 0; --i)
+            {
+                this.countdownLabel.Text = i.ToString();
+                this.Refresh();
+                Thread.Sleep(1000);
+            }
+
+            this.countdownLabel.Visible = false;
+            this.richTextBox.Visible = true;
+
+            this.timer.Start();
+            
+        }
+
+        private void Timer__Tick(object sender, EventArgs e)
+        {
+            //need to decrement the progress bar
+            --this.toolStripProgressBar.Value;
+
+            if (this.toolStripProgressBar.Value == 0)
+            {
+                this.timer.Stop();
+
+                string performance = "Congratulations, you typed " + Math.Round(this.richTextBox.TextLength / 30.0, 2) + " letters per second";
+                
+                MessageBox.Show(performance);
+            }
+
+            
+        }
 
 
         //saving delegate method
@@ -276,6 +324,11 @@ namespace MyEditor
         private void ExitToolStripMenuItem__Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void toolStripContainer1_TopToolStripPanel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
