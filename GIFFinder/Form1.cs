@@ -35,6 +35,7 @@ namespace GIFFinder
             timer.Interval = 100;
             timer.Tick += new EventHandler(Timer__Tick);
 
+            webBrowser.ScriptErrorsSuppressed = true;
             webBrowser.Navigate("https://people.rit.edu/dxsigm/gif-finder.html");
 
             this.tileToolStripMenuItem.Click += new EventHandler(TileToolStripMenuItem__Click);
@@ -92,9 +93,17 @@ namespace GIFFinder
                 htmlElementCollection = webBrowser.Document.GetElementsByTagName("img");
                 foreach (HtmlElement htmlElement1 in htmlElementCollection)
                 {
-                    
+                    ImageForm imageForm = new ImageForm(this, htmlElement1.GetAttribute("src"), htmlElement1.GetAttribute("title"));
+                    imageForm.Show();
                 }
+                //will remove the last element
+                htmlElem.OuterHtml = "";
             }
+            else 
+            {
+                timer.Start();
+            }
+            
         }
 
     }
