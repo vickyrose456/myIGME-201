@@ -53,8 +53,9 @@ namespace GIFFinder
             this.fileToolStripMenuItem,
             this.windowToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.MdiWindowListItem = this.windowToolStripMenuItem;
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1827, 49);
+            this.menuStrip.Size = new System.Drawing.Size(1827, 52);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -67,11 +68,12 @@ namespace GIFFinder
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 45);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 48);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // newSearchToolStripMenuItem
             // 
+            this.newSearchToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.newSearchToolStripMenuItem.Name = "newSearchToolStripMenuItem";
             this.newSearchToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
             this.newSearchToolStripMenuItem.Text = "&New Search";
@@ -151,9 +153,6 @@ namespace GIFFinder
 
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newSearchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem windowToolStripMenuItem;
@@ -161,6 +160,9 @@ namespace GIFFinder
         private System.Windows.Forms.ToolStripMenuItem cascadeToolStripMenuItem;
         private System.Windows.Forms.WebBrowser webBrowser;
         private System.Windows.Forms.Timer timer;
+        public System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newSearchToolStripMenuItem;
     }
 }
 

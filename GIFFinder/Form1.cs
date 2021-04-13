@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace GIFFinder
 {
-    public partial class GIFFinder : Form
+    public partial class GIFFinder : System.Windows.Forms.Form
     {
         SearchForm searchForm;
         public GIFFinder()
@@ -37,6 +37,65 @@ namespace GIFFinder
 
             webBrowser.Navigate("https://people.rit.edu/dxsigm/gif-finder.html");
 
+            this.tileToolStripMenuItem.Click += new EventHandler(TileToolStripMenuItem__Click);
+            this.exitToolStripMenuItem.Click += new EventHandler(ExitToolStripMenuItem__Click);
+            this.cascadeToolStripMenuItem.Click += new EventHandler(CascadeToolStripMenuItem__Click);
+            this.newSearchToolStripMenuItem.Click += new EventHandler(NewSearchToolStripMenuItem__Click);
         }
+        private void TileToolStripMenuItem__Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.TileHorizontal);
+        }
+
+        private void CascadeToolStripMenuItem__Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.Cascade);
+
+        }
+        private void ExitToolStripMenuItem__Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
+        }
+        private void NewSearchToolStripMenuItem__Click(object sender, EventArgs e)
+        {
+            this.searchForm.ShowDialog();
+
+            if (searchForm.response == "OK")
+            {
+                HtmlElement htmlElem;
+
+                //modfifying theDOM
+                htmlElem = webBrowser.Document.GetElementById("searchTerm");
+
+                htmlElem.SetAttribute("value", searchForm.searchTerms);
+
+                htmlElem = webBrowser.Document.GetElementById("limit");
+
+                htmlElem.SetAttribute("value", Convert.ToString(searchForm.maxItems));
+
+                webBrowser.Document.InvokeScript("searchButtonClicked");
+                timer.Start();
+            }
+        }
+
+        private void Timer__Tick(object sender, EventArgs e)
+        {
+            timer.Stop();
+
+            HtmlElement htmlElem = webBrowser.Document.GetElementById("lastelement");
+
+            if (htmlElem != null)
+            {
+                //if exists, get array element of imgs
+                HtmlElementCollection htmlElementCollection;
+                htmlElementCollection = webBrowser.Document.GetElementsByTagName("img");
+                foreach (HtmlElement htmlElement1 in htmlElementCollection)
+                {
+                    
+                }
+            }
+        }
+
     }
 }

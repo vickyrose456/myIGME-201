@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace GIFFinder
 {
-    public partial class SearchForm : Form
+    public partial class SearchForm : System.Windows.Forms.Form
     {
         public string response;
         public string searchTerms;
