@@ -1,7 +1,7 @@
 ﻿
 namespace GIFFinder
 {
-    partial class searchForm
+    partial class SearchForm
     {
         /// <summary>
         /// Required designer variable.
@@ -89,7 +89,7 @@ namespace GIFFinder
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
-            // searchForm
+            // SearchForm
             // 
             this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -102,7 +102,7 @@ namespace GIFFinder
             this.Controls.Add(this.searchTermlabel);
             this.Controls.Add(this.searchTermTextBox);
             this.Controls.Add(this.maxItemsTextBox);
-            this.Name = "searchForm";
+            this.Name = "SearchForm";
             this.Text = "Search";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace GIFFinder
 {
-    public partial class searchForm : Form
+    public partial class SearchForm : Form
     {
         public string response;
         public string searchTerms;
         public int maxItems;
 
-        public searchForm()
+        public SearchForm()
         {
             
             InitializeComponent();
@@ -37,7 +37,6 @@ namespace GIFFinder
         private void CancelButton__Click(object sender, EventArgs e)
         {
             this.response = "Cancel";
-
             this.Hide();
         }
         private void OkButton__Click(object sender, EventArgs e)

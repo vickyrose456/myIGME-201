@@ -515,7 +515,7 @@ namespace EditPerson
             this.homepageTabPage.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.homepageTabPage.Name = "homepageTabPage";
             this.homepageTabPage.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.homepageTabPage.Size = new System.Drawing.Size(2172, 979);
+            this.homepageTabPage.Size = new System.Drawing.Size(2129, 862);
             this.homepageTabPage.TabIndex = 1;
             this.homepageTabPage.Text = "Homepage";
             this.homepageTabPage.UseVisualStyleBackColor = true;
@@ -528,7 +528,7 @@ namespace EditPerson
             this.homepageWebBrowser.MinimumSize = new System.Drawing.Size(53, 48);
             this.homepageWebBrowser.Name = "homepageWebBrowser";
             this.homepageWebBrowser.ScriptErrorsSuppressed = true;
-            this.homepageWebBrowser.Size = new System.Drawing.Size(2156, 965);
+            this.homepageWebBrowser.Size = new System.Drawing.Size(2113, 848);
             this.homepageWebBrowser.TabIndex = 0;
             // 
             // coursesTabPage
@@ -538,7 +538,7 @@ namespace EditPerson
             this.coursesTabPage.Location = new System.Drawing.Point(10, 48);
             this.coursesTabPage.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.coursesTabPage.Name = "coursesTabPage";
-            this.coursesTabPage.Size = new System.Drawing.Size(2172, 979);
+            this.coursesTabPage.Size = new System.Drawing.Size(2129, 862);
             this.coursesTabPage.TabIndex = 2;
             this.coursesTabPage.Text = "Courses";
             this.coursesTabPage.UseVisualStyleBackColor = true;
@@ -551,7 +551,7 @@ namespace EditPerson
             this.selectedCoursesGroupBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.selectedCoursesGroupBox.Name = "selectedCoursesGroupBox";
             this.selectedCoursesGroupBox.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.selectedCoursesGroupBox.Size = new System.Drawing.Size(2172, 362);
+            this.selectedCoursesGroupBox.Size = new System.Drawing.Size(2129, 362);
             this.selectedCoursesGroupBox.TabIndex = 3;
             this.selectedCoursesGroupBox.TabStop = false;
             this.selectedCoursesGroupBox.Text = "Selected Courses";
@@ -570,9 +570,9 @@ namespace EditPerson
             this.selectedCoursesListView.FullRowSelect = true;
             this.selectedCoursesListView.HideSelection = false;
             this.selectedCoursesListView.Location = new System.Drawing.Point(8, 38);
-            this.selectedCoursesListView.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.selectedCoursesListView.Margin = new System.Windows.Forms.Padding(5);
             this.selectedCoursesListView.Name = "selectedCoursesListView";
-            this.selectedCoursesListView.Size = new System.Drawing.Size(2156, 317);
+            this.selectedCoursesListView.Size = new System.Drawing.Size(2113, 317);
             this.selectedCoursesListView.TabIndex = 11;
             this.selectedCoursesListView.UseCompatibleStateImageBehavior = false;
             this.selectedCoursesListView.View = System.Windows.Forms.View.Details;
@@ -608,11 +608,11 @@ namespace EditPerson
             this.allCoursesGroupBox.Controls.Add(this.courseSearchTextBox);
             this.allCoursesGroupBox.Controls.Add(this.allCoursesListView);
             this.allCoursesGroupBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.allCoursesGroupBox.Location = new System.Drawing.Point(0, 388);
+            this.allCoursesGroupBox.Location = new System.Drawing.Point(0, 271);
             this.allCoursesGroupBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.allCoursesGroupBox.Name = "allCoursesGroupBox";
             this.allCoursesGroupBox.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.allCoursesGroupBox.Size = new System.Drawing.Size(2172, 591);
+            this.allCoursesGroupBox.Size = new System.Drawing.Size(2129, 591);
             this.allCoursesGroupBox.TabIndex = 2;
             this.allCoursesGroupBox.TabStop = false;
             this.allCoursesGroupBox.Text = "All Courses";
@@ -649,9 +649,9 @@ namespace EditPerson
             this.allCoursesListView.FullRowSelect = true;
             this.allCoursesListView.HideSelection = false;
             this.allCoursesListView.Location = new System.Drawing.Point(8, 110);
-            this.allCoursesListView.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.allCoursesListView.Margin = new System.Windows.Forms.Padding(5);
             this.allCoursesListView.Name = "allCoursesListView";
-            this.allCoursesListView.Size = new System.Drawing.Size(2156, 474);
+            this.allCoursesListView.Size = new System.Drawing.Size(2113, 474);
             this.allCoursesListView.TabIndex = 12;
             this.allCoursesListView.UseCompatibleStateImageBehavior = false;
             this.allCoursesListView.View = System.Windows.Forms.View.Details;
@@ -686,7 +686,7 @@ namespace EditPerson
             this.scheduleTabPage.Location = new System.Drawing.Point(10, 48);
             this.scheduleTabPage.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.scheduleTabPage.Name = "scheduleTabPage";
-            this.scheduleTabPage.Size = new System.Drawing.Size(2172, 979);
+            this.scheduleTabPage.Size = new System.Drawing.Size(2129, 862);
             this.scheduleTabPage.TabIndex = 3;
             this.scheduleTabPage.Text = "Schedule";
             this.scheduleTabPage.UseVisualStyleBackColor = true;
