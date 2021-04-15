@@ -570,11 +570,17 @@ namespace EditPerson
                 this.Owner.Enabled = true;
 
                 this.Owner.Focus();
-
-                IListView iListView = (IListView)this.Owner;
-                iListView.PaintListView(person.email);
+                try
+                {
+                    IListView iListView = (IListView)this.Owner;
+                    iListView.PaintListView(person.email);
+                }
+                catch { }
+                
             }
+            formPerson = person;
 
+            this.Hide();
             this.Close();
             this.Dispose();
         }
