@@ -116,7 +116,7 @@ namespace DynamicPeople
             this.flowLayoutPanel1.Controls.SetChildIndex(panel1, flowLayoutPanel1.Controls.Count);
         }//end add panel
 
-        private void AddPersonToPanel(ref Panel panel, Person person)
+        private void AddPersonToPanel(ref Panel panel1, Person person)
         {
             ToolStrip toolStrip1 = new System.Windows.Forms.ToolStrip();
             ToolStripButton toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -135,7 +135,7 @@ namespace DynamicPeople
             panel1.Controls.Add(toolStrip1);
             panel1.Location = new System.Drawing.Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(452, 200);
+            panel1.Size = new System.Drawing.Size(452, 55);
             panel1.TabIndex = 0;
             panel1.Tag = person;
             // 

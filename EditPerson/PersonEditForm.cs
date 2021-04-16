@@ -15,7 +15,7 @@ namespace EditPerson
     public partial class PersonEditForm : Form
     {
         public Person formPerson;
-        
+        HtmlElement htmlElement;
 
         public PersonEditForm( Person person, Form parentForm )
         {
@@ -581,8 +581,8 @@ namespace EditPerson
             formPerson = person;
 
             this.Hide();
-            this.Close();
-            this.Dispose();
+            //this.Close();
+            //this.Dispose();
         }
 
         private void TypeComboBox__SelectedIndexChanged(object sender, EventArgs e)

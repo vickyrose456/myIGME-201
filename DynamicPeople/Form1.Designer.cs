@@ -36,22 +36,22 @@ namespace DynamicPeople
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.teacherButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.emailLabel = new System.Windows.Forms.Label();
-            this.photoGroupBox = new System.Windows.Forms.GroupBox();
-            this.photoPictureBox = new System.Windows.Forms.PictureBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.photoGroupBox = new System.Windows.Forms.GroupBox();
+            this.photoPictureBox = new System.Windows.Forms.PictureBox();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.photoGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
-            this.toolStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer
@@ -70,7 +70,7 @@ namespace DynamicPeople
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer.Size = new System.Drawing.Size(1112, 706);
+            this.splitContainer.Size = new System.Drawing.Size(1499, 958);
             this.splitContainer.SplitterDistance = 194;
             this.splitContainer.TabIndex = 0;
             // 
@@ -111,27 +111,40 @@ namespace DynamicPeople
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(914, 706);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1301, 958);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // panel1
+            // toolStrip1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.emailLabel);
-            this.panel1.Controls.Add(this.photoGroupBox);
-            this.panel1.Controls.Add(this.toolStrip1);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(414, 395);
-            this.panel1.TabIndex = 0;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripLabel1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.toolStrip1.Size = new System.Drawing.Size(1041, 77);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
             // 
-            // emailLabel
+            // toolStripButton1
             // 
-            this.emailLabel.Location = new System.Drawing.Point(35, 81);
-            this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(347, 56);
-            this.emailLabel.TabIndex = 1;
-            this.emailLabel.Text = "label1";
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::DynamicPeople.Properties.Resources.plus;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(58, 70);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.AutoSize = false;
+            this.toolStripLabel1.IsLink = true;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripLabel1.Size = new System.Drawing.Size(300, 70);
+            this.toolStripLabel1.Text = "toolStripLabel1";
+            this.toolStripLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // photoGroupBox
             // 
@@ -157,43 +170,30 @@ namespace DynamicPeople
             this.photoPictureBox.TabIndex = 0;
             this.photoPictureBox.TabStop = false;
             // 
-            // toolStrip1
+            // emailLabel
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripLabel1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStrip1.Size = new System.Drawing.Size(410, 77);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.emailLabel.Location = new System.Drawing.Point(35, 81);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(347, 56);
+            this.emailLabel.TabIndex = 1;
+            this.emailLabel.Text = "label1";
             // 
-            // toolStripButton1
+            // panel1
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::DynamicPeople.Properties.Resources.plus;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(58, 70);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.AutoSize = false;
-            this.toolStripLabel1.IsLink = true;
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripLabel1.Size = new System.Drawing.Size(300, 70);
-            this.toolStripLabel1.Text = "toolStripLabel1";
-            this.toolStripLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.emailLabel);
+            this.panel1.Controls.Add(this.photoGroupBox);
+            this.panel1.Controls.Add(this.toolStrip1);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1045, 807);
+            this.panel1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1112, 706);
+            this.ClientSize = new System.Drawing.Size(1499, 958);
             this.Controls.Add(this.splitContainer);
             this.Name = "Form1";
             this.Text = "Dynamic People";
@@ -202,12 +202,12 @@ namespace DynamicPeople
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.photoGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.photoGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -220,12 +220,12 @@ namespace DynamicPeople
         private System.Windows.Forms.Button teacherButton;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.GroupBox photoGroupBox;
         private System.Windows.Forms.PictureBox photoPictureBox;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }
 
