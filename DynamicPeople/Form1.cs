@@ -90,7 +90,7 @@ namespace DynamicPeople
                 //if checked we want button image to be the minus
                 tsb.Image = global::DynamicPeople.Properties.Resources.plus;
                 //panel shrink size
-                p.Size = new System.Drawing.Size(452, 200);
+                p.Size = new System.Drawing.Size(448, 77); ;
                 tsb.Checked = false;
             }
             else 
