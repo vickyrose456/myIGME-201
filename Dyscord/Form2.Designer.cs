@@ -37,7 +37,7 @@ namespace Dyscord
             this.loginButton = new System.Windows.Forms.Button();
             this.userTextBox = new System.Windows.Forms.TextBox();
             this.sendButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.usersButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.convGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -90,7 +90,7 @@ namespace Dyscord
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.exitButton);
-            this.splitContainer1.Panel2.Controls.Add(this.button1);
+            this.splitContainer1.Panel2.Controls.Add(this.usersButton);
             this.splitContainer1.Panel2.Controls.Add(this.sendButton);
             this.splitContainer1.Panel2.Controls.Add(this.userTextBox);
             this.splitContainer1.Panel2.Controls.Add(this.loginButton);
@@ -133,14 +133,14 @@ namespace Dyscord
             this.sendButton.Text = "Send";
             this.sendButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // usersButton
             // 
-            this.button1.Location = new System.Drawing.Point(206, 119);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 52);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Users";
-            this.button1.UseVisualStyleBackColor = true;
+            this.usersButton.Location = new System.Drawing.Point(206, 119);
+            this.usersButton.Name = "usersButton";
+            this.usersButton.Size = new System.Drawing.Size(127, 52);
+            this.usersButton.TabIndex = 4;
+            this.usersButton.Text = "Users";
+            this.usersButton.UseVisualStyleBackColor = true;
             // 
             // exitButton
             // 
@@ -180,7 +180,7 @@ namespace Dyscord
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.TextBox userTextBox;
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button usersButton;
         private System.Windows.Forms.Button sendButton;
     }
 }

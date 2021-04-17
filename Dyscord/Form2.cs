@@ -29,7 +29,7 @@ namespace Dyscord
                 •	Socket listener;*/
 
         string targetUser;
-        string targetTip;
+        string targetIp;
         int targetPort;
         string myIp;
         int myPort;
@@ -50,10 +50,108 @@ namespace Dyscord
             //thread start 
             ThreadStart threadStart = new ThreadStart(Listen);
             thread = new Thread(threadStart);
+            thread.Start();
+
+            IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress iPAddress in ipHost.AddressList)
+            {
+                if(iPAddress.AddressFamily = AddressFamily.InterNetwork)
+                {
+                    this.myIp = iPAddress.ToString();
+                    break;
+                }
+            }
+
+
+            //event handlers for bttns
+            this.loginButton.Click += new EventHandler(LoginButton__Click);
+            this.sendButton.Click += new EventHandler(SendButton__Click);
+            this.usersButton.Click += new EventHandler(UsersButton__Click);
+            this.exitButton.Click += new EventHandler(ExitButton__Click);
+            this.webBrowser1.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(WebBrowser1__DocumentCompleted);
         }
         public void UpdateConversation(string text)
         {
             this.convGroupBox.Text += text + "\n";
+        }//update convo
+
+        private void LoginButton__Click(object sender, EventArgs e)
+        {
+            //should only do this if they use their username
+            if(userTextBox.TextLength >0)
+            {
+                webBrowser1.Navigate("http://people.rit.edu/dxsigm/php/login.php?login=" + userTextBox.Text + "&ip=" + myIp + ":" + myPort);
+                webBrowser1.Visible = false;
+                userTextBox.Enabled = false;
+                loginButton.Enabled = false;
+            }
+        }//login btn
+
+        private void UsersButton__Click(object sender, EventArgs e)
+        {
+            webBrowser1.Navigate("http://people.rit.edu/dxsigm/php/login.php?login=");
+            webBrowser1.Visible = true;
+            convRichTextBox.SendToBack();
+        }//end users
+
+        private void WebBrowser1__DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            HtmlElementCollection htmlElementCollection;
+            htmlElementCollection = webBrowser1.Document.GetElementsByTagName("button");
+            foreach (HtmlElement htmlElement in htmlElementCollection)
+            {
+                htmlElement.Click += new HtmlElementEventHandler(HtmlElement__Click);
+            }
+        }//end web doc completed
+
+        private void HtmlElement__Click(object sender, HtmlElementEventArgs e)
+        {
+            string title;
+            string[] ipPort;
+
+            HtmlElement htmlElement = (HtmlElement)sender;
+
+            title = htmlElement.GetAttribute("title");
+            ipPort = title.Split(':');
+            this.targetIp = ipPort[0];
+            this.targetPort = Int32.Parse(ipPort[1]);
+
+            this.targetUser = htmlElement.GetAttribute("name");
+            this.convGroupBox.Text = "Conversing with " + targetUser;
+
+            webBrowser1.Visible = false;
+            webBrowser1.SendToBack();
+        }//html elem click
+
+        private void SendButton__Click(object sender, EventArgs e)
+        {
+            if (targetIp.Length > 0)
+            {
+                //open a socket
+                //need ip adress
+                IPAddress iPAddress = IPAddress.Parse(this.targetIp);
+
+                IPEndPoint remoteEndPoint = new IPEndPoint(iPAddress, this.targetPort);
+
+                Socket server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                //telling it to connect with ip address and port of the listener on the other end
+                server.Connect(remoteEndPoint);
+
+                Stream netStream = new NetworkStream(server);
+                StreamWriter writer = new StreamWriter(netStream);
+
+                string msg = userTextBox + ": " + msgRichTextBox.Text;
+                writer.Write(msg.ToCharArray(), 0, msg.Length);
+
+                writer.Close();
+                netStream.Close();
+                server.Close();
+
+                this.convRichTextBox.Text += "> " + this.targetUser + ": " + msgRichTextBox.Text + "\n";
+
+                msgRichTextBox.Clear();
+
+            }
         }
 
         public void Listen()
