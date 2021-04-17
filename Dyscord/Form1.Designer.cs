@@ -64,7 +64,7 @@ namespace Dyscord
             this.AcceptButton = this.startButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1275, 935);
+            this.ClientSize = new System.Drawing.Size(552, 307);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.portTextBox);

@@ -32,7 +32,7 @@ namespace Dyscord
         string targetIp = "";
         int targetPort = 0;
         string myIp = "";
-        int myPort = 0;
+        int myPort = 2222;
         Thread thread;
         Socket listener;
 
@@ -196,6 +196,11 @@ namespace Dyscord
         }
 
         private void loginButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

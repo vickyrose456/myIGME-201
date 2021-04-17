@@ -30,15 +30,15 @@ namespace Dyscord
         private void InitializeComponent()
         {
             this.convGroupBox = new System.Windows.Forms.GroupBox();
-            this.convRichTextBox = new System.Windows.Forms.RichTextBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.convRichTextBox = new System.Windows.Forms.RichTextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.msgRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.loginButton = new System.Windows.Forms.Button();
-            this.userTextBox = new System.Windows.Forms.TextBox();
-            this.sendButton = new System.Windows.Forms.Button();
-            this.usersButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
+            this.usersButton = new System.Windows.Forms.Button();
+            this.sendButton = new System.Windows.Forms.Button();
+            this.userTextBox = new System.Windows.Forms.TextBox();
+            this.loginButton = new System.Windows.Forms.Button();
             this.convGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -50,13 +50,21 @@ namespace Dyscord
             // 
             this.convGroupBox.Controls.Add(this.webBrowser1);
             this.convGroupBox.Controls.Add(this.convRichTextBox);
-            this.convGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.convGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.convGroupBox.Location = new System.Drawing.Point(0, 0);
             this.convGroupBox.Name = "convGroupBox";
             this.convGroupBox.Size = new System.Drawing.Size(1450, 955);
             this.convGroupBox.TabIndex = 0;
             this.convGroupBox.TabStop = false;
             this.convGroupBox.Text = "Conversation";
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(912, 37);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(538, 711);
+            this.webBrowser1.TabIndex = 1;
             // 
             // convRichTextBox
             // 
@@ -66,15 +74,6 @@ namespace Dyscord
             this.convRichTextBox.Size = new System.Drawing.Size(1444, 918);
             this.convRichTextBox.TabIndex = 0;
             this.convRichTextBox.Text = "";
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.webBrowser1.Location = new System.Drawing.Point(912, 37);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(538, 711);
-            this.webBrowser1.TabIndex = 1;
             // 
             // splitContainer1
             // 
@@ -94,8 +93,9 @@ namespace Dyscord
             this.splitContainer1.Panel2.Controls.Add(this.sendButton);
             this.splitContainer1.Panel2.Controls.Add(this.userTextBox);
             this.splitContainer1.Panel2.Controls.Add(this.loginButton);
+            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(1450, 208);
-            this.splitContainer1.SplitterDistance = 906;
+            this.splitContainer1.SplitterDistance = 915;
             this.splitContainer1.TabIndex = 1;
             // 
             // msgRichTextBox
@@ -103,35 +103,18 @@ namespace Dyscord
             this.msgRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.msgRichTextBox.Location = new System.Drawing.Point(0, 0);
             this.msgRichTextBox.Name = "msgRichTextBox";
-            this.msgRichTextBox.Size = new System.Drawing.Size(906, 208);
+            this.msgRichTextBox.Size = new System.Drawing.Size(915, 208);
             this.msgRichTextBox.TabIndex = 0;
             this.msgRichTextBox.Text = "";
             // 
-            // loginButton
+            // exitButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(362, 25);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(127, 52);
-            this.loginButton.TabIndex = 1;
-            this.loginButton.Text = "Login";
-            this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
-            // 
-            // userTextBox
-            // 
-            this.userTextBox.Location = new System.Drawing.Point(49, 33);
-            this.userTextBox.Name = "userTextBox";
-            this.userTextBox.Size = new System.Drawing.Size(284, 38);
-            this.userTextBox.TabIndex = 2;
-            // 
-            // sendButton
-            // 
-            this.sendButton.Location = new System.Drawing.Point(49, 119);
-            this.sendButton.Name = "sendButton";
-            this.sendButton.Size = new System.Drawing.Size(127, 52);
-            this.sendButton.TabIndex = 3;
-            this.sendButton.Text = "Send";
-            this.sendButton.UseVisualStyleBackColor = true;
+            this.exitButton.Location = new System.Drawing.Point(362, 119);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(127, 52);
+            this.exitButton.TabIndex = 5;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
             // 
             // usersButton
             // 
@@ -142,14 +125,31 @@ namespace Dyscord
             this.usersButton.Text = "Users";
             this.usersButton.UseVisualStyleBackColor = true;
             // 
-            // exitButton
+            // sendButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(362, 119);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(127, 52);
-            this.exitButton.TabIndex = 5;
-            this.exitButton.Text = "Exit";
-            this.exitButton.UseVisualStyleBackColor = true;
+            this.sendButton.Location = new System.Drawing.Point(49, 119);
+            this.sendButton.Name = "sendButton";
+            this.sendButton.Size = new System.Drawing.Size(127, 52);
+            this.sendButton.TabIndex = 3;
+            this.sendButton.Text = "Send";
+            this.sendButton.UseVisualStyleBackColor = true;
+            // 
+            // userTextBox
+            // 
+            this.userTextBox.Location = new System.Drawing.Point(49, 33);
+            this.userTextBox.Name = "userTextBox";
+            this.userTextBox.Size = new System.Drawing.Size(284, 38);
+            this.userTextBox.TabIndex = 2;
+            // 
+            // loginButton
+            // 
+            this.loginButton.Location = new System.Drawing.Point(362, 25);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(127, 52);
+            this.loginButton.TabIndex = 1;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // DyscordForm
             // 
