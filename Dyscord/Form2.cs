@@ -81,7 +81,7 @@ namespace Dyscord
                 string result = reader.ReadToEnd();
                 //put msg into textbox [does not have direct access to parent method]
                 //can use invoke of delegate method
-                Invoke(UpdateConversationDelegate, result);
+                Invoke(updateConversationDelegate, result);
                 reader.Close();
                 netStream.Close();
                 client.Close();
