@@ -28,11 +28,11 @@ namespace Dyscord
                 •	Thread thread:
                 •	Socket listener;*/
 
-        string targetUser;
-        string targetIp;
-        int targetPort;
-        string myIp;
-        int myPort;
+        string targetUser = "";
+        string targetIp = "";
+        int targetPort = 0;
+        string myIp = "";
+        int myPort = 0;
         Thread thread;
         Socket listener;
 
@@ -55,7 +55,7 @@ namespace Dyscord
             IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
             foreach (IPAddress iPAddress in ipHost.AddressList)
             {
-                if(iPAddress.AddressFamily = AddressFamily.InterNetwork)
+                if(iPAddress.AddressFamily == AddressFamily.InterNetwork)
                 {
                     this.myIp = iPAddress.ToString();
                     break;
@@ -152,7 +152,7 @@ namespace Dyscord
                 msgRichTextBox.Clear();
 
             }
-        }
+        }//send button
 
         public void Listen()
         {
@@ -185,6 +185,15 @@ namespace Dyscord
                 client.Close();
             }
         }//end listen
+
+        private void ExitButton__Click(object sender, EventArgs e)
+        {
+            listener.Close();
+
+            thread.Abort();
+
+            Application.Exit();
+        }
 
         private void loginButton_Click(object sender, EventArgs e)
         {

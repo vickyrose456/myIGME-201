@@ -16,7 +16,7 @@ namespace Dyscord
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new settingsForm());
+            Application.Run(new DyscordForm());
         }
     }
 }
