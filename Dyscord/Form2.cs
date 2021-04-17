@@ -15,6 +15,8 @@ using System.IO;
 
 namespace Dyscord
 {
+    public delegate void UpdateConversationDelegate(string text);
+
     public partial class DyscordForm : Form
     {
             /*
@@ -40,8 +42,51 @@ namespace Dyscord
 
             this.Show();
             SettingsForm settingsForm = new SettingsForm(this, myPort);
+            //want it to be the only active one (pause constructor to get new port setting)
+            settingsForm.ShowDialog();
+            
+            this.myPort = settingsForm.myPort;
 
+            //thread start 
+            ThreadStart threadStart = new ThreadStart(Listen);
+            thread = new Thread(threadStart);
         }
+        public void UpdateConversation(string text)
+        {
+            this.convGroupBox.Text += text + "\n";
+        }
+
+        public void Listen()
+        {
+            UpdateConversationDelegate updateConversationDelegate;
+            updateConversationDelegate = new UpdateConversationDelegate(UpdateConversation);
+            //no matter IP adress, it will process it
+            IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Any, this.myPort);
+
+            //tcp ~ phone line
+            this.listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+            listener.Bind(serverEndPoint);
+
+            listener.Listen(300);
+
+            //cont. listen for connections
+            while (true)
+            {
+                Socket client = listener.Accept();
+                Stream netStream = new NetworkStream(client);
+                StreamReader reader = new StreamReader(netStream);
+
+                //reads to full content and returns as string
+                string result = reader.ReadToEnd();
+                //put msg into textbox [does not have direct access to parent method]
+                //can use invoke of delegate method
+                Invoke(UpdateConversationDelegate, result);
+                reader.Close();
+                netStream.Close();
+                client.Close();
+            }
+        }//end listen
 
         private void loginButton_Click(object sender, EventArgs e)
         {
