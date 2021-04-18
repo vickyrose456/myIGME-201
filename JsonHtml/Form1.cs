@@ -44,6 +44,27 @@ namespace JsonHtml
             string t = JsonConvert.SerializeObject(teachers);
 
             //now write them to a file
+            StreamWriter writer = new StreamWriter("c:/temp/student.json");
+            writer.Write(s);
+
+            writer = new StreamWriter("c:/temp/teacher.json");
+            writer.Write(t);
+            writer.Close();
+
+            //read that data back in
+            
+            StreamReader reader = new StreamReader("c:/temp/student.json");
+            s = reader.ReadToEnd();
+            reader.Close();
+
+            reader = new StreamReader("c:/temp/teacher.json");
+            t = reader.ReadToEnd();
+            reader.Close();
+
+            //desrialize the data back into the list
+                                                    //obj type <list type> (what we are deserializing)
+            students = JsonConvert.DeserializeObject<List<Student>>(s);
+            teachers = JsonConvert.DeserializeObject<List<Teacher>>(t);
 
         }
     }
