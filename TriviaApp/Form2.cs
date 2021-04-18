@@ -218,10 +218,5 @@ namespace Dyscord
         {
 
         }
-
-        private void convGroupBox_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }
