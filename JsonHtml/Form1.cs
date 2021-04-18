@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 using PeopleAppGlobals;
 using PeopleLib;
 using System.IO;
-
+using System.Net;
 
 namespace JsonHtml
 {
@@ -64,6 +64,34 @@ namespace JsonHtml
             //desrialize the data back into the list
                                                     //obj type <list type> (what we are deserializing)
             students = JsonConvert.DeserializeObject<List<Student>>(s);
+            teachers = JsonConvert.DeserializeObject<List<Teacher>>(t);
+
+            SortedList<string, Person> people = new SortedList<string, Person>();
+
+            foreach(Student student in students)
+            {
+                people[student.email] = student;
+            }
+
+            foreach (Teacher teacher in teachers)
+            {
+                people[teacher.email] = teacher;
+            }
+
+            string url = "http://people.rit.edu/dxsigm/json.php";
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+            //read from the socket
+            reader = new StreamReader(response.GetResponseStream());
+
+            t = reader.ReadToEnd();
+            reader.Close();
+            response.Close();
+
+            //t has lis of teachers in serialized format from banjo site now ^^^
+
             teachers = JsonConvert.DeserializeObject<List<Teacher>>(t);
 
         }
