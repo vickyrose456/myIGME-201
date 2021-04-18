@@ -32,7 +32,7 @@ namespace Dyscord
         string targetIp = "";
         int targetPort = 0;
         string myIp = "";
-        int myPort = 0;
+        int myPort = 2222;
         Thread thread;
         Socket listener;
 
