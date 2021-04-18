@@ -69,6 +69,10 @@ namespace Dyscord
             this.usersButton.Click += new EventHandler(UsersButton__Click);
             this.exitButton.Click += new EventHandler(ExitButton__Click);
             this.webBrowser1.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(WebBrowser1__DocumentCompleted);
+
+
+            this.FormClosing += new FormClosingEventHandler(Form__FormClosing);
+        
         }
         public void UpdateConversation(string text)
         {
@@ -194,7 +198,16 @@ namespace Dyscord
             thread.Abort();
 
             Application.Exit();
-        }
+        }//end exit
+
+        public void Form__FormClosing(object sender, FormClosingEventArgs e)
+        {
+            listener.Close();
+
+            thread.Abort();
+
+            Application.Exit();
+        }//end Form__FormClosing
 
         private void loginButton_Click(object sender, EventArgs e)
         {

@@ -71,7 +71,7 @@ namespace Dyscord
             this.convRichTextBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.convRichTextBox.Location = new System.Drawing.Point(3, 34);
             this.convRichTextBox.Name = "convRichTextBox";
-            this.convRichTextBox.Size = new System.Drawing.Size(1444, 714);
+            this.convRichTextBox.Size = new System.Drawing.Size(1444, 635);
             this.convRichTextBox.TabIndex = 0;
             this.convRichTextBox.Text = "";
             // 
