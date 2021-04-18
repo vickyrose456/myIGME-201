@@ -68,10 +68,10 @@ namespace Dyscord
             // 
             // convRichTextBox
             // 
-            this.convRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.convRichTextBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.convRichTextBox.Location = new System.Drawing.Point(3, 34);
             this.convRichTextBox.Name = "convRichTextBox";
-            this.convRichTextBox.Size = new System.Drawing.Size(1444, 918);
+            this.convRichTextBox.Size = new System.Drawing.Size(1444, 714);
             this.convRichTextBox.TabIndex = 0;
             this.convRichTextBox.Text = "";
             // 
@@ -79,7 +79,7 @@ namespace Dyscord
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 747);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 675);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -155,7 +155,7 @@ namespace Dyscord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1450, 955);
+            this.ClientSize = new System.Drawing.Size(1450, 883);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.convGroupBox);
             this.Name = "DyscordForm";

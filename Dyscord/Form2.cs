@@ -28,11 +28,11 @@ namespace Dyscord
                 •	Thread thread:
                 •	Socket listener;*/
 
-        string targetUser = "";
+        string targetUser = ""; 
         string targetIp = "";
         int targetPort = 0;
         string myIp = "";
-        int myPort = 2222;
+        int myPort = 0;
         Thread thread;
         Socket listener;
 
@@ -80,7 +80,7 @@ namespace Dyscord
             //should only do this if they use their username
             if(userTextBox.TextLength >0)
             {
-                webBrowser1.Navigate("http://people.rit.edu/dxsigm/php/login.php?login=" + userTextBox.Text + "&ip=" + myIp + ":" + myPort);
+                webBrowser1.Navigate("http://people.rit.edu/dxsigm/php/login.php?login=dschuh&ip=1.1.1.1:2222" + userTextBox.Text + "&ip=" + myIp + ":" + myPort);
                 webBrowser1.Visible = false;
                 userTextBox.Enabled = false;
                 loginButton.Enabled = false;
@@ -92,6 +92,7 @@ namespace Dyscord
             webBrowser1.Navigate("http://people.rit.edu/dxsigm/php/login.php?login=");
             webBrowser1.Visible = true;
             convRichTextBox.SendToBack();
+
         }//end users
 
         private void WebBrowser1__DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
