@@ -78,9 +78,9 @@ namespace Dyscord
         private void LoginButton__Click(object sender, EventArgs e)
         {
             //should only do this if they use their username
-            if(userTextBox.TextLength >0)
+            if(userTextBox.TextLength > 0)
             {
-                webBrowser1.Navigate("http://people.rit.edu/dxsigm/php/login.php?login=dschuh&ip=1.1.1.1:2222" + userTextBox.Text + "&ip=" + myIp + ":" + myPort);
+                webBrowser1.Navigate("http://people.rit.edu/dxsigm/php/login.php?login=" + userTextBox.Text + "&ip=" + myIp + ":" + myPort);
                 webBrowser1.Visible = false;
                 userTextBox.Enabled = false;
                 loginButton.Enabled = false;
@@ -89,7 +89,7 @@ namespace Dyscord
 
         private void UsersButton__Click(object sender, EventArgs e)
         {
-            webBrowser1.Navigate("http://people.rit.edu/dxsigm/php/login.php?login=");
+            webBrowser1.Navigate("http://people.rit.edu/dxsigm/php/login.php?logins");
             webBrowser1.Visible = true;
             convRichTextBox.SendToBack();
 
