@@ -42,6 +42,8 @@ namespace triviaApp
             HttpWebResponse response;
             StreamReader reader;
 
+            start:
+
             url = "https://opentdb.com/api.php?amount=1";
 
             request = (HttpWebRequest)WebRequest.Create(url);
@@ -100,7 +102,7 @@ namespace triviaApp
             {
                 userAnswer = int.Parse(Console.ReadLine());
                 userAnswer = userAnswer - 1;
-                if (userAnswer >= numOfAnswers)
+                if (userAnswer > numOfAnswers)
                 {
                     Console.WriteLine("Not a valid choice. \nEnter the number of your choice: ");
                     userAnswer = int.Parse(Console.ReadLine());
@@ -117,10 +119,11 @@ namespace triviaApp
             //if the repsonse it correct congrats, if not sorry
             if (myAnswers[userAnswer] == trivia.results[0].correct_answer)
             {
-                Console.WriteLine("Nice! That is correct.");
+                Console.WriteLine("Nice! That is correct. Try the next one!");
+                goto start;
             }
             else {
-                Console.WriteLine("Sorry, that was incorrect. ");
+                Console.WriteLine("Sorry, that was incorrect. The game is done");
 
             }
             
