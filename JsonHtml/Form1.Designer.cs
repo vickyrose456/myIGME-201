@@ -35,7 +35,7 @@ namespace JsonHtml
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 869);
+            this.ClientSize = new System.Drawing.Size(1158, 592);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
