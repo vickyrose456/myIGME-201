@@ -59,14 +59,15 @@ namespace triviaApp
             trivia.results[0].question = HttpUtility.HtmlDecode(trivia.results[0].question);
             trivia.results[0].correct_answer = HttpUtility.HtmlDecode(trivia.results[0].correct_answer);
 
-            for (int i=0; i< trivia.results[0].incorrect_answers.Count; i++)
+            for (int i = 0; i < trivia.results[0].incorrect_answers.Count; i++)
             {
                 trivia.results[0].incorrect_answers[i] = HttpUtility.HtmlDecode(trivia.results[0].incorrect_answers[i]);
             }
 
             //Continue coding trivia app:
-            string userAnswer = null;
-            string [] myAnswers = new string[trivia.results[0].incorrect_answers.Count + 1];
+            int userAnswer = 0;
+            int numOfAnswers = trivia.results[0].incorrect_answers.Count;
+            string[] myAnswers = new string[numOfAnswers + 1];
 
             //Console.WriteLine(trivia.results[0].incorrect_answers.Count + 1);
             //show question
@@ -75,26 +76,70 @@ namespace triviaApp
             //show incorrect and correct answers
 
             //get all answers and store them into an array of answers
-            for (int i = 0; i < trivia.results[0].incorrect_answers.Count; i++)
+            for (int i = 0; i < numOfAnswers; i++)
             {
                 //store incorrect answers in array
                 myAnswers[i] = trivia.results[0].incorrect_answers[i];
             }
             //store the correct answer at the final index
-            myAnswers[trivia.results[0].incorrect_answers.Count] = trivia.results[0].correct_answer; 
+            myAnswers[numOfAnswers] = trivia.results[0].correct_answer;
 
             //print out the answers randomly
-            for (int i = 0; i< myAnswers.Length; i++)
-            {
-               Console.WriteLine((i + 1) + ". " + myAnswers[i]);
-            }
+            Randomize<string>(myAnswers);
 
+            for (int i = 0; i < myAnswers.Length; i++)
+            {
+                Console.WriteLine((i + 1) + ". " + myAnswers[i]);
+            }
 
             //prompt user for reponse
             Console.WriteLine("Enter the number of your choice: ");
-            //read response
-            userAnswer = Console.ReadLine();
 
+            //read response
+            try
+            {
+                userAnswer = int.Parse(Console.ReadLine());
+                userAnswer = userAnswer - 1;
+                if (userAnswer >= numOfAnswers)
+                {
+                    Console.WriteLine("Not a valid choice. \nEnter the number of your choice: ");
+                    userAnswer = int.Parse(Console.ReadLine());
+                    userAnswer = userAnswer - 1;
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Not a valid integer. \nEnter the number of your choice: ");
+                userAnswer = int.Parse(Console.ReadLine());
+            }
+
+
+            //if the repsonse it correct congrats, if not sorry
+            if (myAnswers[userAnswer] == trivia.results[0].correct_answer)
+            {
+                Console.WriteLine("Nice! That is correct.");
+            }
+            else {
+                Console.WriteLine("Sorry, that was incorrect. ");
+
+            }
+            
+        }
+        /*
+         * Randomize will swap the positions of the array randomly
+         */
+        public static void Randomize<Ans>(Ans[] items)
+        {
+            Random rand = new Random();
+
+            for (int i = 0; i < items.Length - 1; i++)
+            {
+                int q = rand.Next(i, items.Length);
+                Ans temp = items[i];
+                items[i] = items[q];
+                items[q] = temp;
+            }
         }
     }
-}
+    }
+    
