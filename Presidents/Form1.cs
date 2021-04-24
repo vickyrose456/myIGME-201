@@ -15,6 +15,17 @@ namespace Presidents
         public Form1()
         {
             InitializeComponent();
+
+         //event handlers for each radio button
+
+         //when radio button is clicked. Web browser loads up specific president website
+
+            //set timer interval
+            //timer tick handler
+
+
+
+
         }
     }
 }
