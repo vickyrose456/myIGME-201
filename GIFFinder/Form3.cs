@@ -35,7 +35,7 @@ namespace GIFFinder
             this.Close();
         }
 
-        private void ImageForm__FormClosing(object sender, FormClosingEventHandler e)
+        private void ImageForm__FormClosing(object sender, FormClosingEventArgs e)
         {
             GIFFinder parent = (GIFFinder)this.MdiParent;
 

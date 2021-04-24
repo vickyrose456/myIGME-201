@@ -60,6 +60,7 @@ namespace Presidents
             this.label1 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.button1 = new System.Windows.Forms.Button();
+            this.presidentNumTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.filterGroupBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -245,7 +246,7 @@ namespace Presidents
             // 
             this.pictureBox1.Location = new System.Drawing.Point(12, 209);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 193);
+            this.pictureBox1.Size = new System.Drawing.Size(162, 193);
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
@@ -256,7 +257,7 @@ namespace Presidents
             this.filterGroupBox.Controls.Add(this.republicanRadioButton);
             this.filterGroupBox.Controls.Add(this.democratRadioButton);
             this.filterGroupBox.Controls.Add(this.allRadioButton);
-            this.filterGroupBox.Location = new System.Drawing.Point(135, 209);
+            this.filterGroupBox.Location = new System.Drawing.Point(180, 209);
             this.filterGroupBox.Name = "filterGroupBox";
             this.filterGroupBox.Size = new System.Drawing.Size(143, 150);
             this.filterGroupBox.TabIndex = 17;
@@ -320,9 +321,9 @@ namespace Presidents
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.webBrowser1);
-            this.groupBox2.Location = new System.Drawing.Point(284, 12);
+            this.groupBox2.Location = new System.Drawing.Point(329, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(450, 399);
+            this.groupBox2.Size = new System.Drawing.Size(405, 399);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
@@ -359,7 +360,7 @@ namespace Presidents
             this.webBrowser1.Location = new System.Drawing.Point(3, 16);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(444, 380);
+            this.webBrowser1.Size = new System.Drawing.Size(399, 380);
             this.webBrowser1.TabIndex = 0;
             // 
             // button1
@@ -371,11 +372,21 @@ namespace Presidents
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // presidentNumTextBox
+            // 
+            this.presidentNumTextBox.Location = new System.Drawing.Point(145, 12);
+            this.presidentNumTextBox.Name = "presidentNumTextBox";
+            this.presidentNumTextBox.Size = new System.Drawing.Size(28, 20);
+            this.presidentNumTextBox.TabIndex = 21;
+            this.presidentNumTextBox.Tag = "Which # president";
+            this.presidentNumTextBox.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.presidentNumTextBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.groupBox2);
@@ -442,6 +453,7 @@ namespace Presidents
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox presidentNumTextBox;
     }
 }
 
