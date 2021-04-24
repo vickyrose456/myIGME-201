@@ -30,9 +30,9 @@ namespace Presidents
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.bHarrisonRadioButton = new System.Windows.Forms.RadioButton();
+            this.fRooseveltRadioButton = new System.Windows.Forms.RadioButton();
+            this.wClintonRadioButton = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
@@ -53,51 +53,68 @@ namespace Presidents
             this.republicanRadioButton = new System.Windows.Forms.RadioButton();
             this.demo_repubRadioButton = new System.Windows.Forms.RadioButton();
             this.federalistRadioButton = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.webGroupBox = new System.Windows.Forms.GroupBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.webCheckBox = new System.Windows.Forms.CheckBox();
+            this.presidentLabel = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.button1 = new System.Windows.Forms.Button();
             this.presidentNumTextBox = new System.Windows.Forms.TextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.filterGroupBox.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.webGroupBox.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // radioButton1
+            // bHarrisonRadioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(12, 12);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.bHarrisonRadioButton.AutoSize = true;
+            this.bHarrisonRadioButton.Location = new System.Drawing.Point(12, 12);
+            this.bHarrisonRadioButton.Name = "bHarrisonRadioButton";
+            this.bHarrisonRadioButton.Size = new System.Drawing.Size(110, 17);
+            this.bHarrisonRadioButton.TabIndex = 0;
+            this.bHarrisonRadioButton.TabStop = true;
+            this.bHarrisonRadioButton.Text = "Benjamin Harrison";
+            this.bHarrisonRadioButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // fRooseveltRadioButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(12, 35);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.fRooseveltRadioButton.AutoSize = true;
+            this.fRooseveltRadioButton.Location = new System.Drawing.Point(12, 35);
+            this.fRooseveltRadioButton.Name = "fRooseveltRadioButton";
+            this.fRooseveltRadioButton.Size = new System.Drawing.Size(124, 17);
+            this.fRooseveltRadioButton.TabIndex = 1;
+            this.fRooseveltRadioButton.TabStop = true;
+            this.fRooseveltRadioButton.Text = "Franklin D Roosevelt";
+            this.fRooseveltRadioButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // wClintonRadioButton
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(12, 58);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(85, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "radioButton3";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.wClintonRadioButton.AutoSize = true;
+            this.wClintonRadioButton.Location = new System.Drawing.Point(12, 58);
+            this.wClintonRadioButton.Name = "wClintonRadioButton";
+            this.wClintonRadioButton.Size = new System.Drawing.Size(101, 17);
+            this.wClintonRadioButton.TabIndex = 2;
+            this.wClintonRadioButton.TabStop = true;
+            this.wClintonRadioButton.Text = "William J Clinton";
+            this.wClintonRadioButton.UseVisualStyleBackColor = true;
             // 
             // radioButton4
             // 
@@ -316,43 +333,35 @@ namespace Presidents
             this.federalistRadioButton.Text = "Federalist";
             this.federalistRadioButton.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // webGroupBox
             // 
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.webBrowser1);
-            this.groupBox2.Location = new System.Drawing.Point(329, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(405, 399);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.webGroupBox.Controls.Add(this.presidentLabel);
+            this.webGroupBox.Controls.Add(this.webCheckBox);
+            this.webGroupBox.Controls.Add(this.webBrowser1);
+            this.webGroupBox.Location = new System.Drawing.Point(329, 12);
+            this.webGroupBox.Name = "webGroupBox";
+            this.webGroupBox.Size = new System.Drawing.Size(405, 399);
+            this.webGroupBox.TabIndex = 18;
+            this.webGroupBox.TabStop = false;
+            this.webGroupBox.Text = "html";
             // 
-            // progressBar1
+            // webCheckBox
             // 
-            this.progressBar1.Location = new System.Drawing.Point(1, 428);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(519, 23);
-            this.progressBar1.TabIndex = 19;
+            this.webCheckBox.AutoSize = true;
+            this.webCheckBox.Location = new System.Drawing.Point(15, 24);
+            this.webCheckBox.Name = "webCheckBox";
+            this.webCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.webCheckBox.TabIndex = 1;
+            this.webCheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // presidentLabel
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(15, 24);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.presidentLabel.AutoSize = true;
+            this.presidentLabel.Location = new System.Drawing.Point(12, 59);
+            this.presidentLabel.Name = "presidentLabel";
+            this.presidentLabel.Size = new System.Drawing.Size(150, 13);
+            this.presidentLabel.TabIndex = 2;
+            this.presidentLabel.Text = "Professor Schuh for President!";
             // 
             // webBrowser1
             // 
@@ -374,22 +383,187 @@ namespace Presidents
             // 
             // presidentNumTextBox
             // 
-            this.presidentNumTextBox.Location = new System.Drawing.Point(145, 12);
+            this.presidentNumTextBox.Location = new System.Drawing.Point(146, 9);
             this.presidentNumTextBox.Name = "presidentNumTextBox";
             this.presidentNumTextBox.Size = new System.Drawing.Size(28, 20);
             this.presidentNumTextBox.TabIndex = 21;
-            this.presidentNumTextBox.Tag = "Which # president";
+            this.presidentNumTextBox.Tag = "";
             this.presidentNumTextBox.Text = "0";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.TabIndex = 22;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripProgressBar
+            // 
+            this.toolStripProgressBar.Name = "toolStripProgressBar";
+            this.toolStripProgressBar.Size = new System.Drawing.Size(100, 16);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(146, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(28, 20);
+            this.textBox1.TabIndex = 23;
+            this.textBox1.Tag = "";
+            this.textBox1.Text = "0";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(146, 55);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(28, 20);
+            this.textBox2.TabIndex = 24;
+            this.textBox2.Tag = "";
+            this.textBox2.Text = "0";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(146, 78);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(28, 20);
+            this.textBox3.TabIndex = 25;
+            this.textBox3.Tag = "";
+            this.textBox3.Text = "0";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(146, 101);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(28, 20);
+            this.textBox4.TabIndex = 26;
+            this.textBox4.Tag = "";
+            this.textBox4.Text = "0";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(146, 124);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(28, 20);
+            this.textBox5.TabIndex = 27;
+            this.textBox5.Tag = "";
+            this.textBox5.Text = "0";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(146, 147);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(28, 20);
+            this.textBox6.TabIndex = 28;
+            this.textBox6.Tag = "";
+            this.textBox6.Text = "0";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(146, 170);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(28, 20);
+            this.textBox7.TabIndex = 29;
+            this.textBox7.Tag = "";
+            this.textBox7.Text = "0";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(294, 11);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(28, 20);
+            this.textBox8.TabIndex = 30;
+            this.textBox8.Tag = "";
+            this.textBox8.Text = "0";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(294, 34);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(28, 20);
+            this.textBox9.TabIndex = 31;
+            this.textBox9.Tag = "";
+            this.textBox9.Text = "0";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(294, 57);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(28, 20);
+            this.textBox10.TabIndex = 32;
+            this.textBox10.Tag = "";
+            this.textBox10.Text = "0";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(294, 80);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(28, 20);
+            this.textBox11.TabIndex = 33;
+            this.textBox11.Tag = "";
+            this.textBox11.Text = "0";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(294, 103);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(28, 20);
+            this.textBox12.TabIndex = 34;
+            this.textBox12.Tag = "";
+            this.textBox12.Text = "0";
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(294, 126);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(28, 20);
+            this.textBox13.TabIndex = 35;
+            this.textBox13.Tag = "";
+            this.textBox13.Text = "0";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(294, 149);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(28, 20);
+            this.textBox14.TabIndex = 36;
+            this.textBox14.Tag = "";
+            this.textBox14.Text = "0";
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(294, 172);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(28, 20);
+            this.textBox15.TabIndex = 37;
+            this.textBox15.Tag = "";
+            this.textBox15.Text = "0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox15);
+            this.Controls.Add(this.textBox14);
+            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.presidentNumTextBox);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.webGroupBox);
             this.Controls.Add(this.filterGroupBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.radioButton16);
@@ -405,17 +579,18 @@ namespace Presidents
             this.Controls.Add(this.radioButton6);
             this.Controls.Add(this.radioButton5);
             this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.wClintonRadioButton);
+            this.Controls.Add(this.fRooseveltRadioButton);
+            this.Controls.Add(this.bHarrisonRadioButton);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.filterGroupBox.ResumeLayout(false);
             this.filterGroupBox.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.webGroupBox.ResumeLayout(false);
+            this.webGroupBox.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,9 +598,9 @@ namespace Presidents
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton bHarrisonRadioButton;
+        private System.Windows.Forms.RadioButton fRooseveltRadioButton;
+        private System.Windows.Forms.RadioButton wClintonRadioButton;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton6;
@@ -446,14 +621,30 @@ namespace Presidents
         private System.Windows.Forms.RadioButton republicanRadioButton;
         private System.Windows.Forms.RadioButton democratRadioButton;
         private System.Windows.Forms.RadioButton allRadioButton;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.GroupBox webGroupBox;
+        private System.Windows.Forms.Label presidentLabel;
+        private System.Windows.Forms.CheckBox webCheckBox;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox presidentNumTextBox;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox textBox15;
     }
 }
 
