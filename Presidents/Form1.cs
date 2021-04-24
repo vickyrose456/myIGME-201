@@ -18,37 +18,37 @@ namespace Presidents
 
             //event handlers for each radio button (presidents)
             //(1st row)
-            this.bHarrisonRadioButton.Checked += new EventHandler(BHarrisonRadioButton__Checked);
-            this.fDRooseveltRadioButton.Checked += new EventHandler(FDRooseveltRadioButton__Checked);
-            this.wJClintonRadioButton.Checked += new EventHandler(WJClintonRadioButton__Checked);
-            this.jBuchananRadioButton.Checked += new EventHandler(JBuchananRadioButton__Checked);
-            this.fPierceRadioButton.Checked += new EventHandler(FPierceRadioButton__Checked);
-            this.gWBushRadioButton.Checked += new EventHandler(GWBushRadioButton__Checked);
-            this.bObamaRadioButton.Checked += new EventHandler(BObamaRadioButton__Checked);
-            this.jFKennedyRadioButton.Checked += new EventHandler(JFKennedyRadioButton__Checked);
+            this.bHarrisonRadioButton.CheckedChanged += new EventHandler(BHarrisonRadioButton__Checked);
+            this.fDRooseveltRadioButton.CheckedChanged += new EventHandler(FDRooseveltRadioButton__Checked);
+            this.wJClintonRadioButton.CheckedChanged += new EventHandler(WJClintonRadioButton__Checked);
+            this.jBuchananRadioButton.CheckedChanged += new EventHandler(JBuchananRadioButton__Checked);
+            this.fPierceRadioButton.CheckedChanged += new EventHandler(FPierceRadioButton__Checked);
+            this.gWBushRadioButton.CheckedChanged += new EventHandler(GWBushRadioButton__Checked);
+            this.bObamaRadioButton.CheckedChanged += new EventHandler(BObamaRadioButton__Checked);
+            this.jFKennedyRadioButton.CheckedChanged += new EventHandler(JFKennedyRadioButton__Checked);
             //2nd row)
-            this.wMcKinleyRadioButton.Checked += new EventHandler(WMcKinleyRadioButton__Checked);
-            this.rReaganRadioButton.Checked += new EventHandler(RReaganRadioButton__Checked);
-            this.dDEisenhowerRadioButton.Checked += new EventHandler(DDEisenhowerRadioButton__Checked);
-            this.mVanBurenRadioButton.Checked += new EventHandler(mVanBurenRadioButton__Checked);
-            this.gWashingtonRadioButton.Checked += new EventHandler(GWashingtonRadioButton__Checked);
-            this.jAdamsRadioButton.Checked += new EventHandler(JAdamsRadioButton__Checked);
-            this.tRooseveltRadioButton.Checked += new EventHandler(TRooseveltRadioButton__Checked);
-            this.tJeffersonRadioButton.Checked += new EventHandler(TJeffersonRadioButton__Checked);
+            this.wMcKinleyRadioButton.CheckedChanged += new EventHandler(WMcKinleyRadioButton__Checked);
+            this.rReaganRadioButton.CheckedChanged += new EventHandler(RReaganRadioButton__Checked);
+            this.dDEisenhowerRadioButton.CheckedChanged += new EventHandler(DDEisenhowerRadioButton__Checked);
+            this.mVanBurenRadioButton.CheckedChanged += new EventHandler(MVanBurenRadioButton__Checked);
+            this.gWashingtonRadioButton.CheckedChanged += new EventHandler(GWashingtonRadioButton__Checked);
+            this.jAdamsRadioButton.CheckedChanged += new EventHandler(JAdamsRadioButton__Checked);
+            this.tRooseveltRadioButton.CheckedChanged += new EventHandler(TRooseveltRadioButton__Checked);
+            this.tJeffersonRadioButton.CheckedChanged += new EventHandler(TJeffersonRadioButton__Checked);
 
             //event handlers for each radio button in group box filter
-            this.allRadioButton.Checked += new EventHandler(AllRadioButton__Checked);
-            this.democratRadioButton.Checked += new EventHandler(DemocratRadioButton__Checked);
-            this.republicanRadioButton.Checked += new EventHandler(RepublicanRadioButton__Checked);
-            this.demo_repubRadioButton.Checked += new EventHandler(Demo_repubRadioButton__Checked);
-            this.federalistRadioButton.Checked += new EventHandler(FederalistRadioButton__Checked);
+            this.allRadioButton.CheckedChanged += new EventHandler(AllRadioButton__Checked);
+            this.democratRadioButton.CheckedChanged += new EventHandler(DemocratRadioButton__Checked);
+            this.republicanRadioButton.CheckedChanged += new EventHandler(RepublicanRadioButton__Checked);
+            this.demo_repubRadioButton.CheckedChanged += new EventHandler(Demo_repubRadioButton__Checked);
+            this.federalistRadioButton.CheckedChanged += new EventHandler(FederalistRadioButton__Checked);
 
 
             //event handler for the photo
 
             //event handler for exit button
             this.exitButton.Click += new EventHandler(ExitButton__Click);
-
+            
             //event handler for the check box
             this.webCheckBox.Checked += new EventHandler(WebCheckBox__Checked);
 
@@ -72,7 +72,7 @@ namespace Presidents
             this.adamsTextBox.KeyPress += new KeyPressEventHandler(AdamsTextBox__KeyPress);
             this.tRooseveltTextBox += new KeyPressEventHandler(TRooseveltTextBox__KeyPress);
             this.jeffersonTextBox += new KeyPressEventHandler(JeffersonTextBox__KeyPress);
-
+            
 
             //webbrower control event handler to download the html
 
@@ -81,6 +81,7 @@ namespace Presidents
             timer1.Interval = 1000;
 
             timer1.Tick += new EventHandler(Timer__Tick);
+            
         }
 
         //president event handlers
@@ -91,7 +92,190 @@ namespace Presidents
             //1. display photo
             //2. web browser will go to his wikipedia page
             //3. title of group box changes to that html
-        
+
+        }//end BHarrison 
+
+        private void FDRooseveltRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if the button is checked, then:
+            if (this.fDRooseveltRadioButton.Checked == true)
+            {
+                //1. display photo
+                //2. web browser will go to his wikipedia page
+                //3. title of group box changes to that html
+            }
+
+
+        }//end FDR
+
+        private void WJClintonRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if the button is checked, then:
+            //1. display photo
+            //2. web browser will go to his wikipedia page
+            //3. title of group box changes to that html
+
+        }//end Clinton
+
+        private void JBuchananRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if the button is checked, then:
+            //1. display photo
+            //2. web browser will go to his wikipedia page
+            //3. title of group box changes to that html
+
+        }//end Buchanan
+
+        private void FPierceRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if the button is checked, then:
+            //1. display photo
+            //2. web browser will go to his wikipedia page
+            //3. title of group box changes to that html
+
+        }//end f Pierce
+
+        private void GWBushRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if the button is checked, then:
+            //1. display photo
+            //2. web browser will go to his wikipedia page
+            //3. title of group box changes to that html
+
+        }//end G Bush
+
+        private void BObamaRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if the button is checked, then:
+            //1. display photo
+            //2. web browser will go to his wikipedia page
+            //3. title of group box changes to that html
+
+        }//end obama
+
+        private void JFKennedyRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if the button is checked, then:
+            //1. display photo
+            //2. web browser will go to his wikipedia page
+            //3. title of group box changes to that html
+
+        }//end JFK
+
+        private void WMcKinleyRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if the button is checked, then:
+            //1. display photo
+            //2. web browser will go to his wikipedia page
+            //3. title of group box changes to that html
+
+        }//end McKinley
+
+        private void RReaganRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if the button is checked, then:
+            //1. display photo
+            //2. web browser will go to his wikipedia page
+            //3. title of group box changes to that html
+
+        }//end R Reagan
+
+        private void DDEisenhowerRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if the button is checked, then:
+            //1. display photo
+            //2. web browser will go to his wikipedia page
+            //3. title of group box changes to that html
+
+        }//end Eisenhower
+
+        private void MVanBurenRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if the button is checked, then:
+            //1. display photo
+            //2. web browser will go to his wikipedia page
+            //3. title of group box changes to that html
+
+        }//end VanBuren 
+
+        private void GWashingtonRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if the button is checked, then:
+            //1. display photo
+            //2. web browser will go to his wikipedia page
+            //3. title of group box changes to that html
+
+        }//end Washington
+
+        private void JAdamsRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if the button is checked, then:
+            //1. display photo
+            //2. web browser will go to his wikipedia page
+            //3. title of group box changes to that html
+
+        }//end J adams
+
+        private void TRooseveltRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if the button is checked, then:
+            //1. display photo
+            //2. web browser will go to his wikipedia page
+            //3. title of group box changes to that html
+
+        }// end t roosevelt
+
+        private void TJeffersonRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if the button is checked, then:
+            //1. display photo
+            //2. web browser will go to his wikipedia page
+            //3. title of group box changes to that html
+
+        }//end t jefferson
+
+        private void AllRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if checked:
+            //display all radio buttons
+
+        }//end all checked
+
+        private void DemocratRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if checked:
+            //display only radio buttons with democatic pres
+
+        }//end democratic
+
+        private void RepublicanRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if checked:
+            //display only republiican pres
+
+        }//end republican 
+
+        private void Demo_repubRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if checked
+            //display both democrat and republican pres
+
+        }//end demo repub
+
+        private void FederalistRadioButton__Checked(object sender, EventArgs e)
+        {
+            //if checked
+            //only display federalist pres
+
+        }//end federalist
+
+
+
+        private void ExitButton__Click(object sender, EventArgs e)
+        {
+            //end the application
+            Application.Exit();
         }
+
     }
 }
