@@ -30,6 +30,7 @@ namespace Presidents
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.bHarrisonRadioButton = new System.Windows.Forms.RadioButton();
             this.fDRooseveltRadioButton = new System.Windows.Forms.RadioButton();
             this.wJClintonRadioButton = new System.Windows.Forms.RadioButton();
@@ -58,25 +59,27 @@ namespace Presidents
             this.webCheckBox = new System.Windows.Forms.CheckBox();
             this.presidentLabel = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.button1 = new System.Windows.Forms.Button();
-            this.presidentNumTextBox = new System.Windows.Forms.TextBox();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.harrisonNumTextBox = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.fRooseveltTextBox = new System.Windows.Forms.TextBox();
+            this.clintonTextBox = new System.Windows.Forms.TextBox();
+            this.buchananTextBox = new System.Windows.Forms.TextBox();
+            this.pierceTextBox = new System.Windows.Forms.TextBox();
+            this.bushTextBox = new System.Windows.Forms.TextBox();
+            this.obamaTextBox = new System.Windows.Forms.TextBox();
+            this.kennedyTextBox = new System.Windows.Forms.TextBox();
+            this.mckinleyTextBox = new System.Windows.Forms.TextBox();
+            this.reaganTextBox = new System.Windows.Forms.TextBox();
+            this.eisenhowerTextBox = new System.Windows.Forms.TextBox();
+            this.vanBurenTextBox = new System.Windows.Forms.TextBox();
+            this.washingtonTextBox = new System.Windows.Forms.TextBox();
+            this.adamsTextBox = new System.Windows.Forms.TextBox();
+            this.tRooseveltTextBox = new System.Windows.Forms.TextBox();
+            this.jeffersonTextBox = new System.Windows.Forms.TextBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.filterGroupBox.SuspendLayout();
             this.webGroupBox.SuspendLayout();
@@ -372,23 +375,23 @@ namespace Presidents
             this.webBrowser1.Size = new System.Drawing.Size(368, 383);
             this.webBrowser1.TabIndex = 0;
             // 
-            // button1
+            // exitButton
             // 
-            this.button1.Location = new System.Drawing.Point(659, 417);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.exitButton.Location = new System.Drawing.Point(659, 417);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(75, 23);
+            this.exitButton.TabIndex = 20;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
             // 
-            // presidentNumTextBox
+            // harrisonNumTextBox
             // 
-            this.presidentNumTextBox.Location = new System.Drawing.Point(146, 9);
-            this.presidentNumTextBox.Name = "presidentNumTextBox";
-            this.presidentNumTextBox.Size = new System.Drawing.Size(28, 20);
-            this.presidentNumTextBox.TabIndex = 21;
-            this.presidentNumTextBox.Tag = "";
-            this.presidentNumTextBox.Text = "0";
+            this.harrisonNumTextBox.Location = new System.Drawing.Point(146, 9);
+            this.harrisonNumTextBox.Name = "harrisonNumTextBox";
+            this.harrisonNumTextBox.Size = new System.Drawing.Size(28, 20);
+            this.harrisonNumTextBox.TabIndex = 21;
+            this.harrisonNumTextBox.Tag = "";
+            this.harrisonNumTextBox.Text = "0";
             // 
             // statusStrip1
             // 
@@ -405,164 +408,196 @@ namespace Presidents
             this.toolStripProgressBar.Name = "toolStripProgressBar";
             this.toolStripProgressBar.Size = new System.Drawing.Size(500, 20);
             // 
-            // textBox1
+            // fRooseveltTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(146, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(28, 20);
-            this.textBox1.TabIndex = 23;
-            this.textBox1.Tag = "";
-            this.textBox1.Text = "0";
+            this.fRooseveltTextBox.Location = new System.Drawing.Point(146, 32);
+            this.fRooseveltTextBox.Name = "fRooseveltTextBox";
+            this.fRooseveltTextBox.Size = new System.Drawing.Size(28, 20);
+            this.fRooseveltTextBox.TabIndex = 23;
+            this.fRooseveltTextBox.Tag = "";
+            this.fRooseveltTextBox.Text = "0";
             // 
-            // textBox2
+            // clintonTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(146, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(28, 20);
-            this.textBox2.TabIndex = 24;
-            this.textBox2.Tag = "";
-            this.textBox2.Text = "0";
+            this.clintonTextBox.Location = new System.Drawing.Point(146, 55);
+            this.clintonTextBox.Name = "clintonTextBox";
+            this.clintonTextBox.Size = new System.Drawing.Size(28, 20);
+            this.clintonTextBox.TabIndex = 24;
+            this.clintonTextBox.Tag = "";
+            this.clintonTextBox.Text = "0";
             // 
-            // textBox3
+            // buchananTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(146, 78);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(28, 20);
-            this.textBox3.TabIndex = 25;
-            this.textBox3.Tag = "";
-            this.textBox3.Text = "0";
+            this.buchananTextBox.Location = new System.Drawing.Point(146, 78);
+            this.buchananTextBox.Name = "buchananTextBox";
+            this.buchananTextBox.Size = new System.Drawing.Size(28, 20);
+            this.buchananTextBox.TabIndex = 25;
+            this.buchananTextBox.Tag = "";
+            this.buchananTextBox.Text = "0";
             // 
-            // textBox4
+            // pierceTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(146, 101);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(28, 20);
-            this.textBox4.TabIndex = 26;
-            this.textBox4.Tag = "";
-            this.textBox4.Text = "0";
+            this.pierceTextBox.Location = new System.Drawing.Point(146, 101);
+            this.pierceTextBox.Name = "pierceTextBox";
+            this.pierceTextBox.Size = new System.Drawing.Size(28, 20);
+            this.pierceTextBox.TabIndex = 26;
+            this.pierceTextBox.Tag = "";
+            this.pierceTextBox.Text = "0";
             // 
-            // textBox5
+            // bushTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(146, 124);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(28, 20);
-            this.textBox5.TabIndex = 27;
-            this.textBox5.Tag = "";
-            this.textBox5.Text = "0";
+            this.bushTextBox.Location = new System.Drawing.Point(146, 124);
+            this.bushTextBox.Name = "bushTextBox";
+            this.bushTextBox.Size = new System.Drawing.Size(28, 20);
+            this.bushTextBox.TabIndex = 27;
+            this.bushTextBox.Tag = "";
+            this.bushTextBox.Text = "0";
             // 
-            // textBox6
+            // obamaTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(146, 147);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(28, 20);
-            this.textBox6.TabIndex = 28;
-            this.textBox6.Tag = "";
-            this.textBox6.Text = "0";
+            this.obamaTextBox.Location = new System.Drawing.Point(146, 147);
+            this.obamaTextBox.Name = "obamaTextBox";
+            this.obamaTextBox.Size = new System.Drawing.Size(28, 20);
+            this.obamaTextBox.TabIndex = 28;
+            this.obamaTextBox.Tag = "";
+            this.obamaTextBox.Text = "0";
             // 
-            // textBox7
+            // kennedyTextBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(146, 170);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(28, 20);
-            this.textBox7.TabIndex = 29;
-            this.textBox7.Tag = "";
-            this.textBox7.Text = "0";
+            this.kennedyTextBox.Location = new System.Drawing.Point(146, 170);
+            this.kennedyTextBox.Name = "kennedyTextBox";
+            this.kennedyTextBox.Size = new System.Drawing.Size(28, 20);
+            this.kennedyTextBox.TabIndex = 29;
+            this.kennedyTextBox.Tag = "";
+            this.kennedyTextBox.Text = "0";
             // 
-            // textBox8
+            // mckinleyTextBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(326, 9);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(28, 20);
-            this.textBox8.TabIndex = 30;
-            this.textBox8.Tag = "";
-            this.textBox8.Text = "0";
+            this.mckinleyTextBox.Location = new System.Drawing.Point(326, 9);
+            this.mckinleyTextBox.Name = "mckinleyTextBox";
+            this.mckinleyTextBox.Size = new System.Drawing.Size(28, 20);
+            this.mckinleyTextBox.TabIndex = 30;
+            this.mckinleyTextBox.Tag = "";
+            this.mckinleyTextBox.Text = "0";
             // 
-            // textBox9
+            // reaganTextBox
             // 
-            this.textBox9.Location = new System.Drawing.Point(326, 32);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(28, 20);
-            this.textBox9.TabIndex = 31;
-            this.textBox9.Tag = "";
-            this.textBox9.Text = "0";
+            this.reaganTextBox.Location = new System.Drawing.Point(326, 32);
+            this.reaganTextBox.Name = "reaganTextBox";
+            this.reaganTextBox.Size = new System.Drawing.Size(28, 20);
+            this.reaganTextBox.TabIndex = 31;
+            this.reaganTextBox.Tag = "";
+            this.reaganTextBox.Text = "0";
             // 
-            // textBox10
+            // eisenhowerTextBox
             // 
-            this.textBox10.Location = new System.Drawing.Point(326, 55);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(28, 20);
-            this.textBox10.TabIndex = 32;
-            this.textBox10.Tag = "";
-            this.textBox10.Text = "0";
+            this.eisenhowerTextBox.Location = new System.Drawing.Point(326, 55);
+            this.eisenhowerTextBox.Name = "eisenhowerTextBox";
+            this.eisenhowerTextBox.Size = new System.Drawing.Size(28, 20);
+            this.eisenhowerTextBox.TabIndex = 32;
+            this.eisenhowerTextBox.Tag = "";
+            this.eisenhowerTextBox.Text = "0";
             // 
-            // textBox11
+            // vanBurenTextBox
             // 
-            this.textBox11.Location = new System.Drawing.Point(326, 78);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(28, 20);
-            this.textBox11.TabIndex = 33;
-            this.textBox11.Tag = "";
-            this.textBox11.Text = "0";
+            this.vanBurenTextBox.Location = new System.Drawing.Point(326, 78);
+            this.vanBurenTextBox.Name = "vanBurenTextBox";
+            this.vanBurenTextBox.Size = new System.Drawing.Size(28, 20);
+            this.vanBurenTextBox.TabIndex = 33;
+            this.vanBurenTextBox.Tag = "";
+            this.vanBurenTextBox.Text = "0";
             // 
-            // textBox12
+            // washingtonTextBox
             // 
-            this.textBox12.Location = new System.Drawing.Point(326, 101);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(28, 20);
-            this.textBox12.TabIndex = 34;
-            this.textBox12.Tag = "";
-            this.textBox12.Text = "0";
+            this.washingtonTextBox.Location = new System.Drawing.Point(326, 101);
+            this.washingtonTextBox.Name = "washingtonTextBox";
+            this.washingtonTextBox.Size = new System.Drawing.Size(28, 20);
+            this.washingtonTextBox.TabIndex = 34;
+            this.washingtonTextBox.Tag = "";
+            this.washingtonTextBox.Text = "0";
             // 
-            // textBox13
+            // adamsTextBox
             // 
-            this.textBox13.Location = new System.Drawing.Point(326, 124);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(28, 20);
-            this.textBox13.TabIndex = 35;
-            this.textBox13.Tag = "";
-            this.textBox13.Text = "0";
+            this.adamsTextBox.Location = new System.Drawing.Point(326, 124);
+            this.adamsTextBox.Name = "adamsTextBox";
+            this.adamsTextBox.Size = new System.Drawing.Size(28, 20);
+            this.adamsTextBox.TabIndex = 35;
+            this.adamsTextBox.Tag = "";
+            this.adamsTextBox.Text = "0";
             // 
-            // textBox14
+            // tRooseveltTextBox
             // 
-            this.textBox14.Location = new System.Drawing.Point(326, 147);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(28, 20);
-            this.textBox14.TabIndex = 36;
-            this.textBox14.Tag = "";
-            this.textBox14.Text = "0";
+            this.tRooseveltTextBox.Location = new System.Drawing.Point(326, 147);
+            this.tRooseveltTextBox.Name = "tRooseveltTextBox";
+            this.tRooseveltTextBox.Size = new System.Drawing.Size(28, 20);
+            this.tRooseveltTextBox.TabIndex = 36;
+            this.tRooseveltTextBox.Tag = "";
+            this.tRooseveltTextBox.Text = "0";
             // 
-            // textBox15
+            // jeffersonTextBox
             // 
-            this.textBox15.Location = new System.Drawing.Point(326, 170);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(28, 20);
-            this.textBox15.TabIndex = 37;
-            this.textBox15.Tag = "";
-            this.textBox15.Text = "0";
+            this.jeffersonTextBox.Location = new System.Drawing.Point(326, 170);
+            this.jeffersonTextBox.Name = "jeffersonTextBox";
+            this.jeffersonTextBox.Size = new System.Drawing.Size(28, 20);
+            this.jeffersonTextBox.TabIndex = 37;
+            this.jeffersonTextBox.Tag = "";
+            this.jeffersonTextBox.Text = "0";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "BarackObama.png");
+            this.imageList1.Images.SetKeyName(1, "BenjaminHarrison.jpeg");
+            this.imageList1.Images.SetKeyName(2, "FranklinDRoosevelt.jpeg");
+            this.imageList1.Images.SetKeyName(3, "DwightDEisenhower.jpeg");
+            this.imageList1.Images.SetKeyName(4, "FranklinPierce.jpeg");
+            this.imageList1.Images.SetKeyName(5, "GeorgeWashington.jpeg");
+            this.imageList1.Images.SetKeyName(6, "GeorgeWBush.jpeg");
+            this.imageList1.Images.SetKeyName(7, "JamesBuchanan.jpeg");
+            this.imageList1.Images.SetKeyName(8, "JohnAdams.jpeg");
+            this.imageList1.Images.SetKeyName(9, "JohnFKennedy.jpeg");
+            this.imageList1.Images.SetKeyName(10, "MartinVanBuren.jpeg");
+            this.imageList1.Images.SetKeyName(11, "RonaldReagan.jpeg");
+            this.imageList1.Images.SetKeyName(12, "TheodoreRoosevelt.jpeg");
+            this.imageList1.Images.SetKeyName(13, "ThomasJefferson.jpeg");
+            this.imageList1.Images.SetKeyName(14, "WilliamJClinton.jpeg");
+            this.imageList1.Images.SetKeyName(15, "WilliamMcKinley.jpeg");
+            // 
+            // button2
+            // 
+            this.button2.ImageKey = "BenjaminHarrison.jpeg";
+            this.button2.ImageList = this.imageList1;
+            this.button2.Location = new System.Drawing.Point(13, 215);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(161, 193);
+            this.button2.TabIndex = 38;
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 479);
-            this.Controls.Add(this.textBox15);
-            this.Controls.Add(this.textBox14);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.jeffersonTextBox);
+            this.Controls.Add(this.tRooseveltTextBox);
+            this.Controls.Add(this.adamsTextBox);
+            this.Controls.Add(this.washingtonTextBox);
+            this.Controls.Add(this.vanBurenTextBox);
+            this.Controls.Add(this.eisenhowerTextBox);
+            this.Controls.Add(this.reaganTextBox);
+            this.Controls.Add(this.mckinleyTextBox);
+            this.Controls.Add(this.kennedyTextBox);
+            this.Controls.Add(this.obamaTextBox);
+            this.Controls.Add(this.bushTextBox);
+            this.Controls.Add(this.pierceTextBox);
+            this.Controls.Add(this.buchananTextBox);
+            this.Controls.Add(this.clintonTextBox);
+            this.Controls.Add(this.fRooseveltTextBox);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.presidentNumTextBox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.harrisonNumTextBox);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.webGroupBox);
             this.Controls.Add(this.filterGroupBox);
             this.Controls.Add(this.pictureBox);
@@ -626,25 +661,27 @@ namespace Presidents
         private System.Windows.Forms.CheckBox webCheckBox;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox presidentNumTextBox;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.TextBox harrisonNumTextBox;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox fRooseveltTextBox;
+        private System.Windows.Forms.TextBox clintonTextBox;
+        private System.Windows.Forms.TextBox buchananTextBox;
+        private System.Windows.Forms.TextBox pierceTextBox;
+        private System.Windows.Forms.TextBox bushTextBox;
+        private System.Windows.Forms.TextBox obamaTextBox;
+        private System.Windows.Forms.TextBox kennedyTextBox;
+        private System.Windows.Forms.TextBox mckinleyTextBox;
+        private System.Windows.Forms.TextBox reaganTextBox;
+        private System.Windows.Forms.TextBox eisenhowerTextBox;
+        private System.Windows.Forms.TextBox vanBurenTextBox;
+        private System.Windows.Forms.TextBox washingtonTextBox;
+        private System.Windows.Forms.TextBox adamsTextBox;
+        private System.Windows.Forms.TextBox tRooseveltTextBox;
+        private System.Windows.Forms.TextBox jeffersonTextBox;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
