@@ -58,7 +58,7 @@ namespace Presidents
             //1st box
             this.harrisonNumTextBox.KeyPress += new KeyPressEventHandler(HarrisonNumTextBox__KeyPress);
             this.fRooseveltTextBox.KeyPress += new KeyPressEventHandler(FRooseveltTextBox__KeyPress);
-            this.clintonTextBox.KeyPress += new KeyPressEventHandler(Clinton__KeyPress);
+            this.clintonTextBox.KeyPress += new KeyPressEventHandler(ClintonTextBox__KeyPress);
             this.buchananTextBox.KeyPress += new KeyPressEventHandler(BuchananTextBox__KeyPress);
             this.pierceTextBox.KeyPress += new KeyPressEventHandler(PierceTextBox__KeyPress);
             this.obamaTextBox.KeyPress += new KeyPressEventHandler(ObamaTextBox__KeyPress);
@@ -72,9 +72,14 @@ namespace Presidents
             this.adamsTextBox.KeyPress += new KeyPressEventHandler(AdamsTextBox__KeyPress);
             this.tRooseveltTextBox += new KeyPressEventHandler(TRooseveltTextBox__KeyPress);
             this.jeffersonTextBox += new KeyPressEventHandler(JeffersonTextBox__KeyPress);
-            
+
+            //hover delegate for each textbox
+
 
             //webbrower control event handler to download the html
+            webBrowser1.ScriptErrorsSuppressed = true;
+            webBrowser1.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(WebBrowser1__DocumentCompleted);
+            webBrowser1.Navigate("https://google.com");
 
             //set timer interval
             //timer tick handler
@@ -268,6 +273,68 @@ namespace Presidents
             //only display federalist pres
 
         }//end federalist
+
+        private void HarrisonNumTextBox__KeyPress(object sender, EventArgs e)
+        {
+            //start the timer since the input was changed
+            //check user input
+            //if input == 0 
+            //do nothing
+            //if user input == pres number
+            //correct
+            //else
+            //show error saying incorect until correct answer is inputed
+
+        }//end Harrison text box
+
+        private void FRooseveltTextBox__KeyPress(object sender, EventArgs e)
+        {
+            //start the timer since the input was changed
+            //check user input
+            //if input == 0 
+            //do nothing
+            //if user input == pres number
+            //correct(do nothing, keep time running)
+            //else
+            //show error saying incorect until correct answer is inputed
+
+        }//end Roosevelt text box
+
+        public void ClintonTextBox__KeyPress(object sender, EventArgs e)
+        {
+            //start the timer since the input was changed
+            //check user input
+            //if input == 0 
+            //do nothing
+            //if user input == pres number
+            //correct(do nothing, keep time running)
+            //else
+            //show error saying incorect until correct answer is inputed
+
+        }//end clinton text box
+
+        private void BuchananTextBox__KeyPress(object sender, EventArgs e)
+        {
+            //start the timer since the input was changed
+            //check user input
+            //if input == 0 
+            //do nothing
+            //if user input == pres number
+            //correct(do nothing, keep time running)
+            //else
+            //show error saying incorect until correct answer is inputed
+
+        }//end buchanan text box
+
+
+
+
+
+
+        private void Timer__Tick(object sender, EventArgs e)
+        {
+            
+        }//end timer_tick
 
 
 
