@@ -107,6 +107,11 @@ namespace Presidents
         private void WebBrowser1__DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             //create html element
+            WebBrowser wb = (WebBrowser)sender;
+            HtmlElement htmlElement;
+
+            string htmlId = null;
+
             //depending on the pres button, that wiki will be displayed
 
         }//end web browser doc completed
