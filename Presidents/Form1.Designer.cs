@@ -55,8 +55,6 @@ namespace Presidents
             this.federalistRadioButton = new System.Windows.Forms.RadioButton();
             this.webGroupBox = new System.Windows.Forms.GroupBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.webCheckBox = new System.Windows.Forms.CheckBox();
-            this.presidentLabel = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.exitButton = new System.Windows.Forms.Button();
             this.harrisonNumTextBox = new System.Windows.Forms.TextBox();
@@ -329,8 +327,6 @@ namespace Presidents
             // 
             // webGroupBox
             // 
-            this.webGroupBox.Controls.Add(this.presidentLabel);
-            this.webGroupBox.Controls.Add(this.webCheckBox);
             this.webGroupBox.Controls.Add(this.webBrowser1);
             this.webGroupBox.Location = new System.Drawing.Point(360, 9);
             this.webGroupBox.Name = "webGroupBox";
@@ -338,24 +334,6 @@ namespace Presidents
             this.webGroupBox.TabIndex = 18;
             this.webGroupBox.TabStop = false;
             this.webGroupBox.Text = "html";
-            // 
-            // webCheckBox
-            // 
-            this.webCheckBox.AutoSize = true;
-            this.webCheckBox.Location = new System.Drawing.Point(15, 24);
-            this.webCheckBox.Name = "webCheckBox";
-            this.webCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.webCheckBox.TabIndex = 1;
-            this.webCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // presidentLabel
-            // 
-            this.presidentLabel.AutoSize = true;
-            this.presidentLabel.Location = new System.Drawing.Point(12, 59);
-            this.presidentLabel.Name = "presidentLabel";
-            this.presidentLabel.Size = new System.Drawing.Size(150, 13);
-            this.presidentLabel.TabIndex = 2;
-            this.presidentLabel.Text = "Professor Schuh for President!";
             // 
             // webBrowser1
             // 
@@ -612,7 +590,6 @@ namespace Presidents
             this.filterGroupBox.ResumeLayout(false);
             this.filterGroupBox.PerformLayout();
             this.webGroupBox.ResumeLayout(false);
-            this.webGroupBox.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
@@ -646,8 +623,6 @@ namespace Presidents
         private System.Windows.Forms.RadioButton democratRadioButton;
         private System.Windows.Forms.RadioButton allRadioButton;
         private System.Windows.Forms.GroupBox webGroupBox;
-        private System.Windows.Forms.Label presidentLabel;
-        private System.Windows.Forms.CheckBox webCheckBox;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button exitButton;

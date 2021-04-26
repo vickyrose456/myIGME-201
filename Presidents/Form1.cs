@@ -12,6 +12,24 @@ namespace Presidents
 {
     public partial class Form1 : Form
     {
+        //string of all buttons
+        /*string presidentButtons = ["BHarrisonRadioButton", 
+            "FDRooseveltRadioButton", 
+            "WJClintonRadioButton", 
+            "BuchananRadioButton", 
+            "FPierceRadioButton",
+            "GWBushRadioButton", 
+            "BObamaRadioButton",
+            "JFKennedyRadioButton",
+            "WMcKinleyRadioButton",
+            "RReaganRadioButton",
+            "DDEisenhowerRadioButton",
+            "MVanBurenRadioButton",
+            "GWashingtonRadioButton",
+            "JAdamsRadioButton",
+            "TRooseveltRadioButton",
+            "TJeffersonRadioButton"];*/
+
         public Form1()
         {
             InitializeComponent();
@@ -44,18 +62,16 @@ namespace Presidents
             this.federalistRadioButton.CheckedChanged += new EventHandler(FederalistRadioButton__Checked);
 
 
-            //event handler for the photo
 
             //event handler for exit button
             this.exitButton.Click += new EventHandler(ExitButton__Click);
-            
-            //event handler for the check box
-            this.webCheckBox.CheckedChanged += new EventHandler(WebCheckBox__CheckedChanged);
 
             //need to add tool tip to the text boxes when hovering over them
 
+
+            //event handler for the photo
             //hover over the photo => the photo gets larger
-            this.pictureBox.MouseHover += new EventHandler(PictureBox__MouseHover);
+           this.pictureBox.MouseHover += new EventHandler(PictureBox__MouseHover);
 
             //text box event handler
             //1st box
@@ -101,7 +117,10 @@ namespace Presidents
 
         private void PictureBox__MouseHover(object sender, EventArgs e)
         {
-            
+
+            pictureBox.Size = new System.Drawing.Size(192, 223);
+            pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+
         }//end pic hover
 
         private void WebBrowser1__DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -152,6 +171,8 @@ namespace Presidents
 
                 //3. title of group box changes to that html
                 this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Benjamin_Harrison";
+
+                //4. if hovering over the photo, make larger
             }
 
 
@@ -568,34 +589,146 @@ namespace Presidents
         {
             //if checked:
             //display all radio buttons
+            if (allRadioButton.Checked == true)
+            {
+                this.bHarrisonRadioButton.Visible = true;
+                this.fDRooseveltRadioButton.Visible = true;
+                this.wJClintonRadioButton.Visible = true;
+                this.jBuchananRadioButton.Visible = true;
+                this.fPierceRadioButton.Visible = true;
+                this.gWBushRadioButton.Visible = true;
+                this.bObamaRadioButton.Visible = true;
+                this.jFKennedyRadioButton.Visible = true;
+                this.wMcKinleyRadioButton.Visible = true;
+                this.rReaganRadioButton.Visible = true;
+                this.dDEisenhowerRadioButton.Visible = true;
+                this.mVanBurenRadioButton.Visible = true;
+                this.gWashingtonRadioButton.Visible = true;
+                this.jAdamsRadioButton.Visible = true;
+                this.tRooseveltRadioButton.Visible = true;
+                this.tJeffersonRadioButton.Visible = true;
+
+                //mark ben harrison checked
+                bHarrisonRadioButton.Checked = true;
+            }
+            else { }
 
         }//end all checked
 
         private void DemocratRadioButton__Checked(object sender, EventArgs e)
         {
             //if checked:
-            //display only radio buttons with democatic pres
+            if (democratRadioButton.Checked == true)
+            {
+                //display only radio buttons with democatic pres
+                //set non demo pres to false
+                this.bHarrisonRadioButton.Visible = false;
+                this.fDRooseveltRadioButton.Visible = true;
+                this.wJClintonRadioButton.Visible = true;
+                this.jBuchananRadioButton.Visible = true;
+                this.fPierceRadioButton.Visible = true;
+                this.gWBushRadioButton.Visible = false;
+                this.bObamaRadioButton.Visible = true;
+                this.jFKennedyRadioButton.Visible = true;
+                this.wMcKinleyRadioButton.Visible = false;
+                this.rReaganRadioButton.Visible = false;
+                this.dDEisenhowerRadioButton.Visible = false;
+                this.mVanBurenRadioButton.Visible = true;
+                this.gWashingtonRadioButton.Visible = false;
+                this.jAdamsRadioButton.Visible = false;
+                this.tRooseveltRadioButton.Visible = false;
+                this.tJeffersonRadioButton.Visible = false;
 
+                this.fDRooseveltRadioButton.Checked = true;
+            }
+            
         }//end democratic
 
         private void RepublicanRadioButton__Checked(object sender, EventArgs e)
         {
             //if checked:
-            //display only republiican pres
+            if (republicanRadioButton.Checked == true)
+            {
+                //display only republiican pres
+                this.bHarrisonRadioButton.Visible = true;
+                this.fDRooseveltRadioButton.Visible = false;
+                this.wJClintonRadioButton.Visible = false;
+                this.jBuchananRadioButton.Visible = false;
+                this.fPierceRadioButton.Visible = false;
+                this.gWBushRadioButton.Visible = true;
+                this.bObamaRadioButton.Visible = false;
+                this.jFKennedyRadioButton.Visible = false;
+                this.wMcKinleyRadioButton.Visible = true;
+                this.rReaganRadioButton.Visible = true;
+                this.dDEisenhowerRadioButton.Visible = true;
+                this.mVanBurenRadioButton.Visible = false;
+                this.gWashingtonRadioButton.Visible = false;
+                this.jAdamsRadioButton.Visible = false;
+                this.tRooseveltRadioButton.Visible = true;
+                this.tJeffersonRadioButton.Visible = false;
 
+                //mark ben harrison checked
+                bHarrisonRadioButton.Checked = true;
+            }
+            
         }//end republican 
 
         private void Demo_repubRadioButton__Checked(object sender, EventArgs e)
         {
             //if checked
-            //display both democrat and republican pres
+            if (demo_repubRadioButton.Checked == true)
+            {
+                //display democrat- republican pres
+                this.bHarrisonRadioButton.Visible = false;
+                this.fDRooseveltRadioButton.Visible = false;
+                this.wJClintonRadioButton.Visible = false;
+                this.jBuchananRadioButton.Visible = false;
+                this.fPierceRadioButton.Visible = false;
+                this.gWBushRadioButton.Visible = false;
+                this.bObamaRadioButton.Visible = false;
+                this.jFKennedyRadioButton.Visible = false;
+                this.wMcKinleyRadioButton.Visible = false;
+                this.rReaganRadioButton.Visible = false;
+                this.dDEisenhowerRadioButton.Visible = false;
+                this.mVanBurenRadioButton.Visible = false;
+                this.gWashingtonRadioButton.Visible = false;
+                this.jAdamsRadioButton.Visible = false;
+                this.tRooseveltRadioButton.Visible = false;
+                this.tJeffersonRadioButton.Visible = true;
+
+
+                //set t jeff button to checked
+                tJeffersonRadioButton.Checked = true;
+            }
 
         }//end demo repub
 
         private void FederalistRadioButton__Checked(object sender, EventArgs e)
         {
             //if checked
-            //only display federalist pres
+            if (federalistRadioButton.Checked == true)
+            {
+                //only display federalist pres
+                this.bHarrisonRadioButton.Visible = false;
+                this.fDRooseveltRadioButton.Visible = false;
+                this.wJClintonRadioButton.Visible = false;
+                this.jBuchananRadioButton.Visible = false;
+                this.fPierceRadioButton.Visible = false;
+                this.gWBushRadioButton.Visible = false;
+                this.bObamaRadioButton.Visible = false;
+                this.jFKennedyRadioButton.Visible = false;
+                this.wMcKinleyRadioButton.Visible = false;
+                this.rReaganRadioButton.Visible = false;
+                this.dDEisenhowerRadioButton.Visible = false;
+                this.mVanBurenRadioButton.Visible = false;
+                this.gWashingtonRadioButton.Visible = true;
+                this.jAdamsRadioButton.Visible = true;
+                this.tRooseveltRadioButton.Visible = false;
+                this.tJeffersonRadioButton.Visible = false;
+
+                //g washington is checked
+                this.gWashingtonRadioButton.Checked = true;
+            }
 
         }//end federalist
 
