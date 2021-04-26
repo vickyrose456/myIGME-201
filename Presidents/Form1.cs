@@ -146,7 +146,7 @@ namespace Presidents
                 //2. web browser will go to his wikipedia page
 
                 //3. title of group box changes to that html
-
+                this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Benjamin_Harrison";
             }
 
 
@@ -176,6 +176,7 @@ namespace Presidents
                 //2. web browser will go to his wikipedia page
 
                 //3. title of group box changes to that html
+                this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Franklin_D._Roosevelt";
             }
 
 
@@ -339,78 +340,222 @@ namespace Presidents
                 //2. web browser will go to his wikipedia page
 
                 //3. title of group box changes to that html
+                this.webGroupBox.Text = "https://en.wikipedia.org/wiki/John_F._Kennedy";
             }
         }//end JFK
 
         private void WMcKinleyRadioButton__Checked(object sender, EventArgs e)
         {
-            //if the button is checked, then:
-            //1. display photo
-            //2. web browser will go to his wikipedia page
-            //3. title of group box changes to that html
+            if (this.wMcKinleyRadioButton.Checked == true)
+            {
+                //1. display photo
+                //create new picture box 
+                PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
+                this.pictureBox.BackColor = System.Drawing.Color.LightGray;
+                this.pictureBox.Location = new System.Drawing.Point(12, 215);
+                this.pictureBox.Name = "pictureBox";
+                this.pictureBox.Size = new System.Drawing.Size(162, 193);
+                this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                this.pictureBox.TabIndex = 16;
+                this.pictureBox.TabStop = false;
+
+                this.Controls.Add(photoPictureBox);
+
+                this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/WilliamMcKinley.jpeg";
+
+                //2. web browser will go to his wikipedia page
+
+                //3. title of group box changes to that html
+                this.webGroupBox.Text = "https://en.wikipedia.org/wiki/William_McKinley";
+            }
 
         }//end McKinley
 
         private void RReaganRadioButton__Checked(object sender, EventArgs e)
         {
-            //if the button is checked, then:
-            //1. display photo
-            //2. web browser will go to his wikipedia page
-            //3. title of group box changes to that html
+            if (this.rReaganRadioButton.Checked == true)
+            {
+                //1. display photo
+                //create new picture box 
+                PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
+                this.pictureBox.BackColor = System.Drawing.Color.LightGray;
+                this.pictureBox.Location = new System.Drawing.Point(12, 215);
+                this.pictureBox.Name = "pictureBox";
+                this.pictureBox.Size = new System.Drawing.Size(162, 193);
+                this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                this.pictureBox.TabIndex = 16;
+                this.pictureBox.TabStop = false;
+
+                this.Controls.Add(photoPictureBox);
+
+                this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/RonaldReagan.jpeg";
+
+                //2. web browser will go to his wikipedia page
+
+                //3. title of group box changes to that html
+                this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Ronald_Reagan";
+            }
 
         }//end R Reagan
 
         private void DDEisenhowerRadioButton__Checked(object sender, EventArgs e)
         {
-            //if the button is checked, then:
-            //1. display photo
-            //2. web browser will go to his wikipedia page
-            //3. title of group box changes to that html
+            if (this.dDEisenhowerRadioButton.Checked == true)
+            {
+                //1. display photo
+                //create new picture box 
+                PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
+                this.pictureBox.BackColor = System.Drawing.Color.LightGray;
+                this.pictureBox.Location = new System.Drawing.Point(12, 215);
+                this.pictureBox.Name = "pictureBox";
+                this.pictureBox.Size = new System.Drawing.Size(162, 193);
+                this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                this.pictureBox.TabIndex = 16;
+                this.pictureBox.TabStop = false;
+
+                this.Controls.Add(photoPictureBox);
+
+                this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/DwightDEisenhower.jpeg";
+
+                //2. web browser will go to his wikipedia page
+
+                //3. title of group box changes to that html
+                this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower";
+            }
 
         }//end Eisenhower
 
         private void MVanBurenRadioButton__Checked(object sender, EventArgs e)
         {
-            //if the button is checked, then:
-            //1. display photo
-            //2. web browser will go to his wikipedia page
-            //3. title of group box changes to that html
+            if (this.mVanBurenRadioButton.Checked == true)
+            {
+                //1. display photo
+                //create new picture box 
+                PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
+                this.pictureBox.BackColor = System.Drawing.Color.LightGray;
+                this.pictureBox.Location = new System.Drawing.Point(12, 215);
+                this.pictureBox.Name = "pictureBox";
+                this.pictureBox.Size = new System.Drawing.Size(162, 193);
+                this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                this.pictureBox.TabIndex = 16;
+                this.pictureBox.TabStop = false;
+
+                this.Controls.Add(photoPictureBox);
+
+                this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/MartinVanBuren.jpeg";
+
+                //2. web browser will go to his wikipedia page
+
+                //3. title of group box changes to that html
+                this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Martin_Van_Buren";
+            }
 
         }//end VanBuren 
 
         private void GWashingtonRadioButton__Checked(object sender, EventArgs e)
         {
-            //if the button is checked, then:
-            //1. display photo
-            //2. web browser will go to his wikipedia page
-            //3. title of group box changes to that html
+            if (this.gWashingtonRadioButton.Checked == true)
+            {
+                //1. display photo
+                //create new picture box 
+                PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
+                this.pictureBox.BackColor = System.Drawing.Color.LightGray;
+                this.pictureBox.Location = new System.Drawing.Point(12, 215);
+                this.pictureBox.Name = "pictureBox";
+                this.pictureBox.Size = new System.Drawing.Size(162, 193);
+                this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                this.pictureBox.TabIndex = 16;
+                this.pictureBox.TabStop = false;
+
+                this.Controls.Add(photoPictureBox);
+
+                this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/GeorgeWashington.jpeg";
+
+                //2. web browser will go to his wikipedia page
+
+                //3. title of group box changes to that html
+                this.webGroupBox.Text = "https://en.wikipedia.org/wiki/George_Washington";
+            }
 
         }//end Washington
 
         private void JAdamsRadioButton__Checked(object sender, EventArgs e)
         {
-            //if the button is checked, then:
-            //1. display photo
-            //2. web browser will go to his wikipedia page
-            //3. title of group box changes to that html
+            if (this.jAdamsRadioButton.Checked == true)
+            {
+                //1. display photo
+                //create new picture box 
+                PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
+                this.pictureBox.BackColor = System.Drawing.Color.LightGray;
+                this.pictureBox.Location = new System.Drawing.Point(12, 215);
+                this.pictureBox.Name = "pictureBox";
+                this.pictureBox.Size = new System.Drawing.Size(162, 193);
+                this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                this.pictureBox.TabIndex = 16;
+                this.pictureBox.TabStop = false;
+
+                this.Controls.Add(photoPictureBox);
+
+                this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/JohnAdams.jpeg";
+
+                //2. web browser will go to his wikipedia page
+
+                //3. title of group box changes to that html
+                this.webGroupBox.Text = "https://en.wikipedia.org/wiki/John_Adams";
+            }
 
         }//end J adams
 
         private void TRooseveltRadioButton__Checked(object sender, EventArgs e)
         {
-            //if the button is checked, then:
-            //1. display photo
-            //2. web browser will go to his wikipedia page
-            //3. title of group box changes to that html
+            if (this.tRooseveltRadioButton.Checked == true)
+            {
+                //1. display photo
+                //create new picture box 
+                PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
+                this.pictureBox.BackColor = System.Drawing.Color.LightGray;
+                this.pictureBox.Location = new System.Drawing.Point(12, 215);
+                this.pictureBox.Name = "pictureBox";
+                this.pictureBox.Size = new System.Drawing.Size(162, 193);
+                this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                this.pictureBox.TabIndex = 16;
+                this.pictureBox.TabStop = false;
 
+                this.Controls.Add(photoPictureBox);
+
+                this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/TheodoreRoosevelt.jpeg";
+
+                //2. web browser will go to his wikipedia page
+
+                //3. title of group box changes to that html
+                this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Theodore_Roosevelt";
+            }
         }// end t roosevelt
 
         private void TJeffersonRadioButton__Checked(object sender, EventArgs e)
         {
-            //if the button is checked, then:
-            //1. display photo
-            //2. web browser will go to his wikipedia page
-            //3. title of group box changes to that html
+            if (this.tJeffersonRadioButton.Checked == true)
+            {
+                //1. display photo
+                //create new picture box 
+                PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
+                this.pictureBox.BackColor = System.Drawing.Color.LightGray;
+                this.pictureBox.Location = new System.Drawing.Point(12, 215);
+                this.pictureBox.Name = "pictureBox";
+                this.pictureBox.Size = new System.Drawing.Size(162, 193);
+                this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                this.pictureBox.TabIndex = 16;
+                this.pictureBox.TabStop = false;
+
+                this.Controls.Add(photoPictureBox);
+
+                this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/ThomasJefferson.jpeg";
+
+                //2. web browser will go to his wikipedia page
+
+                //3. title of group box changes to that html
+                this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Thomas_Jefferson";
+            }
 
         }//end t jefferson
 
