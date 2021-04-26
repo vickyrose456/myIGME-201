@@ -51,11 +51,6 @@ namespace Presidents
             
             this.exitButton.Click += new EventHandler(ExitButton__Click);
             
-            if (numCorrect == 16)
-            {
-                this.exitButton.Enabled = true;
-            }
-            else { this.exitButton.Enabled = false;}
 
             //need to add tool tip to the text boxes when hovering over them
 
@@ -596,6 +591,8 @@ namespace Presidents
 
         private void AllRadioButton__Checked(object sender, EventArgs e)
         {
+            numCorrect = 0;
+            timer1.Stop();
             //if checked:
             //display all radio buttons
             if (allRadioButton.Checked == true)
@@ -626,6 +623,8 @@ namespace Presidents
 
         private void DemocratRadioButton__Checked(object sender, EventArgs e)
         {
+            numCorrect = 0;
+            timer1.Stop();
             //if checked:
             if (democratRadioButton.Checked == true)
             {
@@ -655,6 +654,8 @@ namespace Presidents
 
         private void RepublicanRadioButton__Checked(object sender, EventArgs e)
         {
+            numCorrect = 0;
+            timer1.Stop();
             //if checked:
             if (republicanRadioButton.Checked == true)
             {
@@ -684,6 +685,8 @@ namespace Presidents
 
         private void Demo_repubRadioButton__Checked(object sender, EventArgs e)
         {
+            numCorrect = 0;
+            timer1.Stop();
             //if checked
             if (demo_repubRadioButton.Checked == true)
             {
@@ -714,6 +717,8 @@ namespace Presidents
 
         private void FederalistRadioButton__Checked(object sender, EventArgs e)
         {
+            numCorrect = 0;
+            timer1.Stop();
             //if checked
             if (federalistRadioButton.Checked == true)
             {
