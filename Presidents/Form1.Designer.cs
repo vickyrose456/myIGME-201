@@ -332,7 +332,7 @@ namespace Presidents
             this.webGroupBox.Controls.Add(this.webBrowser1);
             this.webGroupBox.Location = new System.Drawing.Point(360, 9);
             this.webGroupBox.Name = "webGroupBox";
-            this.webGroupBox.Size = new System.Drawing.Size(374, 402);
+            this.webGroupBox.Size = new System.Drawing.Size(437, 402);
             this.webGroupBox.TabIndex = 18;
             this.webGroupBox.TabStop = false;
             this.webGroupBox.Text = "html";
@@ -343,12 +343,12 @@ namespace Presidents
             this.webBrowser1.Location = new System.Drawing.Point(3, 16);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(368, 383);
+            this.webBrowser1.Size = new System.Drawing.Size(431, 383);
             this.webBrowser1.TabIndex = 0;
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(659, 417);
+            this.exitButton.Location = new System.Drawing.Point(719, 417);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 20;
@@ -368,9 +368,9 @@ namespace Presidents
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 453);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 454);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(759, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(830, 26);
             this.statusStrip1.TabIndex = 22;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -553,7 +553,7 @@ namespace Presidents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 479);
+            this.ClientSize = new System.Drawing.Size(830, 480);
             this.Controls.Add(this.jeffersonTextBox);
             this.Controls.Add(this.tRooseveltTextBox);
             this.Controls.Add(this.adamsTextBox);
