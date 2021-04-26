@@ -47,7 +47,6 @@ namespace Presidents
             this.jAdamsRadioButton = new System.Windows.Forms.RadioButton();
             this.tRooseveltRadioButton = new System.Windows.Forms.RadioButton();
             this.tJeffersonRadioButton = new System.Windows.Forms.RadioButton();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.filterGroupBox = new System.Windows.Forms.GroupBox();
             this.allRadioButton = new System.Windows.Forms.RadioButton();
             this.democratRadioButton = new System.Windows.Forms.RadioButton();
@@ -79,11 +78,11 @@ namespace Presidents
             this.tRooseveltTextBox = new System.Windows.Forms.TextBox();
             this.jeffersonTextBox = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.filterGroupBox.SuspendLayout();
             this.webGroupBox.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // bHarrisonRadioButton
@@ -261,14 +260,6 @@ namespace Presidents
             this.tJeffersonRadioButton.TabStop = true;
             this.tJeffersonRadioButton.Text = "Thomas Jefferson";
             this.tJeffersonRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.Location = new System.Drawing.Point(12, 215);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(162, 193);
-            this.pictureBox.TabIndex = 16;
-            this.pictureBox.TabStop = false;
             // 
             // filterGroupBox
             // 
@@ -564,22 +555,21 @@ namespace Presidents
             this.imageList1.Images.SetKeyName(14, "WilliamJClinton.jpeg");
             this.imageList1.Images.SetKeyName(15, "WilliamMcKinley.jpeg");
             // 
-            // button2
+            // pictureBox
             // 
-            this.button2.ImageKey = "BenjaminHarrison.jpeg";
-            this.button2.ImageList = this.imageList1;
-            this.button2.Location = new System.Drawing.Point(13, 215);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 193);
-            this.button2.TabIndex = 38;
-            this.button2.UseVisualStyleBackColor = true;
+            this.pictureBox.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBox.Location = new System.Drawing.Point(12, 215);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(162, 193);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 16;
+            this.pictureBox.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 479);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.jeffersonTextBox);
             this.Controls.Add(this.tRooseveltTextBox);
             this.Controls.Add(this.adamsTextBox);
@@ -619,13 +609,13 @@ namespace Presidents
             this.Controls.Add(this.bHarrisonRadioButton);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.filterGroupBox.ResumeLayout(false);
             this.filterGroupBox.PerformLayout();
             this.webGroupBox.ResumeLayout(false);
             this.webGroupBox.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -649,7 +639,6 @@ namespace Presidents
         private System.Windows.Forms.RadioButton jAdamsRadioButton;
         private System.Windows.Forms.RadioButton tRooseveltRadioButton;
         private System.Windows.Forms.RadioButton tJeffersonRadioButton;
-        private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.GroupBox filterGroupBox;
         private System.Windows.Forms.RadioButton federalistRadioButton;
         private System.Windows.Forms.RadioButton demo_repubRadioButton;
@@ -681,7 +670,7 @@ namespace Presidents
         private System.Windows.Forms.TextBox tRooseveltTextBox;
         private System.Windows.Forms.TextBox jeffersonTextBox;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }
 

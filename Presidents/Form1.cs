@@ -50,9 +50,12 @@ namespace Presidents
             this.exitButton.Click += new EventHandler(ExitButton__Click);
             
             //event handler for the check box
-            this.webCheckBox.Checked += new EventHandler(WebCheckBox__Checked);
+            this.webCheckBox.CheckedChanged += new EventHandler(WebCheckBox__CheckedChanged);
 
-            //need to add tool tip to the text boxes
+            //need to add tool tip to the text boxes when hovering over them
+
+            //hover over the photo => the photo gets larger
+            this.pictureBox.MouseHover += new EventHandler(PictureBox__MouseHover);
 
             //text box event handler
             //1st box
@@ -70,8 +73,8 @@ namespace Presidents
             this.vanBurenTextBox.KeyPress += new KeyPressEventHandler(VanBuranTextBox__KeyPress);
             this.washingtonTextBox.KeyPress += new KeyPressEventHandler(WashingtonTextBox__KeyPress);
             this.adamsTextBox.KeyPress += new KeyPressEventHandler(AdamsTextBox__KeyPress);
-            this.tRooseveltTextBox += new KeyPressEventHandler(TRooseveltTextBox__KeyPress);
-            this.jeffersonTextBox += new KeyPressEventHandler(JeffersonTextBox__KeyPress);
+            this.tRooseveltTextBox.KeyPress += new KeyPressEventHandler(TRooseveltTextBox__KeyPress);
+            this.jeffersonTextBox.KeyPress += new KeyPressEventHandler(JeffersonTextBox__KeyPress);
 
             //hover delegate for each textbox
 
@@ -79,7 +82,7 @@ namespace Presidents
             //webbrower control event handler to download the html
             webBrowser1.ScriptErrorsSuppressed = true;
             webBrowser1.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(WebBrowser1__DocumentCompleted);
-            webBrowser1.Navigate("https://google.com");
+            webBrowser1.Navigate("google.com");
 
             //set timer interval
             //timer tick handler
@@ -88,17 +91,67 @@ namespace Presidents
             timer1.Tick += new EventHandler(Timer__Tick);
             
         }
+        //function to make Which # president when hovering over the textbox
+        private void TextBox__MouseHover(object sender, EventArgs e)
+        {
+            //when hovering over the textbox
+            //display Which pres #?
+
+        }//end txt hover
+
+        private void PictureBox__MouseHover(object sender, EventArgs e)
+        {
+            
+        }//end pic hover
+
+        private void WebBrowser1__DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            //create html element
+            //depending on the pres button, that wiki will be displayed
+
+        }//end web browser doc completed
+
+        private void WebCheckBox__CheckedChanged(object sender, EventArgs e)
+        {
+            //if check box = checked
+            //then the web browser goes to the normal search site
+            //https://en.wikipedia.org/w/index.php?search=&title=Special%3ASearch&profile=advanced&fulltext=1
+            //if not checked
+            // then go to the webbrowser control
+        }//end web check box
+
 
         //president event handlers
         //depending on the radio button, respective pres will appear in browser
         private void BHarrisonRadioButton__Checked(object sender, EventArgs e)
         {
             //if the harrison button is checked, then:
-            //1. display photo
-            //2. web browser will go to his wikipedia page
-            //3. title of group box changes to that html
+            if (bHarrisonRadioButton.Checked == true)
+            {
+                //1. display photo
+                //create new picture box 
+                PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
+                this.pictureBox.BackColor = System.Drawing.Color.LightGray;
+                this.pictureBox.Location = new System.Drawing.Point(12, 215);
+                this.pictureBox.Name = "pictureBox";
+                this.pictureBox.Size = new System.Drawing.Size(162, 193);
+                this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                this.pictureBox.TabIndex = 16;
+                this.pictureBox.TabStop = false;
+
+                this.Controls.Add(photoPictureBox);
+
+                this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/BenjaminHarrison.jpeg";
+
+                //2. web browser will go to his wikipedia page
+
+                //3. title of group box changes to that html
+
+            }
+
 
         }//end BHarrison 
+        
 
         private void FDRooseveltRadioButton__Checked(object sender, EventArgs e)
         {
@@ -106,7 +159,22 @@ namespace Presidents
             if (this.fDRooseveltRadioButton.Checked == true)
             {
                 //1. display photo
+                //create new picture box 
+                PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
+                this.pictureBox.BackColor = System.Drawing.Color.LightGray;
+                this.pictureBox.Location = new System.Drawing.Point(12, 215);
+                this.pictureBox.Name = "pictureBox";
+                this.pictureBox.Size = new System.Drawing.Size(162, 193);
+                this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                this.pictureBox.TabIndex = 16;
+                this.pictureBox.TabStop = false;
+
+                this.Controls.Add(photoPictureBox);
+
+                this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/FranklinDRoosevelt.jpeg";
+
                 //2. web browser will go to his wikipedia page
+
                 //3. title of group box changes to that html
             }
 
@@ -116,55 +184,162 @@ namespace Presidents
         private void WJClintonRadioButton__Checked(object sender, EventArgs e)
         {
             //if the button is checked, then:
-            //1. display photo
-            //2. web browser will go to his wikipedia page
-            //3. title of group box changes to that html
+            if (this.wJClintonRadioButton.Checked == true)
+            {
+                //1. display photo
+                //create new picture box 
+                PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
+                this.pictureBox.BackColor = System.Drawing.Color.LightGray;
+                this.pictureBox.Location = new System.Drawing.Point(12, 215);
+                this.pictureBox.Name = "pictureBox";
+                this.pictureBox.Size = new System.Drawing.Size(162, 193);
+                this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                this.pictureBox.TabIndex = 16;
+                this.pictureBox.TabStop = false;
+
+                this.Controls.Add(photoPictureBox);
+
+                this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/WilliamJClinton.jpeg";
+
+                //2. web browser will go to his wikipedia page
+
+                //3. title of group box changes to that html
+                this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Bill_Clinton";
+            }
 
         }//end Clinton
 
         private void JBuchananRadioButton__Checked(object sender, EventArgs e)
         {
-            //if the button is checked, then:
-            //1. display photo
-            //2. web browser will go to his wikipedia page
-            //3. title of group box changes to that html
+            if (this.jBuchananRadioButton.Checked == true)
+            {
+                //1. display photo
+                //create new picture box 
+                PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
+                this.pictureBox.BackColor = System.Drawing.Color.LightGray;
+                this.pictureBox.Location = new System.Drawing.Point(12, 215);
+                this.pictureBox.Name = "pictureBox";
+                this.pictureBox.Size = new System.Drawing.Size(162, 193);
+                this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                this.pictureBox.TabIndex = 16;
+                this.pictureBox.TabStop = false;
+
+                this.Controls.Add(photoPictureBox);
+
+                this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/JamesBuchanan.jpeg";
+
+                //2. web browser will go to his wikipedia page
+
+                //3. title of group box changes to that html
+                this.webGroupBox.Text = "https://en.wikipedia.org/wiki/James_Buchanan";
+            }
 
         }//end Buchanan
 
         private void FPierceRadioButton__Checked(object sender, EventArgs e)
         {
-            //if the button is checked, then:
-            //1. display photo
-            //2. web browser will go to his wikipedia page
-            //3. title of group box changes to that html
+            if (this.fPierceRadioButton.Checked == true)
+            {
+                //1. display photo
+                //create new picture box 
+                PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
+                this.pictureBox.BackColor = System.Drawing.Color.LightGray;
+                this.pictureBox.Location = new System.Drawing.Point(12, 215);
+                this.pictureBox.Name = "pictureBox";
+                this.pictureBox.Size = new System.Drawing.Size(162, 193);
+                this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                this.pictureBox.TabIndex = 16;
+                this.pictureBox.TabStop = false;
+
+                this.Controls.Add(photoPictureBox);
+
+                this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/FranklinPierce.jpeg";
+
+                //2. web browser will go to his wikipedia page
+
+                //3. title of group box changes to that html
+                this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Franklin_Pierce";
+
+            }
 
         }//end f Pierce
 
         private void GWBushRadioButton__Checked(object sender, EventArgs e)
         {
-            //if the button is checked, then:
-            //1. display photo
-            //2. web browser will go to his wikipedia page
-            //3. title of group box changes to that html
+            if (this.gWBushRadioButton.Checked == true)
+            {
+                //1. display photo
+                //create new picture box 
+                PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
+                this.pictureBox.BackColor = System.Drawing.Color.LightGray;
+                this.pictureBox.Location = new System.Drawing.Point(12, 215);
+                this.pictureBox.Name = "pictureBox";
+                this.pictureBox.Size = new System.Drawing.Size(162, 193);
+                this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                this.pictureBox.TabIndex = 16;
+                this.pictureBox.TabStop = false;
+
+                this.Controls.Add(photoPictureBox);
+
+                this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/GeorgeWBush.jpeg";
+
+                //2. web browser will go to his wikipedia page
+
+                //3. title of group box changes to that html
+                this.webGroupBox.Text = "https://en.wikipedia.org/wiki/George_W._Bush";
+            }
 
         }//end G Bush
 
         private void BObamaRadioButton__Checked(object sender, EventArgs e)
         {
-            //if the button is checked, then:
-            //1. display photo
-            //2. web browser will go to his wikipedia page
-            //3. title of group box changes to that html
+            if (this.bObamaRadioButton.Checked == true)
+            {
+                //1. display photo
+                //create new picture box 
+                PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
+                this.pictureBox.BackColor = System.Drawing.Color.LightGray;
+                this.pictureBox.Location = new System.Drawing.Point(12, 215);
+                this.pictureBox.Name = "pictureBox";
+                this.pictureBox.Size = new System.Drawing.Size(162, 193);
+                this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                this.pictureBox.TabIndex = 16;
+                this.pictureBox.TabStop = false;
 
+                this.Controls.Add(photoPictureBox);
+
+                this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/BarackObama.png";
+
+                //2. web browser will go to his wikipedia page
+
+                //3. title of group box changes to that html
+                this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Barack_Obama";
+            }
         }//end obama
 
         private void JFKennedyRadioButton__Checked(object sender, EventArgs e)
         {
-            //if the button is checked, then:
-            //1. display photo
-            //2. web browser will go to his wikipedia page
-            //3. title of group box changes to that html
+            if (this.jFKennedyRadioButton.Checked == true)
+            {
+                //1. display photo
+                //create new picture box 
+                PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
+                this.pictureBox.BackColor = System.Drawing.Color.LightGray;
+                this.pictureBox.Location = new System.Drawing.Point(12, 215);
+                this.pictureBox.Name = "pictureBox";
+                this.pictureBox.Size = new System.Drawing.Size(162, 193);
+                this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                this.pictureBox.TabIndex = 16;
+                this.pictureBox.TabStop = false;
 
+                this.Controls.Add(photoPictureBox);
+
+                this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/JohnFKennedy.jpeg";
+
+                //2. web browser will go to his wikipedia page
+
+                //3. title of group box changes to that html
+            }
         }//end JFK
 
         private void WMcKinleyRadioButton__Checked(object sender, EventArgs e)
@@ -276,25 +451,26 @@ namespace Presidents
 
         private void HarrisonNumTextBox__KeyPress(object sender, EventArgs e)
         {
-            //start the timer since the input was changed
+            //start the timer(if not started already) since the input was changed
             //check user input
             //if input == 0 
-            //do nothing
+            //dont let the user stop unless correct
             //if user input == pres number
-            //correct
+            //correct(keep time running)
             //else
             //show error saying incorect until correct answer is inputed
+
 
         }//end Harrison text box
 
         private void FRooseveltTextBox__KeyPress(object sender, EventArgs e)
         {
-            //start the timer since the input was changed
+            //start the timer(if not started already) since the input was changed
             //check user input
             //if input == 0 
-            //do nothing
+            //dont let the user stop unless correct
             //if user input == pres number
-            //correct(do nothing, keep time running)
+            //correct(keep time running)
             //else
             //show error saying incorect until correct answer is inputed
 
@@ -325,6 +501,149 @@ namespace Presidents
             //show error saying incorect until correct answer is inputed
 
         }//end buchanan text box
+
+        public void PierceTextBox__KeyPress(object sender, EventArgs e)
+        {
+            //start the timer(if not started already) since the input was changed
+            //check user input
+            //if input == 0 
+            //dont let the user stop unless correct
+            //if user input == pres number
+            //correct(keep time running)
+            //else
+            //show error saying incorect until correct answer is inputed
+
+        }//end Pierce textbox
+
+        private void ObamaTextBox__KeyPress(object sender, EventArgs e)
+        {
+            //start the timer(if not started already) since the input was changed
+            //check user input
+            //if input == 0 
+            //dont let the user stop unless correct
+            //if user input == pres number
+            //correct(keep time running)
+            //else
+            //show error saying incorect until correct answer is inputed
+
+        }//obama text box
+
+        private void KennedyTextBox__KeyPress(object sender, EventArgs e)
+        {
+            //start the timer(if not started already) since the input was changed
+            //check user input
+            //if input == 0 
+            //dont let the user stop unless correct
+            //if user input == pres number
+            //correct(keep time running)
+            //else
+            //show error saying incorect until correct answer is inputed
+
+        }//kennedy text box
+
+        private void McknleyTextBox__KeyPress(object sender, EventArgs e)
+        {
+            //start the timer(if not started already) since the input was changed
+            //check user input
+            //if input == 0 
+            //dont let the user stop unless correct
+            //if user input == pres number
+            //correct(keep time running)
+            //else
+            //show error saying incorect until correct answer is inputed
+
+        }//McKinley text box
+
+        private void ReaganTextBox__KeyPress(object sender, EventArgs e)
+        {
+            //start the timer(if not started already) since the input was changed
+            //check user input
+            //if input == 0 
+            //dont let the user stop unless correct
+            //if user input == pres number
+            //correct(keep time running)
+            //else
+            //show error saying incorect until correct answer is inputed
+
+        }//reagan txt box
+
+        private void EisenhowerTextBox__KeyPress(object sender, EventArgs e)
+        {
+            //start the timer(if not started already) since the input was changed
+            //check user input
+            //if input == 0 
+            //dont let the user stop unless correct
+            //if user input == pres number
+            //correct(keep time running)
+            //else
+            //show error saying incorect until correct answer is inputed
+
+        }//end eisenhower txt box
+
+        private void VanBuranTextBox__KeyPress(object sender, EventArgs e)
+        {
+            //start the timer(if not started already) since the input was changed
+            //check user input
+            //if input == 0 
+            //dont let the user stop unless correct
+            //if user input == pres number
+            //correct(keep time running)
+            //else
+            //show error saying incorect until correct answer is inputed
+
+        }//end vanburan txt box
+
+        private void AdamsTextBox__KeyPress(object sender, EventArgs e)
+        {
+            //start the timer(if not started already) since the input was changed
+            //check user input
+            //if input == 0 
+            //dont let the user stop unless correct
+            //if user input == pres number
+            //correct(keep time running)
+            //else
+            //show error saying incorect until correct answer is inputed
+
+        }//adams txt box
+
+        private void WashingtonTextBox__KeyPress(object sender, EventArgs e)
+        {
+            //start the timer(if not started already) since the input was changed
+            //check user input
+            //if input == 0 
+            //dont let the user stop unless correct
+            //if user input == pres number
+            //correct(keep time running)
+            //else
+            //show error saying incorect until correct answer is inputed
+
+        }//end washington txt box
+
+        private void TRooseveltTextBox__KeyPress(object sender, EventArgs e)
+        {
+            //start the timer(if not started already) since the input was changed
+            //check user input
+            //if input == 0 
+            //dont let the user stop unless correct
+            //if user input == pres number
+            //correct(keep time running)
+            //else
+            //show error saying incorect until correct answer is inputed
+
+        }//end t roosevelt txt box
+
+        private void JeffersonTextBox__KeyPress(object sender, EventArgs e)
+        {
+            //start the timer(if not started already) since the input was changed
+            //check user input
+            //if input == 0 
+            //dont let the user stop unless correct
+            //if user input == pres number
+            //correct(keep time running)
+            //else
+            //show error saying incorect until correct answer is inputed
+
+        }//jefferson txt box
 
 
 
