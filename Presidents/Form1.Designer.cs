@@ -77,10 +77,12 @@ namespace Presidents
             this.jeffersonTextBox = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.filterGroupBox.SuspendLayout();
             this.webGroupBox.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // bHarrisonRadioButton
@@ -543,6 +545,10 @@ namespace Presidents
             this.pictureBox.TabIndex = 16;
             this.pictureBox.TabStop = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -586,13 +592,14 @@ namespace Presidents
             this.Controls.Add(this.fDRooseveltRadioButton);
             this.Controls.Add(this.bHarrisonRadioButton);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Presidents";
             this.filterGroupBox.ResumeLayout(false);
             this.filterGroupBox.PerformLayout();
             this.webGroupBox.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -646,6 +653,7 @@ namespace Presidents
         private System.Windows.Forms.TextBox jeffersonTextBox;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

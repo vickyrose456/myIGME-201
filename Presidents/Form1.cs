@@ -12,23 +12,7 @@ namespace Presidents
 {
     public partial class Form1 : Form
     {
-        //string of all buttons
-        /*string presidentButtons = ["BHarrisonRadioButton", 
-            "FDRooseveltRadioButton", 
-            "WJClintonRadioButton", 
-            "BuchananRadioButton", 
-            "FPierceRadioButton",
-            "GWBushRadioButton", 
-            "BObamaRadioButton",
-            "JFKennedyRadioButton",
-            "WMcKinleyRadioButton",
-            "RReaganRadioButton",
-            "DDEisenhowerRadioButton",
-            "MVanBurenRadioButton",
-            "GWashingtonRadioButton",
-            "JAdamsRadioButton",
-            "TRooseveltRadioButton",
-            "TJeffersonRadioButton"];*/
+        int numCorrect = 0;
 
         public Form1()
         {
@@ -64,14 +48,22 @@ namespace Presidents
 
 
             //event handler for exit button
+            
             this.exitButton.Click += new EventHandler(ExitButton__Click);
+            
+            if (numCorrect == 16)
+            {
+                this.exitButton.Enabled = true;
+            }
+            else { this.exitButton.Enabled = false;}
 
             //need to add tool tip to the text boxes when hovering over them
 
 
             //event handler for the photo
             //hover over the photo => the photo gets larger
-           this.pictureBox.MouseHover += new EventHandler(PictureBox__MouseHover);
+             this.pictureBox.MouseHover += new EventHandler(PictureBox__MouseHover);
+            this.pictureBox.MouseLeave += new EventHandler(PictureBox__MouseLeave);
 
             //text box event handler
             //1st box
@@ -98,12 +90,12 @@ namespace Presidents
             //webbrower control event handler to download the html
             webBrowser1.ScriptErrorsSuppressed = true;
             webBrowser1.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(WebBrowser1__DocumentCompleted);
-            webBrowser1.Navigate("google.com");
+            //webBrowser1.Navigate("google.com");
 
             //set timer interval
             //timer tick handler
             timer1.Interval = 1000;
-
+            toolStripProgressBar.Value = 50;
             timer1.Tick += new EventHandler(Timer__Tick);
             
         }
@@ -122,6 +114,11 @@ namespace Presidents
             pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 
         }//end pic hover
+        private void PictureBox__MouseLeave(object sender, EventArgs e)
+        {
+            this.pictureBox.Size = new System.Drawing.Size(162, 193);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+        }//end pic leave hover
 
         private void WebBrowser1__DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
@@ -132,17 +129,12 @@ namespace Presidents
             string htmlId = null;
 
             //depending on the pres button, that wiki will be displayed
+            if (bHarrisonRadioButton.Checked == true)
+            {
+                
+            }
 
         }//end web browser doc completed
-
-        private void WebCheckBox__CheckedChanged(object sender, EventArgs e)
-        {
-            //if check box = checked
-            //then the web browser goes to the normal search site
-            //https://en.wikipedia.org/w/index.php?search=&title=Special%3ASearch&profile=advanced&fulltext=1
-            //if not checked
-            // then go to the webbrowser control
-        }//end web check box
 
 
         //president event handlers
@@ -168,11 +160,11 @@ namespace Presidents
                 this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/BenjaminHarrison.jpeg";
 
                 //2. web browser will go to his wikipedia page
+                this.webBrowser1.Navigate("https://en.wikipedia.org/wiki/Benjamin_Harrison");
 
                 //3. title of group box changes to that html
                 this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Benjamin_Harrison";
 
-                //4. if hovering over the photo, make larger
             }
 
 
@@ -200,6 +192,7 @@ namespace Presidents
                 this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/FranklinDRoosevelt.jpeg";
 
                 //2. web browser will go to his wikipedia page
+                this.webBrowser1.Navigate("https://en.wikipedia.org/wiki/Franklin_D._Roosevelt");
 
                 //3. title of group box changes to that html
                 this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Franklin_D._Roosevelt";
@@ -229,6 +222,7 @@ namespace Presidents
                 this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/WilliamJClinton.jpeg";
 
                 //2. web browser will go to his wikipedia page
+                this.webBrowser1.Navigate("https://en.wikipedia.org/wiki/Bill_Clinton");
 
                 //3. title of group box changes to that html
                 this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Bill_Clinton";
@@ -256,6 +250,8 @@ namespace Presidents
                 this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/JamesBuchanan.jpeg";
 
                 //2. web browser will go to his wikipedia page
+                this.webBrowser1.Navigate("https://en.wikipedia.org/wiki/James_Buchanan");
+
 
                 //3. title of group box changes to that html
                 this.webGroupBox.Text = "https://en.wikipedia.org/wiki/James_Buchanan";
@@ -283,6 +279,7 @@ namespace Presidents
                 this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/FranklinPierce.jpeg";
 
                 //2. web browser will go to his wikipedia page
+                this.webBrowser1.Navigate("https://en.wikipedia.org/wiki/Franklin_Pierce");
 
                 //3. title of group box changes to that html
                 this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Franklin_Pierce";
@@ -311,6 +308,7 @@ namespace Presidents
                 this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/GeorgeWBush.jpeg";
 
                 //2. web browser will go to his wikipedia page
+                this.webBrowser1.Navigate("https://en.wikipedia.org/wiki/George_W._Bush");
 
                 //3. title of group box changes to that html
                 this.webGroupBox.Text = "https://en.wikipedia.org/wiki/George_W._Bush";
@@ -338,6 +336,7 @@ namespace Presidents
                 this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/BarackObama.png";
 
                 //2. web browser will go to his wikipedia page
+                this.webBrowser1.Navigate("https://en.wikipedia.org/wiki/Barack_Obama");
 
                 //3. title of group box changes to that html
                 this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Barack_Obama";
@@ -364,6 +363,7 @@ namespace Presidents
                 this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/JohnFKennedy.jpeg";
 
                 //2. web browser will go to his wikipedia page
+                this.webBrowser1.Navigate("https://en.wikipedia.org/wiki/John_F._Kennedy");
 
                 //3. title of group box changes to that html
                 this.webGroupBox.Text = "https://en.wikipedia.org/wiki/John_F._Kennedy";
@@ -390,6 +390,7 @@ namespace Presidents
                 this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/WilliamMcKinley.jpeg";
 
                 //2. web browser will go to his wikipedia page
+                this.webBrowser1.Navigate("https://en.wikipedia.org/wiki/William_McKinley");
 
                 //3. title of group box changes to that html
                 this.webGroupBox.Text = "https://en.wikipedia.org/wiki/William_McKinley";
@@ -417,6 +418,7 @@ namespace Presidents
                 this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/RonaldReagan.jpeg";
 
                 //2. web browser will go to his wikipedia page
+                this.webBrowser1.Navigate("https://en.wikipedia.org/wiki/Ronald_Reagan");
 
                 //3. title of group box changes to that html
                 this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Ronald_Reagan";
@@ -444,6 +446,7 @@ namespace Presidents
                 this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/DwightDEisenhower.jpeg";
 
                 //2. web browser will go to his wikipedia page
+                this.webBrowser1.Navigate("https://en.wikipedia.org/wiki/Dwight_D._Eisenhower");
 
                 //3. title of group box changes to that html
                 this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower";
@@ -471,6 +474,7 @@ namespace Presidents
                 this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/MartinVanBuren.jpeg";
 
                 //2. web browser will go to his wikipedia page
+                this.webBrowser1.Navigate("https://en.wikipedia.org/wiki/Martin_Van_Buren");
 
                 //3. title of group box changes to that html
                 this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Martin_Van_Buren";
@@ -732,199 +736,420 @@ namespace Presidents
 
         }//end federalist
 
-        private void HarrisonNumTextBox__KeyPress(object sender, EventArgs e)
+        private void HarrisonNumTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
+            TextBox tb = (TextBox)sender;
             //start the timer(if not started already) since the input was changed
+            if (toolStripProgressBar.Value == 50)
+            {
+                timer1.Start();
+            }
+            else { }
+
             //check user input
             //if input == 0 
-            //dont let the user stop unless correct
-            //if user input == pres number
-            //correct(keep time running)
-            //else
-            //show error saying incorect until correct answer is inputed
+            if (tb.Text != "3")
+            {
+                this.errorProvider1.SetError(tb, "Wrong number");
+                tb.Tag = true;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+                numCorrect++;
+            }
 
 
         }//end Harrison text box
 
-        private void FRooseveltTextBox__KeyPress(object sender, EventArgs e)
+        private void FRooseveltTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
+            TextBox tb = (TextBox)sender;
             //start the timer(if not started already) since the input was changed
+            if (toolStripProgressBar.Value == 50)
+            {
+                timer1.Start();
+            }
+            else { }
+
             //check user input
             //if input == 0 
-            //dont let the user stop unless correct
-            //if user input == pres number
-            //correct(keep time running)
-            //else
-            //show error saying incorect until correct answer is inputed
+            if (tb.Text != "3")
+            {
+                this.errorProvider1.SetError(tb, "Wrong number");
+                tb.Tag = true;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+                numCorrect++;
+            }
+
 
         }//end Roosevelt text box
 
-        public void ClintonTextBox__KeyPress(object sender, EventArgs e)
+        public void ClintonTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
-            //start the timer since the input was changed
+            TextBox tb = (TextBox)sender;
+            //start the timer(if not started already) since the input was changed
+            if (toolStripProgressBar.Value == 50)
+            {
+                timer1.Start();
+            }
+            else { }
+
             //check user input
             //if input == 0 
-            //do nothing
-            //if user input == pres number
-            //correct(do nothing, keep time running)
-            //else
-            //show error saying incorect until correct answer is inputed
+            if (tb.Text != "3")
+            {
+                this.errorProvider1.SetError(tb, "Wrong number");
+                tb.Tag = true;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+                numCorrect++;
+            }
 
         }//end clinton text box
 
-        private void BuchananTextBox__KeyPress(object sender, EventArgs e)
+        private void BuchananTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
-            //start the timer since the input was changed
+            TextBox tb = (TextBox)sender;
+            //start the timer(if not started already) since the input was changed
+            if (toolStripProgressBar.Value == 50)
+            {
+                timer1.Start();
+            }
+            else { }
+
             //check user input
             //if input == 0 
-            //do nothing
-            //if user input == pres number
-            //correct(do nothing, keep time running)
-            //else
-            //show error saying incorect until correct answer is inputed
+            if (tb.Text != "3")
+            {
+                this.errorProvider1.SetError(tb, "Wrong number");
+                tb.Tag = true;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+                numCorrect++;
+            }
 
         }//end buchanan text box
 
-        public void PierceTextBox__KeyPress(object sender, EventArgs e)
+        public void PierceTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
+            TextBox tb = (TextBox)sender;
             //start the timer(if not started already) since the input was changed
+            if (toolStripProgressBar.Value == 50)
+            {
+                timer1.Start();
+            }
+            else { }
+
             //check user input
             //if input == 0 
-            //dont let the user stop unless correct
-            //if user input == pres number
-            //correct(keep time running)
-            //else
-            //show error saying incorect until correct answer is inputed
+            if (tb.Text != "3")
+            {
+                this.errorProvider1.SetError(tb, "Wrong number");
+                tb.Tag = true;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+                numCorrect++;
+            }
+
 
         }//end Pierce textbox
 
-        private void ObamaTextBox__KeyPress(object sender, EventArgs e)
+        private void ObamaTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
+            TextBox tb = (TextBox)sender;
             //start the timer(if not started already) since the input was changed
+            if (toolStripProgressBar.Value == 50)
+            {
+                timer1.Start();
+            }
+            else { }
+
             //check user input
             //if input == 0 
-            //dont let the user stop unless correct
-            //if user input == pres number
-            //correct(keep time running)
-            //else
-            //show error saying incorect until correct answer is inputed
+            if (tb.Text != "3")
+            {
+                this.errorProvider1.SetError(tb, "Wrong number");
+                tb.Tag = true;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+                numCorrect++;
+            }
+
 
         }//obama text box
 
-        private void KennedyTextBox__KeyPress(object sender, EventArgs e)
+        private void KennedyTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
+            TextBox tb = (TextBox)sender;
             //start the timer(if not started already) since the input was changed
+            if (toolStripProgressBar.Value == 50)
+            {
+                timer1.Start();
+            }
+            else { }
+
             //check user input
             //if input == 0 
-            //dont let the user stop unless correct
-            //if user input == pres number
-            //correct(keep time running)
-            //else
-            //show error saying incorect until correct answer is inputed
+            if (tb.Text != "3")
+            {
+                this.errorProvider1.SetError(tb, "Wrong number");
+                tb.Tag = true;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+                numCorrect++;
+            }
+
 
         }//kennedy text box
 
-        private void McknleyTextBox__KeyPress(object sender, EventArgs e)
+        private void McknleyTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
+            TextBox tb = (TextBox)sender;
             //start the timer(if not started already) since the input was changed
+            if (toolStripProgressBar.Value == 50)
+            {
+                timer1.Start();
+            }
+            else { }
+
             //check user input
             //if input == 0 
-            //dont let the user stop unless correct
-            //if user input == pres number
-            //correct(keep time running)
-            //else
-            //show error saying incorect until correct answer is inputed
+            if (tb.Text != "3")
+            {
+                this.errorProvider1.SetError(tb, "Wrong number");
+                tb.Tag = true;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+                numCorrect++;
+            }
+
 
         }//McKinley text box
 
-        private void ReaganTextBox__KeyPress(object sender, EventArgs e)
+        private void ReaganTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
+            TextBox tb = (TextBox)sender;
             //start the timer(if not started already) since the input was changed
+            if (toolStripProgressBar.Value == 50)
+            {
+                timer1.Start();
+            }
+            else { }
+
             //check user input
             //if input == 0 
-            //dont let the user stop unless correct
-            //if user input == pres number
-            //correct(keep time running)
-            //else
-            //show error saying incorect until correct answer is inputed
+            if (tb.Text != "3")
+            {
+                this.errorProvider1.SetError(tb, "Wrong number");
+                tb.Tag = true;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+                numCorrect++;
+            }
+
 
         }//reagan txt box
 
-        private void EisenhowerTextBox__KeyPress(object sender, EventArgs e)
+        private void EisenhowerTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
+            TextBox tb = (TextBox)sender;
             //start the timer(if not started already) since the input was changed
+            if (toolStripProgressBar.Value == 50)
+            {
+                timer1.Start();
+            }
+            else { }
+
             //check user input
             //if input == 0 
-            //dont let the user stop unless correct
-            //if user input == pres number
-            //correct(keep time running)
-            //else
-            //show error saying incorect until correct answer is inputed
+            if (tb.Text != "3")
+            {
+                this.errorProvider1.SetError(tb, "Wrong number");
+                tb.Tag = true;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+                numCorrect++;
+            }
+
 
         }//end eisenhower txt box
 
-        private void VanBuranTextBox__KeyPress(object sender, EventArgs e)
+        private void VanBuranTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
+            TextBox tb = (TextBox)sender;
             //start the timer(if not started already) since the input was changed
+            if (toolStripProgressBar.Value == 50)
+            {
+                timer1.Start();
+            }
+            else { }
+
             //check user input
             //if input == 0 
-            //dont let the user stop unless correct
-            //if user input == pres number
-            //correct(keep time running)
-            //else
-            //show error saying incorect until correct answer is inputed
+            if (tb.Text != "3")
+            {
+                this.errorProvider1.SetError(tb, "Wrong number");
+                tb.Tag = true;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+                numCorrect++;
+            }
+
 
         }//end vanburan txt box
 
-        private void AdamsTextBox__KeyPress(object sender, EventArgs e)
+        private void AdamsTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
+            TextBox tb = (TextBox)sender;
             //start the timer(if not started already) since the input was changed
+            if (toolStripProgressBar.Value == 50)
+            {
+                timer1.Start();
+            }
+            else { }
+
             //check user input
             //if input == 0 
-            //dont let the user stop unless correct
-            //if user input == pres number
-            //correct(keep time running)
-            //else
-            //show error saying incorect until correct answer is inputed
+            if (tb.Text != "3")
+            {
+                this.errorProvider1.SetError(tb, "Wrong number");
+                tb.Tag = true;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+                numCorrect++;
+            }
+
 
         }//adams txt box
 
-        private void WashingtonTextBox__KeyPress(object sender, EventArgs e)
+        private void WashingtonTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
+            TextBox tb = (TextBox)sender;
             //start the timer(if not started already) since the input was changed
+            if (toolStripProgressBar.Value == 50)
+            {
+                timer1.Start();
+            }
+            else { }
+
             //check user input
             //if input == 0 
-            //dont let the user stop unless correct
-            //if user input == pres number
-            //correct(keep time running)
-            //else
-            //show error saying incorect until correct answer is inputed
+            if (tb.Text != "3")
+            {
+                this.errorProvider1.SetError(tb, "Wrong number");
+                tb.Tag = true;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+                numCorrect++;
+            }
+
 
         }//end washington txt box
 
-        private void TRooseveltTextBox__KeyPress(object sender, EventArgs e)
+        private void TRooseveltTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
+            TextBox tb = (TextBox)sender;
             //start the timer(if not started already) since the input was changed
+            if (toolStripProgressBar.Value == 50)
+            {
+                timer1.Start();
+            }
+            else { }
+
             //check user input
             //if input == 0 
-            //dont let the user stop unless correct
-            //if user input == pres number
-            //correct(keep time running)
-            //else
-            //show error saying incorect until correct answer is inputed
+            if (tb.Text != "3")
+            {
+                this.errorProvider1.SetError(tb, "Wrong number");
+                tb.Tag = true;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+                numCorrect++;
+            }
 
         }//end t roosevelt txt box
 
-        private void JeffersonTextBox__KeyPress(object sender, EventArgs e)
+        private void JeffersonTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
+            TextBox tb = (TextBox)sender;
             //start the timer(if not started already) since the input was changed
+            if (toolStripProgressBar.Value == 50)
+            {
+                timer1.Start();
+            }
+            else { }
+
             //check user input
             //if input == 0 
-            //dont let the user stop unless correct
-            //if user input == pres number
-            //correct(keep time running)
-            //else
-            //show error saying incorect until correct answer is inputed
+            if (tb.Text != "3")
+            {
+                this.errorProvider1.SetError(tb, "Wrong number");
+                tb.Tag = true;
+                
+            }
+            else
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+                numCorrect++;
+            }
+
 
         }//jefferson txt box
 
@@ -935,7 +1160,15 @@ namespace Presidents
 
         private void Timer__Tick(object sender, EventArgs e)
         {
-            
+            toolStripProgressBar.Value--;
+            if (toolStripProgressBar.Value == 0)
+            {
+                //set all text boxes to 0
+                this.harrisonNumTextBox.Text = "0";
+                //stop the timer
+                timer1.Stop();
+
+            }
         }//end timer_tick
 
 
