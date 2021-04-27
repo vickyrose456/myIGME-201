@@ -21,6 +21,8 @@ namespace unit3Test
 
             //picturebox delegate
             this.turtlePictureBox.MouseClick += new MouseEventHandler(PictureBox__MouseClick);
+            this.tigerPictureBox.MouseClick += new MouseEventHandler(PictureBox__MouseClick);
+            this.dogPictureBox.MouseClick += new MouseEventHandler(PictureBox__MouseClick);
 
             //random number txt box that takes you back to form 1
             this.toForm1CheckBox.CheckedChanged += new EventHandler(ToForm1CheckBox__CheckedChanged);
