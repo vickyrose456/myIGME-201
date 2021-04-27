@@ -31,6 +31,17 @@ namespace unit3Test
             //replace "s", "t" and "a" with ""
             TextBox tb = (TextBox)sender;
 
+            //make the radio buttons dissappear when "s" is typed
+            if (e.KeyChar.ToString().ToLower() == "s")
+            {
+                e.Handled = false;
+                this.optionsGroupBox.Visible = false;
+            }
+            //if "t" or "a" is pressed, then the text box will not type it
+            if (e.KeyChar.ToString().ToLower() == "a" || e.KeyChar.ToString().ToLower() == "t")
+            {
+                e.Handled = true;
+            }
         }
 
         private void FriendsListRadioButton__CheckedChanged(object sender, EventArgs e)

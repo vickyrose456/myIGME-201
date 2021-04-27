@@ -128,6 +128,7 @@ namespace unit3Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Sienna;
             this.ClientSize = new System.Drawing.Size(1594, 704);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.groupBox1);
