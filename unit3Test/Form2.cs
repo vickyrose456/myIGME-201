@@ -40,6 +40,7 @@ namespace unit3Test
                 Form1 form1 = new Form1();
                 form1.ShowDialog();
 
+                //change the photo to the dogs
                 this.turtlePictureBox.Visible = false;
                 this.tigerPictureBox.Visible = false;
                 this.dogPictureBox.Visible = true;
@@ -47,6 +48,7 @@ namespace unit3Test
             }
             else if (rNum == 2)//change the photo
             {
+                //change photo to tiger
                 this.turtlePictureBox.Visible = false;
                 this.tigerPictureBox.Visible = true;
                 this.dogPictureBox.Visible = false;
@@ -54,6 +56,7 @@ namespace unit3Test
             }
             else
             {
+                //change photo to turtle
                  this.turtlePictureBox.Visible = true;
                 this.tigerPictureBox.Visible = false;
                 this.dogPictureBox.Visible = false;

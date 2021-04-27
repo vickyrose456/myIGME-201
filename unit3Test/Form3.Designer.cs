@@ -36,6 +36,7 @@ namespace unit3Test
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.optionsGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +67,7 @@ namespace unit3Test
             // latestPostRadioButton2
             // 
             this.latestPostRadioButton2.AutoSize = true;
-            this.latestPostRadioButton2.Location = new System.Drawing.Point(19, 159);
+            this.latestPostRadioButton2.Location = new System.Drawing.Point(19, 244);
             this.latestPostRadioButton2.Name = "latestPostRadioButton2";
             this.latestPostRadioButton2.Size = new System.Drawing.Size(208, 36);
             this.latestPostRadioButton2.TabIndex = 1;
@@ -77,7 +78,7 @@ namespace unit3Test
             // directMessageRadioButton
             // 
             this.directMessageRadioButton.AutoSize = true;
-            this.directMessageRadioButton.Location = new System.Drawing.Point(19, 249);
+            this.directMessageRadioButton.Location = new System.Drawing.Point(19, 163);
             this.directMessageRadioButton.Name = "directMessageRadioButton";
             this.directMessageRadioButton.Size = new System.Drawing.Size(248, 36);
             this.directMessageRadioButton.TabIndex = 2;
@@ -112,12 +113,25 @@ namespace unit3Test
             this.groupBox1.Size = new System.Drawing.Size(686, 426);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Visible = false;
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(1594, 333);
+            this.webBrowser1.TabIndex = 4;
+            this.webBrowser1.Url = new System.Uri("", System.UriKind.Relative);
+            this.webBrowser1.Visible = false;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1594, 704);
+            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.optionsGroupBox);
             this.Name = "Form3";
@@ -139,5 +153,6 @@ namespace unit3Test
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

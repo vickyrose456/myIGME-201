@@ -34,11 +34,10 @@ namespace unit3Test
             //set progress bar value
             this.toolStripProgressBar.Value = 3;
 
-
+            //if id and password = correct, exit app
             if (idBool == true && passowordBool == true)
             {
-                Form2 form2 = new Form2();
-                form2.ShowDialog();
+                Application.Exit();
             }
 
 
@@ -54,7 +53,8 @@ namespace unit3Test
 
         private void ExitButton__Click(object sender, EventArgs e)
         {
-            
+            Form3 form3 = new Form3();
+            form3.ShowDialog();
             //Application.Exit();
         }
 
