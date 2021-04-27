@@ -18,6 +18,7 @@ namespace Presidents
         {
             InitializeComponent();
 
+
             //event handlers for each radio button (presidents)
             //(1st row)
             this.bHarrisonRadioButton.CheckedChanged += new EventHandler(BHarrisonRadioButton__Checked);
@@ -50,14 +51,35 @@ namespace Presidents
             //event handler for exit button
             
             this.exitButton.Click += new EventHandler(ExitButton__Click);
-            
+            if (numCorrect == 16)
+            {
+                this.exitButton.Enabled = true;
+            }
+            else { this.exitButton.Enabled = false; }
 
+            //hover delegate for each textbox
             //need to add tool tip to the text boxes when hovering over them
+            this.harrisonNumTextBox.MouseHover += new EventHandler(TextBox__MouseHover);
+            this.fRooseveltTextBox.MouseHover += new EventHandler(TextBox__MouseHover);
+            this.clintonTextBox.MouseHover += new EventHandler(TextBox__MouseHover);
+            this.buchananTextBox.MouseHover += new EventHandler(TextBox__MouseHover);
+            this.pierceTextBox.MouseHover += new EventHandler(TextBox__MouseHover);
+            this.bushTextBox.MouseHover += new EventHandler(TextBox__MouseHover);
+            this.obamaTextBox.MouseHover += new EventHandler(TextBox__MouseHover);
+            this.kennedyTextBox.MouseHover += new EventHandler(TextBox__MouseHover);
 
+            this.mckinleyTextBox.MouseHover += new EventHandler(TextBox__MouseHover);
+            this.reaganTextBox.MouseHover += new EventHandler(TextBox__MouseHover);
+            this.eisenhowerTextBox.MouseHover += new EventHandler(TextBox__MouseHover);
+            this.vanBurenTextBox.MouseHover += new EventHandler(TextBox__MouseHover);
+            this.washingtonTextBox.MouseHover += new EventHandler(TextBox__MouseHover);
+            this.adamsTextBox.MouseHover += new EventHandler(TextBox__MouseHover);
+            this.tRooseveltTextBox.MouseHover += new EventHandler(TextBox__MouseHover);
+            this.jeffersonTextBox.MouseHover += new EventHandler(TextBox__MouseHover);
 
             //event handler for the photo
             //hover over the photo => the photo gets larger
-             this.pictureBox.MouseHover += new EventHandler(PictureBox__MouseHover);
+            this.pictureBox.MouseHover += new EventHandler(PictureBox__MouseHover);
             this.pictureBox.MouseLeave += new EventHandler(PictureBox__MouseLeave);
 
             //text box event handler
@@ -80,10 +102,22 @@ namespace Presidents
             this.tRooseveltTextBox.KeyPress += new KeyPressEventHandler(TRooseveltTextBox__KeyPress);
             this.jeffersonTextBox.KeyPress += new KeyPressEventHandler(JeffersonTextBox__KeyPress);
 
-            //hover delegate for each textbox
-
 
             //webbrower control event handler to download the html
+            try
+            {
+                // Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.2; WOW64; Trident / 7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; wbx 1.0.0)
+                Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(
+                    @"SOFTWARE\\WOW6432Node\\Microsoft\\Internet Explorer\\MAIN\\FeatureControl\\FEATURE_BROWSER_EMULATION",
+                    true);
+                key.SetValue(Application.ExecutablePath.Replace(Application.StartupPath + "\\", ""), 11001, Microsoft.Win32.RegistryValueKind.DWord);
+                key.Close();
+            }
+            catch
+            {
+
+            }
+
             webBrowser1.ScriptErrorsSuppressed = true;
             webBrowser1.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(WebBrowser1__DocumentCompleted);
             //webBrowser1.Navigate("google.com");
@@ -99,7 +133,9 @@ namespace Presidents
         private void TextBox__MouseHover(object sender, EventArgs e)
         {
             //when hovering over the textbox
+            TextBox tb = (TextBox)sender;
             //display Which pres #?
+            toolTip1.SetToolTip(tb , "Which # President?");
 
         }//end txt hover
 
@@ -121,17 +157,12 @@ namespace Presidents
             //create html element
             WebBrowser wb = (WebBrowser)sender;
             HtmlElement htmlElement;
+            HtmlElementCollection htmlElementCollection;
 
-            string htmlId = null;
+            htmlElementCollection = wb.Document.GetElementsByTagName("a");
 
-            //depending on the pres button, that wiki will be displayed
-            if (bHarrisonRadioButton.Checked == true)
-            {
-                
-            }
 
         }//end web browser doc completed
-
 
         //president event handlers
         //depending on the radio button, respective pres will appear in browser
@@ -156,8 +187,9 @@ namespace Presidents
                 this.pictureBox.ImageLocation = "https://people.rit.edu/dxsigm/BenjaminHarrison.jpeg";
 
                 //2. web browser will go to his wikipedia page
-                this.webBrowser1.Navigate("https://en.wikipedia.org/wiki/Benjamin_Harrison");
-
+                //webBrowser1.Url = new System.Uri("https://en.wikipedia.org/wiki/Benjamin_Harrison", System.UriKind.Absolute);
+                // this.webBrowser1.Navigate("");
+                this.webBrowser1.Navigate(new Uri("https://en.wikipedia.org/wiki/Benjamin_Harrison"));
                 //3. title of group box changes to that html
                 this.webGroupBox.Text = "https://en.wikipedia.org/wiki/Benjamin_Harrison";
 

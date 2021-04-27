@@ -78,6 +78,7 @@ namespace Presidents
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.filterGroupBox.SuspendLayout();
             this.webGroupBox.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -339,11 +340,11 @@ namespace Presidents
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.webBrowser1.Location = new System.Drawing.Point(3, 16);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(431, 383);
+            this.webBrowser1.Size = new System.Drawing.Size(405, 380);
             this.webBrowser1.TabIndex = 0;
             // 
             // exitButton
@@ -654,6 +655,7 @@ namespace Presidents
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
