@@ -12,21 +12,49 @@ namespace unit3Test
 {
     public partial class Form1 : Form
     {
+        bool passowordBool = false;
+        bool idBool = false;
         public Form1()
         {
             InitializeComponent();
 
-            //open form 2
-            //Form2 form2 = new Form2();
-            //form2.ShowDialog();
+            
 
             //text box delegates
             this.idTextBox.KeyPress += new KeyPressEventHandler(IdTextBox__KeyPress);
             this.passwordTextBox.KeyPress += new KeyPressEventHandler(PasswordTextBox__KeyPress);
 
+            //button delegates
+            this.logInButton.Click += new EventHandler(LogInButton__Click);
+            this.exitButton.Click += new EventHandler(ExitButton__Click);
+
             //set timer interval
-            timer.Interval = 100;
+            timer.Interval = 1000;
             timer.Tick += new EventHandler(Timer__Tick);
+            //set progress bar value
+            this.toolStripProgressBar.Value = 3;
+
+
+            if (idBool == true && passowordBool == true)
+            {
+                Form2 form2 = new Form2();
+                form2.ShowDialog();
+            }
+
+
+        }
+
+        private void LogInButton__Click(object sender, EventArgs e) 
+        {
+            Application.Exit();
+
+        }//log in button
+
+        private void ExitButton__Click(object sender, EventArgs e)
+        {
+            //open form 2
+            Form3 form3 = new Form3();
+            form3.ShowDialog();
         }
 
         private void Timer__Tick(object sender, EventArgs e)
@@ -39,11 +67,23 @@ namespace unit3Test
                 this.passwordTextBox.Text = "";
                 //stop the timer
                 timer.Stop();
+                this.toolStripProgressBar.Value = 3;
             }
         }//timer tick
 
         private void PasswordTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (toolStripProgressBar.Value == 3)
+            {
+                timer.Start();
+            }
+
+            if (passwordTextBox.Text.ToLower() == "cookies")
+            {
+                passowordBool = true;
+                timer.Stop();
+            }
+
 
         }//end password
 
@@ -56,6 +96,7 @@ namespace unit3Test
             {
                 //correct(but show error message)
                 this.errorProvider.SetError(tb, "Correct id");
+                idBool = true;
                 tb.Tag = false;
             }//otherwise error message
             else 
@@ -64,7 +105,7 @@ namespace unit3Test
                 tb.Tag = true;
             }
             
-        }
+        }//end id key press
         
     }
 }

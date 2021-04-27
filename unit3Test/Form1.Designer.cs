@@ -49,7 +49,7 @@ namespace unit3Test
             // 
             this.logInButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.logInButton.ForeColor = System.Drawing.Color.DarkRed;
-            this.logInButton.Location = new System.Drawing.Point(1425, 687);
+            this.logInButton.Location = new System.Drawing.Point(101, 496);
             this.logInButton.Name = "logInButton";
             this.logInButton.Size = new System.Drawing.Size(196, 75);
             this.logInButton.TabIndex = 0;
@@ -108,7 +108,7 @@ namespace unit3Test
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1686, 62);
+            this.toolStrip1.Size = new System.Drawing.Size(1304, 25);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -117,9 +117,9 @@ namespace unit3Test
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 730);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 648);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1686, 66);
+            this.statusStrip1.Size = new System.Drawing.Size(1304, 66);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -127,13 +127,13 @@ namespace unit3Test
             // 
             this.toolStripProgressBar.Name = "toolStripProgressBar";
             this.toolStripProgressBar.Size = new System.Drawing.Size(50, 50);
-            this.toolStripProgressBar.Visible = false;
+            this.toolStripProgressBar.Value = 50;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1686, 796);
+            this.ClientSize = new System.Drawing.Size(1304, 714);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.exitButton);
