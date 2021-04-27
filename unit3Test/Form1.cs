@@ -34,13 +34,6 @@ namespace unit3Test
             //set progress bar value
             this.toolStripProgressBar.Value = 3;
 
-            //if id and password = correct, exit app
-            if (idBool == true && passowordBool == true)
-            {
-                Application.Exit();
-            }
-
-
         }
 
         private void LogInButton__Click(object sender, EventArgs e) 
@@ -72,6 +65,16 @@ namespace unit3Test
             }
         }//timer tick
 
+        private void checkLogin()
+        {
+            //if id and password = correct, exit app
+            if (idBool == true && passowordBool == true)
+            {
+                //Application.Exit();
+                this.Close();
+            }
+        }
+
         private void PasswordTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
             if (toolStripProgressBar.Value == 3)
@@ -85,7 +88,7 @@ namespace unit3Test
                 timer.Stop();
             }
 
-
+            checkLogin();
         }//end password
 
         private void IdTextBox__KeyPress(object sender, KeyPressEventArgs e)
@@ -105,7 +108,7 @@ namespace unit3Test
                 this.errorProvider.SetError(tb, null);
                 tb.Tag = true;
             }
-            
+            checkLogin();
         }//end id key press
         
     }
