@@ -555,6 +555,7 @@ namespace Presidents
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(830, 480);
+            this.ControlBox = false;
             this.Controls.Add(this.jeffersonTextBox);
             this.Controls.Add(this.tRooseveltTextBox);
             this.Controls.Add(this.adamsTextBox);
@@ -592,6 +593,8 @@ namespace Presidents
             this.Controls.Add(this.wJClintonRadioButton);
             this.Controls.Add(this.fDRooseveltRadioButton);
             this.Controls.Add(this.bHarrisonRadioButton);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Presidents";
             this.filterGroupBox.ResumeLayout(false);
