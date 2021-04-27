@@ -16,15 +16,37 @@ namespace unit3Test
         {
             InitializeComponent();
 
-            //
+            //open form 2
             //Form2 form2 = new Form2();
             //form2.ShowDialog();
 
             //text box delegates
             this.idTextBox.KeyPress += new KeyPressEventHandler(IdTextBox__KeyPress);
-            //this.passwordTextBox.KeyPress += new EventHandler(PasswordTextBox__KeyPress);
+            this.passwordTextBox.KeyPress += new KeyPressEventHandler(PasswordTextBox__KeyPress);
 
+            //set timer interval
+            timer.Interval = 100;
+            timer.Tick += new EventHandler(Timer__Tick);
         }
+
+        private void Timer__Tick(object sender, EventArgs e)
+        {
+            this.toolStripProgressBar.Value--;
+            //if timer runs out
+            if(this.toolStripProgressBar.Value == 0 )
+            {
+                //clear the password text box
+                this.passwordTextBox.Text = "";
+                //stop the timer
+                timer.Stop();
+            }
+        }//timer tick
+
+        private void PasswordTextBox__KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }//end password
+
         private void IdTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
             TextBox tb = (TextBox)sender;
@@ -43,5 +65,6 @@ namespace unit3Test
             }
             
         }
+        
     }
 }
