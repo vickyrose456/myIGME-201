@@ -46,15 +46,16 @@ namespace unit3Test
 
         private void LogInButton__Click(object sender, EventArgs e) 
         {
-            Application.Exit();
+            //open form 2
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
 
         }//log in button
 
         private void ExitButton__Click(object sender, EventArgs e)
         {
-            //open form 2
-            Form3 form3 = new Form3();
-            form3.ShowDialog();
+            
+            //Application.Exit();
         }
 
         private void Timer__Tick(object sender, EventArgs e)

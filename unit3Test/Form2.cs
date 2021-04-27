@@ -20,7 +20,7 @@ namespace unit3Test
             InitializeComponent();
 
             //picturebox delegate
-            this.pictureBox.MouseClick += new MouseEventHandler(PictureBox__MouseClick);
+            this.turtlePictureBox.MouseClick += new MouseEventHandler(PictureBox__MouseClick);
 
             //random number txt box that takes you back to form 1
             this.toForm1CheckBox.CheckedChanged += new EventHandler(ToForm1CheckBox__CheckedChanged);
@@ -37,24 +37,24 @@ namespace unit3Test
             {
                 Form1 form1 = new Form1();
                 form1.ShowDialog();
+
+                this.turtlePictureBox.Visible = false;
+                this.tigerPictureBox.Visible = false;
+                this.dogPictureBox.Visible = true;
+               
             }
-            else //change the photo
+            else if (rNum == 2)//change the photo
             {
-                //1. display photo
-                //create new picture box 
-                PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
-                this.pictureBox.BackColor = System.Drawing.Color.LightGray;
-                this.pictureBox.Location = new System.Drawing.Point(12, 215);
-                this.pictureBox.Name = "pictureBox";
-                this.pictureBox.Size = new System.Drawing.Size(162, 193);
-                this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-                this.pictureBox.TabIndex = 16;
-                this.pictureBox.TabStop = false;
+                this.turtlePictureBox.Visible = false;
+                this.tigerPictureBox.Visible = true;
+                this.dogPictureBox.Visible = false;
 
-                this.Controls.Add(photoPictureBox);
-
-                this.pictureBox.ImageLocation = "https://image.shutterstock.com/z/stock-photo-photo-of-sea-turtle-in-the-galapagos-island-1453313555.jpg";
-
+            }
+            else
+            {
+                 this.turtlePictureBox.Visible = true;
+                this.tigerPictureBox.Visible = false;
+                this.dogPictureBox.Visible = false;
             }
 
 
@@ -71,6 +71,11 @@ namespace unit3Test
                 form3.ShowDialog();
                 picClicks = 0;
             }
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

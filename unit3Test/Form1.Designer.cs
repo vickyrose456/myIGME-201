@@ -47,9 +47,9 @@ namespace unit3Test
             // 
             // logInButton
             // 
-            this.logInButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.logInButton.ForeColor = System.Drawing.Color.DarkRed;
-            this.logInButton.Location = new System.Drawing.Point(101, 496);
+            this.logInButton.BackColor = System.Drawing.Color.Turquoise;
+            this.logInButton.ForeColor = System.Drawing.Color.White;
+            this.logInButton.Location = new System.Drawing.Point(26, 57);
             this.logInButton.Name = "logInButton";
             this.logInButton.Size = new System.Drawing.Size(196, 75);
             this.logInButton.TabIndex = 0;
@@ -59,7 +59,7 @@ namespace unit3Test
             // idLabel
             // 
             this.idLabel.AutoSize = true;
-            this.idLabel.Location = new System.Drawing.Point(560, 138);
+            this.idLabel.Location = new System.Drawing.Point(292, 177);
             this.idLabel.Name = "idLabel";
             this.idLabel.Size = new System.Drawing.Size(148, 32);
             this.idLabel.TabIndex = 1;
@@ -68,7 +68,7 @@ namespace unit3Test
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(455, 253);
+            this.passwordLabel.Location = new System.Drawing.Point(207, 286);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(233, 32);
             this.passwordLabel.TabIndex = 2;
@@ -76,23 +76,23 @@ namespace unit3Test
             // 
             // idTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(717, 132);
+            this.idTextBox.Location = new System.Drawing.Point(449, 171);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(297, 38);
             this.idTextBox.TabIndex = 3;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(717, 247);
+            this.passwordTextBox.Location = new System.Drawing.Point(449, 286);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(297, 38);
             this.passwordTextBox.TabIndex = 4;
             // 
             // exitButton
             // 
-            this.exitButton.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.exitButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.exitButton.Location = new System.Drawing.Point(641, 357);
+            this.exitButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.exitButton.ForeColor = System.Drawing.Color.Maroon;
+            this.exitButton.Location = new System.Drawing.Point(393, 366);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(146, 54);
             this.exitButton.TabIndex = 5;
@@ -117,9 +117,9 @@ namespace unit3Test
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 648);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 692);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1304, 66);
+            this.statusStrip1.Size = new System.Drawing.Size(1304, 22);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -128,11 +128,13 @@ namespace unit3Test
             this.toolStripProgressBar.Name = "toolStripProgressBar";
             this.toolStripProgressBar.Size = new System.Drawing.Size(50, 50);
             this.toolStripProgressBar.Value = 50;
+            this.toolStripProgressBar.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Wheat;
             this.ClientSize = new System.Drawing.Size(1304, 714);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
