@@ -32,13 +32,16 @@ namespace unit3Test
             this.logInButton = new System.Windows.Forms.Button();
             this.idLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
+            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.exitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // logInButton
             // 
             this.logInButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.logInButton.ForeColor = System.Drawing.Color.DarkRed;
-            this.logInButton.Location = new System.Drawing.Point(702, 384);
+            this.logInButton.Location = new System.Drawing.Point(1425, 687);
             this.logInButton.Name = "logInButton";
             this.logInButton.Size = new System.Drawing.Size(196, 75);
             this.logInButton.TabIndex = 0;
@@ -63,11 +66,39 @@ namespace unit3Test
             this.passwordLabel.TabIndex = 2;
             this.passwordLabel.Text = "Enter password : ";
             // 
+            // idTextBox
+            // 
+            this.idTextBox.Location = new System.Drawing.Point(717, 132);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.Size = new System.Drawing.Size(297, 38);
+            this.idTextBox.TabIndex = 3;
+            // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.Location = new System.Drawing.Point(717, 247);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(297, 38);
+            this.passwordTextBox.TabIndex = 4;
+            // 
+            // exitButton
+            // 
+            this.exitButton.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.exitButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.exitButton.Location = new System.Drawing.Point(641, 357);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(146, 54);
+            this.exitButton.TabIndex = 5;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1686, 796);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.logInButton);
@@ -83,6 +114,9 @@ namespace unit3Test
         private System.Windows.Forms.Button logInButton;
         private System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.Label passwordLabel;
+        private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.Button exitButton;
     }
 }
 

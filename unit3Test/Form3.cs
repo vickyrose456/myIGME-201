@@ -10,15 +10,13 @@ using System.Windows.Forms;
 
 namespace unit3Test
 {
-    public partial class Form1 : Form
+    public partial class Form3 : Form
     {
-        public Form1()
+        public Form3()
         {
             InitializeComponent();
 
-            //
-            Form2 form2 = new Form2();
-            form2.ShowDialog();
+
         }
     }
 }
