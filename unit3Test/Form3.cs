@@ -20,6 +20,17 @@ namespace unit3Test
             this.friendsListRadioButton.CheckedChanged += new EventHandler(FriendsListRadioButton__CheckedChanged);
             this.directMessageRadioButton.CheckedChanged += new EventHandler(DirectMessageRadioButton__CheckChanged);
             this.latestPostRadioButton2.CheckedChanged += new EventHandler(LatestPostRadioButton2__CheckedChanged);
+
+            //key press for message box
+            this.messageTextBox.KeyPress += new KeyPressEventHandler(MessageTextBox__KeyPress);
+        
+        }
+
+        private void MessageTextBox__KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //replace "s", "t" and "a" with ""
+            TextBox tb = (TextBox)sender;
+
         }
 
         private void FriendsListRadioButton__CheckedChanged(object sender, EventArgs e)
@@ -35,7 +46,10 @@ namespace unit3Test
 
         private void LatestPostRadioButton2__CheckedChanged(object sender, EventArgs e)
         {
-            this.webBrowser1.Visible = false;   
+            this.webBrowser1.Visible = false;
+            //make group box appear
+            this.groupBox1.Visible = true;
+
         }//end latest post
     }
 }

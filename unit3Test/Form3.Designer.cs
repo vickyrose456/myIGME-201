@@ -33,10 +33,10 @@ namespace unit3Test
             this.friendsListRadioButton = new System.Windows.Forms.RadioButton();
             this.latestPostRadioButton2 = new System.Windows.Forms.RadioButton();
             this.directMessageRadioButton = new System.Windows.Forms.RadioButton();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.messageTextBox = new System.Windows.Forms.TextBox();
             this.optionsGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -86,15 +86,6 @@ namespace unit3Test
             this.directMessageRadioButton.Text = "Direct Message";
             this.directMessageRadioButton.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 74);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(680, 349);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -106,9 +97,9 @@ namespace unit3Test
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.messageTextBox);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.richTextBox1);
-            this.groupBox1.Location = new System.Drawing.Point(808, 70);
+            this.groupBox1.Location = new System.Drawing.Point(687, 181);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(686, 426);
             this.groupBox1.TabIndex = 3;
@@ -121,10 +112,17 @@ namespace unit3Test
             this.webBrowser1.Location = new System.Drawing.Point(0, 0);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1594, 333);
+            this.webBrowser1.Size = new System.Drawing.Size(1594, 247);
             this.webBrowser1.TabIndex = 4;
             this.webBrowser1.Url = new System.Uri("", System.UriKind.Relative);
             this.webBrowser1.Visible = false;
+            // 
+            // messageTextBox
+            // 
+            this.messageTextBox.Location = new System.Drawing.Point(12, 111);
+            this.messageTextBox.Name = "messageTextBox";
+            this.messageTextBox.Size = new System.Drawing.Size(638, 38);
+            this.messageTextBox.TabIndex = 3;
             // 
             // Form3
             // 
@@ -150,9 +148,9 @@ namespace unit3Test
         private System.Windows.Forms.RadioButton directMessageRadioButton;
         private System.Windows.Forms.RadioButton latestPostRadioButton2;
         private System.Windows.Forms.RadioButton friendsListRadioButton;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.TextBox messageTextBox;
     }
 }
