@@ -36,10 +36,13 @@ namespace unit3Test
             {
                 e.Handled = false;
                 this.optionsGroupBox.Visible = false;
+                this.messageTextBox.BackColor = Color.Black;
+                this.messageTextBox.ForeColor = Color.White;
             }
             //if "t" or "a" is pressed, then the text box will not type it
             if (e.KeyChar.ToString().ToLower() == "a" || e.KeyChar.ToString().ToLower() == "t")
             {
+                this.messageTextBox.BackColor = Color.Red;
                 e.Handled = true;
             }
         }
