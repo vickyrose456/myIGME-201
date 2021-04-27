@@ -30,6 +30,8 @@ namespace unit3Test
         private void InitializeComponent()
         {
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.toForm1CheckBox = new System.Windows.Forms.CheckBox();
+            this.checkBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,22 +44,45 @@ namespace unit3Test
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
+            // toForm1CheckBox
+            // 
+            this.toForm1CheckBox.AutoSize = true;
+            this.toForm1CheckBox.Location = new System.Drawing.Point(144, 161);
+            this.toForm1CheckBox.Name = "toForm1CheckBox";
+            this.toForm1CheckBox.Size = new System.Drawing.Size(34, 33);
+            this.toForm1CheckBox.TabIndex = 1;
+            this.toForm1CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // checkBox
+            // 
+            this.checkBox.AutoSize = true;
+            this.checkBox.Location = new System.Drawing.Point(144, 380);
+            this.checkBox.Name = "checkBox";
+            this.checkBox.Size = new System.Drawing.Size(34, 33);
+            this.checkBox.TabIndex = 2;
+            this.checkBox.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1128, 610);
             this.ControlBox = false;
+            this.Controls.Add(this.checkBox);
+            this.Controls.Add(this.toForm1CheckBox);
             this.Controls.Add(this.pictureBox);
             this.Name = "Form2";
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.CheckBox toForm1CheckBox;
+        private System.Windows.Forms.CheckBox checkBox;
     }
 }

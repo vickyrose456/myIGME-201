@@ -17,8 +17,31 @@ namespace unit3Test
             InitializeComponent();
 
             //
-            Form2 form2 = new Form2();
-            form2.ShowDialog();
+            //Form2 form2 = new Form2();
+            //form2.ShowDialog();
+
+            //text box delegates
+            this.idTextBox.KeyPress += new KeyPressEventHandler(IdTextBox__KeyPress);
+            //this.passwordTextBox.KeyPress += new EventHandler(PasswordTextBox__KeyPress);
+
+        }
+        private void IdTextBox__KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+
+            //check if the user inputed "id" (not case sensitive)
+            if (tb.Text.ToLower() == "id")
+            {
+                //correct(but show error message)
+                this.errorProvider.SetError(tb, "Correct id");
+                tb.Tag = false;
+            }//otherwise error message
+            else 
+            {
+                this.errorProvider.SetError(tb, null);
+                tb.Tag = true;
+            }
+            
         }
     }
 }

@@ -29,12 +29,15 @@ namespace unit3Test
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.logInButton = new System.Windows.Forms.Button();
             this.idLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.exitButton = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // logInButton
@@ -53,9 +56,9 @@ namespace unit3Test
             this.idLabel.AutoSize = true;
             this.idLabel.Location = new System.Drawing.Point(560, 138);
             this.idLabel.Name = "idLabel";
-            this.idLabel.Size = new System.Drawing.Size(128, 32);
+            this.idLabel.Size = new System.Drawing.Size(148, 32);
             this.idLabel.TabIndex = 1;
-            this.idLabel.Text = "Enter Id :";
+            this.idLabel.Text = "Enter \"Id\" :";
             // 
             // passwordLabel
             // 
@@ -91,6 +94,10 @@ namespace unit3Test
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = false;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -104,6 +111,7 @@ namespace unit3Test
             this.Controls.Add(this.logInButton);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,6 +125,7 @@ namespace unit3Test
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
 
