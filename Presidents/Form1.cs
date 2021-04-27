@@ -119,7 +119,7 @@ namespace Presidents
             }
 
             webBrowser1.ScriptErrorsSuppressed = true;
-            webBrowser1.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(WebBrowser1__DocumentCompleted);
+            //webBrowser1.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(WebBrowser1__DocumentCompleted);
             //webBrowser1.Navigate("google.com");
 
             //set timer interval
@@ -152,17 +152,7 @@ namespace Presidents
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
         }//end pic leave hover
 
-        private void WebBrowser1__DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-            //create html element
-            WebBrowser wb = (WebBrowser)sender;
-            HtmlElement htmlElement;
-            HtmlElementCollection htmlElementCollection;
-
-            htmlElementCollection = wb.Document.GetElementsByTagName("a");
-
-
-        }//end web browser doc completed
+        
 
         //president event handlers
         //depending on the radio button, respective pres will appear in browser
