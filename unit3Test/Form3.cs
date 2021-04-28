@@ -12,6 +12,9 @@ namespace unit3Test
 {
     public partial class Form3 : Form
     {
+            int rNum1;
+            int rNum2;
+
         public Form3()
         {
             InitializeComponent();
@@ -24,6 +27,7 @@ namespace unit3Test
             //key press for message box
             this.messageTextBox.KeyPress += new KeyPressEventHandler(MessageTextBox__KeyPress);
         
+            
         }
 
         private void MessageTextBox__KeyPress(object sender, KeyPressEventArgs e)
@@ -49,21 +53,59 @@ namespace unit3Test
 
         private void FriendsListRadioButton__CheckedChanged(object sender, EventArgs e)
         {
+            Random rand = new Random();
+            rNum1 = rand.Next(20, 300);
+            rNum2 = rand.Next(5, 300);
+
+            //closes the youtube video section
             this.webBrowser1.Visible = false;
+            //message box is invisible
+            this.groupBox1.Visible = false;
+
+            //resets the radio buttons size and location
+            this.friendsListRadioButton.Location = new System.Drawing.Point(rNum2, rNum1);
+            // 
+            // latestPostRadioButton2
+            // 
+            rNum1 = rand.Next(20, 500);
+            rNum2 = rand.Next(5, 100);
+            this.latestPostRadioButton2.Location = new System.Drawing.Point(rNum2, rNum1);
+            // 
+            // directMessageRadioButton
+            // 
+            rNum1 = rand.Next(20, 500);
+            rNum2 = rand.Next(5, 100);
+            this.directMessageRadioButton.AutoSize = true;
+            this.directMessageRadioButton.Location = new System.Drawing.Point(rNum2, rNum1);
+
+
         }//end friend list
 
         private void DirectMessageRadioButton__CheckChanged(object sender, EventArgs e)
         {
+            // shows the youtube video
             this.webBrowser1.Visible = true;
             this.webBrowser1.Navigate("https://www.youtube.com/watch?v=0iCtC-EOzEo");
+
+            //message is not visible
+            this.groupBox1.Visible = false;
         }//end direct message
 
         private void LatestPostRadioButton2__CheckedChanged(object sender, EventArgs e)
         {
+            //close youtube video
             this.webBrowser1.Visible = false;
             //make group box appear
             this.groupBox1.Visible = true;
 
         }//end latest post
+
+        private void Form3__KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Control)
+            {
+                this.Close();
+            }
+        }
     }
 }

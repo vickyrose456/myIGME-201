@@ -28,12 +28,16 @@ namespace unit3Test
             this.toForm1CheckBox.CheckedChanged += new EventHandler(ToForm1CheckBox__CheckedChanged);
 
             //random number for the checkbox
-            Random rand = new Random();
-            this.rNum = rand.Next(1, 3);
+            //Random rand = new Random();
+            //this.rNum = rand.Next(1, 3);
         }
 
         private void ToForm1CheckBox__CheckedChanged(object sender, EventArgs e)
         {
+            //gen random number
+            Random rand = new Random();
+            this.rNum = rand.Next(1, 3);
+
             //open form 1 if the random number is equal to 1
             if (rNum == 1)
             {
@@ -70,7 +74,8 @@ namespace unit3Test
         private void PictureBox__MouseClick(object sender, EventArgs e)
         {
             picClicks++;
-            if (picClicks == 3)
+            //click the pic 3 times to make form 3 pop up
+            if (picClicks == 2)
             {
                 Form3 form3 = new Form3();
                 form3.ShowDialog();
