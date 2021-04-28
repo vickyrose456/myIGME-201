@@ -70,8 +70,8 @@ namespace unit3Test
             //if id and password = correct, exit app
             if (idBool == true && passowordBool == true)
             {
-                //Application.Exit();
-                this.Close();
+                Application.Exit();
+                //this.Close();
             }
         }
 
