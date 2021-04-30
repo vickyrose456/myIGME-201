@@ -246,32 +246,34 @@ namespace LinkedList
 
             // 3. add "quick" and "brown" before "fox"
             string[] words = {"the", "fox", "jumped", "over", "the", "dog"};
+
             linkedList = new LinkedList<object>(words);
-            LinkedListNode<object> target = linkedList.Find("fox");
-            if (target == null)
+            linkedListNode = linkedList.Find("fox");
+
+            if (linkedListNode == null)
             {
                 // "fox" is not found
             }
             else
             {
                 // Add add "quick" and "brown" before "fox" (the LinkedListNode named target).
-                linkedList.AddBefore(target, "quick");
-                linkedList.AddBefore(target, "brown");
+                linkedList.AddBefore(linkedListNode, "quick");
+                linkedList.AddBefore(linkedListNode, "brown");
             }
 
 
             // 4. Your code here
 
             // 5. using example #8, add "lazy" after the last "the"
-            target = linkedList.FindLast("the");
-            if (target == null)
+            linkedListNode = linkedList.FindLast("the");
+            if (linkedListNode == null)
             {
                 // "the" is not found
             }
             else
             {
                 // Add lazy after 'the' (the LinkedListNode named target).
-               linkedList.AddAfter(target, "lazy");
+               linkedList.AddAfter(linkedListNode, "lazy");
             }
 
                 // 6. Your code here
@@ -298,8 +300,19 @@ namespace LinkedList
             // you will have to cast Value as a string as follows:
             //     if( (string)linkedListNode.Value == "sad"
 
+            string[] words = {"Because", "I'm",  "sad", "Clap", "along", "if", "you",
+                "feel", "like", "a", "room", "without", "a", "roof", "Because", "I'm", "sad", "Clap", "along",
+                "if", "you", "feel", "like", "sadness", "is", "the", "truth", "sad"};
+           
             // 4. Your code here
+            for (int i=0; i< words.Length; i++)
+            {
+                s[i] = words[i];
+            }
 
+            linkedList = new LinkedList<object>(s);
+
+            linkedListNode = linkedList.Find("car");
 
             // 5. then call the visualizer
             VisualizeLinkedList visualizeLinkedList = new VisualizeLinkedList(linkedList);
