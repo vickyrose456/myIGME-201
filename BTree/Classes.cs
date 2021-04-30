@@ -392,9 +392,10 @@ namespace BTree
 
                 if( node.isData)
                 {
+                    //current node
                     PrintThisNode(node);
                 }
-
+                //greater nodes
                 TraverseAscending(node.gteChild);
             }
         }
