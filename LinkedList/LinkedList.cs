@@ -44,7 +44,7 @@ namespace LinkedList
 
        1. Create a Linked List of strings
            LinkedList<string> sentence = new LinkedList<string>();
-
+        
        2. Create a Linked List from an array of strings
            string[] words =
                { "the", "red", "car", "speeds", "away" };
@@ -159,9 +159,39 @@ namespace LinkedList
 
             // 2. Your code here
 
+            for(int i=1; i<=10; i++)
+            {
+                //add element to end of list
+                linkedList.AddLast(i);
+            }
 
+            string[] words =
+               { "the", "car", "speeds", "away" };
+            
+            LinkedList<object> sentence = new LinkedList<object>(words);
+
+            //sentence.AddLast("today");
+            sentence.AddFirst("today");
+
+
+            LinkedListNode<object> firstNode = sentence.First;
+            sentence.RemoveFirst();
+            sentence.AddLast(firstNode);
+
+            //after the, we want it to say bright red
+            LinkedListNode<object> target = sentence.FindLast("the");
+            if (target == null)
+            {
+                // "the" is not found
+            }
+            else
+            {
+                // Add 'bright' and 'red' after 'the' (the LinkedListNode named target).
+                sentence.AddAfter(target, "bright");
+                sentence.AddAfter(target, "red");
+            }
             // 3. then call the visualizer
-            VisualizeLinkedList visualizeLinkedList = new VisualizeLinkedList(linkedList);
+            VisualizeLinkedList visualizeLinkedList = new VisualizeLinkedList(sentence);
         }
 
         private void Button2__Click(object sender, EventArgs e)
