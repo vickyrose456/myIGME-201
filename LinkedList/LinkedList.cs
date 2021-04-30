@@ -305,14 +305,21 @@ namespace LinkedList
                 "if", "you", "feel", "like", "sadness", "is", "the", "truth", "sad"};
            
             // 4. Your code here
-            for (int i=0; i< words.Length; i++)
+            
+
+            linkedList = new LinkedList<object>(words);
+            linkedListNode = linkedList.Find("sad");
+
+            if ((string)linkedListNode.Value == "sad")
             {
-                s[i] = words[i];
+                linkedListNode.Value = "happy";
             }
 
-            linkedList = new LinkedList<object>(s);
-
-            linkedListNode = linkedList.Find("car");
+            linkedListNode = linkedList.Find("sadness");
+            if ((string)linkedListNode.Value == "sadness")
+            {
+                linkedListNode.Value = "hapiness";
+            }
 
             // 5. then call the visualizer
             VisualizeLinkedList visualizeLinkedList = new VisualizeLinkedList(linkedList);
