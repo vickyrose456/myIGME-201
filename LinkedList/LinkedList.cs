@@ -187,9 +187,17 @@ namespace LinkedList
             else
             {
                 // Add 'bright' and 'red' after 'the' (the LinkedListNode named target).
-                sentence.AddAfter(target, "bright");
                 sentence.AddAfter(target, "red");
+                sentence.AddAfter(target, "bright");
             }
+
+            target = sentence.Find("car");
+
+            //10.Add 'sporty' and 'red' before 'car':
+           sentence.AddBefore(target, "sporty");
+            sentence.AddBefore(target, "red");
+
+
             // 3. then call the visualizer
             VisualizeLinkedList visualizeLinkedList = new VisualizeLinkedList(sentence);
         }
@@ -201,13 +209,26 @@ namespace LinkedList
 
             // 2. Your code here
 
+            for (int i = 1; i <= 10; i++)
+            {
+                //add element to end of list
+                linkedList.AddLast(i);
+            }
+
+
             // 3. using example #18, copy the linkedList to reverseLinkedList in reverse order
             // so that reverseLinkedList goes from 10 to 1
             LinkedList<object> reverseLinkedList = new LinkedList<object>();
             LinkedListNode<object> linkedListNode;
 
             // 4. Your code here
+            linkedListNode = linkedList.Last;
 
+            while (linkedListNode != null)
+            {
+                reverseLinkedList.AddLast(linkedListNode.Value);
+                linkedListNode = linkedListNode.Previous;
+            }
 
             // 5. then call the visualizer
             VisualizeLinkedList visualizeLinkedList = new VisualizeLinkedList(reverseLinkedList);
