@@ -245,15 +245,39 @@ namespace LinkedList
             // 2. Your code here
 
             // 3. add "quick" and "brown" before "fox"
+            string[] words = {"the", "fox", "jumped", "over", "the", "dog"};
+            linkedList = new LinkedList<object>(words);
+            LinkedListNode<object> target = linkedList.Find("fox");
+            if (target == null)
+            {
+                // "fox" is not found
+            }
+            else
+            {
+                // Add add "quick" and "brown" before "fox" (the LinkedListNode named target).
+                linkedList.AddBefore(target, "quick");
+                linkedList.AddBefore(target, "brown");
+            }
+
 
             // 4. Your code here
 
             // 5. using example #8, add "lazy" after the last "the"
-            
-            // 6. Your code here
+            target = linkedList.FindLast("the");
+            if (target == null)
+            {
+                // "the" is not found
+            }
+            else
+            {
+                // Add lazy after 'the' (the LinkedListNode named target).
+               linkedList.AddAfter(target, "lazy");
+            }
 
-            // 7. then call the visualizer
-            VisualizeLinkedList visualizeLinkedList = new VisualizeLinkedList(linkedList);
+                // 6. Your code here
+
+                // 7. then call the visualizer
+                VisualizeLinkedList visualizeLinkedList = new VisualizeLinkedList(linkedList);
         }
 
         private void Button4__Click(object sender, EventArgs e)
