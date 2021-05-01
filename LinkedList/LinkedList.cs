@@ -362,6 +362,18 @@ namespace LinkedList
             linkedList.Remove(linkedListNode2);
             linkedList.AddBefore(linkedListNode1, linkedListNode2);
 
+            //swap mainly and plain
+            linkedListNode1 = linkedList.Find("the");
+            linkedListNode2 = linkedList.Find("plain");
+
+            linkedList.Remove(linkedListNode2);
+            linkedList.AddAfter(linkedListNode1, linkedListNode2);
+
+            linkedListNode1 = linkedList.Find("on");
+            linkedListNode2 = linkedList.Find("mainly");
+
+            linkedList.Remove(linkedListNode2);
+            linkedList.AddBefore(linkedListNode1, linkedListNode2);
 
             // 4. Your code here
             /*
