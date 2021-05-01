@@ -167,10 +167,23 @@ namespace BTree
             this.richTextBox.Clear();
 
             // Your code here
+            //clear the textbox
+            this.richTextBox.Clear();
 
+            //loop 30 times to insert rand numbers
+            for (int i = 0; i < 30; ++i)
+            {
+                //node is a random number
+                node = new BTree(random.Next(1, 51), root);
 
-            this.richTextBox.Text += "\n";
+                //if first node, then that is the root node
+                if (i == 0)
+                {
+                    root = node;
+                }
+            }
 
+            //print the tree ascending
             BTree.TraverseAscending(root);
 
             VisualizeBinaryTree visualizeBinaryTree = new VisualizeBinaryTree(root);
