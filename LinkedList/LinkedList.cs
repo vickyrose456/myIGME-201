@@ -419,9 +419,16 @@ namespace LinkedList
             anagram.AddAfter(linkedListNode2, linkedListNode1);
 
             //dirtyomor
-            linkedListNode1 = anagram.Find("R");
+            linkedListNode1 = anagram.FindLast("R");
             linkedListNode2 = anagram.Find("Y");
+            anagram.Remove(linkedListNode1);
+            anagram.AddAfter(linkedListNode2, linkedListNode1);
 
+            //dirtyromo
+            linkedListNode1 = anagram.FindLast("O");
+            linkedListNode2 = anagram.Find("M");
+            anagram.Remove(linkedListNode2);
+            anagram.AddAfter(linkedListNode1, linkedListNode2);
 
             /*
              *        13. Remove the node referred to by carNode, and then add it
