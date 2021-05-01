@@ -429,20 +429,7 @@ namespace LinkedList
             linkedListNode2 = anagram.Find("M");
             anagram.Remove(linkedListNode2);
             anagram.AddAfter(linkedListNode1, linkedListNode2);
-
-            /*
-             *        13. Remove the node referred to by carNode, and then add it
-       before the node referred to by current.
-           sentence.Remove(carNode);
-           sentence.AddBefore(current, carNode);
-
-
-       14. Add the 'current' node after the node referred to by mark2
-           sentence.AddAfter(mark2, current);
-
-             */
-
-
+            //dirtyroom
 
             // then call the visualizer
             VisualizeLinkedList visualizeLinkedList = new VisualizeLinkedList(anagram);
