@@ -340,20 +340,31 @@ namespace LinkedList
             string[] s = null;
 
             // 2. Your code here
+            //s[0] = "The"; s[1] = "Spain"; s[2] = "in";s[3] = "rain"; s[4] = "falls"; s[5] = "plain"; s[6] = "on"; s[7] = "the"; s[8] = "mainly";
+            
 
+            string[] words = { "The", "Spain", "in", "rain", "falls", "plain", "on", "the", "mainly" };
+
+            linkedList = new LinkedList<object>(words);
 
             // 3. manipulate the list using Find(), Remove(), AddBefore() and/or AddAfter() to result in
             // "The rain in Spain falls mainly on the plain"
             // your Add methods must use 2 LinkedListNode arguments like examples #13 and #14 
             // you may not use string arguments in your Add method calls
 
+            //add rain and in before spain  and remove rain
+            linkedListNode1 = linkedList.Find("Spain");
+            linkedListNode2 = linkedList.Find("rain");
+            linkedList.Remove(linkedListNode2);
+            linkedList.AddBefore(linkedListNode1, linkedListNode2);
+
+            linkedListNode2 = linkedList.Find("in");
+            linkedList.Remove(linkedListNode2);
+            linkedList.AddBefore(linkedListNode1, linkedListNode2);
+
+
             // 4. Your code here
             /*
-             *        13. Remove the node referred to by carNode, and then add it
-       before the node referred to by current.
-           sentence.Remove(carNode);
-           sentence.AddBefore(current, carNode);
-
 
        14. Add the 'current' node after the node referred to by mark2
            sentence.AddAfter(mark2, current);
