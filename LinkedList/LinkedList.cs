@@ -308,17 +308,22 @@ namespace LinkedList
             
 
             linkedList = new LinkedList<object>(words);
-            linkedListNode = linkedList.Find("sad");
+            //linkedListNode = linkedList.Find("sad");
+            LinkedListNode<object> sadness = linkedList.Find("sadness");
 
-            if ((string)linkedListNode.Value == "sad")
+            for(int i=0; i<3; i++)
             {
-                linkedListNode.Value = "happy";
+                linkedListNode = linkedList.Find("sad");
+                if ((string)linkedListNode.Value == "sad")
+                {
+                    linkedListNode.Value = "happy";
+                }
+                else { }
             }
 
-            linkedListNode = linkedList.Find("sadness");
-            if ((string)linkedListNode.Value == "sadness")
+            if ((string)sadness.Value == "sadness")
             {
-                linkedListNode.Value = "hapiness";
+             sadness.Value = "hapiness";
             }
 
             // 5. then call the visualizer
@@ -343,6 +348,18 @@ namespace LinkedList
             // you may not use string arguments in your Add method calls
 
             // 4. Your code here
+            /*
+             *        13. Remove the node referred to by carNode, and then add it
+       before the node referred to by current.
+           sentence.Remove(carNode);
+           sentence.AddBefore(current, carNode);
+
+
+       14. Add the 'current' node after the node referred to by mark2
+           sentence.AddAfter(mark2, current);
+
+             */
+
 
 
             // 5. then call the visualizer
@@ -362,6 +379,20 @@ namespace LinkedList
             // you may not use string arguments in your Add method calls
 
             // Your code here
+
+            /*
+             *        13. Remove the node referred to by carNode, and then add it
+       before the node referred to by current.
+           sentence.Remove(carNode);
+           sentence.AddBefore(current, carNode);
+
+
+       14. Add the 'current' node after the node referred to by mark2
+           sentence.AddAfter(mark2, current);
+
+             */
+
+
 
             // then call the visualizer
             VisualizeLinkedList visualizeLinkedList = new VisualizeLinkedList(anagram);
