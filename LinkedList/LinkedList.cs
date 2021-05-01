@@ -340,9 +340,7 @@ namespace LinkedList
             string[] s = null;
 
             // 2. Your code here
-            //s[0] = "The"; s[1] = "Spain"; s[2] = "in";s[3] = "rain"; s[4] = "falls"; s[5] = "plain"; s[6] = "on"; s[7] = "the"; s[8] = "mainly";
             
-
             string[] words = { "The", "Spain", "in", "rain", "falls", "plain", "on", "the", "mainly" };
 
             linkedList = new LinkedList<object>(words);
@@ -376,13 +374,6 @@ namespace LinkedList
             linkedList.AddBefore(linkedListNode1, linkedListNode2);
 
             // 4. Your code here
-            /*
-
-       14. Add the 'current' node after the node referred to by mark2
-           sentence.AddAfter(mark2, current);
-
-             */
-
 
 
             // 5. then call the visualizer
@@ -402,6 +393,35 @@ namespace LinkedList
             // you may not use string arguments in your Add method calls
 
             // Your code here
+             
+            linkedListNode1 = anagram.Find("I");
+            linkedListNode2 = anagram.Find("D");
+
+            anagram.Remove(linkedListNode1);
+            anagram.AddAfter(linkedListNode2, linkedListNode1);
+            
+            //currently have  D I O R M I T O R Y
+            linkedListNode1 = anagram.Find("I");
+            linkedListNode2 = anagram.Find("R");
+            anagram.Remove(linkedListNode2);
+            anagram.AddAfter(linkedListNode1, linkedListNode2);
+
+            //diromtory
+            linkedListNode1 = anagram.Find("T");
+            linkedListNode2 = anagram.Find("O");
+            anagram.Remove(linkedListNode1);
+            anagram.AddBefore(linkedListNode2, linkedListNode1);
+
+            //dirtomory
+            linkedListNode1 = anagram.Find("Y");
+            linkedListNode2 = anagram.Find("T");
+            anagram.Remove(linkedListNode1);
+            anagram.AddAfter(linkedListNode2, linkedListNode1);
+
+            //dirtyomor
+            linkedListNode1 = anagram.Find("R");
+            linkedListNode2 = anagram.Find("Y");
+
 
             /*
              *        13. Remove the node referred to by carNode, and then add it
