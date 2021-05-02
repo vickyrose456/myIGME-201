@@ -31,27 +31,68 @@ namespace Group_Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.searchPictureBox = new System.Windows.Forms.PictureBox();
+            this.friendsPictureBox = new System.Windows.Forms.PictureBox();
+            this.homePictureBox = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.userMsgRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.sendMsgButton = new System.Windows.Forms.Button();
+            this.messagesRichTextBox = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.friendsPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.searchPictureBox);
+            this.panel1.Controls.Add(this.friendsPictureBox);
+            this.panel1.Controls.Add(this.homePictureBox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1191, 40);
             this.panel1.TabIndex = 0;
+            // 
+            // searchPictureBox
+            // 
+            this.searchPictureBox.BackColor = System.Drawing.Color.White;
+            this.searchPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("searchPictureBox.Image")));
+            this.searchPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("searchPictureBox.InitialImage")));
+            this.searchPictureBox.Location = new System.Drawing.Point(1024, 2);
+            this.searchPictureBox.Name = "searchPictureBox";
+            this.searchPictureBox.Size = new System.Drawing.Size(41, 38);
+            this.searchPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.searchPictureBox.TabIndex = 3;
+            this.searchPictureBox.TabStop = false;
+            // 
+            // friendsPictureBox
+            // 
+            this.friendsPictureBox.BackColor = System.Drawing.Color.White;
+            this.friendsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.friendsPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("friendsPictureBox.Image")));
+            this.friendsPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("friendsPictureBox.InitialImage")));
+            this.friendsPictureBox.Location = new System.Drawing.Point(1088, 3);
+            this.friendsPictureBox.Name = "friendsPictureBox";
+            this.friendsPictureBox.Size = new System.Drawing.Size(41, 38);
+            this.friendsPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.friendsPictureBox.TabIndex = 3;
+            this.friendsPictureBox.TabStop = false;
+            // 
+            // homePictureBox
+            // 
+            this.homePictureBox.BackColor = System.Drawing.Color.White;
+            this.homePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.homePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("homePictureBox.Image")));
+            this.homePictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("homePictureBox.InitialImage")));
+            this.homePictureBox.Location = new System.Drawing.Point(1147, 2);
+            this.homePictureBox.Name = "homePictureBox";
+            this.homePictureBox.Size = new System.Drawing.Size(41, 38);
+            this.homePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.homePictureBox.TabIndex = 2;
+            this.homePictureBox.TabStop = false;
             // 
             // panel2
             // 
@@ -62,54 +103,46 @@ namespace Group_Project
             this.panel2.Size = new System.Drawing.Size(150, 573);
             this.panel2.TabIndex = 1;
             // 
-            // pictureBox1
+            // userMsgRichTextBox
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(1147, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 38);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.userMsgRichTextBox.Location = new System.Drawing.Point(173, 438);
+            this.userMsgRichTextBox.Name = "userMsgRichTextBox";
+            this.userMsgRichTextBox.Size = new System.Drawing.Size(975, 127);
+            this.userMsgRichTextBox.TabIndex = 2;
+            this.userMsgRichTextBox.Text = "";
             // 
-            // pictureBox2
+            // sendMsgButton
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(1088, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(41, 38);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
+            this.sendMsgButton.Location = new System.Drawing.Point(972, 512);
+            this.sendMsgButton.Name = "sendMsgButton";
+            this.sendMsgButton.Size = new System.Drawing.Size(175, 52);
+            this.sendMsgButton.TabIndex = 3;
+            this.sendMsgButton.Text = "Send";
+            this.sendMsgButton.UseVisualStyleBackColor = true;
             // 
-            // pictureBox3
+            // messagesRichTextBox
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.White;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(1024, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(41, 38);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
+            this.messagesRichTextBox.Location = new System.Drawing.Point(173, 57);
+            this.messagesRichTextBox.Name = "messagesRichTextBox";
+            this.messagesRichTextBox.Size = new System.Drawing.Size(975, 347);
+            this.messagesRichTextBox.TabIndex = 4;
+            this.messagesRichTextBox.Text = "";
             // 
             // Form
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1191, 613);
+            this.Controls.Add(this.messagesRichTextBox);
+            this.Controls.Add(this.sendMsgButton);
+            this.Controls.Add(this.userMsgRichTextBox);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Form";
-            this.Text = "Form";
+            this.Text = "Private Messages";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.friendsPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -117,10 +150,13 @@ namespace Group_Project
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox searchPictureBox;
+        private System.Windows.Forms.PictureBox friendsPictureBox;
+        private System.Windows.Forms.PictureBox homePictureBox;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RichTextBox userMsgRichTextBox;
+        private System.Windows.Forms.Button sendMsgButton;
+        private System.Windows.Forms.RichTextBox messagesRichTextBox;
     }
 }
 

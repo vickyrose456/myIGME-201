@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace Group_Project
 {
-    public partial class Form : System.Windows.Forms.Form
+    public partial class Form2 : Form
     {
-        public Form()
+        public Form2()
         {
             InitializeComponent();
         }
-
     }
 }
