@@ -1,7 +1,7 @@
 ﻿
 namespace Group_Project
 {
-    partial class Form2
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -29,38 +29,46 @@ namespace Group_Project
         /// </summary>
         private void InitializeComponent()
         {
-            this.userNameTextBox = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            this.uerNameTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
-            // userNameTextBox
+            // uerNameTextBox
             // 
-            this.userNameTextBox.Location = new System.Drawing.Point(241, 89);
-            this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(432, 38);
-            this.userNameTextBox.TabIndex = 2;
-            this.userNameTextBox.Text = "Username";
+            this.uerNameTextBox.Location = new System.Drawing.Point(347, 156);
+            this.uerNameTextBox.Name = "uerNameTextBox";
+            this.uerNameTextBox.Size = new System.Drawing.Size(285, 38);
+            this.uerNameTextBox.TabIndex = 5;
+            this.uerNameTextBox.Text = "Username";
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(327, 147);
+            this.loginButton.Location = new System.Drawing.Point(336, 252);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(237, 118);
-            this.loginButton.TabIndex = 3;
+            this.loginButton.Size = new System.Drawing.Size(264, 89);
+            this.loginButton.TabIndex = 6;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
             // 
-            // Form2
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.loginButton);
-            this.Controls.Add(this.userNameTextBox);
-            this.Name = "Form2";
+            this.Controls.Add(this.uerNameTextBox);
+            this.Name = "Login";
             this.Text = "Login";
-            this.Controls.SetChildIndex(this.userNameTextBox, 0);
+            this.Controls.SetChildIndex(this.uerNameTextBox, 0);
             this.Controls.SetChildIndex(this.loginButton, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -68,7 +76,8 @@ namespace Group_Project
 
         #endregion
 
-        private System.Windows.Forms.TextBox userNameTextBox;
+        private System.Windows.Forms.TextBox uerNameTextBox;
         private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

@@ -35,10 +35,10 @@ namespace Group_Project
             this.friendsPictureBox = new System.Windows.Forms.PictureBox();
             this.homePictureBox = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.userMsgRichTextBox = new System.Windows.Forms.RichTextBox();
             this.sendMsgButton = new System.Windows.Forms.Button();
             this.messagesRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.friendsPictureBox)).BeginInit();
@@ -106,6 +106,14 @@ namespace Group_Project
             this.panel2.Size = new System.Drawing.Size(150, 573);
             this.panel2.TabIndex = 1;
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(0, 49);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(150, 346);
+            this.webBrowser1.TabIndex = 0;
+            // 
             // userMsgRichTextBox
             // 
             this.userMsgRichTextBox.Location = new System.Drawing.Point(173, 438);
@@ -119,7 +127,7 @@ namespace Group_Project
             this.sendMsgButton.Location = new System.Drawing.Point(972, 512);
             this.sendMsgButton.Name = "sendMsgButton";
             this.sendMsgButton.Size = new System.Drawing.Size(175, 52);
-            this.sendMsgButton.TabIndex = 3;
+            this.sendMsgButton.TabIndex = 1;
             this.sendMsgButton.Text = "Send";
             this.sendMsgButton.UseVisualStyleBackColor = true;
             // 
@@ -130,14 +138,6 @@ namespace Group_Project
             this.messagesRichTextBox.Size = new System.Drawing.Size(975, 347);
             this.messagesRichTextBox.TabIndex = 4;
             this.messagesRichTextBox.Text = "";
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Location = new System.Drawing.Point(0, 49);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(150, 346);
-            this.webBrowser1.TabIndex = 0;
             // 
             // Form
             // 
