@@ -12,9 +12,11 @@ namespace Group_Project
 {
     public partial class Form : System.Windows.Forms.Form
     {
+        
         public Form()
         {
             InitializeComponent();
+
         }
 
     }

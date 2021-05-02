@@ -38,10 +38,12 @@ namespace Group_Project
             this.userMsgRichTextBox = new System.Windows.Forms.RichTextBox();
             this.sendMsgButton = new System.Windows.Forms.Button();
             this.messagesRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.friendsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -97,6 +99,7 @@ namespace Group_Project
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(105)))), ((int)(((byte)(2)))));
+            this.panel2.Controls.Add(this.webBrowser1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
@@ -128,6 +131,14 @@ namespace Group_Project
             this.messagesRichTextBox.TabIndex = 4;
             this.messagesRichTextBox.Text = "";
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(0, 49);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(150, 346);
+            this.webBrowser1.TabIndex = 0;
+            // 
             // Form
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -143,6 +154,7 @@ namespace Group_Project
             ((System.ComponentModel.ISupportInitialize)(this.searchPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.friendsPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -157,6 +169,7 @@ namespace Group_Project
         private System.Windows.Forms.RichTextBox userMsgRichTextBox;
         private System.Windows.Forms.Button sendMsgButton;
         private System.Windows.Forms.RichTextBox messagesRichTextBox;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
 
