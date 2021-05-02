@@ -183,6 +183,8 @@ namespace BTree
                 }
             }
 
+            this.richTextBox.Text += "\n";
+ 
             //print the tree ascending
             BTree.TraverseAscending(root);
 
@@ -205,7 +207,12 @@ namespace BTree
 
             // Your code here
 
+            this.richTextBox.Clear();
 
+            node = new BTree(26, null);
+            root = node;
+
+            //insert 30 numbers b/w 1 and 51
             for (int i = 0; i < 30; ++i)
             {
                 node = new BTree(random.Next(1, 52), root);
