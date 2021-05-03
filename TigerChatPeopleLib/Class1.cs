@@ -46,6 +46,28 @@ namespace TigerChatPeopleLib
 
     }//public class person 
 
+    public interface IUser
+    {
+        void Settings();
+    }
+
+
+    public class User : Person
+    {
+        public List<String> friendsNames = new List<string>();
+
+        public List<String> FriendsList
+        {
+            get 
+            {
+                return this.friendsNames;
+            }
+            set 
+            {
+                this.friendsNames = value;
+            }
+        }
+    }
 
 
     public class People

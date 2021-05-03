@@ -14,9 +14,28 @@ namespace GroupProject
 {
     public partial class Login : Form
     {
+        Person thisPerson;
+
+        //store username
+        string userName = "";
+
         public Login()
         {
             InitializeComponent();
+
+
+            //controls
+            this.userNametextBox.KeyPress += new KeyPressEventHandler(UserNametextBox__Click);
+        }
+
+        private void UserNameTextBox__Click(object sender, KeyPressEventArgs e)
+        {
+            userName = this.userNametextBox.Text;
+        }
+
+        public AddNewPerson(string name)
+        {
+            
         }
     }
 }
