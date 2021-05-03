@@ -22,16 +22,20 @@ namespace GroupProject
         {
             InitializeComponent();
 
-           
-
             //controls
             this.userNametextBox.KeyPress += new KeyPressEventHandler(UserNameTextBox__Click);
+            this.signUpButton.Click += new EventHandler(SignUpButton__Click);
         }
 
         private void UserNameTextBox__Click(object sender, KeyPressEventArgs e)
         {
-            string userName = this.userNametextBox.Text;
-            thisPerson = Globals.people[userName];
+            //set the person username to the username entered in the textbox
+           thisPerson.userName = this.userNametextBox.Text;
+        }
+
+        private void SignUpButton__Click(object sender, EventArgs e)
+        {
+            //open the form to add the user 
         }
 
     }
