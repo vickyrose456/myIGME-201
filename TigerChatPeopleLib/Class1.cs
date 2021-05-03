@@ -12,7 +12,7 @@ namespace TigerChatPeopleLib
         her,
         them
     }
-
+    
     public abstract class Person
     {
         public string userName;
@@ -67,8 +67,7 @@ namespace TigerChatPeopleLib
                 this.friendsNames = value;
             }
         }
-    }
-
+    }//user: peron
 
     public class People
     {
