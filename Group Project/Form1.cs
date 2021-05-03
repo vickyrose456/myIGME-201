@@ -29,80 +29,48 @@ namespace Group_Project
         public Form()
         {
             InitializeComponent();
-            /*
-            //show this form
-            //this.Show();
 
-            //call the login form by creating a new one
-            Form2 loginForm = new Form2(this);
-            //only want active one to show(pause constructor)
-            //loginForm.ShowDialog();
+            //create new login form to show that first
+            Login login = new Login();
+            login.ShowDialog();
 
             //thread start
-            ThreadStart threadStart = new ThreadStart(Listen);
-            thread = new Thread(threadStart);
-            thread.Start();
 
-            //Get the host for the messages
-            IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (IPAddress iPAddress in ipHost.AddressList)
-            {
-                if (iPAddress.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    this.myIp = iPAddress.ToString();
-                    break;
-                }
-            }
+            //control buttons
+            this.friendsPictureBox.Click += new EventHandler(FriendsPictureBox__Click);
+            this.sendMsgButton.Click += new EventHandler(SendMsgButton__Click);
 
 
-            //change cursor of home pic box
-            this.homePictureBox.Cursor = Cursors.Arrow;
+            this.FormClosing += new FormClosingEventHandler(FormClosing__Form);
 
-            //event handlers for controls
-            this.homePictureBox.Click += new EventHandler(HomePictureBox__Click);
         }
 
-        public void UpdateConversation(string text)
+        private void FormClosing__Form(object sender, FormClosingEventArgs e)
         {
-            this.messagesRichTextBox.Text += text + "\n";
-        }//update convo
+            //close the listener 
+            listener.Close();
 
-        private void Listen()
+            //end the thread 
+            thread.Abort();
+
+            //close the application
+            Application.Exit();
+        }// end form closing
+
+        private void SendMsgButton__Click(object sender, EventArgs e)
         {
-            UpdateConvo updateConversation;
-            updateConversation = new UpdateConvo(UpdateConversation);
-            //no matter IP adress, it will process it
-            IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Any, this.myPort);
-
-            //tcp ~ phone line
-            this.listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-            listener.Bind(serverEndPoint);
-
-            listener.Listen(300);
-
-            //cont. listen for connections
-            while (true)
-            {
-                Socket client = listener.Accept();
-                Stream netStream = new NetworkStream(client);
-                StreamReader reader = new StreamReader(netStream);
-
-                //reads to full content and returns as string
-                string result = reader.ReadToEnd();
-                //put msg into textbox [does not have direct access to parent method]
-                //can use invoke of delegate method
-                Invoke(updateConversation, result);
-                reader.Close();
-                netStream.Close();
-                client.Close();
-            }
+            
         }
 
+        private void FriendsPictureBox__Click(object sender, EventArgs e)
+        {
+            //go to the form with the firends list
+
+        }
         private void HomePictureBox__Click(object sender, EventArgs e)
         {
             //already on home page
-        */
-        }//en home pic box
+        
+        }//end home pic box
     }
 }

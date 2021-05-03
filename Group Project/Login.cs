@@ -22,6 +22,7 @@ namespace Group_Project
         }
         private void LoginButton__Click(object sender, EventArgs e)
         {
+            //Close this form when logging in
             this.Close();
         }
 
@@ -35,9 +36,10 @@ namespace Group_Project
                 //correct(but show error message)
                 this.errorProvider.SetError(tb, "Invlid id");
                 tb.Tag = false;
-            }//otherwise error message
+            }//otherwise no error message
             else
             {
+                //set error message to null
                 this.errorProvider.SetError(tb, null);
                 tb.Tag = true;
             }
