@@ -13,12 +13,14 @@ using System.Net.Sockets;
 using System.Threading;
 using System.IO;
 
-namespace Group_Project
+namespace GroupProject
 {
-    public delegate void UpdateConvo(string text);
-    public partial class Form : System.Windows.Forms.Form
+    public delegate void UpdateConvoDelegate(string text);
+
+    public partial class Form1 : Form
     {
         string targetUser = "";
+        string userName = "";
         string targetIp = "";
         int targetPort = 0;
         string myIp = "";
@@ -26,7 +28,7 @@ namespace Group_Project
         Thread thread;
         Socket listener;
 
-        public Form()
+        public Form1()
         {
             InitializeComponent();
 
@@ -36,20 +38,43 @@ namespace Group_Project
 
             //thread start
 
+
+
+            //ip host
+            IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress iPAddress in ipHost.AddressList)
+            {
+                if (iPAddress.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    this.myIp = iPAddress.ToString();
+                    break;
+                }
+            }
+
+
+
+
             //control buttons
             this.friendsPictureBox.Click += new EventHandler(FriendsPictureBox__Click);
             this.sendMsgButton.Click += new EventHandler(SendMsgButton__Click);
 
 
+
+
+
             this.FormClosing += new FormClosingEventHandler(FormClosing__Form);
 
         }
+        public void UpdateConversation(string text)
+        {
+            this.messagesRichTextBox.Text += text + "\n";
+        }//update convo
 
         //listener fns
         public void Listen()
         {
-            UpdateConversationDelegate updateConversationDelegate;
-            updateConversationDelegate = new UpdateConversationDelegate(UpdateConversation);
+            UpdateConvoDelegate updateConversationDelegate;
+            updateConversationDelegate = new UpdateConvoDelegate(UpdateConversation);
             //no matter IP adress, it will process it
             IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Any, this.myPort);
 
@@ -107,16 +132,16 @@ namespace Group_Project
                 Stream netStream = new NetworkStream(server);
                 StreamWriter writer = new StreamWriter(netStream);
 
-                string msg = userTextBox + ": " + msgRichTextBox.Text;
+                string msg = userName + ": " + userMsgRichTextBox.Text;
                 writer.Write(msg.ToCharArray(), 0, msg.Length);
 
                 writer.Close();
                 netStream.Close();
                 server.Close();
 
-                this.convRichTextBox.Text += "> " + this.targetUser + ": " + msgRichTextBox.Text + "\n";
+                messagesRichTextBox.Text += "> " + this.targetUser + ": " + userMsgRichTextBox.Text + "\n";
 
-                msgRichTextBox.Clear();
+                userMsgRichTextBox.Clear();
 
             }
         }//send button
@@ -128,7 +153,8 @@ namespace Group_Project
         private void HomePictureBox__Click(object sender, EventArgs e)
         {
             //already on home page
-        
+
         }//end home pic box
     }
 }
+

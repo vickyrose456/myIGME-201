@@ -76,7 +76,7 @@ namespace Dyscord
         }
         public void UpdateConversation(string text)
         {
-            this.convGroupBox.Text += text + "\n";
+            this.convRichTextBox.Text += text + "\n";
         }//update convo
 
         private void LoginButton__Click(object sender, EventArgs e)
