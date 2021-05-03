@@ -35,7 +35,13 @@ namespace GroupProject
 
         private void SignUpButton__Click(object sender, EventArgs e)
         {
-            //open the form to add the user 
+            //create new user
+            User newUser = new User();
+            //close the form
+            this.Enabled = false;
+
+            //create a signupform to add the new person
+            new SignUp(newUser, this);
         }
 
     }

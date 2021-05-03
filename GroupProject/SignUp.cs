@@ -15,7 +15,8 @@ namespace GroupProject
 {
     public partial class SignUp : Form
     {
-        public SignUp()
+        Person newUser;
+        public SignUp(Person person, Form parentForm)
         {
             InitializeComponent();
 
@@ -23,7 +24,13 @@ namespace GroupProject
             this.userNameTextBox.KeyPress += new KeyPressEventHandler(UserNameTextBox__KeyPress);
             this.passwordTextBox.KeyPress += new KeyPressEventHandler(PasswordTextBox__KeyPress);
             this.exitButton.Click += new EventHandler(ExitButton__Click);
+            this.createPersonButton.Click += new EventHandler(CreatePersonButton__Click);
 
+        }
+        private void CreatePersonButton__Click(object sender, EventArgs e)
+        {
+            //close thi form
+            this.Close();
         }
 
         private void UserNameTextBox__KeyPress(object sender, KeyPressEventArgs e)
@@ -35,7 +42,7 @@ namespace GroupProject
         private void PasswordTextBox__KeyPress (object sender, KeyPressEventArgs e)
         {
             //associate this password with this user
-
+            
         }
 
         private void ExitButton__Click(object sender, EventArgs e)
