@@ -25,6 +25,7 @@ namespace GroupProject
             //controls
             this.userNametextBox.KeyPress += new KeyPressEventHandler(UserNameTextBox__Click);
             this.signUpButton.Click += new EventHandler(SignUpButton__Click);
+
         }
 
         private void UserNameTextBox__Click(object sender, KeyPressEventArgs e)

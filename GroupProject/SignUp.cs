@@ -36,6 +36,17 @@ namespace GroupProject
             this.exitButton.Click += new EventHandler(ExitButton__Click);
             this.createPersonButton.Click += new EventHandler(CreatePersonButton__Click);
 
+
+
+            this.himRadioButton.CheckedChanged += new EventHandler(this.GenderRadioButton__CheckedChanged);
+            this.herRadioButton.CheckedChanged += new EventHandler(this.GenderRadioButton__CheckedChanged);
+            this.themRadioButton.CheckedChanged += new EventHandler(this.GenderRadioButton__CheckedChanged);
+
+        }
+
+        private void GenderRadioButton__CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
         private void CreatePersonButton__Click(object sender, EventArgs e)
         {

@@ -35,6 +35,9 @@ namespace GroupProject
             this.createPersonButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.himRadioButton = new System.Windows.Forms.RadioButton();
+            this.herRadioButton = new System.Windows.Forms.RadioButton();
+            this.themRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,11 +77,46 @@ namespace GroupProject
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // himRadioButton
+            // 
+            this.himRadioButton.AutoSize = true;
+            this.himRadioButton.Location = new System.Drawing.Point(964, 69);
+            this.himRadioButton.Name = "himRadioButton";
+            this.himRadioButton.Size = new System.Drawing.Size(98, 36);
+            this.himRadioButton.TabIndex = 4;
+            this.himRadioButton.Text = "him";
+            this.himRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // herRadioButton
+            // 
+            this.herRadioButton.AutoSize = true;
+            this.herRadioButton.Location = new System.Drawing.Point(964, 129);
+            this.herRadioButton.Name = "herRadioButton";
+            this.herRadioButton.Size = new System.Drawing.Size(93, 36);
+            this.herRadioButton.TabIndex = 5;
+            this.herRadioButton.Text = "her";
+            this.herRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // themRadioButton
+            // 
+            this.themRadioButton.AutoSize = true;
+            this.themRadioButton.Checked = true;
+            this.themRadioButton.Location = new System.Drawing.Point(964, 188);
+            this.themRadioButton.Name = "themRadioButton";
+            this.themRadioButton.Size = new System.Drawing.Size(115, 36);
+            this.themRadioButton.TabIndex = 6;
+            this.themRadioButton.TabStop = true;
+            this.themRadioButton.Text = "them";
+            this.themRadioButton.UseVisualStyleBackColor = true;
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1279, 584);
+            this.Controls.Add(this.themRadioButton);
+            this.Controls.Add(this.herRadioButton);
+            this.Controls.Add(this.himRadioButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.createPersonButton);
             this.Controls.Add(this.passwordTextBox);
@@ -98,5 +136,8 @@ namespace GroupProject
         private System.Windows.Forms.Button createPersonButton;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.RadioButton themRadioButton;
+        private System.Windows.Forms.RadioButton herRadioButton;
+        private System.Windows.Forms.RadioButton himRadioButton;
     }
 }
