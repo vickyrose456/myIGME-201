@@ -15,10 +15,20 @@ namespace GroupProject
 {
     public partial class SignUp : Form
     {
-        Person newUser;
+        Person formUser;
         public SignUp(Person person, Form parentForm)
         {
             InitializeComponent();
+
+
+            if (parentForm != null)
+            {
+                this.Owner = parentForm;
+                this.CenterToParent();
+            }
+
+            this.formUser = person;
+
 
             //controls
             this.userNameTextBox.KeyPress += new KeyPressEventHandler(UserNameTextBox__KeyPress);

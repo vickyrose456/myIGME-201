@@ -29,10 +29,13 @@ namespace GroupProject
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.createPersonButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // userNameTextBox
@@ -67,6 +70,10 @@ namespace GroupProject
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -78,6 +85,7 @@ namespace GroupProject
             this.Controls.Add(this.userNameTextBox);
             this.Name = "SignUp";
             this.Text = "SignUp";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -89,5 +97,6 @@ namespace GroupProject
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button createPersonButton;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
