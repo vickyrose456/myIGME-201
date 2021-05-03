@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using TigerChatPeopleLib;
+using TigerUsersGlobals;
 
 namespace GroupProject
 {
@@ -16,21 +17,19 @@ namespace GroupProject
     {
         Person thisPerson;
 
-        //store username
-        string userName = "";
 
         public Login()
         {
             InitializeComponent();
-
+            thisPerson
 
             //controls
-            this.userNametextBox.KeyPress += new KeyPressEventHandler(UserNametextBox__Click);
+            this.userNametextBox.KeyPress += new KeyPressEventHandler(UserNameTextBox__Click);
         }
 
         private void UserNameTextBox__Click(object sender, KeyPressEventArgs e)
         {
-            userName = this.userNametextBox.Text;
+            thisPerson.userName = this.userNametextBox.Text;
         }
 
         public AddNewPerson(string name)

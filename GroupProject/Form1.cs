@@ -52,13 +52,9 @@ namespace GroupProject
             }
 
 
-
-
             //control buttons
             this.friendsPictureBox.Click += new EventHandler(FriendsPictureBox__Click);
             this.sendMsgButton.Click += new EventHandler(SendMsgButton__Click);
-
-
 
 
 

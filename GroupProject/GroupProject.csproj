@@ -47,6 +47,9 @@
     <Reference Include="TigerChatPeopleLib">
       <HintPath>..\TigerChatPeopleLib\bin\Debug\TigerChatPeopleLib.dll</HintPath>
     </Reference>
+    <Reference Include="TigerUsersGlobals">
+      <HintPath>..\TigerUsersGlobals\bin\Debug\TigerUsersGlobals.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
