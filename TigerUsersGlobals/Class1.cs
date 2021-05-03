@@ -14,7 +14,7 @@ namespace TigerUsersGlobals
         void PaintListView(string code);
     }
     
-    public class Class1
+    public class Globals
     {
         //create new user
         public static People people = new People();

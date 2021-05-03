@@ -21,7 +21,8 @@ namespace GroupProject
         public Login()
         {
             InitializeComponent();
-            thisPerson
+
+           
 
             //controls
             this.userNametextBox.KeyPress += new KeyPressEventHandler(UserNameTextBox__Click);
@@ -29,12 +30,9 @@ namespace GroupProject
 
         private void UserNameTextBox__Click(object sender, KeyPressEventArgs e)
         {
-            thisPerson.userName = this.userNametextBox.Text;
+            string userName = this.userNametextBox.Text;
+            thisPerson = Globals.people[userName];
         }
 
-        public AddNewPerson(string name)
-        {
-            
-        }
     }
 }
