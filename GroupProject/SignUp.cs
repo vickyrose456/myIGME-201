@@ -16,7 +16,7 @@ namespace GroupProject
     public partial class SignUp : Form
     {
         Person formUser;
-        public SignUp(Person person, Form parentForm)
+        public SignUp(Form parentForm)
         {
             InitializeComponent();
 
@@ -26,8 +26,6 @@ namespace GroupProject
                 this.Owner = parentForm;
                 this.CenterToParent();
             }
-
-            this.formUser = person;
 
 
             //controls
@@ -64,8 +62,9 @@ namespace GroupProject
         }
         private void CreatePersonButton__Click(object sender, EventArgs e)
         {
-            //close thi form
+            //close this form
             this.Close();
+            ParentForm.Enabled = true;
         }
 
         private void UserNameTextBox__KeyPress(object sender, KeyPressEventArgs e)

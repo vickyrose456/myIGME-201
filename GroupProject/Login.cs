@@ -42,7 +42,9 @@ namespace GroupProject
             this.Enabled = false;
 
             //create a signupform to add the new person
-            new SignUp(newUser, this);
+            //new SignUp(newUser, this);
+            SignUp signUpForm = new SignUp(this);
+            signUpForm.ShowDialog();
         }
 
     }
