@@ -71,8 +71,13 @@ namespace GroupProject
 
         private void UserNameTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
+            TextBox tb = (TextBox)sender;
            //while it isnt empty, store it into the person
-
+           if(tb.Text == null)
+            {
+                this.errorProvider1.SetError(tb, "Invalid username");
+                tb.Tag = false;
+            }
         }
 
         private void PasswordTextBox__KeyPress (object sender, KeyPressEventArgs e)
