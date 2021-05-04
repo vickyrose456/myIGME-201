@@ -99,7 +99,7 @@ namespace GroupProject
         {
             Person person = null;
 
-            IUser iUser = (IUser)formUser;
+            //IUser iUser = (IUser)formUser;
 
             User user = new User();
             person = user;

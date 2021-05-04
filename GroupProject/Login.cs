@@ -28,7 +28,17 @@ namespace GroupProject
             this.loginButton.Click += new EventHandler(LoginButton__Click);
 
             Globals.AddPeopleData();
+
+            this.exitButton.Click += new EventHandler(ExitButton__Click);
         }
+
+        private void ExitButton__Click(object sender, EventArgs e)
+        {
+            //close the application
+            Application.Exit();
+
+        }// end form closing
+
         private void LoginButton__Click(object sender, EventArgs e)
         {
             
@@ -60,7 +70,7 @@ namespace GroupProject
                 this.errorProvider1.SetError(tb, null);
                 tb.Tag = true;
             }
-        }
+        }//end username txt box
 
         private void SignUpButton__Click(object sender, EventArgs e)
         {
@@ -73,7 +83,7 @@ namespace GroupProject
             //new SignUp(newUser, this);
             SignUp signUpForm = new SignUp(newUser, this);
             signUpForm.ShowDialog();
-        }
+        }//end ign up button
 
     }
 }
