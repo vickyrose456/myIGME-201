@@ -110,7 +110,7 @@ namespace GroupProject
             thread.Abort();
 
             //close the application
-            Application.Exit();
+            //t7Application.Exit();
 
         }// end form closing
 

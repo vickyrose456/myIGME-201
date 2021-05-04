@@ -72,11 +72,11 @@ namespace GroupProject
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(294, 240);
+            this.exitButton.Location = new System.Drawing.Point(193, 222);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(169, 50);
+            this.exitButton.Size = new System.Drawing.Size(105, 50);
             this.exitButton.TabIndex = 3;
-            this.exitButton.Text = "exit";
+            this.exitButton.Text = "button1";
             this.exitButton.UseVisualStyleBackColor = true;
             // 
             // Login
@@ -84,7 +84,6 @@ namespace GroupProject
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1312, 584);
-            this.ControlBox = false;
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.signUpButton);
             this.Controls.Add(this.loginButton);

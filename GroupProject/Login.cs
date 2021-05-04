@@ -41,15 +41,15 @@ namespace GroupProject
 
         private void LoginButton__Click(object sender, EventArgs e)
         {
-            
+
             //close this if the user name is not empty
             if (this.userNametextBox.Text.Length > 2)
             {
                 this.Close();
             }
-            else 
-            {}
-            
+            else
+            { }
+
 
         }//end login button
 
