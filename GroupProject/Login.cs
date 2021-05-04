@@ -32,7 +32,20 @@ namespace GroupProject
         private void UserNameTextBox__Click(object sender, KeyPressEventArgs e)
         {
             //set the person username to the username entered in the textbox
-            thisPerson.userName = this.userNametextBox.Text;
+            TextBox tb = (TextBox)sender;
+
+            if (tb.Text == null || tb.Text.Length <= 2)
+            {
+                //show error message
+                this.errorProvider1.SetError(tb, "Invalid username");
+                tb.Tag = false;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+            }
         }
 
         private void SignUpButton__Click(object sender, EventArgs e)
