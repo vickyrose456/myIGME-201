@@ -46,7 +46,22 @@ namespace GroupProject
 
         private void GenderRadioButton__CheckedChanged(object sender, EventArgs e)
         {
-            
+            RadioButton rb = (RadioButton)sender;
+            if(rb == this.himRadioButton)
+            {
+                //set the gender to him
+                formUser.userGender = genderPronoun.him;
+            }
+            if(rb == this.herRadioButton)
+            {
+                //set the gender to her
+                formUser.userGender = genderPronoun.her;
+            }
+            if (rb == this.themRadioButton)
+            {
+                //set gender to them
+                formUser.userGender = genderPronoun.them;
+            }
         }
         private void CreatePersonButton__Click(object sender, EventArgs e)
         {
