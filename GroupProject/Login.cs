@@ -33,7 +33,7 @@ namespace GroupProject
         {
             
             //close this if the user name is not empty
-            if (this.userNametextBox.Text != null)
+            if (this.userNametextBox.Text.Length > 2)
             {
                 this.Close();
             }
@@ -48,7 +48,7 @@ namespace GroupProject
             //set the person username to the username entered in the textbox
             TextBox tb = (TextBox)sender;
 
-            if (tb.Text == null || tb.Text.Length <= 2)
+            if (tb.Text == null || tb.Text.Length < 2)
             {
                 //show error message
                 this.errorProvider1.SetError(tb, "Invalid username");
