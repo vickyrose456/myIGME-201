@@ -25,13 +25,14 @@ namespace GroupProject
             //controls
             this.userNametextBox.KeyPress += new KeyPressEventHandler(UserNameTextBox__Click);
             this.signUpButton.Click += new EventHandler(SignUpButton__Click);
-
+            
+            Globals.AddPeopleData();
         }
 
         private void UserNameTextBox__Click(object sender, KeyPressEventArgs e)
         {
             //set the person username to the username entered in the textbox
-           thisPerson.userName = this.userNametextBox.Text;
+            thisPerson.userName = this.userNametextBox.Text;
         }
 
         private void SignUpButton__Click(object sender, EventArgs e)
@@ -43,7 +44,7 @@ namespace GroupProject
 
             //create a signupform to add the new person
             //new SignUp(newUser, this);
-            SignUp signUpForm = new SignUp(this);
+            SignUp signUpForm = new SignUp(newUser, this);
             signUpForm.ShowDialog();
         }
 

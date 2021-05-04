@@ -109,6 +109,7 @@ namespace GroupProject
 
             //close the application
             Application.Exit();
+
         }// end form closing
 
         private void SendMsgButton__Click(object sender, EventArgs e)

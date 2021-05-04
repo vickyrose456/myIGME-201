@@ -16,7 +16,7 @@ namespace GroupProject
     public partial class SignUp : Form
     {
         Person formUser;
-        public SignUp(Form parentForm)
+        public SignUp(Person newUser, Form parentForm)
         {
             InitializeComponent();
 
@@ -26,7 +26,7 @@ namespace GroupProject
                 this.Owner = parentForm;
                 this.CenterToParent();
             }
-
+            this.formUser = newUser;
 
             //controls
             this.userNameTextBox.KeyPress += new KeyPressEventHandler(UserNameTextBox__KeyPress);
