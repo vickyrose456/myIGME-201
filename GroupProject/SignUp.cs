@@ -37,7 +37,6 @@ namespace GroupProject
             this.createPersonButton.Click += new EventHandler(CreatePersonButton__Click);
 
 
-
             this.himRadioButton.CheckedChanged += new EventHandler(this.GenderRadioButton__CheckedChanged);
             this.herRadioButton.CheckedChanged += new EventHandler(this.GenderRadioButton__CheckedChanged);
             this.themRadioButton.CheckedChanged += new EventHandler(this.GenderRadioButton__CheckedChanged);
@@ -72,18 +71,44 @@ namespace GroupProject
         private void UserNameTextBox__KeyPress(object sender, KeyPressEventArgs e)
         {
             TextBox tb = (TextBox)sender;
-           //while it isnt empty, store it into the person
-           if(tb.Text == null)
+            //while it isnt empty, store it into the person
+            if (tb.Text == null || tb.Text.Length <= 2)
             {
+                //show error message
                 this.errorProvider1.SetError(tb, "Invalid username");
                 tb.Tag = false;
+
+            }
+            else 
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+
+                //set the text to the username
+                formUser.userName = tb.Text;
             }
         }
 
         private void PasswordTextBox__KeyPress (object sender, KeyPressEventArgs e)
         {
-            //associate this password with this user
-            
+            TextBox tb = (TextBox)sender;
+            //while it isnt empty, store it into the person
+            if (tb.Text == null || tb.Text.Length <= 2)
+            {
+           
+                //show error message
+                this.errorProvider1.SetError(tb, "Invalid password");
+                tb.Tag = false;
+
+            }
+            else
+            {
+                this.errorProvider1.SetError(tb, null);
+                tb.Tag = true;
+
+                //set the text to the password
+                formUser.UserPassword = tb.Text;
+            }
         }
 
         private void ExitButton__Click(object sender, EventArgs e)
