@@ -38,6 +38,7 @@ namespace GroupProject
             this.himRadioButton = new System.Windows.Forms.RadioButton();
             this.herRadioButton = new System.Windows.Forms.RadioButton();
             this.themRadioButton = new System.Windows.Forms.RadioButton();
+            this.birthDateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,11 +110,19 @@ namespace GroupProject
             this.themRadioButton.Text = "them";
             this.themRadioButton.UseVisualStyleBackColor = true;
             // 
+            // birthDateTimePicker
+            // 
+            this.birthDateTimePicker.Location = new System.Drawing.Point(661, 334);
+            this.birthDateTimePicker.Name = "birthDateTimePicker";
+            this.birthDateTimePicker.Size = new System.Drawing.Size(540, 38);
+            this.birthDateTimePicker.TabIndex = 7;
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1279, 584);
+            this.Controls.Add(this.birthDateTimePicker);
             this.Controls.Add(this.themRadioButton);
             this.Controls.Add(this.herRadioButton);
             this.Controls.Add(this.himRadioButton);
@@ -139,5 +148,6 @@ namespace GroupProject
         private System.Windows.Forms.RadioButton themRadioButton;
         private System.Windows.Forms.RadioButton herRadioButton;
         private System.Windows.Forms.RadioButton himRadioButton;
+        private System.Windows.Forms.DateTimePicker birthDateTimePicker;
     }
 }

@@ -16,17 +16,31 @@ namespace GroupProject
     public partial class SignUp : Form
     {
         Person formUser;
-        public SignUp(Person newUser, Form parentForm)
+        public SignUp(Person person, Form parentForm)
         {
             InitializeComponent();
 
+            try
+            {
+                // Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.2; WOW64; Trident / 7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; wbx 1.0.0)
+                Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(
+                    @"SOFTWARE\\WOW6432Node\\Microsoft\\Internet Explorer\\MAIN\\FeatureControl\\FEATURE_BROWSER_EMULATION",
+                    true);
+                key.SetValue(Application.ExecutablePath.Replace(Application.StartupPath + "\\", ""), 11001, Microsoft.Win32.RegistryValueKind.DWord);
+                key.Close();
+            }
+            catch
+            {
+
+            }
 
             if (parentForm != null)
             {
                 this.Owner = parentForm;
                 this.CenterToParent();
             }
-            this.formUser = newUser;
+            this.formUser = person;
+
 
             //controls
             this.userNameTextBox.KeyPress += new KeyPressEventHandler(UserNameTextBox__KeyPress);
@@ -38,6 +52,7 @@ namespace GroupProject
             this.himRadioButton.CheckedChanged += new EventHandler(this.GenderRadioButton__CheckedChanged);
             this.herRadioButton.CheckedChanged += new EventHandler(this.GenderRadioButton__CheckedChanged);
             this.themRadioButton.CheckedChanged += new EventHandler(this.GenderRadioButton__CheckedChanged);
+
 
         }
 
@@ -62,6 +77,18 @@ namespace GroupProject
         }
         private void CreatePersonButton__Click(object sender, EventArgs e)
         {
+            Person person = null;
+
+            IUser iUser = (IUser)formUser;
+
+            User user = new User();
+            person = user;
+
+            //asssign the values to the person
+            person.userName = this.userNameTextBox.Text;
+            person.UserPassword = this.passwordTextBox.Text;
+            person.dateOfBirth = this.birthDateTimePicker.Value;
+
             //close this form
             this.Close();
             ParentForm.Enabled = true;
