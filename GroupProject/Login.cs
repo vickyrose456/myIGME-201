@@ -25,9 +25,23 @@ namespace GroupProject
             //controls
             this.userNametextBox.KeyPress += new KeyPressEventHandler(UserNameTextBox__Click);
             this.signUpButton.Click += new EventHandler(SignUpButton__Click);
-            
+            this.loginButton.Click += new EventHandler(LoginButton__Click);
+
             Globals.AddPeopleData();
         }
+        private void LoginButton__Click(object sender, EventArgs e)
+        {
+            
+            //close this if the user name is not empty
+            if (this.userNametextBox.Text != null)
+            {
+                this.Close();
+            }
+            else 
+            {}
+            
+
+        }//end login button
 
         private void UserNameTextBox__Click(object sender, KeyPressEventArgs e)
         {
@@ -53,7 +67,7 @@ namespace GroupProject
             //create new user
             User newUser = new User();
             //close the form
-            this.Enabled = false;
+            //this.Enabled = false;
 
             //create a signupform to add the new person
             //new SignUp(newUser, this);
