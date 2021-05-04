@@ -33,9 +33,16 @@ namespace GroupProject
             this.searchPictureBox = new System.Windows.Forms.PictureBox();
             this.friendsPictureBox = new System.Windows.Forms.PictureBox();
             this.homePictureBox = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.photoPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.searchPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.friendsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // searchPictureBox
@@ -79,11 +86,48 @@ namespace GroupProject
             this.homePictureBox.TabIndex = 14;
             this.homePictureBox.TabStop = false;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.groupBox1);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(86, 174);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1164, 617);
+            this.flowLayoutPanel1.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.photoPictureBox);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(336, 330);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // photoPictureBox
+            // 
+            this.photoPictureBox.Location = new System.Drawing.Point(77, 116);
+            this.photoPictureBox.Name = "photoPictureBox";
+            this.photoPictureBox.Size = new System.Drawing.Size(176, 143);
+            this.photoPictureBox.TabIndex = 1;
+            this.photoPictureBox.TabStop = false;
+            // 
             // FriendsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1301, 856);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.searchPictureBox);
             this.Controls.Add(this.friendsPictureBox);
             this.Controls.Add(this.homePictureBox);
@@ -92,6 +136,10 @@ namespace GroupProject
             ((System.ComponentModel.ISupportInitialize)(this.searchPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.friendsPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -101,5 +149,9 @@ namespace GroupProject
         private System.Windows.Forms.PictureBox searchPictureBox;
         private System.Windows.Forms.PictureBox friendsPictureBox;
         private System.Windows.Forms.PictureBox homePictureBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox photoPictureBox;
     }
 }
