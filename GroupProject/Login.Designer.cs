@@ -36,37 +36,41 @@ namespace GroupProject
             // 
             // userNametextBox
             // 
-            this.userNametextBox.Location = new System.Drawing.Point(192, 70);
+            this.userNametextBox.Location = new System.Drawing.Point(512, 167);
+            this.userNametextBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.userNametextBox.Name = "userNametextBox";
-            this.userNametextBox.Size = new System.Drawing.Size(100, 20);
+            this.userNametextBox.Size = new System.Drawing.Size(260, 38);
             this.userNametextBox.TabIndex = 0;
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(192, 120);
+            this.loginButton.Location = new System.Drawing.Point(512, 286);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(75, 23);
+            this.loginButton.Size = new System.Drawing.Size(200, 55);
             this.loginButton.TabIndex = 1;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
             // 
             // signUpButton
             // 
-            this.signUpButton.Location = new System.Drawing.Point(213, 172);
+            this.signUpButton.Location = new System.Drawing.Point(512, 402);
+            this.signUpButton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.signUpButton.Name = "signUpButton";
-            this.signUpButton.Size = new System.Drawing.Size(75, 23);
+            this.signUpButton.Size = new System.Drawing.Size(200, 55);
             this.signUpButton.TabIndex = 2;
             this.signUpButton.Text = "sign up";
             this.signUpButton.UseVisualStyleBackColor = true;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 245);
+            this.ClientSize = new System.Drawing.Size(1312, 584);
             this.Controls.Add(this.signUpButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.userNametextBox);
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);

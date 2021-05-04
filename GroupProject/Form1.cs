@@ -38,7 +38,9 @@ namespace GroupProject
 
             //thread start
 
-
+            ThreadStart threadStart = new ThreadStart(Listen);
+            thread = new Thread(threadStart);
+            thread.Start();
 
             //ip host
             IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
