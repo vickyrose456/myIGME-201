@@ -49,11 +49,31 @@ namespace GroupProject
             this.createPersonButton.Click += new EventHandler(CreatePersonButton__Click);
 
 
-            this.himRadioButton.CheckedChanged += new EventHandler(this.GenderRadioButton__CheckedChanged);
-            this.herRadioButton.CheckedChanged += new EventHandler(this.GenderRadioButton__CheckedChanged);
-            this.themRadioButton.CheckedChanged += new EventHandler(this.GenderRadioButton__CheckedChanged);
+            this.himRadioButton.CheckedChanged += new EventHandler(GenderRadioButton__CheckedChanged);
+            this.herRadioButton.CheckedChanged += new EventHandler(GenderRadioButton__CheckedChanged);
+            this.themRadioButton.CheckedChanged += new EventHandler(GenderRadioButton__CheckedChanged);
 
+            this.birthDateTimePicker.ValueChanged += new EventHandler(this.BirthDateTimePicker__ValueChanged);
 
+            this.birthDateTimePicker.Value = this.birthDateTimePicker.MinDate;
+            if (person.dateOfBirth > this.birthDateTimePicker.MinDate)
+            {
+                this.birthDateTimePicker.Value = person.dateOfBirth;
+            }
+        }
+
+        private void BirthDateTimePicker__ValueChanged(object sender, EventArgs e)
+        {
+            DateTimePicker dtp = (DateTimePicker)sender;
+
+            if (dtp.Value == dtp.MinDate)
+            {
+                dtp.CustomFormat = " ";
+            }
+            else 
+            {
+                dtp.CustomFormat = "MMM d, yyyy";
+            }
         }
 
         private void GenderRadioButton__CheckedChanged(object sender, EventArgs e)
