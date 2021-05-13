@@ -393,6 +393,25 @@ namespace BTree
             node = new BTree("Z", root);
 
             //remove C, I, and A
+            nodeToDelete = new BTree("C", null);
+            BTree.DeleteNode(nodeToDelete, root);
+            //new line and traverse ascending
+            this.richTextBox.Text += "\n";
+            BTree.TraverseAscending(root);
+
+            //delete i
+            nodeToDelete = new BTree("I", null);
+            BTree.DeleteNode(nodeToDelete, root);
+            //new line and traverse ascending
+            this.richTextBox.Text += "\n";
+            BTree.TraverseAscending(root);
+
+            //delete a
+            nodeToDelete = new BTree("A", null);
+            BTree.DeleteNode(nodeToDelete, root);
+            //new line and traverse ascending
+            this.richTextBox.Text += "\n";
+            BTree.TraverseAscending(root);
 
 
             this.richTextBox.Text += "\n";
