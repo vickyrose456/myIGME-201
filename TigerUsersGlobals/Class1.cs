@@ -36,6 +36,7 @@ namespace TigerUsersGlobals
             {
                 if (rand.Next(0, 2) == 0)
                 {
+                    //create a bew student
                     student = new Student();
                     student.gpa = rand.NextDouble() * 4;
 
@@ -43,8 +44,9 @@ namespace TigerUsersGlobals
                 }
                 else
                 {
+                    //make new teacher
                     teacher = new Teacher();
-
+                    //create teacher specialty
                     teacher.specialty = specialty[rand.Next(0, specialty.Length)];
                     user = teacher;
                 }
@@ -52,7 +54,7 @@ namespace TigerUsersGlobals
                 user.age = rand.Next(0, 81);
 
                 user.email = "person_" + i.ToString() + "@rit.edu";
-                user.userName = firstName[rand.Next(0, firstName.Length)] + " " + lastName[rand.Next(0, lastName.Length)];
+                user.userName = firstName[rand.Next(0, firstName.Length)] + " " + rand.Next(0, lastName.Length);
 
                 people[user.email] = user;
             }
