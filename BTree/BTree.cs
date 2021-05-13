@@ -237,7 +237,21 @@ namespace BTree
             this.richTextBox.Clear();
 
             // Your code here
+            string[] chars = new string[26]{"A", "B", "C", "D", "E", "F", "G", "H", "I" ,"J", "K",
+            "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 
+            for (int i=0; i < 15; ++i)
+            {
+                int num = random.Next(1, 25);
+                string randChar = chars[num];
+
+                //insert random strings
+                node = new BTree(randChar, root);
+                if (i == 0)
+                {
+                    root = node;
+                }
+            }
 
             this.richTextBox.Text += "\n";
 

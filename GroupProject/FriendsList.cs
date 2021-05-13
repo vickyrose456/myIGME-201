@@ -29,6 +29,8 @@ namespace GroupProject
                     AddPanel(keyValuePair.Value);
                 }
             }
+
+            this.homePictureBox.Click += new EventHandler(HomePicutreBox__Click);
         }
 
         public void AddPanel(Person person)

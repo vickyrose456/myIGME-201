@@ -147,6 +147,9 @@ namespace GroupProject
         private void FriendsPictureBox__Click(object sender, EventArgs e)
         {
             //go to the form with the firends list
+            FriendsList friendsListForm = new FriendsList();
+            friendsListForm.ShowDialog();
+            this.Close();
 
         }
         private void HomePictureBox__Click(object sender, EventArgs e)
