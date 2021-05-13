@@ -29,7 +29,7 @@ namespace TigerChatPeopleLib
             }
         }
 
-        public abstract class Person
+        public abstract class User
         {
             public string userName;
             public int age;
@@ -60,32 +60,32 @@ namespace TigerChatPeopleLib
                 }
             }
 
-            public static bool operator <(Person p1, Person p2)
+            public static bool operator <(User p1, User p2)
             {
                 return (p1.age < p2.age);
             }
 
-            public static bool operator >(Person p1, Person p2)
+            public static bool operator >(User p1, User p2)
             {
                 return (p1.age > p2.age);
             }
 
-            public static bool operator <=(Person p1, Person p2)
+            public static bool operator <=(User p1, User p2)
             {
                 return (p1.age <= p2.age);
             }
 
-            public static bool operator >=(Person p1, Person p2)
+            public static bool operator >=(User p1, User p2)
             {
                 return (p1.age >= p2.age);
             }
 
-            public static bool operator ==(Person p1, Person p2)
+            public static bool operator ==(User p1, User p2)
             {
                 return (p1.age == p2.age);
             }
 
-            public static bool operator !=(Person p1, Person p2)
+            public static bool operator !=(User p1, User p2)
             {
                 return (p1.age != p2.age);
             }
@@ -97,11 +97,11 @@ namespace TigerChatPeopleLib
             
         }
 
-        public interface IPerson
-        {
+        public interface IUser
+    {
         }
 
-        public class Student : Person, IPerson, IStudent, ICourseList
+        public class Student : User, IUser, IStudent, ICourseList
         {
             public double gpa;
             public collegeYear eCollegeYear;
@@ -155,7 +155,7 @@ namespace TigerChatPeopleLib
 
         }
 
-        public class Teacher : Person, IPerson, ICourseList
+        public class Teacher : User, IUser, ICourseList
         {
             public string specialty;
             public List<string> courseCodes = new List<string>();
@@ -180,7 +180,7 @@ namespace TigerChatPeopleLib
             // the generic SortedList class uses a template <> to store indexed data
             // the first type is the data type to index on
             // the second type is the data type to store in the list
-            public SortedList<string, Person> sortedList = new SortedList<string, Person>();
+            public SortedList<string, User> sortedList = new SortedList<string, User>();
 
             public void Remove(string userName)
             {
@@ -199,14 +199,14 @@ namespace TigerChatPeopleLib
             //     people[email] to access the Person object with that email address
             // and value will be the Person object (person) being added to the list in the case of:
             //     people[email] = person;
-            public Person this[string userName]
+            public User this[string userName]
             {
                 get
                 {
-                    Person returnVal;
+                    User returnVal;
                     try
                     {
-                        returnVal = (Person)sortedList[userName];
+                        returnVal = (User)sortedList[userName];
                     }
                     catch
                     {

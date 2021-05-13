@@ -29,8 +29,8 @@ namespace TigerUsersGlobals
             Random rand = new Random();
 
             String[] userNames = new string[] {"vro6068", "dao9631", "dxsigm", "aem3780", "tdd9179", "al3464"};
-            //String[] firstName = new string[] { "Victoria", "Dennis", "David", "Allie", "Twanda", "Archer"};
-            //String[] lastName = new string[] { "Olivieri", "O", "Schuh", "M", "D", "L"};
+            String[] firstName = new string[] { "Victoria", "Dennis", "David", "Allie", "Twanda", "Archer"};
+            String[] lastName = new string[] { "Olivieri", "O", "Schuh", "M", "D", "L"};
 
             for (i = 0; i < 10; i++)
             {
