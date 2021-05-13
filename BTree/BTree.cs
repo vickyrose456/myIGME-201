@@ -242,7 +242,7 @@ namespace BTree
 
             for (int i=0; i < 15; ++i)
             {
-                int num = random.Next(1, 25);
+                int num = random.Next(1, 26);
                 string randChar = chars[num];
 
                 //insert random strings
@@ -272,7 +272,64 @@ namespace BTree
             BTree root = null;
 
             // Your code here
+            //code from button 3
 
+            node = new BTree("M", null);
+            root = node;
+            Random random = new Random();
+
+            node = new BTree("F", root);
+            node = new BTree("C", root);
+            node = new BTree("B", root);
+            node = new BTree("A", root);
+            node = new BTree("E", root);
+            node = new BTree("D", root);
+
+            node = new BTree("J", root);
+            node = new BTree("I", root);
+            node = new BTree("H", root);
+            node = new BTree("G", root);
+            node = new BTree("L", root);
+            node = new BTree("K", root);
+
+            node = new BTree("P", root);
+            node = new BTree("O", root);
+            node = new BTree("N", root);
+            node = new BTree("T", root);
+            node = new BTree("S", root);
+            node = new BTree("R", root);
+            node = new BTree("Q", root);
+
+            node = new BTree("W", root);
+            node = new BTree("V", root);
+            node = new BTree("U", root);
+            node = new BTree("X", root);
+            node = new BTree("Y", root);
+            node = new BTree("Z", root);
+
+            //insert 15 random strings
+            node = new BTree("Hi", root);
+            node = new BTree("Cake", root);
+            node = new BTree("My name is Victoria", root);
+            node = new BTree("Spongebob squarepants", root);
+            node = new BTree("pinapple", root); 
+            node = new BTree("Victoria", root);
+            node = new BTree("Umbrella", root);
+            node = new BTree("Cats are cool", root);
+            node = new BTree("yellow", root);
+            node = new BTree("Zebras have stripes", root); 
+            node = new BTree("I need coffee", root);
+            node = new BTree("Suit and tie", root);
+            node = new BTree("Rainbow", root);
+            node = new BTree("Yo-yo", root);
+            node = new BTree("Roots of a tree", root);
+
+            //insert 30 numbers b/w 1 and 51
+            for (int i = 0; i < 30; i++)
+            {
+                //numbers between 1 and 51
+                node = new BTree(random.Next(1, 51), root);
+            }
 
             this.richTextBox.Text += "\n";
             BTree.TraverseAscending(root);
@@ -301,6 +358,41 @@ namespace BTree
             BTree root = null;
 
             // Your code here
+            //add 26 letters to tree
+
+            node = new BTree("M", null);
+            root = node;
+
+            node = new BTree("F", root);
+            node = new BTree("C", root);
+            node = new BTree("B", root);
+            node = new BTree("A", root);
+            node = new BTree("E", root);
+            node = new BTree("D", root);
+
+            node = new BTree("J", root);
+            node = new BTree("I", root);
+            node = new BTree("H", root);
+            node = new BTree("G", root);
+            node = new BTree("L", root);
+            node = new BTree("K", root);
+
+            node = new BTree("P", root);
+            node = new BTree("O", root);
+            node = new BTree("N", root);
+            node = new BTree("T", root);
+            node = new BTree("S", root);
+            node = new BTree("R", root);
+            node = new BTree("Q", root);
+
+            node = new BTree("W", root);
+            node = new BTree("V", root);
+            node = new BTree("U", root);
+            node = new BTree("X", root);
+            node = new BTree("Y", root);
+            node = new BTree("Z", root);
+
+            //remove C, I, and A
 
 
             this.richTextBox.Text += "\n";
