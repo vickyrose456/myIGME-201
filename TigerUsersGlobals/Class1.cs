@@ -39,22 +39,22 @@ namespace TigerUsersGlobals
                     student = new Student();
                     student.gpa = rand.NextDouble() * 4;
 
-                    person = student;
+                   user = student;
                 }
                 else
                 {
                     teacher = new Teacher();
 
                     teacher.specialty = specialty[rand.Next(0, specialty.Length)];
-                    person = teacher;
+                    user = teacher;
                 }
 
-                person.age = rand.Next(0, 81);
+                user.age = rand.Next(0, 81);
 
-                person.email = "person_" + i.ToString() + "@rit.edu";
-                person.name = firstName[rand.Next(0, firstName.Length)] + " " + lastName[rand.Next(0, lastName.Length)];
+                user.email = "person_" + i.ToString() + "@rit.edu";
+                user.userName = firstName[rand.Next(0, firstName.Length)] + " " + lastName[rand.Next(0, lastName.Length)];
 
-                people[person.email] = person;
+                people[user.email] = user;
             }
         }
     }
