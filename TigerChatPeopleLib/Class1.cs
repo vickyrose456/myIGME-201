@@ -192,13 +192,7 @@ namespace TigerChatPeopleLib
 
             // indexer property allows array access to sortedList via the class object
             // and catching missing keys and duplicate key exceptions 
-            // notice the indexer property definition shows how it will be used in the calling code:
-            // if we have:
-            //     People people;
-            // then we can call:
-            //     people[email] to access the Person object with that email address
-            // and value will be the Person object (person) being added to the list in the case of:
-            //     people[email] = person;
+          
             public User this[string userName]
             {
                 get
