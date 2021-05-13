@@ -8,39 +8,51 @@ using TigerChatPeopleLib;
 
 namespace TigerUsersGlobals
 {
-
     public interface IListView
     {
         void PaintListView(string code);
     }
-    
-    public class Globals
+
+    public static class Globals
     {
-        //create new user
         public static People people = new People();
 
-        //create some generic people
-        public static void AddPeopleData()
+        public static void AddPeopleSampleData()
         {
             int i = 0;
+
             Person person = null;
-            User user = null;
+            Student student = null;
+            Teacher teacher = null;
 
             Random rand = new Random();
 
-            String[] userNames = new string[] {"vro6068", "dao9631", "dxsigm", "aem3780", "tdd9179", "al3464"};
-            String[] firstName = new string[] { "Victoria", "Dennis", "David", "Allie", "Twanda", "Archer"};
-            String[] lastName = new string[] { "Olivieri", "O", "Schuh", "M", "D", "L"};
+            String[] specialty = new String[] { "Math", "Comp Sci", "History", "Chemistry", "English" };
 
-            for (i = 0; i < 10; i++)
+            String[] firstName = new string[] { "Sue", "Tom", "Harry", "John", "David", "Rob", "Mary", "Cathy", "Amy", "Theresa", "Beth" };
+            String[] lastName = new string[] { "Harris", "Smith", "Johnson", "Cass", "Murphy", "O'Malley", "Scott", "Peterson", "Clark" };
+
+            for (i = 0; i < 100; ++i)
             {
-                user = new User();
+                if (rand.Next(0, 2) == 0)
+                {
+                    student = new Student();
+                    student.gpa = rand.NextDouble() * 4;
 
-                person = user;
+                    person = student;
+                }
+                else
+                {
+                    teacher = new Teacher();
 
-                //use the username list to assign that to the username
+                    teacher.specialty = specialty[rand.Next(0, specialty.Length)];
+                    person = teacher;
+                }
+
+                person.age = rand.Next(0, 81);
+
                 person.email = "person_" + i.ToString() + "@rit.edu";
-                person.userName = userNames[rand.Next(0, userNames.Length)];
+                person.name = firstName[rand.Next(0, firstName.Length)] + " " + lastName[rand.Next(0, lastName.Length)];
 
                 people[person.email] = person;
             }
