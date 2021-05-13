@@ -21,7 +21,7 @@ namespace TigerUsersGlobals
         {
             int i = 0;
 
-            Person person = null;
+            User user = null;
             Student student = null;
             Teacher teacher = null;
 
