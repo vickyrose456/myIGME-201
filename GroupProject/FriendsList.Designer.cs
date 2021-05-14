@@ -34,9 +34,9 @@ namespace GroupProject
             this.friendsPictureBox = new System.Windows.Forms.PictureBox();
             this.homePictureBox = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.photoPictureBox = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.searchPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.friendsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).BeginInit();
@@ -94,15 +94,6 @@ namespace GroupProject
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1164, 617);
             this.flowLayoutPanel1.TabIndex = 17;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.photoPictureBox);
@@ -121,6 +112,15 @@ namespace GroupProject
             this.photoPictureBox.Size = new System.Drawing.Size(176, 143);
             this.photoPictureBox.TabIndex = 1;
             this.photoPictureBox.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
             // 
             // FriendsList
             // 

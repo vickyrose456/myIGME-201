@@ -39,7 +39,11 @@ namespace GroupProject
             this.herRadioButton = new System.Windows.Forms.RadioButton();
             this.themRadioButton = new System.Windows.Forms.RadioButton();
             this.birthDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.typeOfUserGroupBox = new System.Windows.Forms.GroupBox();
+            this.teacherRadioButton = new System.Windows.Forms.RadioButton();
+            this.studentRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.typeOfUserGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // userNameTextBox
@@ -117,11 +121,45 @@ namespace GroupProject
             this.birthDateTimePicker.Size = new System.Drawing.Size(540, 38);
             this.birthDateTimePicker.TabIndex = 7;
             // 
+            // typeOfUserGroupBox
+            // 
+            this.typeOfUserGroupBox.Controls.Add(this.studentRadioButton);
+            this.typeOfUserGroupBox.Controls.Add(this.teacherRadioButton);
+            this.typeOfUserGroupBox.Location = new System.Drawing.Point(751, 69);
+            this.typeOfUserGroupBox.Name = "typeOfUserGroupBox";
+            this.typeOfUserGroupBox.Size = new System.Drawing.Size(194, 177);
+            this.typeOfUserGroupBox.TabIndex = 8;
+            this.typeOfUserGroupBox.TabStop = false;
+            this.typeOfUserGroupBox.Text = "Type of user";
+            // 
+            // teacherRadioButton
+            // 
+            this.teacherRadioButton.AutoSize = true;
+            this.teacherRadioButton.Location = new System.Drawing.Point(7, 59);
+            this.teacherRadioButton.Name = "teacherRadioButton";
+            this.teacherRadioButton.Size = new System.Drawing.Size(147, 36);
+            this.teacherRadioButton.TabIndex = 0;
+            this.teacherRadioButton.TabStop = true;
+            this.teacherRadioButton.Text = "teacher";
+            this.teacherRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // studentRadioButton
+            // 
+            this.studentRadioButton.AutoSize = true;
+            this.studentRadioButton.Location = new System.Drawing.Point(7, 118);
+            this.studentRadioButton.Name = "studentRadioButton";
+            this.studentRadioButton.Size = new System.Drawing.Size(146, 36);
+            this.studentRadioButton.TabIndex = 1;
+            this.studentRadioButton.TabStop = true;
+            this.studentRadioButton.Text = "student";
+            this.studentRadioButton.UseVisualStyleBackColor = true;
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1279, 584);
+            this.Controls.Add(this.typeOfUserGroupBox);
             this.Controls.Add(this.birthDateTimePicker);
             this.Controls.Add(this.themRadioButton);
             this.Controls.Add(this.herRadioButton);
@@ -133,6 +171,8 @@ namespace GroupProject
             this.Name = "SignUp";
             this.Text = "SignUp";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.typeOfUserGroupBox.ResumeLayout(false);
+            this.typeOfUserGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,5 +189,8 @@ namespace GroupProject
         private System.Windows.Forms.RadioButton herRadioButton;
         private System.Windows.Forms.RadioButton himRadioButton;
         private System.Windows.Forms.DateTimePicker birthDateTimePicker;
+        private System.Windows.Forms.GroupBox typeOfUserGroupBox;
+        private System.Windows.Forms.RadioButton studentRadioButton;
+        private System.Windows.Forms.RadioButton teacherRadioButton;
     }
 }

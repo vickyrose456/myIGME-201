@@ -22,7 +22,7 @@ namespace GroupProject
 
             this.flowLayoutPanel1.Controls.Clear();
 
-            foreach (KeyValuePair<string, Person> keyValuePair in Globals.people.myList)
+            foreach (KeyValuePair<string, User> keyValuePair in Globals.people.myList)
             {
                 if (keyValuePair.Value.GetType() == typeof(User))
                 {
@@ -30,14 +30,14 @@ namespace GroupProject
                 }
             }
 
-            this.homePictureBox.Click += new EventHandler(HomePicutreBox__Click);
+            //this.homePictureBox.Click += new EventHandler(HomePicutreBox__Click);
         }
 
-        public void AddPanel(Person person)
+        public void AddPanel(User user)
         {
             Panel panel1 = new System.Windows.Forms.Panel();
             //add the person to the panel
-            AddPersonToPanel(ref panel1, person);
+            AddPersonToPanel(ref panel1, user);
 
             this.flowLayoutPanel1.Controls.Add(panel1);
 
@@ -45,7 +45,7 @@ namespace GroupProject
             this.flowLayoutPanel1.Controls.Add(panel1);
         }
 
-        private void AddPersonToPanel(ref Panel panel1, Person person)
+        private void AddPersonToPanel(ref Panel panel1, User person)
         {
             Label userNameLabel = new System.Windows.Forms.Label();
             GroupBox photoGroupBox = new System.Windows.Forms.GroupBox();

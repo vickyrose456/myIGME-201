@@ -33,7 +33,7 @@ namespace TigerChatPeopleLib
         {
             public string userName;
             public int age;
-            public genderPronoun eGender;
+            public genderPronoun userGender;
             public string email;
 
             public string photoPath;
@@ -59,6 +59,9 @@ namespace TigerChatPeopleLib
                     }
                 }
             }
+        public User()
+        { 
+        }
 
             public static bool operator <(User p1, User p2)
             {
@@ -180,13 +183,13 @@ namespace TigerChatPeopleLib
             // the generic SortedList class uses a template <> to store indexed data
             // the first type is the data type to index on
             // the second type is the data type to store in the list
-            public SortedList<string, User> sortedList = new SortedList<string, User>();
+            public SortedList<string, User> myList = new SortedList<string, User>();
 
             public void Remove(string userName)
             {
                 if (userName != null)
                 {
-                    sortedList.Remove(userName);
+                    myList.Remove(userName);
                 }
             }
 
@@ -200,7 +203,7 @@ namespace TigerChatPeopleLib
                     User returnVal;
                     try
                     {
-                        returnVal = (User)sortedList[userName];
+                        returnVal = (User)myList[userName];
                     }
                     catch
                     {
@@ -214,9 +217,9 @@ namespace TigerChatPeopleLib
                 {
                     try
                     {
-                        // we can add to the list using these 2 methods
-                        //      sortedList.Add(email, value);
-                        sortedList[userName] = value;
+                    // we can add to the list using these 2 methods
+                    //      sortedList.Add(email, value);
+                        myList[userName] = value;
                     }
                     catch
                     {

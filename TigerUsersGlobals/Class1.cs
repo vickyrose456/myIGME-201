@@ -17,7 +17,7 @@ namespace TigerUsersGlobals
     {
         public static People people = new People();
 
-        public static void AddPeopleSampleData()
+        public static void AddPeopleData()
         {
             int i = 0;
 
@@ -32,7 +32,7 @@ namespace TigerUsersGlobals
             String[] firstName = new string[] { "Sue", "Tom", "Harry", "John", "David", "Rob", "Mary", "Cathy", "Amy", "Theresa", "Beth" };
             String[] lastName = new string[] { "Harris", "Smith", "Johnson", "Cass", "Murphy", "O'Malley", "Scott", "Peterson", "Clark" };
 
-            for (i = 0; i < 100; ++i)
+            for (i = 0; i < 50; ++i)
             {
                 if (rand.Next(0, 2) == 0)
                 {

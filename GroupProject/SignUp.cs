@@ -14,9 +14,9 @@ using TigerUsersGlobals;
 namespace GroupProject
 {
     public partial class SignUp : Form
-    {
-        Person formUser;
-        public SignUp(Person person, Form parentForm)
+    {/*
+        User formUser;
+        public SignUp(User person, Form parentForm)
         {
             InitializeComponent();
 
@@ -55,12 +55,36 @@ namespace GroupProject
 
             this.birthDateTimePicker.ValueChanged += new EventHandler(this.BirthDateTimePicker__ValueChanged);
 
+            //deactivate sign up until the user puts all info
+            this.createPersonButton.Enabled = false;
+
             this.birthDateTimePicker.Value = this.birthDateTimePicker.MinDate;
             if (person.dateOfBirth > this.birthDateTimePicker.MinDate)
             {
                 this.birthDateTimePicker.Value = person.dateOfBirth;
             }
-        }
+
+            //if( person.GetType() == typeof(Student))
+            if (person is Student student)
+            {
+                this.typeComboBox.SelectedIndex = 0;
+                //Student student = (Student)person;
+                this.gpaText.Text = student.gpa.ToString();
+
+
+            }
+            else
+            {
+                this.typeComboBox.SelectedIndex = 1;
+                Teacher teacher = (Teacher)person;
+                this.specText.Text = teacher.specialty;
+            }
+
+
+            // show this form as non-modal
+            this.Show();
+
+        }//sign up
 
         private void BirthDateTimePicker__ValueChanged(object sender, EventArgs e)
         {
@@ -97,16 +121,17 @@ namespace GroupProject
         }
         private void CreatePersonButton__Click(object sender, EventArgs e)
         {
-            Person person = null;
+            User person = null;
 
-            //IUser iUser = (IUser)formUser;
+            IUser iUser = (IUser)formUser;
 
-            User user = new User();
-            person = user;
+            
+            People newUser = new People();
+            person = newUser;
 
             //asssign the values to the person
             person.userName = this.userNameTextBox.Text;
-            person.UserPassword = this.passwordTextBox.Text;
+            person.Password = this.passwordTextBox.Text;
             person.dateOfBirth = this.birthDateTimePicker.Value;
 
             //close this form
@@ -153,13 +178,13 @@ namespace GroupProject
                 tb.Tag = true;
 
                 //set the text to the password
-                formUser.UserPassword = tb.Text;
+                formUser.Password = tb.Text;
             }
         }
 
         private void ExitButton__Click(object sender, EventArgs e)
         {
             this.Close();
-        }
+        }*/
     }
 }
