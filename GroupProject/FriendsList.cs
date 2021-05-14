@@ -24,7 +24,11 @@ namespace GroupProject
             this.teacherButton.Click += new EventHandler(TeacherButton__Click);
             this.studentsButton.Click += new EventHandler(StudentsButton__Click);
             this.homePictureBox.Click += new EventHandler(HomePictureBox__Click);
-            //this.groupBox1.Visible = false;
+
+            this.panel1.Visible = true;
+
+
+
 
         }//friendslist
         private void TeacherButton__Click(object sender, EventArgs e)
@@ -42,7 +46,7 @@ namespace GroupProject
 
             teacherButton.Text = this.flowLayoutPanel1.Controls.Count.ToString();
 
-            
+
         }
         private void StudentsButton__Click(object sender, EventArgs e)
         {
@@ -63,7 +67,9 @@ namespace GroupProject
 
         public void AddPanel(User user)
         {
+            //create a new panel
             Panel panel1 = new System.Windows.Forms.Panel();
+            
             //add the person to the panel
             AddPersonToPanel(ref panel1, user);
 
@@ -73,58 +79,88 @@ namespace GroupProject
             this.flowLayoutPanel1.Controls.SetChildIndex(panel1, flowLayoutPanel1.Controls.Count);
         }
 
-        private void AddPersonToPanel(ref Panel panel1, User person)
+
+        private void AddPersonToPanel(ref Panel myPanel, User person)
         {
             Label userNameLabel = new System.Windows.Forms.Label();
-            GroupBox photoGroupBox = new System.Windows.Forms.GroupBox();
+            Label emailLabel = new System.Windows.Forms.Label();
+            GroupBox photoGroupBox1 = new System.Windows.Forms.GroupBox();
             PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
 
-            //panel 1
-            this.flowLayoutPanel1.Controls.Add(this.groupBox1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(86, 174);
+
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 105);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1164, 617);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1301, 751);
             this.flowLayoutPanel1.TabIndex = 17;
-
-            //uername label
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            /// 
+            // panel1
+            // 
+            myPanel.Controls.Add(userNameLabel);
+            myPanel.Controls.Add(emailLabel);
+            myPanel.Controls.Add(photoGroupBox1);
+            myPanel.Controls.Add(photoPictureBox);
+            myPanel.Location = new System.Drawing.Point(3, 3);
+            myPanel.Name = "panel1";
+            myPanel.Size = new System.Drawing.Size(310, 377);
+            myPanel.TabIndex = 19;
 
             // 
-            // groupBox1
+            // label1
             // 
-            this.groupBox1.Controls.Add(this.photoPictureBox);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(336, 330);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-
+            userNameLabel.AutoSize = true;
+            userNameLabel.Location = new System.Drawing.Point(70, 33);
+            userNameLabel.Name = "nameLabel";
+            userNameLabel.Size = new System.Drawing.Size(93, 32);
+            userNameLabel.TabIndex = 0;
+            userNameLabel.Text = person.userName;
             // 
             // photoPictureBox
             // 
-            this.photoPictureBox.Location = new System.Drawing.Point(77, 116);
-            this.photoPictureBox.Name = "photoPictureBox";
-            this.photoPictureBox.Size = new System.Drawing.Size(176, 143);
-            this.photoPictureBox.TabIndex = 1;
-            this.photoPictureBox.TabStop = false;
-
+            photoPictureBox.BackColor = System.Drawing.Color.Silver;
+            photoPictureBox.Location = new System.Drawing.Point(30, 85);
+            photoPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            photoPictureBox.Name = "photoPictureBox";
+            photoPictureBox.Size = new System.Drawing.Size(167, 140);
+            photoPictureBox.TabIndex = 1;
+            photoPictureBox.TabStop = false;
+            photoPictureBox.ImageLocation = person.photoPath;
+            // 
+            // groupBox1
+            // 
+            photoGroupBox1.Controls.Add(this.photoPictureBox);
+            photoGroupBox1.Controls.Add(this.nameLabel);
+            photoGroupBox1.Location = new System.Drawing.Point(28, 56);
+            photoGroupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            photoGroupBox1.Name = "";
+            photoGroupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            photoGroupBox1.Size = new System.Drawing.Size(224, 248);
+            photoGroupBox1.TabIndex = 1;
+            photoGroupBox1.TabStop = false;
+            // 
+            // emailLabel
+            // 
+            emailLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            emailLabel.Location = new System.Drawing.Point(22, 19);
+           emailLabel.Name = "emailLabel";
+           emailLabel.Size = new System.Drawing.Size(128, 35);
+           emailLabel.TabIndex = 20;
+           emailLabel.Text = person.email;
 
         }//end add person to panel
 
-    private void HomePictureBox__Click(object sender, EventArgs e)
+        private void HomePictureBox__Click(object sender, EventArgs e)
         {
-            
+            //open home form
 
         }
     }
 
-    
+
 
 }

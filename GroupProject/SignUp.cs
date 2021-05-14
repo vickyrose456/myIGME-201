@@ -7,17 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using TigerChatPeopleLib;
 using TigerUsersGlobals;
 
-namespace GroupProject
+namespace SignUp
 {
     public partial class SignUp : Form
-    {/*
-        User formUser;
+    {
+        public User formPerson;
+        HtmlElement htmlElement;
+
         public SignUp(User person, Form parentForm)
         {
+            
             InitializeComponent();
 
             try
@@ -34,57 +36,91 @@ namespace GroupProject
 
             }
 
+
+            // and only enable it if all text fields are valid
+            this.createPersonButton.Enabled = false;
+
+            
+
             if (parentForm != null)
             {
                 this.Owner = parentForm;
                 this.CenterToParent();
             }
-            this.formUser = person;
+
+            this.formPerson = person;
+
+            // we want the same delegate function to be called for the following 5 fields
+            // TextBoxEmpty__Validating() is defined below
+            this.userNameTextBox.Validating += new CancelEventHandler(TextBoxEmpty__Validating);
+            this.passwordTextBox.Validating += new CancelEventHandler(TextBoxEmpty__Validating);
+
+            this.userNameTextBox.TextChanged += new EventHandler(TextBoxEmpty__TextChanged);
+            this.passwordTextBox.TextChanged += new EventHandler(TextBoxEmpty__TextChanged);
+       
+           
+            this.createPersonButton.Click += new EventHandler(OkButton__Click);
+
+            this.birthDateTimePicker.ValueChanged += new EventHandler(BirthDateTimePicker__ValueChanged);
 
 
-            //controls
-            this.userNameTextBox.KeyPress += new KeyPressEventHandler(UserNameTextBox__KeyPress);
-            this.passwordTextBox.KeyPress += new KeyPressEventHandler(PasswordTextBox__KeyPress);
-            this.exitButton.Click += new EventHandler(ExitButton__Click);
-            this.createPersonButton.Click += new EventHandler(CreatePersonButton__Click);
-
-
-            this.himRadioButton.CheckedChanged += new EventHandler(GenderRadioButton__CheckedChanged);
-            this.herRadioButton.CheckedChanged += new EventHandler(GenderRadioButton__CheckedChanged);
-            this.themRadioButton.CheckedChanged += new EventHandler(GenderRadioButton__CheckedChanged);
-
-            this.birthDateTimePicker.ValueChanged += new EventHandler(this.BirthDateTimePicker__ValueChanged);
-
-            //deactivate sign up until the user puts all info
-            this.createPersonButton.Enabled = false;
+            this.userNameTextBox.Text = person.userName;
+            this.passwordTextBox.Text = person.Password;
 
             this.birthDateTimePicker.Value = this.birthDateTimePicker.MinDate;
-            if (person.dateOfBirth > this.birthDateTimePicker.MinDate)
+            this.photoPictureBox.ImageLocation = person.photoPath;
+
+            // if a new person being added
+            if (person.userName == null)
             {
-                this.birthDateTimePicker.Value = person.dateOfBirth;
-            }
-
-            //if( person.GetType() == typeof(Student))
-            if (person is Student student)
-            {
-                this.typeComboBox.SelectedIndex = 0;
-                //Student student = (Student)person;
-                this.gpaText.Text = student.gpa.ToString();
-
-
+                // default to them
+                this.themRadioButton.Checked = true;
             }
             else
             {
-                this.typeComboBox.SelectedIndex = 1;
-                Teacher teacher = (Teacher)person;
-                this.specText.Text = teacher.specialty;
+                switch (person.userGender)
+                {
+                    case genderPronoun.her:
+                        this.herRadioButton.Checked = true;
+                        break;
+
+                    case genderPronoun.him:
+                        this.himRadioButton.Checked = true;
+                        break;
+
+                    case genderPronoun.them:
+                        this.themRadioButton.Checked = true;
+                        break;
+                }
+
+                if (person.dateOfBirth > this.birthDateTimePicker.MinDate)
+                {
+                    this.birthDateTimePicker.Value = person.dateOfBirth;
+                }
             }
 
+
+            //if( person.GetType() == typeof(Student))
+            //if (person is Student student)
+            //{ }
 
             // show this form as non-modal
             this.Show();
 
-        }//sign up
+            // show this form as modal
+            //this.ShowDialog();
+        }
+
+        private void PhotoPictureBox__Click(object sender, EventArgs e)
+        {
+            PictureBox pb = (PictureBox)sender;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pb.ImageLocation = openFileDialog.FileName;
+            }
+        }
+
 
         private void BirthDateTimePicker__ValueChanged(object sender, EventArgs e)
         {
@@ -94,97 +130,166 @@ namespace GroupProject
             {
                 dtp.CustomFormat = " ";
             }
-            else 
+            else
             {
                 dtp.CustomFormat = "MMM d, yyyy";
             }
         }
 
-        private void GenderRadioButton__CheckedChanged(object sender, EventArgs e)
+        private void OkButton__Click(object sender, EventArgs e)
         {
-            RadioButton rb = (RadioButton)sender;
-            if(rb == this.himRadioButton)
-            {
-                //set the gender to him
-                formUser.userGender = genderPronoun.him;
-            }
-            if(rb == this.herRadioButton)
-            {
-                //set the gender to her
-                formUser.userGender = genderPronoun.her;
-            }
-            if (rb == this.themRadioButton)
-            {
-                //set gender to them
-                formUser.userGender = genderPronoun.them;
-            }
-        }
-        private void CreatePersonButton__Click(object sender, EventArgs e)
-        {
+            Student student = null;
+            Teacher teacher = null;
             User person = null;
 
-            IUser iUser = (IUser)formUser;
+            Globals.people.Remove(this.formPerson.email);
 
-            
-            People newUser = new People();
-            person = newUser;
 
-            //asssign the values to the person
             person.userName = this.userNameTextBox.Text;
             person.Password = this.passwordTextBox.Text;
             person.dateOfBirth = this.birthDateTimePicker.Value;
+            person.photoPath = this.photoPictureBox.ImageLocation;
 
-            //close this form
-            this.Close();
-            ParentForm.Enabled = true;
-        }
-
-        private void UserNameTextBox__KeyPress(object sender, KeyPressEventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            //while it isnt empty, store it into the person
-            if (tb.Text == null || tb.Text.Length <= 2)
+            if (this.herRadioButton.Checked)
             {
-                //show error message
-                this.errorProvider1.SetError(tb, "Invalid username");
-                tb.Tag = false;
+                person.userGender = genderPronoun.her;
+            }
+
+            if (this.himRadioButton.Checked)
+            {
+                person.userGender = genderPronoun.him;
+            }
+
+            if (this.themRadioButton.Checked)
+            {
+                person.userGender = genderPronoun.them;
+            }
+
+            // if( person is Student )
+            //if (person.GetType() == typeof(Student))
+            //{
+                
+            //}
+
+            Globals.people[person.email] = person;
+
+            if (this.Owner != null)
+            {
+                this.Owner.Enabled = true;
+
+                this.Owner.Focus();
+                try
+                {
+                    IListView iListView = (IListView)this.Owner;
+                    iListView.PaintListView(person.email);
+                }
+                catch { }
 
             }
-            else 
-            {
-                this.errorProvider1.SetError(tb, null);
-                tb.Tag = true;
+            formPerson = person;
 
-                //set the text to the username
-                formUser.userName = tb.Text;
-            }
+            this.Hide();
+            //this.Close();
+            //this.Dispose();
         }
 
-        private void PasswordTextBox__KeyPress (object sender, KeyPressEventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            //while it isnt empty, store it into the person
-            if (tb.Text == null || tb.Text.Length <= 2)
-            {
-           
-                //show error message
-                this.errorProvider1.SetError(tb, "Invalid password");
-                tb.Tag = false;
+        
 
+        private void TextNum__KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // A key was pressed in the associated number field
+            // only allow digits or a single '.' for the gpa field
+            TextBox tb = (TextBox)sender;
+
+            // e.KeyChar contains the character that was pressed
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == '\b')
+            {
+                // .NET should handle the keypress and add it to the textbox
+                e.Handled = false;
+            }
+            else
+            {
+                // assume that the keystroke should not be passed on to .NET
+                e.Handled = true;
+
+            }
+
+            ValidateAll();
+        }
+
+        private void TextBoxEmpty__TextChanged(object textField, EventArgs e)
+        {
+            TextBox tb = (TextBox)textField;
+
+            if (tb.Text.Length == 0)
+            {
+                this.errorProvider1.SetError(tb, "This field cannot be empty.");
+                tb.Tag = false;
             }
             else
             {
                 this.errorProvider1.SetError(tb, null);
                 tb.Tag = true;
-
-                //set the text to the password
-                formUser.Password = tb.Text;
             }
+
+            ValidateAll();
         }
 
-        private void ExitButton__Click(object sender, EventArgs e)
+        private void ValidateAll()
         {
+            this.createPersonButton.Enabled =
+                (bool)this.userNameTextBox.Tag &&
+                (bool)this.passwordTextBox.Tag;
+        }
+
+        private void CancelButton__Click(object sender, EventArgs e)
+        {
+            if (this.Owner != null)
+            {
+                // enable the parent
+                this.Owner.Enabled = true;
+
+                // and set it into focus to process mouse and keyboard events
+                this.Owner.Focus();
+            }
+
+            // close this form
             this.Close();
-        }*/
+            this.Dispose();
+        }
+
+        private void TextBoxEmpty__Validating(object sender, CancelEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+
+            if (tb.Text.Length == 0)
+            {
+                // show error
+                this.errorProvider1.SetError(tb, "This field cannot be empty.");
+
+                // cancel moving to the next field
+                e.Cancel = true;
+
+                // invalidate the control
+                tb.Tag = false;
+            }
+            else
+            {
+                // else there is data in the field
+                // clear the error
+                this.errorProvider1.SetError(tb, null);
+                e.Cancel = false;
+
+                // set the control to being valid
+                tb.Tag = true;
+            }
+
+            ValidateAll();
+        }
+
+        private void typeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

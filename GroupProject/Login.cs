@@ -15,7 +15,7 @@ namespace GroupProject
 {
     public partial class Login : Form
     {
-        User thisUser;
+        public User thisUser;
 
 
         public Login()
@@ -70,8 +70,6 @@ namespace GroupProject
                 this.errorProvider1.SetError(tb, null);
                 tb.Tag = true;
             }
-
-            thisUser.userName = tb.Text;
         }//end username txt box
 
         private void SignUpButton__Click(object sender, EventArgs e)
@@ -86,6 +84,5 @@ namespace GroupProject
             //SignUp signUpForm = new SignUp(newUser, this);
             //signUpForm.ShowDialog();
         }//end ign up button
-
     }
 }
