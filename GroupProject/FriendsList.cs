@@ -15,7 +15,6 @@ namespace GroupProject
 {
     public partial class FriendsList : Form
     {
-        User myUser;
         public FriendsList()
         {
             InitializeComponent();
@@ -80,14 +79,21 @@ namespace GroupProject
             GroupBox photoGroupBox = new System.Windows.Forms.GroupBox();
             PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
 
-            // 
-            // flowLayoutPanel1
-            // 
+            //panel 1
             this.flowLayoutPanel1.Controls.Add(this.groupBox1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(86, 174);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1164, 617);
             this.flowLayoutPanel1.TabIndex = 17;
+
+            //uername label
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+
             // 
             // groupBox1
             // 
@@ -99,32 +105,21 @@ namespace GroupProject
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+
             // 
             // photoPictureBox
             // 
-            this.photoPictureBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.photoPictureBox.Location = new System.Drawing.Point(21, 120);
+            this.photoPictureBox.Location = new System.Drawing.Point(77, 116);
             this.photoPictureBox.Name = "photoPictureBox";
             this.photoPictureBox.Size = new System.Drawing.Size(176, 143);
             this.photoPictureBox.TabIndex = 1;
             this.photoPictureBox.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+
 
         }//end add person to panel
-       private void HomePictureBox__Click(object sender, EventArgs e)
+
+    private void HomePictureBox__Click(object sender, EventArgs e)
         {
-            this.Close();
-            //go to the form with the firends list
-            Form1 messages = new Form1();
-            messages.ShowDialog();
             
 
         }

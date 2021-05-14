@@ -4,9 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using TigerUsersGlobals;
-using TigerChatPeopleLib;
-
 namespace GroupProject
 {
     static class Program

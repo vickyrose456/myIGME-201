@@ -13,9 +13,6 @@ using System.Net.Sockets;
 using System.Threading;
 using System.IO;
 
-using TigerChatPeopleLib;
-using TigerUsersGlobals;
-
 namespace GroupProject
 {
     public delegate void UpdateConvoDelegate(string text);
@@ -31,19 +28,14 @@ namespace GroupProject
         Thread thread;
         Socket listener;
 
-        User myUser;
-
         public Form1()
         {
             InitializeComponent();
 
             //create new login form to show that first
-            if (myUser.userName == null)
-            {
-                Login login = new Login();
-                login.ShowDialog();
-            }
-            
+            Login login = new Login();
+            login.ShowDialog();
+
             //thread start
 
             ThreadStart threadStart = new ThreadStart(Listen);

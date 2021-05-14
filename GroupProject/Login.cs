@@ -13,7 +13,7 @@ using TigerUsersGlobals;
 
 namespace GroupProject
 {
-    public partial class Login : Form 
+    public partial class Login : Form
     {
         User thisUser;
 
@@ -46,9 +46,6 @@ namespace GroupProject
             if (this.userNametextBox.Text.Length > 2)
             {
                 this.Close();
-                //go to the form with the firends list
-                Form1 messages = new Form1();
-                messages.ShowDialog();
             }
             else
             { }
