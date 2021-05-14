@@ -34,22 +34,22 @@ namespace GroupProject
             this.friendsPictureBox = new System.Windows.Forms.PictureBox();
             this.homePictureBox = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.photoPictureBox = new System.Windows.Forms.PictureBox();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.emailLabel = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
             this.studentsButton = new System.Windows.Forms.Button();
             this.teacherButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.nameLabel = new System.Windows.Forms.Label();
-            this.photoPictureBox = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.emailLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.searchPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.friendsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
+            this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // searchPictureBox
@@ -103,6 +103,56 @@ namespace GroupProject
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1301, 751);
             this.flowLayoutPanel1.TabIndex = 17;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.emailLabel);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(251, 259);
+            this.panel1.TabIndex = 19;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.photoPictureBox);
+            this.groupBox1.Controls.Add(this.nameLabel);
+            this.groupBox1.Location = new System.Drawing.Point(28, 47);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(197, 187);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            // 
+            // photoPictureBox
+            // 
+            this.photoPictureBox.BackColor = System.Drawing.Color.Silver;
+            this.photoPictureBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.photoPictureBox.Location = new System.Drawing.Point(3, 63);
+            this.photoPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.photoPictureBox.Name = "photoPictureBox";
+            this.photoPictureBox.Size = new System.Drawing.Size(191, 122);
+            this.photoPictureBox.TabIndex = 1;
+            this.photoPictureBox.TabStop = false;
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Location = new System.Drawing.Point(52, 24);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(93, 32);
+            this.nameLabel.TabIndex = 0;
+            this.nameLabel.Text = "label1";
+            // 
+            // emailLabel
+            // 
+            this.emailLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.emailLabel.Location = new System.Drawing.Point(0, 0);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(251, 35);
+            this.emailLabel.TabIndex = 20;
+            this.emailLabel.Text = "label1";
+            // 
             // panel
             // 
             this.panel.BackColor = System.Drawing.Color.Black;
@@ -124,7 +174,7 @@ namespace GroupProject
             this.studentsButton.Location = new System.Drawing.Point(247, 26);
             this.studentsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.studentsButton.Name = "studentsButton";
-            this.studentsButton.Size = new System.Drawing.Size(137, 50);
+            this.studentsButton.Size = new System.Drawing.Size(189, 50);
             this.studentsButton.TabIndex = 17;
             this.studentsButton.Text = "Students";
             this.studentsButton.UseVisualStyleBackColor = false;
@@ -136,64 +186,16 @@ namespace GroupProject
             this.teacherButton.Location = new System.Drawing.Point(31, 26);
             this.teacherButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.teacherButton.Name = "teacherButton";
-            this.teacherButton.Size = new System.Drawing.Size(154, 50);
+            this.teacherButton.Size = new System.Drawing.Size(197, 50);
             this.teacherButton.TabIndex = 4;
             this.teacherButton.Text = "Teachers";
             this.teacherButton.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.emailLabel);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(310, 377);
-            this.panel1.TabIndex = 19;
-            // 
-            // nameLabel
-            // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(70, 33);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(93, 32);
-            this.nameLabel.TabIndex = 0;
-            this.nameLabel.Text = "label1";
-            // 
-            // photoPictureBox
-            // 
-            this.photoPictureBox.BackColor = System.Drawing.Color.Silver;
-            this.photoPictureBox.Location = new System.Drawing.Point(30, 85);
-            this.photoPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.photoPictureBox.Name = "photoPictureBox";
-            this.photoPictureBox.Size = new System.Drawing.Size(167, 140);
-            this.photoPictureBox.TabIndex = 1;
-            this.photoPictureBox.TabStop = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.photoPictureBox);
-            this.groupBox1.Controls.Add(this.nameLabel);
-            this.groupBox1.Location = new System.Drawing.Point(28, 56);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(224, 248);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            // 
-            // emailLabel
-            // 
-            this.emailLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.emailLabel.Location = new System.Drawing.Point(0, 0);
-            this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(310, 35);
-            this.emailLabel.TabIndex = 20;
-            this.emailLabel.Text = "label1";
             // 
             // FriendsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(105)))), ((int)(((byte)(3)))));
             this.ClientSize = new System.Drawing.Size(1301, 856);
             this.Controls.Add(this.panel);
@@ -205,11 +207,11 @@ namespace GroupProject
             ((System.ComponentModel.ISupportInitialize)(this.friendsPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
+            this.panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

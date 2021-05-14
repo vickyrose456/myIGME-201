@@ -25,7 +25,7 @@ namespace GroupProject
             this.studentsButton.Click += new EventHandler(StudentsButton__Click);
             this.homePictureBox.Click += new EventHandler(HomePictureBox__Click);
 
-            this.panel1.Visible = true;
+            this.panel1.Visible = false;
 
 
 
@@ -87,7 +87,6 @@ namespace GroupProject
             GroupBox photoGroupBox1 = new System.Windows.Forms.GroupBox();
             PictureBox photoPictureBox = new System.Windows.Forms.PictureBox();
 
-
             // 
             // flowLayoutPanel1
             // 
@@ -101,6 +100,7 @@ namespace GroupProject
             /// 
             // panel1
             // 
+            myPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             myPanel.Controls.Add(userNameLabel);
             myPanel.Controls.Add(emailLabel);
             myPanel.Controls.Add(photoGroupBox1);
@@ -109,7 +109,8 @@ namespace GroupProject
             myPanel.Name = "panel1";
             myPanel.Size = new System.Drawing.Size(310, 377);
             myPanel.TabIndex = 19;
-
+            myPanel.Tag = person;
+     
             // 
             // label1
             // 
@@ -130,16 +131,17 @@ namespace GroupProject
             photoPictureBox.TabIndex = 1;
             photoPictureBox.TabStop = false;
             photoPictureBox.ImageLocation = person.photoPath;
+            photoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             // 
             // groupBox1
             // 
             photoGroupBox1.Controls.Add(this.photoPictureBox);
             photoGroupBox1.Controls.Add(this.nameLabel);
-            photoGroupBox1.Location = new System.Drawing.Point(28, 56);
+            photoGroupBox1.Location = new System.Drawing.Point(28, 47);
             photoGroupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            photoGroupBox1.Name = "";
+            photoGroupBox1.Name = "groupBox1";
             photoGroupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            photoGroupBox1.Size = new System.Drawing.Size(224, 248);
+            photoGroupBox1.Size = new System.Drawing.Size(197, 187);
             photoGroupBox1.TabIndex = 1;
             photoGroupBox1.TabStop = false;
             // 

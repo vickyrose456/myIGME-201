@@ -46,18 +46,20 @@ namespace GroupProject
             // messagesRichTextBox
             // 
             this.messagesRichTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(225)))), ((int)(((byte)(205)))));
-            this.messagesRichTextBox.Location = new System.Drawing.Point(187, 108);
+            this.messagesRichTextBox.Location = new System.Drawing.Point(499, 258);
+            this.messagesRichTextBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.messagesRichTextBox.Name = "messagesRichTextBox";
-            this.messagesRichTextBox.Size = new System.Drawing.Size(594, 174);
+            this.messagesRichTextBox.Size = new System.Drawing.Size(1577, 409);
             this.messagesRichTextBox.TabIndex = 16;
             this.messagesRichTextBox.Text = "";
             // 
             // userMsgRichTextBox
             // 
             this.userMsgRichTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(225)))), ((int)(((byte)(205)))));
-            this.userMsgRichTextBox.Location = new System.Drawing.Point(187, 328);
+            this.userMsgRichTextBox.Location = new System.Drawing.Point(499, 782);
+            this.userMsgRichTextBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.userMsgRichTextBox.Name = "userMsgRichTextBox";
-            this.userMsgRichTextBox.Size = new System.Drawing.Size(594, 90);
+            this.userMsgRichTextBox.Size = new System.Drawing.Size(1577, 209);
             this.userMsgRichTextBox.TabIndex = 15;
             this.userMsgRichTextBox.Text = "";
             // 
@@ -66,9 +68,10 @@ namespace GroupProject
             this.searchPictureBox.BackColor = System.Drawing.Color.White;
             this.searchPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("searchPictureBox.Image")));
             this.searchPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("searchPictureBox.InitialImage")));
-            this.searchPictureBox.Location = new System.Drawing.Point(630, 6);
+            this.searchPictureBox.Location = new System.Drawing.Point(1680, 14);
+            this.searchPictureBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.searchPictureBox.Name = "searchPictureBox";
-            this.searchPictureBox.Size = new System.Drawing.Size(41, 38);
+            this.searchPictureBox.Size = new System.Drawing.Size(109, 91);
             this.searchPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.searchPictureBox.TabIndex = 13;
             this.searchPictureBox.TabStop = false;
@@ -79,9 +82,10 @@ namespace GroupProject
             this.friendsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.friendsPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("friendsPictureBox.Image")));
             this.friendsPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("friendsPictureBox.InitialImage")));
-            this.friendsPictureBox.Location = new System.Drawing.Point(694, 7);
+            this.friendsPictureBox.Location = new System.Drawing.Point(1851, 17);
+            this.friendsPictureBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.friendsPictureBox.Name = "friendsPictureBox";
-            this.friendsPictureBox.Size = new System.Drawing.Size(41, 38);
+            this.friendsPictureBox.Size = new System.Drawing.Size(109, 91);
             this.friendsPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.friendsPictureBox.TabIndex = 12;
             this.friendsPictureBox.TabStop = false;
@@ -92,18 +96,20 @@ namespace GroupProject
             this.homePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.homePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("homePictureBox.Image")));
             this.homePictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("homePictureBox.InitialImage")));
-            this.homePictureBox.Location = new System.Drawing.Point(753, 6);
+            this.homePictureBox.Location = new System.Drawing.Point(2008, 14);
+            this.homePictureBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.homePictureBox.Name = "homePictureBox";
-            this.homePictureBox.Size = new System.Drawing.Size(41, 38);
+            this.homePictureBox.Size = new System.Drawing.Size(109, 91);
             this.homePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.homePictureBox.TabIndex = 11;
             this.homePictureBox.TabStop = false;
             // 
             // sendMsgButton
             // 
-            this.sendMsgButton.Location = new System.Drawing.Point(717, 394);
+            this.sendMsgButton.Location = new System.Drawing.Point(1905, 934);
+            this.sendMsgButton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.sendMsgButton.Name = "sendMsgButton";
-            this.sendMsgButton.Size = new System.Drawing.Size(64, 24);
+            this.sendMsgButton.Size = new System.Drawing.Size(171, 57);
             this.sendMsgButton.TabIndex = 17;
             this.sendMsgButton.Text = "Send";
             this.sendMsgButton.UseVisualStyleBackColor = true;
@@ -111,25 +117,27 @@ namespace GroupProject
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(105)))), ((int)(((byte)(3)))));
-            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Location = new System.Drawing.Point(5, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(136, 443);
+            this.panel1.Size = new System.Drawing.Size(363, 1056);
             this.panel1.TabIndex = 18;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(2, 2);
+            this.panel2.Location = new System.Drawing.Point(5, 5);
+            this.panel2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(796, 46);
+            this.panel2.Size = new System.Drawing.Size(2123, 110);
             this.panel2.TabIndex = 19;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 445);
+            this.ClientSize = new System.Drawing.Size(2133, 1061);
             this.Controls.Add(this.sendMsgButton);
             this.Controls.Add(this.messagesRichTextBox);
             this.Controls.Add(this.userMsgRichTextBox);
@@ -138,6 +146,7 @@ namespace GroupProject
             this.Controls.Add(this.homePictureBox);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.searchPictureBox)).EndInit();
