@@ -18,6 +18,8 @@ namespace GroupProject
         public FriendsList()
         {
             InitializeComponent();
+
+
             Globals.AddPeopleData();
 
 
