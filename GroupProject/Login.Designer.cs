@@ -72,7 +72,7 @@ namespace GroupProject
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(193, 222);
+            this.exitButton.Location = new System.Drawing.Point(1149, 37);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(105, 50);
             this.exitButton.TabIndex = 3;
