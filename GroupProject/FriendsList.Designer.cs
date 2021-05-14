@@ -37,6 +37,8 @@ namespace GroupProject
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.photoPictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.teacherButton = new System.Windows.Forms.Button();
+            this.studentsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.searchPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.friendsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).BeginInit();
@@ -107,7 +109,8 @@ namespace GroupProject
             // 
             // photoPictureBox
             // 
-            this.photoPictureBox.Location = new System.Drawing.Point(77, 116);
+            this.photoPictureBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.photoPictureBox.Location = new System.Drawing.Point(21, 120);
             this.photoPictureBox.Name = "photoPictureBox";
             this.photoPictureBox.Size = new System.Drawing.Size(176, 143);
             this.photoPictureBox.TabIndex = 1;
@@ -116,17 +119,37 @@ namespace GroupProject
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 68);
+            this.label1.Location = new System.Drawing.Point(15, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
+            // 
+            // teacherButton
+            // 
+            this.teacherButton.Location = new System.Drawing.Point(40, 47);
+            this.teacherButton.Name = "teacherButton";
+            this.teacherButton.Size = new System.Drawing.Size(182, 54);
+            this.teacherButton.TabIndex = 18;
+            this.teacherButton.Text = "Teachers";
+            this.teacherButton.UseVisualStyleBackColor = true;
+            // 
+            // studentsButton
+            // 
+            this.studentsButton.Location = new System.Drawing.Point(267, 47);
+            this.studentsButton.Name = "studentsButton";
+            this.studentsButton.Size = new System.Drawing.Size(182, 54);
+            this.studentsButton.TabIndex = 19;
+            this.studentsButton.Text = "Students";
+            this.studentsButton.UseVisualStyleBackColor = true;
             // 
             // FriendsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1301, 856);
+            this.Controls.Add(this.studentsButton);
+            this.Controls.Add(this.teacherButton);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.searchPictureBox);
             this.Controls.Add(this.friendsPictureBox);
@@ -153,5 +176,7 @@ namespace GroupProject
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox photoPictureBox;
+        private System.Windows.Forms.Button teacherButton;
+        private System.Windows.Forms.Button studentsButton;
     }
 }

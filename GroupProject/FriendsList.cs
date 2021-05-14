@@ -20,18 +20,44 @@ namespace GroupProject
             InitializeComponent();
             Globals.AddPeopleData();
 
+
+            this.teacherButton.Click += new EventHandler(TeacherButton__Click);
+            this.studentsButton.Click += new EventHandler(StudentsButton__Click);
+
+            this.groupBox1.Visible = false;
+
+        }//friendslist
+        private void TeacherButton__Click(object sender, EventArgs e)
+        {
+            //clearing array of controls assoc w/ panel
             this.flowLayoutPanel1.Controls.Clear();
 
             foreach (KeyValuePair<string, User> keyValuePair in Globals.people.myList)
             {
-                if (keyValuePair.Value.GetType() == typeof(User))
+                if (keyValuePair.Value.GetType() == typeof(Teacher))
                 {
                     AddPanel(keyValuePair.Value);
                 }
             }
 
-            //this.homePictureBox.Click += new EventHandler(HomePicutreBox__Click);
+            teacherButton.Text = this.flowLayoutPanel1.Controls.Count.ToString();
         }
+        private void StudentsButton__Click(object sender, EventArgs e)
+        {
+            //clearing array of controls assoc w/ panel
+            this.flowLayoutPanel1.Controls.Clear();
+
+            foreach (KeyValuePair<string, User> keyValuePair in Globals.people.myList)
+            {
+                if (keyValuePair.Value.GetType() == typeof(Student))
+                {
+                    AddPanel(keyValuePair.Value);
+                }
+            }
+
+            studentsButton.Text = this.flowLayoutPanel1.Controls.Count.ToString();
+        }
+
 
         public void AddPanel(User user)
         {
