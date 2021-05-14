@@ -46,6 +46,8 @@ namespace GroupProject
             if (this.userNametextBox.Text.Length > 2)
             {
                 this.Close();
+                //Form1 messages = new Form1();
+                //messages.ShowDialog();
             }
             else
             { }
