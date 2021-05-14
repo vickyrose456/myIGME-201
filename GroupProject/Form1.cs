@@ -15,7 +15,7 @@ using System.IO;
 
 namespace GroupProject
 {
-    public delegate void UpdateConvoDelegate(string text);
+    public delegate void UpdateConversationDelegate(string text);
 
     public partial class Form1 : Form
     {
@@ -33,16 +33,15 @@ namespace GroupProject
             InitializeComponent();
 
             //create new login form to show that first
-            Login login = new Login();
-            login.ShowDialog();
+            this.Show();
+            Login loginForm = new Login();
+            loginForm.ShowDialog();
 
-            //thread start
-
+            //thread start 
             ThreadStart threadStart = new ThreadStart(Listen);
             thread = new Thread(threadStart);
             thread.Start();
 
-            //ip host
             IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
             foreach (IPAddress iPAddress in ipHost.AddressList)
             {
@@ -54,25 +53,52 @@ namespace GroupProject
             }
 
 
-            //control buttons
-            this.friendsPictureBox.Click += new EventHandler(FriendsPictureBox__Click);
+            //event handlers for bttns
             this.sendMsgButton.Click += new EventHandler(SendMsgButton__Click);
+            this.friendsPictureBox.Click += new EventHandler(FriendsPictureBox__Click);
 
 
+        }//end form 1
+        private void SendMsgButton__Click(object sender, EventArgs e)
+        {
+            if (targetIp.Length > 0)
+            {
+                //open a socket
+                //need ip adress
+                IPAddress iPAddress = IPAddress.Parse(this.targetIp);
 
-            this.FormClosing += new FormClosingEventHandler(FormClosing__Form);
+                IPEndPoint remoteEndPoint = new IPEndPoint(iPAddress, this.targetPort);
 
-        }
+                Socket server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                //telling it to connect with ip address and port of the listener on the other end
+                server.Connect(remoteEndPoint);
+
+                Stream netStream = new NetworkStream(server);
+                StreamWriter writer = new StreamWriter(netStream);
+
+                string msg = userName + ": " + userMsgRichTextBox.Text;
+                writer.Write(msg.ToCharArray(), 0, msg.Length);
+
+                writer.Close();
+                netStream.Close();
+                server.Close();
+
+                this.messagesRichTextBox.Text += "> " + this.targetUser + ": " + userMsgRichTextBox.Text + "\n";
+
+                userMsgRichTextBox.Clear();
+
+            }
+        }//send button
+
         public void UpdateConversation(string text)
         {
-            this.messagesRichTextBox.Text += text + "\n";
+            this.userMsgRichTextBox.Text += text + "\n";
         }//update convo
 
-        //listener fns
         public void Listen()
         {
-            UpdateConvoDelegate updateConversationDelegate;
-            updateConversationDelegate = new UpdateConvoDelegate(UpdateConversation);
+            UpdateConversationDelegate updateConversationDelegate;
+            updateConversationDelegate = new UpdateConversationDelegate(UpdateConversation);
             //no matter IP adress, it will process it
             IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Any, this.myPort);
 
@@ -101,49 +127,6 @@ namespace GroupProject
             }
         }//end listen
 
-        private void FormClosing__Form(object sender, FormClosingEventArgs e)
-        {
-            //close the listener 
-            listener.Close();
-
-            //end the thread 
-            thread.Abort();
-
-            //close the application
-            //t7Application.Exit();
-
-        }// end form closing
-
-        private void SendMsgButton__Click(object sender, EventArgs e)
-        {
-            if (targetIp.Length > 0)
-            {
-                //open a socket
-                //need ip adress
-                IPAddress iPAddress = IPAddress.Parse(this.targetIp);
-
-                IPEndPoint remoteEndPoint = new IPEndPoint(iPAddress, this.targetPort);
-
-                Socket server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                //telling it to connect with ip address and port of the listener on the other end
-                server.Connect(remoteEndPoint);
-
-                Stream netStream = new NetworkStream(server);
-                StreamWriter writer = new StreamWriter(netStream);
-
-                string msg = userName + ": " + userMsgRichTextBox.Text;
-                writer.Write(msg.ToCharArray(), 0, msg.Length);
-
-                writer.Close();
-                netStream.Close();
-                server.Close();
-
-                messagesRichTextBox.Text += "> " + this.targetUser + ": " + userMsgRichTextBox.Text + "\n";
-
-                userMsgRichTextBox.Clear();
-
-            }
-        }//send button
         private void FriendsPictureBox__Click(object sender, EventArgs e)
         {
             //go to the form with the firends list
@@ -157,6 +140,8 @@ namespace GroupProject
             //already on home page
 
         }//end home pic box
+
+
     }
 }
 
